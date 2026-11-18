@@ -281,11 +281,9 @@
     /* Shell */
     .app-shell {
       display: grid;
-      grid-template-columns: 284px minmax(0, 1fr);
+      grid-template-columns: 270px minmax(0, 1fr);
       flex: 1;
-      max-width: 1700px;
       width: 100%;
-      margin: 0 auto;
     }
 
     /* Sidebar */
@@ -349,7 +347,7 @@
     }
 
     /* Main Content */
-    .main-content { padding: 26px 32px 72px; min-width: 0; }
+    .main-content { padding: 14px 16px 28px; min-width: 0; }
 
     .tab-panel { display: none; animation: fadeSlide 0.2s ease-out; }
     .tab-panel.active { display: block; }
@@ -1106,7 +1104,7 @@
     }
 
     @media (max-width: 768px) {
-      .main-content { padding: 18px 14px 52px; }
+      .main-content { padding: 10px 10px 24px; }
       .grid-2, .grid-3, .loadout-grid, .calc-grid, .slot-list, .tree-steps-5, .skill-cards-grid { grid-template-columns: 1fr; }
       .equip-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .hero-title { font-size: 1.42rem; }
