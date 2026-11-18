@@ -1217,6 +1217,11 @@
       <div class="sidebar-footer">
         <strong>Sword x Staff — Đại Bách Khoa VN</strong><br/>
         Bấm <code>Ctrl + K</code> để tra cứu kèm hình ảnh mọi kỹ năng, vật phẩm hay cơ chế.
+        <div style="display:flex; gap:6px; margin-top:8px;">
+          <button type="button" class="copy-code-btn" id="exportDataBtn" style="flex:1;">Xuất Backup</button>
+          <button type="button" class="copy-code-btn" id="importDataBtn" style="flex:1;">Nhập Backup</button>
+          <input type="file" id="importDataFile" accept=".json" style="display:none;" />
+        </div>
       </div>
     </nav>
 
@@ -1492,6 +1497,27 @@
             </thead>
             <tbody id="glossaryTableBody"></tbody>
           </table>
+        </div>
+
+        <!-- CHECKLIST CÔNG VIỆC HÀNG NGÀY & HÀNG TUẦN -->
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+              Checklist Vận Hành Hàng Ngày &amp; Hàng Tuần (Lưu Tự Động)
+            </h2>
+            <p class="section-sub">Đánh dấu nhanh mỗi ngày để không bỏ lỡ lượt Phó Bản, Thể Lực, Ủy Thác Vàng và Khe Nứt Chủ Nhật</p>
+          </div>
+          <button class="icon-btn" id="resetDailyBtn" type="button">Đặt lại Daily</button>
+        </div>
+
+        <div class="grid-2" id="dailyRoutineChecklist">
+          <label class="check-item"><input type="checkbox" data-daily="d1" /><div><div class="check-title">1. Chạy 2 lượt Phó Bản Ngày + mua đủ 2 lượt Dawnium (100 &amp; 150)</div><div class="check-desc">Đi đường thẳng tới Boss đạt hạng S; kích hoạt Cổ Vật Tượng May Mắn.</div></div></label>
+          <label class="check-item"><input type="checkbox" data-daily="d2" /><div><div class="check-title">2. Quét sạch Gỗ/Đá bằng Đồng Rolla tại Cửa Hàng Xe Hàng</div><div class="check-desc">Xả Thể Lực đào mỏ không để chạm trần 300 (12 Thể Lực/giờ).</div></div></label>
+          <label class="check-item"><input type="checkbox" data-daily="d3" /><div><div class="check-title">3. Làm mới &amp; nhận Ủy Thác Vàng (Gold Bounty)</div><div class="check-desc">Săn Sách Công Thức Món Đỏ và Nhật Ký Đồng Hành (tặng đúng quà ×1.25 EXP).</div></div></label>
+          <label class="check-item"><input type="checkbox" data-daily="d4" /><div><div class="check-title">4. Cống hiến Bang Hội, đặt ô sản xuất &amp; đánh Boss Viễn Chinh</div><div class="check-desc">Mua hết vé quay giảm giá tuần tại Guild Shop &amp; mảnh Kels tại Arena Shop.</div></div></label>
+          <label class="check-item"><input type="checkbox" data-daily="d5" /><div><div class="check-title">5. Đánh Bí Cảnh Nguyên Liệu vào CUỐI NGÀY</div><div class="check-desc">Chờ nâng hết cấp &amp; trang bị trong ngày rồi mới đánh để ăn mốc thưởng cao nhất.</div></div></label>
+          <label class="check-item"><input type="checkbox" data-daily="d6" /><div><div class="check-title">6. Sự Kiện Tuần: Khe Nứt 10/10 (Chủ Nhật) &amp; Tích Kho Báu ≥ 3,240 NL</div><div class="check-desc">Hoàn thành 10 lượt Void Rift không bảo lưu và mua Lò Rèn Nguyên Thủy sau Chaos Invasion.</div></div></label>
         </div>
       </section>
 
@@ -2250,6 +2276,15 @@
           <input type="search" id="relicFilterInput" class="filter-input" placeholder="Tìm tên Cổ Vật tiếng Việt/Anh, vùng đất hoặc hiệu ứng (VD: Maelstrom, Accuracy, Cinder Ridge, Nhân đôi...)" aria-label="Lọc bảng Cổ Vật" />
         </div>
 
+        <div class="callout callout-info" style="margin-bottom:16px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01" stroke-linecap="round"/></svg>
+          <div>
+            <strong>QUY TẮC LIÊN KẾT CỔ VẬT LIÊN VÙNG (COLLECTION SYNERGY):</strong><br/>
+            • <strong>50% chỉ số bộ sưu tập Mythic của Thung Lũng Xanh (Sylvan Relics)</strong> được cộng gộp trực tiếp với <strong>Rặng Núi Tro Tàn (Machina Trove)</strong>.<br/>
+            • <strong>50% chỉ số bộ sưu tập Mythic của Thủy Quốc (Ukiyo Tales)</strong> được cộng gộp trực tiếp với <strong>Long Cảng (Celestial Crafts)</strong> — giúp cổ vật vùng cũ vẫn giữ nguyên giá trị lâu dài!
+          </div>
+        </div>
+
         <div class="table-wrap" style="margin-bottom:28px;">
           <table id="relicsTable">
             <thead>
@@ -2540,6 +2575,34 @@
             </thead>
             <tbody id="officialTimelineBody"></tbody>
           </table>
+        </div>
+
+        <!-- LỊCH XOAY TUA GRAND TREASURE HUNT & MỐC HỢP ƯỚC TINH TƯỢNG -->
+        <div class="grid-2" style="margin-bottom:20px;">
+          <div class="card card-sword">
+            <div class="card-header">
+              <h3 class="card-title">Lịch Xoay Tua Grand Treasure Hunt (Phase 1 → 8)</h3>
+              <span class="pill pill-sword">Event Rotation</span>
+            </div>
+            <div class="table-wrap" style="max-height:280px; overflow-y:auto;">
+              <table>
+                <thead><tr><th>Vùng</th><th>Phase &amp; Quà Tầng 5</th><th>Sự Kiện &amp; Thời Điểm</th></tr></thead>
+                <tbody id="treasurePhasesBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card card-staff">
+            <div class="card-header">
+              <h3 class="card-title">Hệ Thống Mốc Hợp Ước Tinh Tượng (Astral Destiny)</h3>
+              <span class="pill pill-staff">S1–S3 &amp; S4–S6</span>
+            </div>
+            <ul class="clean-list staff-bullets">
+              <li><strong>3 Bảng Thiên Phú Kế Tiếp Nhau:</strong> <code>Witching Hours</code> (Mốc 5 → 48+ ★) → <code>Crossed Paths</code> (Mốc 505 → 770+ ★) → <code>Finale of Chaos</code> (Mốc 1,940 → 2,555+ ★).</li>
+              <li><strong>Chu kỳ 9 nút chỉ số lặp lại chuẩn:</strong> <code>ATK +1%</code> → <code>Ascension +3%</code> → <code>DEF +1%</code> → <code>Gem Drop +5%</code> → <code>HP +1%</code> → <code>2× Dungeon +2%</code> → <code>SPD +1%</code> → <code>EXP Gain +2%</code>.</li>
+              <li><strong>Mẹo tối ưu Sao Nguyên Thủy:</strong> Đầu tiên luôn đẩy qua các nút <em>2× Dungeon, Gem Drop và EXP Gain</em> trước để tăng tốc độ thu hoạch tài nguyên cả mùa!</li>
+            </ul>
+          </div>
         </div>
 
         <!-- BẢNG ĐỐI CHIẾU RESET MÙA GIẢI & THÁP HỢP ƯỚC TINH TƯỢNG -->
@@ -4815,6 +4878,77 @@
       syncChecks();
     });
     syncChecks();
+
+    // Daily & Weekly Routine Checklist
+    const savedDaily = JSON.parse(localStorage.getItem('sxs_daily_checks_v1') || '{}');
+    const dailyInputs = document.querySelectorAll('#dailyRoutineChecklist input[type="checkbox"]');
+    function syncDaily() {
+      dailyInputs.forEach(chk => {
+        chk.checked = Boolean(savedDaily[chk.dataset.daily]);
+        chk.closest('.check-item').classList.toggle('done', chk.checked);
+      });
+    }
+    dailyInputs.forEach(chk => {
+      chk.addEventListener('change', () => {
+        savedDaily[chk.dataset.daily] = chk.checked;
+        localStorage.setItem('sxs_daily_checks_v1', JSON.stringify(savedDaily));
+        chk.closest('.check-item').classList.toggle('done', chk.checked);
+      });
+    });
+    document.getElementById('resetDailyBtn').addEventListener('click', () => {
+      Object.keys(savedDaily).forEach(k => delete savedDaily[k]);
+      localStorage.removeItem('sxs_daily_checks_v1');
+      syncDaily();
+    });
+    syncDaily();
+
+    // Grand Treasure Hunt Phase Table
+    const TREASURE_PHASES = [
+      { reg: "Cinder Ridge", phase: "Phase 1 • Cổ Vật Đỏ Tự Chọn Vùng 2", ev: "Mecha Summit" },
+      { reg: "Aqualis (S1)", phase: "Phase 2 • Tượng May Mắn (Lucky Statue)", ev: "Lucky Bingo • Ocean Palace Ruins" },
+      { reg: "Aqualis (S1)", phase: "Phase 3 • 180 Mảnh Kỹ Năng Bậc 3 Tự Chọn", ev: "Lucky Cards • Trước Aquorigin Shrine" },
+      { reg: "Aqualis (S1)", phase: "Phase 4 • Ngọc Nguyên Thủy (Primal Gem)", ev: "Fonik's Puzzle • Aquorigin Shrine" },
+      { reg: "Aqualis (S1)", phase: "Phase 5 • Cổ Vật Đỏ Thủy Quốc Tự Chọn", ev: "Lucky Bingo • Trong Hellhold" },
+      { reg: "Loong Haven (S2)", phase: "Phase 6 • Đá Thời Gian / Cổ Vật Đỏ Long Cảng", ev: "Lucky Cards • Warlord's Rest" },
+      { reg: "Aethyris (S3)", phase: "Phase 7 • Cây Thần Vàng (+10% Căn Cứ)", ev: "Fonik's Puzzle • Thiên Không Giới" },
+      { reg: "Aethyris (S3)", phase: "Phase 8 • Hòn Đá Phù Thủy (Philosopher's Stone)", ev: "Lucky Bingo • Sunspire / Regal Lair" }
+    ];
+    const tpBody = document.getElementById('treasurePhasesBody');
+    if (tpBody) {
+      tpBody.innerHTML = TREASURE_PHASES.map(tp => `
+        <tr>
+          <td><span class="pill pill-cyan">${tp.reg}</span></td>
+          <td><strong>${tp.phase}</strong></td>
+          <td>${tp.ev}</td>
+        </tr>
+      `).join('');
+    }
+
+    // Export / Import Backup JSON
+    document.getElementById('exportDataBtn').addEventListener('click', () => {
+      const payload = {};
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && k.startsWith('sxs_')) payload[k] = localStorage.getItem(k);
+      }
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'swordxstaff_wiki_vn_backup.json';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    });
+    const importFile = document.getElementById('importDataFile');
+    document.getElementById('importDataBtn').addEventListener('click', () => importFile.click());
+    importFile.addEventListener('change', async () => {
+      const f = importFile.files?.[0];
+      if (!f) return;
+      try {
+        const obj = JSON.parse(await f.text());
+        Object.entries(obj).forEach(([k, v]) => { if (k.startsWith('sxs_')) localStorage.setItem(k, String(v)); });
+        location.reload();
+      } catch { alert('Tệp backup JSON không hợp lệ.'); }
+    });
 
     // =========================================================================
     // TRUNG TÂM 6 MÁY TÍNH CÔNG THỨC CHUYÊN SÂU
