@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <defs>
+    <radialGradient id="bg_rel5" cx="50%" cy="42%" r="62%">
+      <stop offset="0%" stop-color="#0c2d48"/>
+      <stop offset="100%" stop-color="#06101e"/>
+    </radialGradient>
+    <linearGradient id="rim_rel5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff6b81"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#991b1b"/>
+    </linearGradient>
+    <linearGradient id="art_rel5" x1="15%" y1="10%" x2="85%" y2="90%">
+      <stop offset="0%" stop-color="#e0f2fe"/>
+      <stop offset="45%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <radialGradient id="glow_rel5" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#2563eb" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="sh_rel5" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.2" flood-color="#000000" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+  <!-- Outer Base & Metallic Bevel Frame -->
+  <rect x="2" y="2" width="76" height="76" rx="14" fill="url(#rim_rel5)" stroke="#05070e" stroke-width="2"/>
+  <rect x="6" y="6" width="68" height="68" rx="10" fill="url(#bg_rel5)" stroke="#fde047" stroke-width="1" stroke-opacity="0.62"/>
+  <!-- Arcane Inner Ring & Glow -->
+  <circle cx="40" cy="40" r="28" fill="url(#glow_rel5)"/>
+  <circle cx="40" cy="40" r="25" fill="none" stroke="#38bdf8" stroke-opacity="0.18" stroke-width="1" stroke-dasharray="6 4"/>
+  <!-- Glossy Top Highlight -->
+  <path d="M12 9 H68 A6 6 0 0 1 73 14 V24 Q40 16 7 24 V14 A6 6 0 0 1 12 9 Z" fill="#ffffff" fill-opacity="0.06"/>
+  <!-- Corner Studs -->
+  <polygon points="8,8 13,8 8,13" fill="#fef08a" opacity="0.85"/>
+  <polygon points="72,8 67,8 72,13" fill="#fef08a" opacity="0.85"/>
+  <polygon points="8,72 13,72 8,67" fill="#fef08a" opacity="0.85"/>
+  <polygon points="72,72 67,72 72,67" fill="#fef08a" opacity="0.85"/>
+  <!-- Main Shaded Illustration -->
+  <g filter="url(#sh_rel5)">
+    <circle cx="40" cy="40" r="22" fill="#38bdf8" fill-opacity="0.22" stroke="#e0f2fe" stroke-width="2.5"/>
+              <path d="M22 34 Q40 18 58 34 M18 44 Q40 60 62 44" fill="none" stroke="url(#art_rel5)" stroke-width="3.5" stroke-linecap="round"/>
+              <circle cx="40" cy="40" r="10" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="4 3"/>
+  </g>
+  
+</svg>

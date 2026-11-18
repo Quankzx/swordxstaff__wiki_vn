@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <defs>
+    <radialGradient id="bg_sk42" cx="50%" cy="42%" r="62%">
+      <stop offset="0%" stop-color="#42330b"/>
+      <stop offset="100%" stop-color="#171205"/>
+    </radialGradient>
+    <linearGradient id="rim_sk42" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </linearGradient>
+    <linearGradient id="art_sk42" x1="15%" y1="10%" x2="85%" y2="90%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="45%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <radialGradient id="glow_sk42" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fde047" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="sh_sk42" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.2" flood-color="#000000" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+  <!-- Outer Base & Metallic Bevel Frame -->
+  <rect x="2" y="2" width="76" height="76" rx="14" fill="url(#rim_sk42)" stroke="#05070e" stroke-width="2"/>
+  <rect x="6" y="6" width="68" height="68" rx="10" fill="url(#bg_sk42)" stroke="#fef9c3" stroke-width="1" stroke-opacity="0.62"/>
+  <!-- Arcane Inner Ring & Glow -->
+  <circle cx="40" cy="40" r="28" fill="url(#glow_sk42)"/>
+  <circle cx="40" cy="40" r="25" fill="none" stroke="#fde047" stroke-opacity="0.18" stroke-width="1" stroke-dasharray="6 4"/>
+  <!-- Glossy Top Highlight -->
+  <path d="M12 9 H68 A6 6 0 0 1 73 14 V24 Q40 16 7 24 V14 A6 6 0 0 1 12 9 Z" fill="#ffffff" fill-opacity="0.06"/>
+  <!-- Corner Studs -->
+  <polygon points="8,8 13,8 8,13" fill="#fffbeb" opacity="0.85"/>
+  <polygon points="72,8 67,8 72,13" fill="#fffbeb" opacity="0.85"/>
+  <polygon points="8,72 13,72 8,67" fill="#fffbeb" opacity="0.85"/>
+  <polygon points="72,72 67,72 72,67" fill="#fffbeb" opacity="0.85"/>
+  <!-- Main Shaded Illustration -->
+  <g filter="url(#sh_sk42)">
+    <polygon points="40,10 47,26 65,20 53,36 68,46 50,49 54,66 40,54 26,66 30,49 12,46 27,36 15,20 33,26" fill="url(#art_sk42)"/>
+              <path d="M28 26 L40 22 L52 26 V41 C52 50 40 57 40 57 C40 57 28 50 28 41 Z" fill="#ffffff"/>
+  </g>
+  <circle cx="65" cy="65" r="8" fill="#090d16" stroke="#eab308" stroke-width="1.6"/>
+    <text x="65" y="68" text-anchor="middle" font-family="Arial,sans-serif" font-weight="bold" font-size="8.5" fill="#ffffff">CK</text>
+</svg>

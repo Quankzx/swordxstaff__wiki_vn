@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 180" width="480" height="180">
+  <defs>
+    <linearGradient id="sky_harpadia" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#172554"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="180" rx="14" fill="url(#sky_harpadia)"/>
+  <circle cx="380" cy="48" r="26" fill="#fde68a" opacity="0.85"/>
+  <circle cx="380" cy="48" r="38" fill="#fde68a" opacity="0.18"/>
+  <polygon points="0,180 0,115 95,72 185,125 290,78 395,122 480,84 480,180" fill="#1d4ed8" opacity="0.8"/>
+  <path d="M240 95 C195 85 170 50 175 28 C205 42 225 60 240 82 C255 60 275 42 305 28 C310 50 285 85 240 95 Z" fill="#fde68a" opacity="0.9"/>
+  <polygon points="0,180 0,140 120,108 230,148 350,112 480,142 480,180" fill="#0f172a"/>
+  <rect width="480" height="180" rx="14" fill="none" stroke="#bae6fd" stroke-opacity="0.45" stroke-width="2"/>
+</svg>
