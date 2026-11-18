@@ -1022,6 +1022,7 @@
     .form-field label { font-size: 0.81rem; font-weight: 600; color: var(--text-secondary); }
 
     .form-field input, .form-field select {
+      width: 100%;
       padding: 8px 12px;
       border-radius: 8px;
       border: 1px solid var(--border-subtle);
@@ -1029,6 +1030,12 @@
       color: var(--text-primary);
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.86rem;
+      color-scheme: dark;
+    }
+
+    [data-theme="light"] .form-field input,
+    [data-theme="light"] .form-field select {
+      color-scheme: light;
     }
 
     .calc-result-box {
@@ -2455,15 +2462,8 @@
           </table>
         </div>
 
-        <!-- CĂN CỨ, ỦY THÁC THẺ VÀNG & BANG HỘI -->
-        <div class="grid-3">
-          <div class="card card-emerald">
-            <div class="media-row">
-              <img src="assets/icons/relics/relic-3.svg" alt="Cây Thần & Tượng Nữ Thần" class="rpg-icon rpg-icon-sm" loading="lazy" />
-              <h3 class="card-title">Căn Cứ, Xe Hàng &amp; Tượng Nữ Thần</h3>
-            </div>
-            <p class="card-body">Mở sương mù kích hoạt hết các <strong>Tượng Nữ Thần</strong> trên bản đồ sẽ nhân trực tiếp hệ số tài nguyên treo máy tại Căn Cứ. Đừng bỏ bê nâng cấp <strong>Xe Hàng (Cart)</strong> vì nó mở rộng kho vật tư miễn phí bằng Rolla mỗi ngày.</p>
-          </div>
+        <!-- ỦY THÁC THẺ VÀNG & BANG HỘI (Không trùng Căn Cứ ở Tab 1) -->
+        <div class="grid-2">
           <div class="card card-sword">
             <div class="media-row">
               <img src="assets/icons/dishes/dish-0.svg" alt="Ủy Thác Vàng" class="rpg-icon rpg-icon-sm" loading="lazy" />
@@ -2489,139 +2489,127 @@
           <div>
             <h2 class="section-title" id="heading-seasons">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-              Biên Niên Sử Lộ Trình Máy Chủ Từ Ngày 1 Tới Mùa 5 (Lv.1 → Lv.198+)
+              Tra Cứu Mốc Mở Sự Kiện, Phó Bản &amp; Chuyển Nghề Theo Ngày Máy Chủ
             </h2>
-            <p class="section-sub">Toàn cảnh thời điểm mở vùng, mở bậc nghề và tính năng trọng đại qua từng mùa giải</p>
+            <p class="section-sub">Nhập ngày mở server hoặc số ngày tuổi server hiện tại để xem ngay mốc đã mở, đếm ngược sự kiện sắp tới &amp; lịch tích trữ</p>
           </div>
         </div>
 
-        <div class="table-wrap" style="margin-bottom:20px;">
-          <table>
-            <thead>
-              <tr>
-                <th>Mùa / Giai Đoạn</th>
-                <th>Mốc Ngày / Cấp</th>
-                <th>Vương Quốc Mở Khóa</th>
-                <th>Hệ Thống Mới, Chuyển Nghề &amp; Trọng Tâm Tích Trữ</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Giai Đoạn 1: Khởi Đầu</strong></td>
-                <td><code>Ngày 1 – 3</code> • Lv.1–39</td>
-                <td>Thung Lũng Xanh (Verdantglade)</td>
-                <td>Mở Căn Cứ, Xe Hàng, Phó Bản Trang Bị, Bang Hội (Lv.15), Tượng Nữ Thần và Boss <em>Storm Griffin</em>.</td>
-              </tr>
-              <tr>
-                <td><strong>Giai Đoạn 2: Tiền Mùa 1</strong></td>
-                <td><code>Ngày 4 – 11</code> • Lv.40–75</td>
-                <td>Rặng Núi Tro Tàn (Cinder Ridge)</td>
-                <td>Đấu Trường (Lv.40), <strong>Chuyển Nghề Bậc 2 (Lv.44)</strong>, <strong>Huyễn Thú (Lv.50)</strong>, Thợ Rèn Micaela &amp; 70 Cổ Vật Dò Tìm Vận Mệnh.</td>
-              </tr>
-              <tr>
-                <td><strong>Season 1 (Mùa Giải 1)</strong></td>
-                <td><code>Ngày 12 – 46</code> • Lv.75–105</td>
-                <td>Thủy Quốc (Aqualis)</td>
-                <td><strong>Chuyển Nghề Bậc 3 ở Lv.82</strong> (Cuồng Chiến / Thánh Kỵ / Đại Pháp / Bí Pháp); đạt <strong>Lv.100 mở Đổi Nghề Bảo Toàn Kỹ Năng</strong>! Sàn cuối mùa: <code>Lv.100 &amp; Cổ Vật +10</code>.</td>
-              </tr>
-              <tr>
-                <td><strong>Season 2 (Mùa Giải 2)</strong></td>
-                <td><code>Ngày 47 – 113</code> • Lv.106–135</td>
-                <td>Long Cảng (Loong Haven)</td>
-                <td><strong>Chuyển Nghề Bậc 4 ở Lv.106</strong> (Chinh Phục / Hộ Vệ / Hủy Diệt / Thống Trị), <strong>Pet Trưởng Thành Lv.108</strong>, <strong>10 Ô Ngọc</strong>, Lò Ảo Ảnh Co-op 2 người &amp; 2 đợt Gacha Cổ Vật I–II.</td>
-              </tr>
-              <tr>
-                <td><strong>Season 3 (Mùa Giải 3)</strong></td>
-                <td><code>Ngày 114+</code> • Lv.136–171</td>
-                <td>Thiên Không Giới (Aethyris)</td>
-                <td><strong>Chuyển Nghề Bậc 5 ở Lv.136</strong> (Tàn Sát Giả / Đền Thánh / Pháp Chủ / Tiên Tri), Hành Trình Khế Ước, Sư Phụ Kỹ Năng, Đá Thời Gian &amp; Cổ Vật <em>Cây Thần Vàng</em>.</td>
-              </tr>
-              <tr>
-                <td><strong>Season 4 — Vũ Quốc</strong></td>
-                <td><code>Ngày 215+</code> • Lv.172–197</td>
-                <td>Vũ Quốc (Harpadia)</td>
-                <td>Mở <strong>Chuyển Nghề Bậc 6 (Lv.172)</strong> (Thương Khung / Thuấn Ngục / Bạo Liệt / Chân Lý), đồng bộ Huyễn Thú &amp; trần khảm Ngọc T10–T15.</td>
-              </tr>
-              <tr>
-                <td><strong>Season 5 — Hỏa Quốc</strong></td>
-                <td><code>Ngày 316+</code> • Lv.198+</td>
-                <td>Hỏa Quốc (Ignis)</td>
-                <td>Mở <strong>Chuyển Nghề Bậc 7 (Lv.198)</strong> (Huy Hoàng / Tinh Vẫn / Hư Không / Toàn Tri), bản đồ băng-lửa kép &amp; Hợp Ước Tinh Tượng đỉnh cao.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <!-- BỘ TRA CỨU & ĐẾM NGƯỢC MỐC SERVER THEO NGÀY -->
+        <div class="card card-cyan" style="margin-bottom:20px;">
+          <div class="grid-3" style="margin-bottom:14px; align-items:end;">
+            <div class="form-field">
+              <label for="srvDayInput">Tuổi Server Hiện Tại (Ngày 1 → 450+)</label>
+              <input type="number" id="srvDayInput" min="1" max="600" value="25" />
+            </div>
+            <div class="form-field">
+              <label for="srvOpenDateInput">Hoặc Chọn Ngày Khai Mở Server (Tự tính ngày)</label>
+              <input type="date" id="srvOpenDateInput" />
+            </div>
+            <div class="form-field">
+              <label for="srvQuickSeasonSelect">Nhảy Nhanh Tới Mốc Mùa Giải</label>
+              <select id="srvQuickSeasonSelect">
+                <option value="">-- Chọn mốc nhanh --</option>
+                <option value="1">Ngày 1 — Khởi Đầu (Thung Lũng Xanh)</option>
+                <option value="4">Ngày 4 — Rặng Núi Tro Tàn (Bậc 2 / Pet)</option>
+                <option value="12">Ngày 12 — Season 1: Thủy Quốc Aqualis</option>
+                <option value="47">Ngày 47 — Season 2: Long Cảng Loong Haven</option>
+                <option value="114">Ngày 114 — Season 3: Thiên Không Giới Aethyris</option>
+                <option value="215">Ngày 215 — Season 4: Vũ Quốc Harpadia</option>
+                <option value="316">Ngày 316 — Season 5: Hỏa Quốc Ignis</option>
+              </select>
+            </div>
+          </div>
 
-        <!-- BẢNG CHI TIẾT 47 MỐC LỰC CHIẾN PHÓ BẢN & ĐIỀU KIỆN MỞ VÙNG S0 -> S5 -->
-        <div class="section-head">
-          <div>
-            <h2 class="section-title">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-              Bảng Mốc Lực Chiến Phó Bản (Normal → Abyss) &amp; Vật Phẩm Mở Khóa Từng Vùng
-            </h2>
-            <p class="section-sub">Số liệu chuẩn xác từng ngày mở Phó Bản, điều kiện Cấp Nghề và số Chìa Khóa / Thuốc / Mũi Khoan / Thủy Lôi cần chuẩn bị</p>
+          <div id="srvStatusBanner" style="padding:12px 14px; border-radius:10px; background:var(--bg-surface); border:1px solid var(--border-subtle); margin-bottom:14px;"></div>
+
+          <div class="filter-bar" style="margin-bottom:14px;">
+            <div class="chip-group" id="srvMilestoneFilter">
+              <button type="button" class="chip-btn active" data-mfilter="all">Tất cả mốc</button>
+              <button type="button" class="chip-btn" data-mfilter="upcoming">Sắp mở (≤ 14 ngày)</button>
+              <button type="button" class="chip-btn" data-mfilter="unlocked">Đã mở</button>
+              <button type="button" class="chip-btn" data-mfilter="dungeon">Phó Bản &amp; Boss</button>
+              <button type="button" class="chip-btn" data-mfilter="event">Gacha / Pet / Sự Kiện</button>
+              <button type="button" class="chip-btn" data-mfilter="system">Chuyển Nghề &amp; Tính Năng</button>
+            </div>
+          </div>
+
+          <div style="font-size:0.82rem; font-weight:700; color:var(--accent-cyan); margin-bottom:8px;">
+            MỐC SẮP MỞ &amp; ĐẾM NGƯỢC CHUẨN BỊ TÀI NGUYÊN
+          </div>
+          <div class="grid-3" id="srvUpcomingGrid" style="margin-bottom:16px;"></div>
+
+          <div class="table-wrap" style="max-height:420px; overflow-y:auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Ngày Server</th>
+                  <th>Trạng Thái</th>
+                  <th>Mùa / Vương Quốc</th>
+                  <th>Loại</th>
+                  <th>Mốc Mở Khóa • Cấp / Lực Chiến • Vật Phẩm Chuẩn Bị</th>
+                </tr>
+              </thead>
+              <tbody id="officialTimelineBody"></tbody>
+            </table>
           </div>
         </div>
-        <div class="table-wrap" style="margin-bottom:20px; max-height:420px; overflow-y:auto;">
-          <table>
-            <thead>
-              <tr>
-                <th>Vương Quốc</th>
-                <th>Chi Tiết Mốc Ngày • Cấp Độ • Phó Bản • Lực Chiến Đề Nghị &amp; Vật Phẩm Mở Khóa</th>
-              </tr>
-            </thead>
-            <tbody id="officialTimelineBody"></tbody>
-          </table>
-        </div>
 
-        <!-- LỊCH XOAY TUA GRAND TREASURE HUNT & MỐC HỢP ƯỚC TINH TƯỢNG -->
+        <!-- ĐẠI TRUY TÌM KHO BÁU (GỘP 1 KHỐI DUY NHẤT: LỊCH 4 TUẦN + BẢNG 8 PHASE) -->
         <div class="grid-2" style="margin-bottom:20px;">
           <div class="card card-sword">
+            <div class="media-row">
+              <img src="assets/icons/relics/relic-0.svg" alt="Tượng May Mắn Đại Truy Tìm Kho Báu" class="rpg-icon" loading="lazy" />
+              <div style="flex:1;">
+                <div class="card-header">
+                  <h3 class="card-title">Đại Truy Tìm Kho Báu: Chu Kỳ 4 Tuần &amp; Mốc 3,240 NL</h3>
+                  <span class="pill pill-sword">3,240 NL / Lần Xả</span>
+                </div>
+              </div>
+            </div>
+            <ul class="clean-list">
+              <li><strong>Chi phí chạm Bậc 5:</strong> B1 (<code>240</code>) + B2 (<code>400</code>) + B3 (<code>600</code>) + B4 (<code>800</code>) + B5 (<code>1,200</code>) = <strong><code>3,240 NL</code></strong> (1 tuần nhiệm vụ chỉ cho ~<code>2,250 NL</code> → bắt buộc nhịn cách tuần).</li>
+              <li><strong>Nhịp xả chuẩn 4 tuần:</strong> Tuần 1 Rương Cổ Vật (<strong style="color:var(--accent-rose);">NHỊN</strong>) → Tuần 2 <strong>Tượng May Mắn</strong> (<strong style="color:var(--accent-emerald);">XẢ</strong>) → Tuần 3 Mảnh Kỹ Năng (<strong style="color:var(--accent-rose);">NHỊN</strong>) → Tuần 4 <strong>Ngọc Nguyên Thủy</strong> (<strong style="color:var(--accent-emerald);">XẢ</strong>).</li>
+              <li><strong>Tích 2–3 tuần &amp; Quy tắc Bậc 5:</strong> Dọn cả 2 món Tầng 5 cần tích <code>4,440 NL</code> (2 tuần) hoặc <code>5,640 NL</code> (3 tuần). Luôn mở <strong>Ô Ngoài Cùng Bên Trái</strong> trước, dư mới lấy Ô Phải!</li>
+            </ul>
+          </div>
+
+          <div class="card card-sword">
             <div class="card-header">
-              <h3 class="card-title">Lịch Xoay Tua Grand Treasure Hunt (Phase 1 → 8)</h3>
+              <h3 class="card-title">Bảng Quà Tầng 5 Grand Treasure Hunt (Phase 1 → 8)</h3>
               <span class="pill pill-sword">Event Rotation</span>
             </div>
-            <div class="table-wrap" style="max-height:280px; overflow-y:auto;">
+            <div class="table-wrap" style="max-height:260px; overflow-y:auto;">
               <table>
                 <thead><tr><th>Vùng</th><th>Phase &amp; Quà Tầng 5</th><th>Sự Kiện &amp; Thời Điểm</th></tr></thead>
                 <tbody id="treasurePhasesBody"></tbody>
               </table>
             </div>
           </div>
-
-          <div class="card card-staff">
-            <div class="card-header">
-              <h3 class="card-title">Hệ Thống Mốc Hợp Ước Tinh Tượng (Astral Destiny)</h3>
-              <span class="pill pill-staff">S1–S3 &amp; S4–S6</span>
-            </div>
-            <ul class="clean-list staff-bullets">
-              <li><strong>3 Bảng Thiên Phú Kế Tiếp Nhau:</strong> <code>Witching Hours</code> (Mốc 5 → 48+ ★) → <code>Crossed Paths</code> (Mốc 505 → 770+ ★) → <code>Finale of Chaos</code> (Mốc 1,940 → 2,555+ ★).</li>
-              <li><strong>Chu kỳ 9 nút chỉ số lặp lại chuẩn:</strong> <code>ATK +1%</code> → <code>Ascension +3%</code> → <code>DEF +1%</code> → <code>Gem Drop +5%</code> → <code>HP +1%</code> → <code>2× Dungeon +2%</code> → <code>SPD +1%</code> → <code>EXP Gain +2%</code>.</li>
-              <li><strong>Mẹo tối ưu Sao Nguyên Thủy:</strong> Đầu tiên luôn đẩy qua các nút <em>2× Dungeon, Gem Drop và EXP Gain</em> trước để tăng tốc độ thu hoạch tài nguyên cả mùa!</li>
-            </ul>
-          </div>
         </div>
 
-        <!-- CẨM NANG CHINH PHỤC CHUỖI SỰ KIỆN XOAY TUA & GỘP SERVER -->
+        <!-- HỢP ƯỚC TINH TƯỢNG & CHUỖI SỰ KIỆN XOAY TUA / GỘP SERVER -->
         <div class="grid-3" style="margin-bottom:20px;">
-          <div class="card card-sword">
+          <div class="card card-staff">
             <div class="card-header">
-              <h3 class="card-title">Lucky Bingo (Quy Tắc 80 Trái Định Mệnh)</h3>
-              <span class="pill pill-sword">Event Tip</span>
+              <h3 class="card-title">Hợp Ước Tinh Tượng (Astral Destiny)</h3>
+              <span class="pill pill-staff">Primostar Tree</span>
             </div>
-            <ul class="clean-list">
-              <li><strong>Bài toán vé chuẩn:</strong> Nhiệm vụ ngày phát ~28 vé, nhưng dọn sạch 2 bảng Bingo cần ~32 vé → phần thiếu kiếm qua <em>Thám Hiểm Định Mệnh</em> (~20 lượt = 1 vé).</li>
-              <li><strong>Mẹo F2P:</strong> Luôn tích sẵn <strong>≥ 80 Trái Định Mệnh</strong> trước sự kiện và chỉ xả bù vé vào ngày cuối sau khi đã ăn hết vé miễn phí!</li>
+            <ul class="clean-list staff-bullets">
+              <li><strong>3 Bảng Kế Tiếp:</strong> <code>Witching Hours</code> (5–48+ ★) → <code>Crossed Paths</code> (505–770+ ★) → <code>Finale of Chaos</code> (1,940–2,555+ ★).</li>
+              <li><strong>Chu kỳ 9 nút:</strong> <code>ATK</code> → <code>Ascension</code> → <code>DEF</code> → <code>Gem Drop</code> → <code>HP</code> → <code>2× Dungeon</code> → <code>SPD</code> → <code>EXP Gain</code>.</li>
+              <li><strong>Mục tiêu mỗi mùa:</strong> F2P nhắm <strong><code>88–128 ★</code></strong> (%ATK/DEF/HP &amp; 2× Dungeon); Nạp vừa nhắm <strong><code>150–176 ★</code></strong> (Tinh Thông/Đỡ Đòn/Chính Xác).</li>
             </ul>
           </div>
           <div class="card card-cyan">
             <div class="card-header">
-              <h3 class="card-title">Lucky Cards, Fonik's Puzzle &amp; Vòng Quay</h3>
-              <span class="pill pill-cyan">Puzzle &amp; Wheel</span>
+              <h3 class="card-title">Lucky Bingo, Puzzle &amp; Vòng Quay</h3>
+              <span class="pill pill-cyan">Event Rules</span>
             </div>
             <ul class="clean-list staff-bullets">
-              <li><strong>Lucky Cards &amp; Fonik's Puzzle:</strong> Đừng xả vé/mảnh ngay Ngày 1; tính tổng vé miễn phí trước xem có chạm mốc thưởng lớn không, nếu thiếu thì giữ lại kỳ sau.</li>
-              <li><strong>Vòng Quay Vận Mệnh (Wheel):</strong> Luôn ưu tiên dồn Vé Quay vào <strong>Vòng Quay Kỹ Năng (Skill Wheel)</strong> trước để chốt bộ chiêu trấn phái!</li>
+              <li><strong>Lucky Bingo (80 Trái Định Mệnh):</strong> Nhiệm vụ ngày cho ~28 vé, dọn 2 bảng cần ~32 vé → tích sẵn <strong>≥ 80 Trái Định Mệnh</strong> và chỉ bù vé vào ngày cuối.</li>
+              <li><strong>Lucky Cards &amp; Fonik's Puzzle:</strong> Đếm tổng vé miễn phí trước khi xả ngày 1; thiếu mốc thưởng lớn thì giữ sang kỳ sau.</li>
+              <li><strong>Vòng Quay Vận Mệnh:</strong> Luôn dồn vé vào <strong>Vòng Quay Kỹ Năng</strong> trước để chốt chiêu trấn phái.</li>
             </ul>
           </div>
           <div class="card card-rose">
@@ -2630,13 +2618,13 @@
               <span class="pill pill-rose">Merge Prep</span>
             </div>
             <ul class="clean-list">
-              <li><strong>Nhịp gộp cụm:</strong> Các server gộp dần theo cụm 2 → 4 → 8 → 16 khi mở <em>Aqualis, Loong Haven, Aethyris, Harpadia</em>.</li>
-              <li><strong>Mẹo trước giờ gộp:</strong> Đẩy hạng Đấu Trường sớm để chốt mốc thưởng trước khi đại gia cụm khác nhập vào; thống nhất Bang Hội tránh thất lạc đội hình!</li>
+              <li><strong>Nhịp gộp cụm:</strong> Server gộp theo cụm <code>2 → 4 → 8 → 16</code> khi mở <em>Aqualis, Loong Haven, Aethyris, Harpadia</em>.</li>
+              <li><strong>Mẹo trước giờ gộp:</strong> Đẩy hạng Đấu Trường sớm để chốt mốc thưởng trước khi đại gia cụm khác nhập vào; thống nhất Bang Hội tránh tan rã đội hình.</li>
             </ul>
           </div>
         </div>
 
-        <!-- BẢNG ĐỐI CHIẾU RESET MÙA GIẢI & THÁP HỢP ƯỚC TINH TƯỢNG -->
+        <!-- ĐỐI CHIẾU RESET MÙA & CÔNG THỨC SAO NGUYÊN THỦY -->
         <div class="grid-2" style="margin-bottom:20px;">
           <div class="card card-rose">
             <div class="card-header">
@@ -2644,44 +2632,8 @@
               <span class="pill pill-rose">Season Reset Rules</span>
             </div>
             <ul class="clean-list">
-              <li><strong style="color:var(--accent-emerald);">ĐƯỢC GIỮ LẠI 100% VĨNH VIỄN:</strong> Toàn bộ Kỹ năng &amp; bậc sao đã mở, Huyễn Thú &amp; tư chất, Toàn bộ Cổ Vật (+ mảnh dư), Cấp Bí Cảnh Nguyên Liệu, Chỉ số Món Ăn &amp; Bang Hội, Thiện Cảm Đồng Hành, Tiến độ Xe Hàng, Tiền tệ/Vé quay/Đá, Hợp Ước Tinh Tượng (Primostar)!</li>
-              <li><strong style="color:var(--accent-rose);">BỊ KÉO VỀ MỐC SÀN MÙA (Reset):</strong> Cấp nhân vật vượt sàn (ví dụ S1 kéo về Lv.100, S2 về Lv.130, S3 về Lv.160), Cấp cường hóa trang bị, Cấp ô kỹ năng, Cấp Huyễn Thú và Cấp Cổ Vật vượt sàn (+10/+13/+16). Toàn bộ phần vượt sàn được quy đổi thành <strong>Sao Nguyên Thủy</strong>!</li>
-            </ul>
-          </div>
-
-          <div class="card card-staff">
-            <div class="card-header">
-              <h3 class="card-title">Lộ Trình Đầu Tư Hợp Ước Tinh Tượng (Astral Pact)</h3>
-              <span class="pill pill-staff">F2P vs Spender</span>
-            </div>
-            <ul class="clean-list staff-bullets">
-              <li><strong>Tài khoản Cày Chay (F2P):</strong> Nhắm mốc <strong><code>88 – 128 ★</code></strong> mỗi mùa — ưu tiên mở các nút <em>%ATK / %DEF / %HP</em> và <em>Thưởng Tài Nguyên Mùa</em> trước, không dàn trải vào các nhánh phụ ít tác dụng.</li>
-              <li><strong>Thẻ Tháng / Nạp Vừa (Low Spender):</strong> Nhắm mốc <strong><code>150 – 176 ★</code></strong> — dồn Sao mở sớm các nút <em>Tinh Thông / Đỡ Đòn / Chính Xác</em> tạo bệ phóng vượt ải ngay Tuần 1 mùa kế tiếp.</li>
-              <li><strong>Chiến lược tích Kho Báu 2–3 Tuần:</strong> Nếu muốn hốt trọn cả 2 món Tầng 5 hoặc dọn sạch ô thưởng hiếm, hãy tích <strong>2 tuần = <code>4,440 NL</code></strong> hoặc <strong>3 tuần = <code>5,640 NL</code></strong> trước khi xả!</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="grid-2" style="margin-bottom:20px;">
-          <div class="card card-sword">
-            <div class="media-row">
-              <img src="assets/icons/relics/relic-0.svg" alt="Tượng May Mắn Đại Truy Tìm Kho Báu" class="rpg-icon" loading="lazy" />
-              <div style="flex:1;">
-                <div class="card-header">
-                  <h3 class="card-title">Lịch Xoay Tua 4 Tuần Đại Truy Tìm Kho Báu</h3>
-                  <span class="pill pill-sword">3,240 NL / Lần Xả</span>
-                </div>
-              </div>
-            </div>
-            <ul class="clean-list">
-              <li><strong>Chi phí từng bậc:</strong> Bậc 1 (<code>240</code>) + Bậc 2 (<code>400</code>) + Bậc 3 (<code>600</code>) + Bậc 4 (<code>800</code>) + Bậc 5 (<code>1,200</code>) = <strong><code>3,240 Năng Lượng</code></strong> (trong khi cày nhiệm vụ 1 tuần chỉ được <code>~2,250 NL</code>).</li>
-              <li><strong>Chu kỳ chuẩn lặp lại:</strong>
-                <br/>• <strong>Tuần 1:</strong> Rương Cổ Vật thường → <strong style="color:var(--accent-rose);">NHỊN XẢ (Bảo lưu NL)</strong>
-                <br/>• <strong>Tuần 2:</strong> <strong>Tượng May Mắn (Lucky Statue)</strong> → <strong style="color:var(--accent-emerald);">XẢ CHẠM BẬC 5!</strong>
-                <br/>• <strong>Tuần 3:</strong> Mảnh Kỹ Năng thường → <strong style="color:var(--accent-rose);">NHỊN XẢ (Bảo lưu NL)</strong>
-                <br/>• <strong>Tuần 4:</strong> <strong>Ngọc Nguyên Thủy (Primal Gem)</strong> → <strong style="color:var(--accent-emerald);">XẢ CHẠM BẬC 5!</strong>
-              </li>
-              <li><strong>Quy tắc chọn ô Bậc 5:</strong> Luôn lấy <strong>Ô Ngoài Cùng Bên Trái</strong> đầu tiên, dư năng lượng mới xét Ô Ngoài Cùng Bên Phải; bỏ qua Ô Giữa!</li>
+              <li><strong style="color:var(--accent-emerald);">GIỮ LẠI 100% VĨNH VIỄN:</strong> Kỹ năng &amp; bậc sao, Huyễn Thú &amp; tư chất, Cổ Vật (+ mảnh dư), Cấp Bí Cảnh Nguyên Liệu, Món Ăn &amp; Bang Hội, Thiện Cảm Đồng Hành, Xe Hàng, Tiền tệ/Vé quay/Đá &amp; Hợp Ước Tinh Tượng!</li>
+              <li><strong style="color:var(--accent-rose);">RESET VỀ SÀN MÙA:</strong> Cấp nhân vật vượt sàn (S1→Lv.100, S2→Lv.130, S3→Lv.160), Cường hóa đồ, Ô kỹ năng, Cấp Huyễn Thú và Cấp Cổ Vật vượt sàn (+10/+13/+16) — quy đổi thành <strong>Sao Nguyên Thủy</strong>.</li>
             </ul>
           </div>
 
@@ -2696,9 +2648,8 @@
               </div>
             </div>
             <ul class="clean-list staff-bullets">
-              <li><strong>Trọng số điểm đánh giá mùa giải:</strong> Cấp Nhân Vật <code>+100đ/cấp</code> • Cấp Cổ Vật <code>+33đ/cấp</code> • Cường Hóa Đồ <code>+18đ/cấp</code> • Huyễn Thú <code>+10đ/cấp</code> • Ô Kỹ Năng <code>+10đ/cấp</code> → Tổng điểm chia cho <code>~27</code> ra số <strong>Sao Nguyên Thủy</strong> đầu mùa mới!</li>
-              <li><strong>Mốc đích khuyến nghị:</strong> Cày Chay / Thẻ Tháng nhắm <strong><code>104 – 128 ★</code></strong>; Nạp Vừa nhắm <strong><code>176 ★</code></strong>; Đại Gia nhắm <strong><code>200 – 230+ ★</code></strong>.</li>
-              <li><strong>Chụp Ảnh Trang Bị Cuối Mùa (Gear Rating Snapshot D → SSS):</strong> Đúng thời khắc đóng mùa, hệ thống chụp bộ đồ đang mặc trên người để xếp hạng từ D tới SSS — <strong>nhớ mặc bộ đồ điểm cao nhất</strong> để ăn buff %HP, %ATK, %DEF, %SPD cả mùa sau!</li>
+              <li><strong>Trọng số điểm:</strong> Cấp NV <code>+100đ</code> • Cổ Vật <code>+33đ</code> • Cường Hóa <code>+18đ</code> • Huyễn Thú <code>+10đ</code> • Ô Kỹ Năng <code>+10đ</code> → Chia <code>~27</code> ra số <strong>Sao Nguyên Thủy</strong> đầu mùa mới.</li>
+              <li><strong>Chụp Ảnh Trang Bị (Gear Rating D → SSS):</strong> Đúng giờ đóng mùa, hệ thống chụp bộ đồ đang mặc để xếp hạng — <strong>luôn mặc bộ điểm cao nhất</strong> để ăn buff %HP, %ATK, %DEF, %SPD cả mùa sau!</li>
             </ul>
           </div>
         </div>
@@ -4270,7 +4221,65 @@
 
 
     const SKILL_CONV_MATRIX = [{"tier":"Bậc 1 (Warrior / Mage)","rows":[{"quality":"Cam (Legendary)","imgs":["assets/official/classchange_78.png","assets/official/classchange_79.png","assets/official/classchange_80.png","assets/official/classchange_81.png","assets/official/classchange_82.png","assets/official/classchange_83.png","assets/official/classchange_84.png","assets/official/classchange_85.png","assets/official/classchange_86.png","assets/official/classchange_87.png","assets/official/classchange_88.png","assets/official/classchange_89.png","assets/official/classchange_90.png","assets/official/classchange_91.png","assets/official/classchange_92.png","assets/official/classchange_93.png"]},{"quality":"Tím (Epic)","imgs":["assets/official/classchange_94.png","assets/official/classchange_95.png","assets/official/classchange_96.png","assets/official/classchange_97.png","assets/official/classchange_98.png","assets/official/classchange_99.png","assets/official/classchange_100.png","assets/official/classchange_101.png","assets/official/classchange_102.png","assets/official/classchange_103.png","assets/official/classchange_104.png","assets/official/classchange_105.png","assets/official/classchange_106.png","assets/official/classchange_107.png","assets/official/classchange_108.png","assets/official/classchange_109.png"]},{"quality":"Bổ sung","imgs":["assets/official/classchange_110.png","assets/official/classchange_111.png"]},{"quality":"Lam (Rare)","imgs":["assets/official/classchange_112.png","assets/official/classchange_113.png","assets/official/classchange_114.png","assets/official/classchange_115.png","assets/official/classchange_116.png","assets/official/classchange_117.png","assets/official/classchange_118.png","assets/official/classchange_119.png","assets/official/classchange_120.png","assets/official/classchange_121.png","assets/official/classchange_122.png","assets/official/classchange_123.png","assets/official/classchange_124.png","assets/official/classchange_125.png","assets/official/classchange_126.png","assets/official/classchange_127.png"]},{"quality":"Bổ sung","imgs":["assets/official/classchange_128.png","assets/official/classchange_129.png"]}]},{"tier":"Bậc 2 (Duelist / Knight / Sorcerer / Sage)","rows":[{"quality":"Cam (Legendary)","imgs":["assets/official/classchange_130.png","assets/official/classchange_131.png","assets/official/classchange_132.png","assets/official/classchange_133.png","assets/official/classchange_134.png","assets/official/classchange_135.png","assets/official/classchange_136.png","assets/official/classchange_137.png","assets/official/classchange_138.png","assets/official/classchange_139.png","assets/official/classchange_140.png","assets/official/classchange_141.png","assets/official/classchange_142.png","assets/official/classchange_143.png","assets/official/classchange_144.png","assets/official/classchange_145.png"]},{"quality":"Tím (Epic)","imgs":["assets/official/classchange_146.png","assets/official/classchange_147.png","assets/official/classchange_148.png","assets/official/classchange_149.png","assets/official/classchange_150.png","assets/official/classchange_151.png","assets/official/classchange_152.png","assets/official/classchange_153.png","assets/official/classchange_154.png","assets/official/classchange_155.png","assets/official/classchange_156.png","assets/official/classchange_157.png","assets/official/classchange_158.png","assets/official/classchange_159.png","assets/official/classchange_160.png","assets/official/classchange_161.png"]},{"quality":"Lam (Rare)","imgs":["assets/official/classchange_162.png","assets/official/classchange_163.png","assets/official/classchange_164.png","assets/official/classchange_165.png","assets/official/classchange_166.png","assets/official/classchange_167.png","assets/official/classchange_168.png","assets/official/classchange_169.png","assets/official/classchange_170.png","assets/official/classchange_171.png","assets/official/classchange_172.png","assets/official/classchange_173.png"]}]},{"tier":"Bậc 3 (Berserker / Paladin / Archmage / Arcanist)","rows":[{"quality":"Cam (Legendary)","imgs":["assets/official/classchange_174.png","assets/official/classchange_175.png","assets/official/classchange_176.png","assets/official/classchange_177.png","assets/official/classchange_178.png","assets/official/classchange_179.png","assets/official/classchange_180.png","assets/official/classchange_181.png","assets/official/classchange_182.png","assets/official/classchange_183.png","assets/official/classchange_184.png","assets/official/classchange_185.png","assets/official/classchange_186.png","assets/official/classchange_187.png","assets/official/classchange_188.png","assets/official/classchange_189.png"]},{"quality":"Tím (Epic)","imgs":["assets/official/classchange_190.png","assets/official/classchange_191.png","assets/official/classchange_192.png","assets/official/classchange_193.png","assets/official/classchange_194.png","assets/official/classchange_195.png","assets/official/classchange_196.png","assets/official/classchange_197.png","assets/official/classchange_198.png","assets/official/classchange_199.png","assets/official/classchange_200.png","assets/official/classchange_201.png"]},{"quality":"Lam (Rare)","imgs":["assets/official/classchange_202.png","assets/official/classchange_203.png","assets/official/classchange_204.png","assets/official/classchange_205.png","assets/official/classchange_206.png","assets/official/classchange_207.png","assets/official/classchange_208.png","assets/official/classchange_209.png","assets/official/classchange_210.png","assets/official/classchange_211.png","assets/official/classchange_212.png","assets/official/classchange_213.png"]}]},{"tier":"Bậc 4 (Conqueror / Guardian / Destroyer / Dominator)","rows":[{"quality":"Cam (Legendary)","imgs":["assets/official/classchange_214.png","assets/official/classchange_215.png","assets/official/classchange_216.png","assets/official/classchange_217.png","assets/official/classchange_218.png","assets/official/classchange_219.png","assets/official/classchange_220.png","assets/official/classchange_221.png","assets/official/classchange_222.png","assets/official/classchange_223.png","assets/official/classchange_224.png","assets/official/classchange_225.png","assets/official/classchange_226.png","assets/official/classchange_227.png","assets/official/classchange_228.png","assets/official/classchange_229.png"]},{"quality":"Tím (Epic)","imgs":["assets/official/classchange_230.png","assets/official/classchange_231.png","assets/official/classchange_232.png","assets/official/classchange_233.png","assets/official/classchange_234.png","assets/official/classchange_235.png","assets/official/classchange_236.png","assets/official/classchange_237.png","assets/official/classchange_238.png","assets/official/classchange_239.png","assets/official/classchange_240.png","assets/official/classchange_241.png","assets/official/classchange_242.png","assets/official/classchange_243.png","assets/official/classchange_244.png","assets/official/classchange_245.png"]},{"quality":"Lam (Rare)","imgs":["assets/official/classchange_246.png","assets/official/classchange_247.png","assets/official/classchange_248.png","assets/official/classchange_249.png","assets/official/classchange_250.png","assets/official/classchange_251.png","assets/official/classchange_252.png","assets/official/classchange_253.png","assets/official/classchange_254.png","assets/official/classchange_255.png","assets/official/classchange_256.png","assets/official/classchange_257.png","assets/official/classchange_258.png","assets/official/classchange_259.png","assets/official/classchange_260.png","assets/official/classchange_261.png"]}]},{"tier":"Bậc 5 (Ravager / Templar / Magister / Prophet)","rows":[{"quality":"Cam (Legendary)","imgs":["assets/official/classchange_262.png","assets/official/classchange_263.png","assets/official/classchange_264.png","assets/official/classchange_265.png","assets/official/classchange_266.png","assets/official/classchange_267.png","assets/official/classchange_268.png","assets/official/classchange_269.png","assets/official/classchange_270.png","assets/official/classchange_271.png","assets/official/classchange_272.png","assets/official/classchange_273.png","assets/official/classchange_274.png","assets/official/classchange_275.png","assets/official/classchange_276.png","assets/official/classchange_277.png"]},{"quality":"Tím (Epic)","imgs":["assets/official/classchange_278.png","assets/official/classchange_279.png","assets/official/classchange_280.png","assets/official/classchange_281.png","assets/official/classchange_282.png","assets/official/classchange_283.png","assets/official/classchange_284.png","assets/official/classchange_285.png","assets/official/classchange_286.png","assets/official/classchange_287.png","assets/official/classchange_288.png","assets/official/classchange_289.png","assets/official/classchange_290.png","assets/official/classchange_291.png","assets/official/classchange_292.png","assets/official/classchange_293.png"]},{"quality":"Lam (Rare)","imgs":["assets/official/classchange_294.png","assets/official/classchange_295.png","assets/official/classchange_296.png","assets/official/classchange_297.png","assets/official/classchange_298.png","assets/official/classchange_299.png","assets/official/classchange_300.png","assets/official/classchange_301.png","assets/official/classchange_302.png","assets/official/classchange_303.png","assets/official/classchange_304.png","assets/official/classchange_305.png","assets/official/classchange_306.png","assets/official/classchange_307.png","assets/official/classchange_308.png","assets/official/classchange_309.png"]},{"quality":"Cam (Legendary)","imgs":["assets/official/classchange_310.png","assets/official/classchange_311.png","assets/official/classchange_312.png","assets/official/classchange_313.png","assets/official/classchange_314.png","assets/official/classchange_315.png","assets/official/classchange_316.png","assets/official/classchange_317.png"]},{"quality":"Tím (Epic)","imgs":["assets/official/classchange_318.png","assets/official/classchange_319.png","assets/official/classchange_320.png","assets/official/classchange_321.png","assets/official/classchange_322.png","assets/official/classchange_323.png","assets/official/classchange_324.png","assets/official/classchange_325.png"]},{"quality":"Lam (Rare)","imgs":["assets/official/classchange_326.png","assets/official/classchange_327.png","assets/official/classchange_328.png","assets/official/classchange_329.png","assets/official/classchange_330.png","assets/official/classchange_331.png","assets/official/classchange_332.png","assets/official/classchange_333.png"]}]}];
-    const OFFICIAL_TIMELINE = [{"kingdom":"Verdantglade","info":"2 • Verdantglade • 1 • Auroradrasil • - • 36K • X • X • X • Kingdom unlock: keys x3, potions x5, drills x3"},{"kingdom":"Verdantglade","info":"3 • Cinder Ridge • 4 • Mecha Summit • - • 180K • X • X • X • Kingdom unlock: keys x4, potions x3, drills x5, sea ​​mines x3"},{"kingdom":"Verdantglade","info":"4 • 44 • 2nd class • Player Lv.44 + Class Lv.20 + 1st Class Lv.18 + Cinder Ridge Five"},{"kingdom":"Verdantglade","info":"5 • Aqualis • 12 • Ocean Palace Ruins • - • 580K • X • X • X • Server merge: 01+02 | 03+04 | 05+06 | 07+08 | 09+10 | 11+12 | 13+14 | 15+16"},{"kingdom":"Verdantglade","info":"6 • 82 • 3rd class • Player Lv.82 + Class Lv.48 + 2nd Class Lv.16 + Aqualis Nine • Kingdom unlock: keys x5, potions x2, drills x3, sea ​​mines x6"},{"kingdom":"Verdantglade","info":"7 • 24 • 100 • Aquorigin Shrine • 930K • 1.45M • 2.05M • X • X • Player Lv.100 unlock Season Power and lossless class change"},{"kingdom":"Verdantglade","info":"8 • 26 • Whaleback • Season Map"},{"kingdom":"Verdantglade","info":"9 • S1 lasts for 44~46 days • 33 • Hellhold • 2.25M • 2.75M • 3.9M • 6.2M • X • Hellhold lasting around 2 weeks. Server mergers alter days needed to enter Loong Haven."},{"kingdom":"Verdantglade","info":"10 • Loong | Haven • 1 • 100 • Demonseal Gorge • - • 2.35M • X • X • X • Server merge: 01+02+03+04 | 05+06+07+08 | 09+10+11+12 | 13+14+15+16"},{"kingdom":"Verdantglade","info":"11 • 106 • 4th class • Player Lv.106 + Class Lv.89 + 3nd Class Lv.19 + Loong Haven Five • Kingdom unlock: keys x5, potions x1, drills x1, sea ​​mines x2, cloud key x7"},{"kingdom":"Verdantglade","info":"12 • 108 • Fantomon Adult"},{"kingdom":"Verdantglade","info":"13 • 116 • Demonbind Tower • The Gem Tower, where you can harvest gems"},{"kingdom":"Verdantglade","info":"14 • 14 • 130 • Warlord's Rest • 3.55M • 5M • 6M • X • X • Player Lv.130 unlock Season Power"},{"kingdom":"Verdantglade","info":"15 • 15 • Acme Nexus • Season Map"},{"kingdom":"Verdantglade","info":"16 • 27 • Cloudcrest Temple • 6.2M • 7.7M • 9.8M • X • X"},{"kingdom":"Verdantglade","info":"18 • 40 • Bladeshire • 10M • 12.5M • 15.8M • X • X"},{"kingdom":"Verdantglade","info":"19 • 46 • Pandarial • Panda Fantomon"},{"kingdom":"Verdantglade","info":"20 • S2 lasts around 67 days • 53 • Celestship • 16.5M • 20M • 24.5M • 40M • X • Celestship lasting around 3 weeks. Server mergers alter days needed to enter Aethyris."},{"kingdom":"Verdantglade","info":"21 • Aethyris • 1 • 130 • Crystal Spire Tree • - • 9M • X • X • X • Server merge: 01+02+03+04+05+06+07+08 | 09+10+11+12+13+14+15+16"},{"kingdom":"Verdantglade","info":"22 • 136 • 5th class • Player Lv.136 + Class Lv.180 + 4th Class Lv.40 + Aethyris Five • Kingdom unlock: keys x5, drills x2, sea ​​mines x2, cloud key x2, hammar x5"},{"kingdom":"Verdantglade","info":"23 • 14 • 160 • Eternal Garden • 12.5M • 15M • 18M • 28.5M • X • Player Lv.160 unlock Season Power"},{"kingdom":"Verdantglade","info":"24 • 15 • Astral Odyssey • Season Map • Discord: Sword x Staff Guide Community"},{"kingdom":"Verdantglade","info":"25 • 28 • Riftwatch Fortress • 20M • 26M • 30M • 46M • X"},{"kingdom":"Verdantglade","info":"27 • 42 • Court of Purification • 32.5M • 43M • 50.5M • 75M • X"},{"kingdom":"Verdantglade","info":"28 • 46 • Prismora • Fox Fantomon"},{"kingdom":"Verdantglade","info":"29 • 56 • Temple of Order • 55M • 65M • 82M • 115M • X"},{"kingdom":"Verdantglade","info":"31 • 70 • Sunspire • 84.5M • 100M • 120M • 180M • X"},{"kingdom":"Verdantglade","info":"32 • S3 lasts around 112 days • 84 • Regal Lair • 125M • 145M • 180M • 250M • 350M"},{"kingdom":"Verdantglade","info":"33 • Harpadia • 1 • 160 • Ingenious Clocktower • - • 27M • X • X • X • Server merge: 01+02+03+04+05+06+07+08+09+10+11+12+13+14+15+16"},{"kingdom":"Verdantglade","info":"34 • 172 • 6th class • Player Lv.172 + Class Lv.280 + 5th Class Lv.50 + Hapadi Nine • Kingdom unlock: keys x5, drills x2, sea ​​mines x2, lego x5"},{"kingdom":"Verdantglade","info":"35 • 180 • Fantomon Resonance"},{"kingdom":"Verdantglade","info":"36 • 14 • 190 • Pirate Galleon • 35M • 48M • 57M • 84M • X • Player Lv.190 unlock Season Power"},{"kingdom":"Verdantglade","info":"37 • 15 • Grotesque Fairground • Season Map"},{"kingdom":"Verdantglade","info":"38 • 28 • Leviathan Submersible • 62M • 72M • 87M • 130M • X"},{"kingdom":"Verdantglade","info":"40 • 42 • Clockwork Fortress • 91M • 110M • 135M • 190M • X"},{"kingdom":"Verdantglade","info":"41 • 56 • Celestial Observatory • 145M • 175M • 210M • 305M • X"},{"kingdom":"Verdantglade","info":"43 • 70 • Titan Hot-Air Balloon • 220M • 256M • 300M • 460M • X"},{"kingdom":"Verdantglade","info":"44 • S4 lasts around 109 days • 84 • Astral Citadel • 315M • 365M • 435M • 630M • 880M"},{"kingdom":"Verdantglade","info":"45 • Ignis • 1 • 190 • Glacial Spire • - • 82M • X • X • X • Kingdom unlock: key x5, ice hammar x3, flame hammar x3"},{"kingdom":"Verdantglade","info":"46 • 198 • 7th class • Player Lv.198 + Class Lv.380 + 6th Class Lv.55 + Ignis Six"},{"kingdom":"Verdantglade","info":"47 • 14 • 220 • Blackrock Ruins • 110M • 130M • 156M • 230M • X • Player Lv.220 unlock Season Power"},{"kingdom":"Verdantglade","info":"48 • 15 • Frostfire Voyage • Season Map"},{"kingdom":"Verdantglade","info":"49 • 28 • Everfrost Sanctuary • 166M • 192M • 230M • 350M • X"},{"kingdom":"Verdantglade","info":"51 • 42 • Infernus Throne • 240M • 280M • 340M • 500M"},{"kingdom":"Verdantglade","info":"52 • 56 • Lunar Palace • 358M • 415M • 500M • 750M • X"},{"kingdom":"Verdantglade","info":"54 • 70 • Crimson Wedge • 514M • 588M • 720M • 1.08B • X"},{"kingdom":"Verdantglade","info":"55 • S5 lasts around 109 days • 84 • Gate of Origin • 680M • 780M • 950M • 1.36B • 1.8B"}];
+    const SERVER_MILESTONES = [
+      { day: 1,  sDay: "Ngày 1", kingdom: "Thung Lũng Xanh (S0)", cat: "dungeon", title: "Mở Vương Quốc & Phó Bản Auroradrasil (36K CP)", detail: "Mở Căn Cứ, Xe Hàng, Tượng Nữ Thần & Bang Hội (Lv.15). Boss Storm Griffin.", prep: "Mở Cinder Ridge cần: 3 Chìa + 5 Thuốc + 3 Mũi Khoan." },
+      { day: 4,  sDay: "Ngày 4", kingdom: "Rặng Núi Tro Tàn (S0)", cat: "dungeon", title: "Mở Rặng Núi Tro Tàn & Mecha Summit (180K CP)", detail: "Mở Đấu Trường (Lv.40), Thợ Rèn Micaela & 70 Cổ Vật Dò Tìm Vận Mệnh.", prep: "Mở Thủy Quốc Aqualis cần: 4 Chìa + 3 Thuốc + 5 Mũi Khoan + 3 Thủy Lôi." },
+      { day: 5,  sDay: "Ngày 5", kingdom: "Rặng Núi Tro Tàn (S0)", cat: "system",  title: "Chuyển Nghề Bậc 2 (Lv.44) & Huyễn Thú (Lv.50)", detail: "Yêu cầu: Nhân vật Lv.44 + Nghề Lv.20 + Bậc 1 Lv.18 + Cinder Ridge 5.", prep: "Tích Trái Định Mệnh mở Huyễn Thú ngay khi chạm Lv.50." },
+      { day: 7,  sDay: "Ngày 7", kingdom: "Rặng Núi Tro Tàn (S0)", cat: "event",   title: "Grand Treasure Hunt — Phase 1 (Cổ Vật Đỏ Vùng 2)", detail: "Đợt Kho Báu đầu tiên: phần thưởng Tầng 5 là Cổ Vật Đỏ tự chọn Vùng 2.", prep: "Cân nhắc nhịn NL nếu chưa đủ mốc 3,240 NL." },
+      { day: 12, sDay: "S1 • Ngày 1", kingdom: "Thủy Quốc Aqualis (S1)", cat: "dungeon", title: "Mở Season 1: Ocean Palace Ruins (580K CP) + Gộp Cụm 2", detail: "Gộp server theo cặp (01+02, 03+04...). Kéo dài ~35 ngày (tới ngày 46).", prep: "Đẩy hạng Đấu Trường sớm trước giờ gộp; mở Long Cảng cần: 5 Chìa + 2 Thuốc + 3 Khoan + 6 Thủy Lôi." },
+      { day: 14, sDay: "S1 • Ngày 3", kingdom: "Thủy Quốc Aqualis (S1)", cat: "system",  title: "Chuyển Nghề Bậc 3 (Lv.82)", detail: "Cuồng Chiến / Thánh Kỵ / Đại Pháp / Bí Pháp (Lv.82 + Nghề Lv.48 + Bậc 2 Lv.16 + Aqualis 9).", prep: "Dồn Vé Quay Kỹ Năng lấy bộ chiêu Bậc 3." },
+      { day: 19, sDay: "S1 • Ngày 8", kingdom: "Thủy Quốc Aqualis (S1)", cat: "event",   title: "Kho Báu Phase 2: Tượng May Mắn + Lucky Bingo", detail: "Quà Tầng 5 là Tượng May Mắn (Lucky Statue) — cực kỳ đáng xả.", prep: "Chuẩn bị đủ 3,240 NL Kho Báu & ≥80 Trái Định Mệnh cho Bingo." },
+      { day: 24, sDay: "S1 • Ngày 13", kingdom: "Thủy Quốc Aqualis (S1)", cat: "dungeon", title: "Aquorigin Shrine (930K → 2.05M) + Lv.100 Đổi Nghề Miễn Phí", detail: "Đạt Lv.100 mở Sức Mạnh Mùa (Season Power) & Đổi Nghề Bảo Toàn Kỹ Năng!", prep: "Tận dụng Lv.100 test đổi nhánh sang class phù hợp meta." },
+      { day: 26, sDay: "S1 • Ngày 15", kingdom: "Thủy Quốc Aqualis (S1)", cat: "event",   title: "Bản Đồ Mùa Whaleback + Kho Báu Phase 3 (180 Mảnh Skill)", detail: "Whaleback Season Map mở khóa; Lucky Cards kèm Kho Báu 180 Mảnh Kỹ Năng Bậc 3.", prep: "Tính kỹ số vé Lucky Cards miễn phí trước khi nạp/xả bù." },
+      { day: 33, sDay: "S1 • Ngày 22", kingdom: "Thủy Quốc Aqualis (S1)", cat: "dungeon", title: "Hellhold (2.25M → 6.2M CP) + Kho Báu Phase 4 (Primal Gem)", detail: "Phó bản Hellhold kéo dài ~2 tuần; Fonik's Puzzle kèm Ngọc Nguyên Thủy Tầng 5.", prep: "Chuẩn bị 3,240 NL lấy Ngọc Nguyên Thủy; bắt đầu tích Thể Lực tuần cuối S1." },
+      { day: 40, sDay: "S1 • Ngày 29", kingdom: "Thủy Quốc Aqualis (S1)", cat: "event",   title: "Kho Báu Phase 5 (Cổ Vật Đỏ S1) + Chuẩn Bị Reset S1", detail: "Lucky Bingo + Cổ Vật Đỏ Thủy Quốc. Chú ý chốt sàn S1: Lv.100 & Cổ Vật +10.", prep: "Mặc bộ đồ điểm cao nhất để ăn SSS Snapshot; ngưng mở EXP treo máy 24h cuối." },
+      { day: 47, sDay: "S2 • Ngày 1", kingdom: "Long Cảng Loong Haven (S2)", cat: "dungeon", title: "Mở Season 2: Demonseal Gorge (2.35M CP) + Gộp Cụm 4", detail: "Gộp cụm 4 server (01..04). Mùa 2 kéo dài ~67 ngày. Mở Aethyris cần: 5 Chìa + 1 Thuốc + 1 Khoan + 2 Thủy Lôi + 7 Chìa Mây.", prep: "Bung Thể Lực & 6 lượt Phó Bản tích trữ từ S1 ngay ngày đầu." },
+      { day: 48, sDay: "S2 • Ngày 2", kingdom: "Long Cảng Loong Haven (S2)", cat: "system",  title: "Chuyển Nghề Bậc 4 (Lv.106)", detail: "Chinh Phục / Hộ Vệ / Hủy Diệt / Thống Trị (Lv.106 + Nghề Lv.89 + Bậc 3 Lv.19 + Loong Haven 5).", prep: "Mở khóa bộ kỹ năng chủ lực Bậc 4." },
+      { day: 50, sDay: "S2 • Ngày 4", kingdom: "Long Cảng Loong Haven (S2)", cat: "system",  title: "Huyễn Thú Trưởng Thành (Lv.108) & 10 Ô Khảm Ngọc", detail: "Mở tiến hóa Pet Adult & nâng trần lên 10 ô khảm Ngọc trang bị.", prep: "Bắt đầu tích Ngọc & đá cường hóa." },
+      { day: 55, sDay: "S2 • Ngày 9", kingdom: "Long Cảng Loong Haven (S2)", cat: "dungeon", title: "Mở Tháp Ngọc Demonbind Tower (Lv.116)", detail: "Tháp chuyên farm Ngọc (Gem Tower) — nguồn ngọc chủ lực suốt S2+.", prep: "Leo cao nhất có thể mỗi ngày để tăng sản lượng treo tháp." },
+      { day: 60, sDay: "S2 • Ngày 14", kingdom: "Long Cảng Loong Haven (S2)", cat: "dungeon", title: "Warlord's Rest (3.55M → 6M CP) + Kho Báu Phase 6", detail: "Mở Season Power Lv.130 & Lucky Cards kèm Đá Thời Gian / Cổ Vật Đỏ Long Cảng.", prep: "Ưu tiên nâng nút Season Power tăng tốc EXP & Drop." },
+      { day: 61, sDay: "S2 • Ngày 15", kingdom: "Long Cảng Loong Haven (S2)", cat: "event",   title: "Bản Đồ Mùa Acme Nexus (S2)", detail: "Bản đồ sự kiện Season 2 chính thức mở khóa.", prep: "Hoàn thành các mốc khám phá bản đồ lấy vé & tài nguyên." },
+      { day: 73, sDay: "S2 • Ngày 27", kingdom: "Long Cảng Loong Haven (S2)", cat: "dungeon", title: "Cloudcrest Temple (6.2M → 9.8M CP)", detail: "Phó bản giữa mùa Long Cảng (Normal → Nightmare).", prep: "Kiểm tra mốc Chính Xác để xuyên Đỡ Đòn Boss." },
+      { day: 78, sDay: "S2 • Ngày 32", kingdom: "Long Cảng Loong Haven (S2)", cat: "event",   title: "Gacha Cổ Vật Đợt II: Ethereal Oracle", detail: "Mở hồ Cổ Vật mới giữa mùa Long Cảng.", prep: "Dùng Vé Cổ Vật tích trữ từ đầu S2." },
+      { day: 86, sDay: "S2 • Ngày 40", kingdom: "Long Cảng Loong Haven (S2)", cat: "dungeon", title: "Bladeshire (10M → 15.8M CP)", detail: "Phó bản nửa cuối Long Cảng.", prep: "Nâng cấp đá khảm & dòng phụ ATK/Bạo Kích." },
+      { day: 92, sDay: "S2 • Ngày 46", kingdom: "Long Cảng Loong Haven (S2)", cat: "event",   title: "Pet Giới Hạn Đỏ: Pandariel (Gấu Trúc)", detail: "Banner Huyễn Thú giới hạn mạnh nhất S2 — siêu hợp PvP/Tank & Stamina.", prep: "Tích sẵn Kim Cương / Vé Pet từ giữa mùa để chốt tối thiểu 1 bản." },
+      { day: 99, sDay: "S2 • Ngày 53", kingdom: "Long Cảng Loong Haven (S2)", cat: "dungeon", title: "Celestship (16.5M → 40M CP) — Phó Bản Cuối S2", detail: "Kéo dài ~3 tuần. Chú ý chốt sàn S2: Lv.130 & Cổ Vật +13.", prep: "Chuẩn bị 10 bước chuyển mùa & Đá Thần Tạo kế thừa dòng." },
+      { day: 114, sDay: "S3 • Ngày 1", kingdom: "Thiên Không Giới Aethyris (S3)", cat: "dungeon", title: "Mở Season 3: Crystal Spire Tree (9M CP) + Gộp Cụm 8", detail: "Gộp cụm 8 server (01..08). Mùa 3 kéo dài ~112 ngày. Mở Harpadia cần: 5 Chìa + 2 Khoan + 2 Thủy Lôi + 2 Chìa Mây + 5 Búa.", prep: "Thống nhất Bang Hội sau gộp cụm 8 trước khi đánh Viễn Chinh." },
+      { day: 115, sDay: "S3 • Ngày 2", kingdom: "Thiên Không Giới Aethyris (S3)", cat: "system",  title: "Chuyển Nghề Bậc 5 (Lv.136)", detail: "Tàn Sát Giả / Đền Thánh / Pháp Chủ / Tiên Tri (Lv.136 + Nghề Lv.180 + Bậc 4 Lv.40 + Aethyris 5).", prep: "Chốt đội hình meta Bậc 5 cho cả PvP & PvE." },
+      { day: 127, sDay: "S3 • Ngày 14", kingdom: "Thiên Không Giới Aethyris (S3)", cat: "dungeon", title: "Eternal Garden (12.5M → 28.5M CP) + Lv.160 Season Power", detail: "Phó bản đầu mùa Thiên Không Giới & mở ngưỡng Season Power Lv.160.", prep: "Nâng nút 2× Dungeon & Gem Drop trong Astral Destiny." },
+      { day: 128, sDay: "S3 • Ngày 15", kingdom: "Thiên Không Giới Aethyris (S3)", cat: "event",   title: "Astral Odyssey (Season Map) + Hành Trình Khế Ước", detail: "Mở Bản đồ mùa S3, Hành Trình Khế Ước & Sư Phụ Kỹ Năng.", prep: "Làm chuỗi Khế Ước đều đặn lấy Đá Khế Ước (Covenite)." },
+      { day: 141, sDay: "S3 • Ngày 28", kingdom: "Thiên Không Giới Aethyris (S3)", cat: "dungeon", title: "Riftwatch Fortress (20M → 46M CP)", detail: "Phó bản Pháo Đài Khe Nứt (Normal → Hell).", prep: "Tối ưu đội hình Co-op 2–4 người vượt mốc Hell." },
+      { day: 144, sDay: "S3 • Ngày 31", kingdom: "Thiên Không Giới Aethyris (S3)", cat: "event",   title: "Kho Báu Phase 7: Cây Thần Vàng (+10% Căn Cứ)", detail: "Fonik's Puzzle + Cổ Vật Đỏ Cây Thần Vàng (Golden Sacred Tree) tăng 10% sản lượng Căn Cứ.", prep: "Bắt buộc xả 3,240 NL để lấy Cây Thần Vàng!" },
+      { day: 155, sDay: "S3 • Ngày 42", kingdom: "Thiên Không Giới Aethyris (S3)", cat: "dungeon", title: "Court of Purification (32.5M → 75M CP)", detail: "Phó bản giữa mùa Aethyris.", prep: "Đảm bảo % Kháng & % Đỡ Đòn đủ trụ Hell." },
+      { day: 159, sDay: "S3 • Ngày 46", kingdom: "Thiên Không Giới Aethyris (S3)", cat: "event",   title: "Pet Giới Hạn Đỏ: Prismora (Hồ Ly 9 Đuôi)", detail: "Banner Huyễn Thú giới hạn S3 — siêu mạnh cho Mage/Support & Crit.", prep: "Dồn vé Pet & Kim Cương đã tích sau đợt Pandariel." },
+      { day: 169, sDay: "S3 • Ngày 56", kingdom: "Thiên Không Giới Aethyris (S3)", cat: "dungeon", title: "Temple of Order (55M → 115M CP)", detail: "Đền Trật Tự — phó bản nửa sau Aethyris.", prep: "Đẩy trang bị Đỏ/Thần chuẩn bị lên Abyss." },
+      { day: 174, sDay: "S3 • Ngày 61", kingdom: "Thiên Không Giới Aethyris (S3)", cat: "event",   title: "Gacha Cổ Vật III & Kho Báu Phase 8 (Hòn Đá Phù Thủy)", detail: "Lucky Bingo kèm Hòn Đá Phù Thủy (Philosopher's Stone) Tầng 5.", prep: "Tích sẵn 3,240 NL + ≥80 Trái Định Mệnh." },
+      { day: 183, sDay: "S3 • Ngày 70", kingdom: "Thiên Không Giới Aethyris (S3)", cat: "dungeon", title: "Sunspire (84.5M → 180M CP)", detail: "Tháp Mặt Trời — phó bản cận cuối S3.", prep: "Chuẩn bị đội hình burst DPS." },
+      { day: 197, sDay: "S3 • Ngày 84", kingdom: "Thiên Không Giới Aethyris (S3)", cat: "dungeon", title: "Regal Lair (125M → 350M CP Abyss) — Trùm Cuối S3", detail: "Phó bản đỉnh cao S3 (mở độ khó Abyss 350M CP). Chuẩn bị Reset S3.", prep: "Chốt Gear Rating SSS & Sao Nguyên Thủy tròn mốc." },
+      { day: 226, sDay: "S4 • Ngày 1", kingdom: "Vũ Quốc Harpadia (S4)", cat: "dungeon", title: "Mở Season 4: Ingenious Clocktower (27M CP) + Gộp Cụm 16", detail: "Gộp cụm 16 server (01..16). Mùa 4 kéo dài ~109 ngày. Mở Ignis cần: 5 Chìa + 2 Khoan + 2 Thủy Lôi + 5 Lego.", prep: "Xả Thể Lực tích trữ vào mỏ & nguyên liệu món mới ngày 1." },
+      { day: 227, sDay: "S4 • Ngày 2", kingdom: "Vũ Quốc Harpadia (S4)", cat: "system",  title: "Chuyển Nghề Bậc 6 (Lv.172)", detail: "Thương Khung / Thuấn Ngục / Bạo Liệt / Chân Lý (Lv.172 + Nghề Lv.280 + Bậc 5 Lv.50 + Harpadia 9).", prep: "Chuyển đổi kỹ năng & nâng trần Ngọc T10–T15." },
+      { day: 231, sDay: "S4 • Ngày 6", kingdom: "Vũ Quốc Harpadia (S4)", cat: "system",  title: "Cộng Hưởng Huyễn Thú (Fantomon Resonance - Lv.180)", detail: "Mở hệ thống cộng hưởng chia sẻ sức mạnh giữa các Huyễn Thú.", prep: "Nâng đều các Pet phụ trợ để kích hoạt mốc cộng hưởng." },
+      { day: 239, sDay: "S4 • Ngày 14", kingdom: "Vũ Quốc Harpadia (S4)", cat: "dungeon", title: "Pirate Galleon (35M → 84M CP) + Lv.190 Season Power", detail: "Thuyền Hải Tặc & mở khóa Season Power Lv.190.", prep: "Farm bộ đồ S4 đầu mùa." },
+      { day: 240, sDay: "S4 • Ngày 15", kingdom: "Vũ Quốc Harpadia (S4)", cat: "event",   title: "Bản Đồ Mùa Grotesque Fairground (S4)", detail: "Hội Chợ Kỳ Dị — bản đồ sự kiện mùa Vũ Quốc.", prep: "Hoàn thành nhiệm vụ bản đồ lấy vé Gacha." },
+      { day: 253, sDay: "S4 • Ngày 28", kingdom: "Vũ Quốc Harpadia (S4)", cat: "dungeon", title: "Leviathan Submersible (62M → 130M CP)", detail: "Tàu Ngầm Thủy Quái giữa mùa S4.", prep: "Kiểm tra chỉ số Xuyên Giáp & Tinh Thông." },
+      { day: 256, sDay: "S4 • Ngày 31", kingdom: "Vũ Quốc Harpadia (S4)", cat: "event",   title: "Gacha Cổ Vật Đợt II (Vũ Quốc)", detail: "Mở hồ Cổ Vật đợt 2 của Season 4.", prep: "Xả Vé Cổ Vật đúng đợt có Cổ Vật %ATK/%SPD." },
+      { day: 267, sDay: "S4 • Ngày 42", kingdom: "Vũ Quốc Harpadia (S4)", cat: "dungeon", title: "Clockwork Fortress (91M → 190M CP)", detail: "Pháo Đài Dây Cót (Normal → Hell).", prep: "Nâng bậc ngọc & tẩy dòng trang bị." },
+      { day: 281, sDay: "S4 • Ngày 56", kingdom: "Vũ Quốc Harpadia (S4)", cat: "dungeon", title: "Celestial Observatory (145M → 305M CP)", detail: "Đài Thiên Văn Vũ Quốc.", prep: "Phối hợp tổ đội 4 người vượt Hell." },
+      { day: 286, sDay: "S4 • Ngày 61", kingdom: "Vũ Quốc Harpadia (S4)", cat: "event",   title: "Gacha Cổ Vật Đợt III (Vũ Quốc)", detail: "Đợt Cổ Vật cuối mùa Harpadia.", prep: "Hoàn thiện bộ sưu tập kích chỉ số vĩnh viễn." },
+      { day: 295, sDay: "S4 • Ngày 70", kingdom: "Vũ Quốc Harpadia (S4)", cat: "dungeon", title: "Titan Hot-Air Balloon (220M → 460M CP)", detail: "Khinh Khí Cầu Titan cận cuối S4.", prep: "Chuẩn bị đội hình vượt ải sát thương đơn mục tiêu." },
+      { day: 309, sDay: "S4 • Ngày 84", kingdom: "Vũ Quốc Harpadia (S4)", cat: "dungeon", title: "Astral Citadel (315M → 880M CP Abyss) — Trùm Cuối S4", detail: "Thành Trì Tinh Tú — phó bản Abyss cuối S4.", prep: "Chốt SSS Snapshot & tích tài nguyên sang Hỏa Quốc." },
+      { day: 335, sDay: "S5 • Ngày 1", kingdom: "Hỏa Quốc Ignis (S5)", cat: "dungeon", title: "Mở Season 5: Glacial Spire (82M CP)", detail: "Bản đồ Băng-Lửa kép. Mùa 5 kéo dài ~109 ngày. Mở vùng tiếp cần: 5 Chìa + 3 Búa Băng + 3 Búa Lửa.", prep: "Ưu tiên farm nguyên liệu & nâng cấp đồ khởi đầu S5." },
+      { day: 336, sDay: "S5 • Ngày 2", kingdom: "Hỏa Quốc Ignis (S5)", cat: "system",  title: "Chuyển Nghề Bậc 7 (Lv.198)", detail: "Huy Hoàng / Tinh Vẫn / Hư Không / Toàn Tri (Lv.198 + Nghề Lv.380 + Bậc 6 Lv.55 + Ignis 6).", prep: "Mở toàn bộ bảng kỹ năng tối thượng Bậc 7." },
+      { day: 348, sDay: "S5 • Ngày 14", kingdom: "Hỏa Quốc Ignis (S5)", cat: "dungeon", title: "Blackrock Ruins (110M → 230M CP) + Lv.220 Season Power", detail: "Tàn Tích Hắc Nham & mở Season Power Lv.220.", prep: "Đẩy bảng Hợp Ước Tinh Tượng Finale of Chaos." },
+      { day: 349, sDay: "S5 • Ngày 15", kingdom: "Hỏa Quốc Ignis (S5)", cat: "event",   title: "Bản Đồ Mùa Frostfire Voyage (S5)", detail: "Hành Trình Băng Hỏa — Season Map S5.", prep: "Thu thập quà khám phá bản đồ." },
+      { day: 362, sDay: "S5 • Ngày 28", kingdom: "Hỏa Quốc Ignis (S5)", cat: "dungeon", title: "Everfrost Sanctuary (166M → 350M CP)", detail: "Thánh Địa Vĩnh Băng.", prep: "Tối ưu kháng nguyên tố & hồi phục." },
+      { day: 365, sDay: "S5 • Ngày 31", kingdom: "Hỏa Quốc Ignis (S5)", cat: "event",   title: "Gacha Cổ Vật Đợt II (Hỏa Quốc)", detail: "Mở hồ Cổ Vật đợt 2 của Season 5.", prep: "Dồn vé vào Cổ Vật tăng %ST Kỹ Năng." },
+      { day: 376, sDay: "S5 • Ngày 42", kingdom: "Hỏa Quốc Ignis (S5)", cat: "dungeon", title: "Infernus Throne (240M → 500M CP)", detail: "Ngai Vàng Địa Ngục.", prep: "Kiểm tra ngưỡng xuyên thủ & hồi năng lượng." },
+      { day: 390, sDay: "S5 • Ngày 56", kingdom: "Hỏa Quốc Ignis (S5)", cat: "dungeon", title: "Lunar Palace (358M → 750M CP)", detail: "Cung Điện Mặt Trăng.", prep: "Đội hình 4 người phối hợp ngắt chiêu Boss." },
+      { day: 395, sDay: "S5 • Ngày 61", kingdom: "Hỏa Quốc Ignis (S5)", cat: "event",   title: "Gacha Cổ Vật Đợt III (Hỏa Quốc)", detail: "Đợt Cổ Vật cuối mùa Ignis.", prep: "Hoàn thiện bộ Cổ Vật S5." },
+      { day: 404, sDay: "S5 • Ngày 70", kingdom: "Hỏa Quốc Ignis (S5)", cat: "dungeon", title: "Crimson Wedge (514M → 1.08B CP)", detail: "Lưỡi Nêm Đỏ Thẫm (vượt ngưỡng 1 Tỷ CP).", prep: "Tối ưu hóa toàn bộ đá khảm & Huyễn Thú." },
+      { day: 418, sDay: "S5 • Ngày 84", kingdom: "Hỏa Quốc Ignis (S5)", cat: "dungeon", title: "Gate of Origin (680M → 1.8B CP Abyss) — Trùm Cuối S5", detail: "Cánh Cổng Khởi Nguyên — thử thách đỉnh cao 1.8 Tỷ Lực Chiến.", prep: "Chinh phục mốc Abyss tối thượng." }
+    ];
 
     const RECIPES_DATA = [
       // 8 MÓN ĐỎ / VÀNG (MYTHIC: +3% & +7% VĨNH VIỄN)
@@ -4566,15 +4575,164 @@
       `).join('');
     }
 
-    // Official Dungeon & Power Timeline (47 rows)
+    // Interactive Server-Day Event & Milestone Checker
+    const srvDayEl = document.getElementById('srvDayInput');
+    const srvDateEl = document.getElementById('srvOpenDateInput');
+    const srvQuickEl = document.getElementById('srvQuickSeasonSelect');
+    const srvBannerEl = document.getElementById('srvStatusBanner');
+    const srvUpcomingEl = document.getElementById('srvUpcomingGrid');
     const tlBody = document.getElementById('officialTimelineBody');
-    if (tlBody && typeof OFFICIAL_TIMELINE !== 'undefined') {
-      tlBody.innerHTML = OFFICIAL_TIMELINE.map(t => `
-        <tr>
-          <td><span class="pill pill-cyan">${t.kingdom}</span></td>
-          <td>${t.info}</td>
-        </tr>
-      `).join('');
+    let activeMFilter = 'all';
+
+    function getSeasonMeta(day) {
+      if (day < 4)   return { name: "Giai Đoạn 1: Thung Lũng Xanh (Verdantglade)", cap: "Lv.1–39 • Bậc 1", nextReset: 12, tip: "Tập trung nâng Căn Cứ, Xe Hàng & gom 3 Chìa + 5 Thuốc + 3 Mũi Khoan mở Rặng Núi Tro Tàn." };
+      if (day < 12)  return { name: "Giai Đoạn 2: Rặng Núi Tro Tàn (Cinder Ridge)", cap: "Lv.40–75 • Bậc 2 + Huyễn Thú", nextReset: 12, tip: "Mở Đấu Trường (Lv.40), chuyển Bậc 2 (Lv.44), tích 4 Chìa + 3 Thuốc + 5 Khoan + 3 Thủy Lôi vào Aqualis." };
+      if (day < 47)  return { name: `Season 1: Thủy Quốc Aqualis (Ngày ${day - 11}/35)`, cap: "Lv.75–105 • Bậc 3 • Sàn cuối mùa Lv.100", nextReset: 47, tip: day >= 38 ? "TUẦN CUỐI S1: Mặc đồ điểm cao nhất chốt SSS Snapshot, tích 1,200 Thể Lực & 6/6 lượt Phó Bản!" : "Ưu tiên Đổi Nghề miễn phí ở Lv.100 và ăn Kho Báu Tượng May Mắn (Phase 2)." };
+      if (day < 114) return { name: `Season 2: Long Cảng Loong Haven (Ngày ${day - 46}/67)`, cap: "Lv.106–135 • Bậc 4 • Pet Trưởng Thành", nextReset: 114, tip: day >= 100 ? "CUỐI MÙA S2: Chốt sàn Lv.130 & Cổ Vật +13, tích Đá Thần Tạo kế thừa dòng sang Thiên Không Giới!" : "Leo Tháp Ngọc Demonbind Tower mỗi ngày & tích vé/Kim Cương chờ Pet Đỏ Pandariel (Ngày 92)." };
+      if (day < 226) return { name: `Season 3: Thiên Không Giới Aethyris (Ngày ${day - 113}/112)`, cap: "Lv.136–171 • Bậc 5 • Khế Ước", nextReset: 226, tip: day >= 210 ? "CUỐI MÙA S3: Chốt sàn Lv.160 & Cổ Vật +16, tích Tài Nguyên mở Vũ Quốc Harpadia!" : "Bắt buộc xả 3,240 NL lấy Cây Thần Vàng (Ngày 144) & tích vé chờ Pet Hồ Ly Prismora (Ngày 159)." };
+      if (day < 335) return { name: `Season 4: Vũ Quốc Harpadia (Ngày ${day - 225}/109)`, cap: "Lv.172–197 • Bậc 6 • Cộng Hưởng Pet", nextReset: 335, tip: "Đẩy Cộng Hưởng Huyễn Thú (Lv.180), nâng trần Ngọc T10–T15 & hoàn thiện Hợp Ước Tinh Tượng." };
+      return { name: `Season 5: Hỏa Quốc Ignis (Ngày ${day - 334}/109+)`, cap: "Lv.198–220+ • Bậc 7 Tối Thượng", nextReset: null, tip: "Chinh phục Bản Đồ Băng-Lửa kép, đẩy bảng Finale of Chaos & săn Gate of Origin (1.8 Tỷ CP)." };
+    }
+
+    function fmtCalDate(openDateStr, offsetDays) {
+      if (!openDateStr) return '';
+      const d = new Date(openDateStr + 'T00:00:00');
+      if (isNaN(d.getTime())) return '';
+      d.setDate(d.getDate() + offsetDays - 1);
+      return d.toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' });
+    }
+
+    function renderServerMilestones() {
+      if (!srvDayEl || !tlBody) return;
+      const curDay = Math.max(1, parseInt(srvDayEl.value, 10) || 1);
+      localStorage.setItem('sxs_srv_day', String(curDay));
+      const openDateStr = srvDateEl ? srvDateEl.value : '';
+      const meta = getSeasonMeta(curDay);
+      const resetNote = meta.nextReset
+        ? `Còn <strong>${meta.nextReset - curDay} ngày</strong> tới mùa kế tiếp${openDateStr ? ' (' + fmtCalDate(openDateStr, meta.nextReset) + ')' : ''}`
+        : 'Đã đạt Mùa 5 (Endgame mới nhất)';
+
+      if (srvBannerEl) {
+        srvBannerEl.innerHTML = `
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; margin-bottom:6px;">
+            <div>
+              <span class="pill pill-cyan">Ngày Server: #${curDay}</span>
+              <strong style="font-size:0.95rem; margin-left:6px;">${meta.name}</strong>
+            </div>
+            <div style="font-size:0.8rem; color:var(--text-secondary);">
+              <span class="pill pill-staff">${meta.cap}</span> • ${resetNote}
+            </div>
+          </div>
+          <div style="font-size:0.8rem; color:var(--accent-emerald);">
+            <strong>Khuyến nghị ngay lúc này:</strong> ${meta.tip}
+          </div>
+        `;
+      }
+
+      if (srvUpcomingEl) {
+        const upcoming = SERVER_MILESTONES.filter(m => m.day >= curDay).slice(0, 6);
+        srvUpcomingEl.innerHTML = upcoming.length
+          ? upcoming.map(m => {
+              const diff = m.day - curDay;
+              const badge = diff === 0
+                ? '<span class="pill pill-emerald">MỞ HÔM NAY!</span>'
+                : `<span class="pill pill-sword">Còn ${diff} ngày</span>`;
+              const cal = openDateStr ? ` • ${fmtCalDate(openDateStr, m.day)}` : '';
+              return `
+                <div class="card ${m.cat === 'event' ? 'card-sword' : (m.cat === 'system' ? 'card-staff' : 'card-cyan')}" style="padding:12px;">
+                  <div style="display:flex; justify-content:space-between; align-items:center; gap:6px; margin-bottom:6px;">
+                    ${badge}
+                    <span style="font-size:0.72rem; color:var(--text-muted);">Ngày ${m.day} (${m.sDay})${cal}</span>
+                  </div>
+                  <div style="font-weight:700; font-size:0.84rem; margin-bottom:4px;">${m.title}</div>
+                  <div style="font-size:0.76rem; color:var(--text-secondary); line-height:1.45;">${m.prep}</div>
+                </div>
+              `;
+            }).join('')
+          : '<div class="card card-emerald" style="grid-column:1/-1;"><strong>Chúc mừng!</strong> Máy chủ của bạn đã mở toàn bộ 57 mốc lịch trình hiện có tới cuối Season 5.</div>';
+      }
+
+      const catLabels = { dungeon: 'Phó Bản', event: 'Sự Kiện / Gacha', system: 'Chuyển Nghề / Hệ Thống' };
+      const filtered = SERVER_MILESTONES.filter(m => {
+        if (activeMFilter === 'upcoming') return m.day >= curDay && (m.day - curDay) <= 14;
+        if (activeMFilter === 'unlocked') return m.day < curDay;
+        if (activeMFilter === 'dungeon' || activeMFilter === 'event' || activeMFilter === 'system') return m.cat === activeMFilter;
+        return true;
+      });
+
+      tlBody.innerHTML = filtered.length ? filtered.map(m => {
+        const diff = m.day - curDay;
+        const statusBadge = diff < 0
+          ? '<span class="pill pill-emerald">Đã mở</span>'
+          : (diff === 0 ? '<span class="pill pill-cyan">Hôm nay!</span>' : `<span class="pill pill-sword">Còn ${diff} ngày</span>`);
+        const cal = openDateStr ? `<br/><span style="font-size:0.72rem;color:var(--text-muted);">${fmtCalDate(openDateStr, m.day)}</span>` : '';
+        return `
+          <tr style="${diff < 0 ? 'opacity:0.76;' : ''}">
+            <td><strong>Ngày ${m.day}</strong><br/><span style="font-size:0.72rem;color:var(--text-muted);">${m.sDay}</span>${cal}</td>
+            <td>${statusBadge}</td>
+            <td><span class="pill pill-cyan">${m.kingdom}</span></td>
+            <td><span class="pill pill-staff">${catLabels[m.cat] || m.cat}</span></td>
+            <td>
+              <strong>${m.title}</strong><br/>
+              <span style="font-size:0.78rem; color:var(--text-secondary);">${m.detail}</span><br/>
+              <span style="font-size:0.75rem; color:var(--accent-emerald);">Chuẩn bị: ${m.prep}</span>
+            </td>
+          </tr>
+        `;
+      }).join('') : '<tr><td colspan="5" style="text-align:center;color:var(--text-muted);padding:18px;">Không có mốc nào khớp bộ lọc hiện tại.</td></tr>';
+    }
+
+    if (srvDayEl) {
+      const savedDay = localStorage.getItem('sxs_srv_day');
+      const savedOpenDate = localStorage.getItem('sxs_srv_open_date');
+      if (savedOpenDate && srvDateEl) {
+        srvDateEl.value = savedOpenDate;
+        const od = new Date(savedOpenDate + 'T00:00:00');
+        if (!isNaN(od.getTime())) {
+          const today = new Date();
+          today.setHours(0, 0, 0, 0);
+          srvDayEl.value = Math.max(1, Math.floor((today - od) / 86400000) + 1);
+        }
+      } else if (savedDay) {
+        srvDayEl.value = savedDay;
+      }
+
+      srvDayEl.addEventListener('input', () => {
+        if (srvDateEl) { srvDateEl.value = ''; localStorage.removeItem('sxs_srv_open_date'); }
+        renderServerMilestones();
+      });
+      if (srvDateEl) {
+        srvDateEl.addEventListener('change', () => {
+          if (srvDateEl.value) {
+            localStorage.setItem('sxs_srv_open_date', srvDateEl.value);
+            const od = new Date(srvDateEl.value + 'T00:00:00');
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            srvDayEl.value = Math.max(1, Math.floor((today - od) / 86400000) + 1);
+          } else {
+            localStorage.removeItem('sxs_srv_open_date');
+          }
+          renderServerMilestones();
+        });
+      }
+      if (srvQuickEl) {
+        srvQuickEl.addEventListener('change', () => {
+          if (srvQuickEl.value) {
+            srvDayEl.value = srvQuickEl.value;
+            if (srvDateEl) { srvDateEl.value = ''; localStorage.removeItem('sxs_srv_open_date'); }
+            renderServerMilestones();
+          }
+        });
+      }
+      document.querySelectorAll('#srvMilestoneFilter .chip-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('#srvMilestoneFilter .chip-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeMFilter = btn.dataset.mfilter;
+          renderServerMilestones();
+        });
+      });
+      renderServerMilestones();
     }
 
     function attachTableFilter(inputId, tableId) {
