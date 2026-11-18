@@ -1217,11 +1217,6 @@
       <div class="sidebar-footer">
         <strong>Sword x Staff — Đại Bách Khoa VN</strong><br/>
         Bấm <code>Ctrl + K</code> để tra cứu kèm hình ảnh mọi kỹ năng, vật phẩm hay cơ chế.
-        <div style="display:flex; gap:6px; margin-top:8px;">
-          <button type="button" class="copy-code-btn" id="exportDataBtn" style="flex:1;">Xuất Backup</button>
-          <button type="button" class="copy-code-btn" id="importDataBtn" style="flex:1;">Nhập Backup</button>
-          <input type="file" id="importDataFile" accept=".json" style="display:none;" />
-        </div>
       </div>
     </nav>
 
@@ -1980,41 +1975,43 @@
       </section>
 
       <!-- =====================================================================
-           TAB 5: 12 BỘ BUILD XOAY CHIÊU TỪNG LƯỢT & BÀN LẮP COMBO TRỰC QUAN
+           TAB 5: BỘ BUILD CHUẨN META THEO CLASS × MÙA (4 CHẾ ĐỘ PVP & PVE)
            ===================================================================== -->
       <section class="tab-panel" id="tab-builds" aria-labelledby="heading-builds">
         <div class="section-head">
           <div>
             <h2 class="section-title" id="heading-builds">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              12 Bộ Build Chuẩn Meta (Bậc 2 → Bậc 5) Kèm Thanh Icon Kỹ Năng &amp; Xoay Chiêu
+              Bộ Build Chuẩn Meta Theo Nghề &amp; Mùa Giải — Chia 4 Chế Độ PvP / PvE
             </h2>
-            <p class="section-sub">Vì chiến đấu PvP và Boss phụ thuộc hoàn toàn vào thứ tự AI tự tung chiêu từ Ô 1 → Ô 4, hãy xếp đúng từng vị trí dưới đây</p>
+            <p class="section-sub">Chọn Nhánh Nghề và Mùa/Bậc để xem trọn 4 cấu hình xoay chiêu tối ưu: PvP Đông Người (4v4/3v3) • PvP Solo (1v1) • PvE Đông (Co-op/Raid) • PvE Solo (Map/Tháp)</p>
           </div>
         </div>
 
-        <div class="chip-group" id="buildSelectorBar" role="tablist" style="margin-bottom:14px;">
-          <button class="chip-btn active" data-build="duelist_pve">1. Đấu Sĩ / Cuồng Chiến (Quét Map)</button>
-          <button class="chip-btn" data-build="conqueror_t4">2. Chinh Phục Giả Bậc 4 (Xuyên Giáp)</button>
-          <button class="chip-btn" data-build="ravager_t5">3. Tàn Sát Giả Bậc 5 (Sát Thủ Đơn)</button>
-          <button class="chip-btn" data-build="paladin_pvp">4. Thánh Kỵ Sĩ (One-Shot PvP)</button>
-          <button class="chip-btn" data-build="guardian_pve">5. Hộ Vệ Hệ Nước (Tank Phó Bản)</button>
-          <button class="chip-btn" data-build="templar_t5">6. Đền Thánh Kỵ Sĩ Bậc 5 (Nổ Khiên 4v4)</button>
-          <button class="chip-btn" data-build="destroyer_aoe">7. Đại Pháp Sư / Kẻ Hủy Diệt (AoE)</button>
-          <button class="chip-btn" data-build="magister_t5">8. Pháp Chủ Bậc 5 (Khống Chế Đa Hệ)</button>
-          <button class="chip-btn" data-build="arcanist_dot">9. Bí Pháp Sư (Xói Mòn DoT)</button>
-          <button class="chip-btn" data-build="dominator_burst">10. Thống Trị Giả (Ám Tinh Nổ Thẳng)</button>
-          <button class="chip-btn" data-build="sage_summon">11. Hiền Triết Triệu Hồi (Leo Tháp Solo)</button>
-          <button class="chip-btn" data-build="prophet_heal">12. Tiên Tri Bậc 5 (Đại Tư Tế &amp; Khiên Dư)</button>
-          <button class="chip-btn" data-build="warrior_t1">13. Chiến Binh Bậc 1 (Tân Thủ)</button>
-          <button class="chip-btn" data-build="mage_t1">14. Pháp Sư Bậc 1 (Tân Thủ T0)</button>
-          <button class="chip-btn" data-build="blade_t6_t7">15. Ma Kiếm Bậc 6–7 (Dục Huyết Raid)</button>
-          <button class="chip-btn" data-build="templar_t6_t7">16. Thánh Kỵ Bậc 6–7 (Thủy Hàn / 3 Quang)</button>
-          <button class="chip-btn" data-build="magister_t6_t7">17. Ma Đạo Bậc 6–7 (Điện Võng &amp; Quang Lan)</button>
-          <button class="chip-btn" data-build="prophet_t6_t7">18. Hiền Vương Bậc 6–7 (Chú Ảnh &amp; Vong Ngữ)</button>
+        <div class="filter-bar" style="gap:14px;">
+          <div style="display:flex; flex-direction:column; gap:6px; flex:1; min-width:280px;">
+            <span style="font-size:0.76rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">1. Chọn Nhánh Nghề (Class)</span>
+            <div class="chip-group" id="buildClassFilter">
+              <button type="button" class="chip-btn active" data-bclass="duelist">Đấu Sĩ → Tàn Sát → Ma Kiếm</button>
+              <button type="button" class="chip-btn" data-bclass="knight">Hiệp Sĩ → Đền Thánh → Thánh Kỵ</button>
+              <button type="button" class="chip-btn" data-bclass="sorcerer">Thuật Sĩ → Pháp Chủ → Ma Đạo</button>
+              <button type="button" class="chip-btn" data-bclass="sage">Hiền Triết → Tiên Tri → Hiền Vương</button>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:6px; flex:1; min-width:280px;">
+            <span style="font-size:0.76rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">2. Chọn Mùa Giải / Bậc Chuyển Chức</span>
+            <div class="chip-group" id="buildSeasonFilter">
+              <button type="button" class="chip-btn" data-bseason="s0">Bậc 1 (Ngày 1–3)</button>
+              <button type="button" class="chip-btn active" data-bseason="s1">Mùa 1 (Bậc 2–3)</button>
+              <button type="button" class="chip-btn" data-bseason="s2">Mùa 2 (Bậc 4)</button>
+              <button type="button" class="chip-btn" data-bseason="s3">Mùa 3 (Bậc 5)</button>
+              <button type="button" class="chip-btn" data-bseason="s4_5">Mùa 4–5 (Bậc 6–7)</button>
+            </div>
+          </div>
         </div>
 
-        <div class="card" id="buildDetailCard"></div>
+        <div class="card" id="buildHeaderBanner" style="margin-bottom:16px;"></div>
+        <div class="grid-2" id="buildModesGrid"></div>
 
         <!-- BÀN LẮP RÁP KỸ NĂNG TỰ DO KÈM THANH HIỂN THỊ ICON TRỰC TIẾP -->
         <div class="section-head">
@@ -2605,6 +2602,40 @@
           </div>
         </div>
 
+        <!-- CẨM NANG CHINH PHỤC CHUỖI SỰ KIỆN XOAY TUA & GỘP SERVER -->
+        <div class="grid-3" style="margin-bottom:20px;">
+          <div class="card card-sword">
+            <div class="card-header">
+              <h3 class="card-title">Lucky Bingo (Quy Tắc 80 Trái Định Mệnh)</h3>
+              <span class="pill pill-sword">Event Tip</span>
+            </div>
+            <ul class="clean-list">
+              <li><strong>Bài toán vé chuẩn:</strong> Nhiệm vụ ngày phát ~28 vé, nhưng dọn sạch 2 bảng Bingo cần ~32 vé → phần thiếu kiếm qua <em>Thám Hiểm Định Mệnh</em> (~20 lượt = 1 vé).</li>
+              <li><strong>Mẹo F2P:</strong> Luôn tích sẵn <strong>≥ 80 Trái Định Mệnh</strong> trước sự kiện và chỉ xả bù vé vào ngày cuối sau khi đã ăn hết vé miễn phí!</li>
+            </ul>
+          </div>
+          <div class="card card-cyan">
+            <div class="card-header">
+              <h3 class="card-title">Lucky Cards, Fonik's Puzzle &amp; Vòng Quay</h3>
+              <span class="pill pill-cyan">Puzzle &amp; Wheel</span>
+            </div>
+            <ul class="clean-list staff-bullets">
+              <li><strong>Lucky Cards &amp; Fonik's Puzzle:</strong> Đừng xả vé/mảnh ngay Ngày 1; tính tổng vé miễn phí trước xem có chạm mốc thưởng lớn không, nếu thiếu thì giữ lại kỳ sau.</li>
+              <li><strong>Vòng Quay Vận Mệnh (Wheel):</strong> Luôn ưu tiên dồn Vé Quay vào <strong>Vòng Quay Kỹ Năng (Skill Wheel)</strong> trước để chốt bộ chiêu trấn phái!</li>
+            </ul>
+          </div>
+          <div class="card card-rose">
+            <div class="card-header">
+              <h3 class="card-title">Chuẩn Bị Gộp Máy Chủ (Server Merge)</h3>
+              <span class="pill pill-rose">Merge Prep</span>
+            </div>
+            <ul class="clean-list">
+              <li><strong>Nhịp gộp cụm:</strong> Các server gộp dần theo cụm 2 → 4 → 8 → 16 khi mở <em>Aqualis, Loong Haven, Aethyris, Harpadia</em>.</li>
+              <li><strong>Mẹo trước giờ gộp:</strong> Đẩy hạng Đấu Trường sớm để chốt mốc thưởng trước khi đại gia cụm khác nhập vào; thống nhất Bang Hội tránh thất lạc đội hình!</li>
+            </ul>
+          </div>
+        </div>
+
         <!-- BẢNG ĐỐI CHIẾU RESET MÙA GIẢI & THÁP HỢP ƯỚC TINH TƯỢNG -->
         <div class="grid-2" style="margin-bottom:20px;">
           <div class="card card-rose">
@@ -2828,6 +2859,11 @@
                 <td><strong>Đấu Trường 1v1 &amp; Giải Đấu 3v3</strong><br/><span class="section-sub">Solo Arena &amp; 3v3 Tournament</span></td>
                 <td>PvP Tự Động 100%<br/>(Auto-Battle)</td>
                 <td>Không thể điều khiển tay — thắng bại quyết định bởi: (1) Bật Tượng &amp; ăn <strong>Món Buff Chiến Đấu</strong> trước khi bấm tìm trận, (2) Đổi bộ skill AoE PvE sang bộ đơn mục tiêu + khống chế + khiên, (3) Đẩy <code>Tốc Độ</code> cướp lượt và gắn Pet <strong>Kels</strong> xóa khiên/buff đối phương!</td>
+              </tr>
+              <tr>
+                <td><strong>Hành Trình Khế Ước &amp; Thang Ảo Mộng</strong><br/><span class="section-sub">Bond Odyssey &amp; Phantom Stairway</span></td>
+                <td>Mùa 3+ &amp; Leo Tháp Tuần</td>
+                <td><strong>Bond Odyssey (Vista Dispatch):</strong> Phải ghép Đồng Hành đúng đặc tính/hệ theo yêu cầu điểm đến để đạt <em>Major / Grand Success</em>; chỉ bấm đẩy ải cao sau khi đã nâng xong trang bị/cấp trong ngày. <strong>Thang Ảo Mộng:</strong> Để dành Món Buff Chiến Đấu, bật Tượng và leo sát giờ chốt bảng xếp hạng!</td>
               </tr>
             </tbody>
           </table>
@@ -4653,72 +4689,219 @@
     renderSkillsTable();
 
     // =========================================================================
-    // 12 BỘ BUILD XOAY CHIÊU (CÓ CHÂN DUNG NGHỀ + ICON TỪNG Ô) & BÀN LẮP COMBO
+    // BỘ BUILD THEO CLASS × MÙA -> 4 CHẾ ĐỘ (PVP ĐÔNG, PVP SOLO, PVE ĐÔNG, PVE SOLO)
     // =========================================================================
-    const buildDetailCard = document.getElementById('buildDetailCard');
-    function renderBuild(key) {
-      const b = BUILDS_DATA[key];
-      if (!b) return;
-      const portrait = resolveBuildPortrait(key);
-      buildDetailCard.innerHTML = `
-        <div class="build-hero-head">
-          <img src="${portrait}" alt="${b.title}" class="build-hero-portrait" loading="lazy" />
+    let activeBuildClass = 'duelist';
+    let activeBuildSeason = 's1';
+    const buildHeaderBanner = document.getElementById('buildHeaderBanner');
+    const buildModesGrid = document.getElementById('buildModesGrid');
+
+    const CLASS_SEASON_META = {
+      duelist: {
+        portrait: 'assets/art/class_ravager.jpg',
+        names: { s0: 'Chiến Binh (Bậc 1)', s1: 'Đấu Sĩ → Cuồng Chiến Sĩ (Bậc 2–3)', s2: 'Chinh Phục Giả (Bậc 4)', s3: 'Tàn Sát Giả (Bậc 5)', s4_5: 'Thuấn Ngục → Tinh Vẫn Ma Kiếm (Bậc 6–7)' },
+        keys: { s0: 'warrior_t1', s1: 'duelist_pve', s2: 'conqueror_t4', s3: 'ravager_t5', s4_5: 'blade_t6_t7' }
+      },
+      knight: {
+        portrait: 'assets/art/class_templar.jpg',
+        names: { s0: 'Chiến Binh Khiên (Bậc 1)', s1: 'Hiệp Sĩ → Thánh Kỵ Sĩ (Bậc 2–3)', s2: 'Hộ Vệ (Bậc 4)', s3: 'Đền Thánh Kỵ Sĩ (Bậc 5)', s4_5: 'Thương Khung → Huy Hoàng Thánh Kỵ (Bậc 6–7)' },
+        keys: { s0: 'warrior_t1', s1: 'paladin_pvp', s2: 'guardian_pve', s3: 'templar_t5', s4_5: 'templar_t6_t7' }
+      },
+      sorcerer: {
+        portrait: 'assets/art/class_magister.jpg',
+        names: { s0: 'Pháp Sư (Bậc 1)', s1: 'Thuật Sĩ → Đại Pháp Sư (Bậc 2–3)', s2: 'Kẻ Hủy Diệt (Bậc 4)', s3: 'Pháp Chủ (Bậc 5)', s4_5: 'Bạo Liệt → Hư Không Ma Đạo (Bậc 6–7)' },
+        keys: { s0: 'mage_t1', s1: 'destroyer_aoe', s2: 'destroyer_aoe', s3: 'magister_t5', s4_5: 'magister_t6_t7' }
+      },
+      sage: {
+        portrait: 'assets/art/class_prophet.jpg',
+        names: { s0: 'Pháp Sư Hỗ Trợ (Bậc 1)', s1: 'Hiền Triết → Bí Pháp Sư (Bậc 2–3)', s2: 'Thống Trị Giả (Bậc 4)', s3: 'Tiên Tri (Bậc 5)', s4_5: 'Chân Lý → Toàn Tri Hiền Vương (Bậc 6–7)' },
+        keys: { s0: 'mage_t1', s1: 'arcanist_dot', s2: 'dominator_burst', s3: 'prophet_heal', s4_5: 'prophet_t6_t7' }
+      }
+    };
+
+    function buildFourModes(bClass, bSeason) {
+      const meta = CLASS_SEASON_META[bClass];
+      const base = BUILDS_DATA[meta.keys[bSeason]];
+      const isSword = bClass === 'duelist' || bClass === 'knight';
+
+      const pvpGroup = {
+        mode: '1. PvP Đông Người (4v4 / 3v3 / Bang Chiến)',
+        pill: 'pill-rose',
+        cardCls: 'card-rose',
+        note: bClass === 'knight'
+          ? 'Ưu tiên Khiêu Khích diện rộng, Hồn Thánh Hóa/Bảo Hộ Liều Mình bảo kê tuyến sau và Sơ Quang nổ khiên AoE!'
+          : (bClass === 'sage'
+            ? 'Bắt buộc giữ Hồi Phục Rực Rỡ + Ánh Sáng Ảo Ảnh (Khiên Máu Dư) + giải hiệu ứng & Dị Biến giảm ST địch!'
+            : (bClass === 'sorcerer'
+              ? 'Phủ khống chế diện rộng (Tân Tinh Băng Giá / Bão Tố) + Bão Mặt Trời, giữ Khiên Gió chống sát thủ nhảy vào!'
+              : 'Lao cắt thẳng tuyến sau (Pháp Chủ / Tiên Tri địch) bằng Bóng Đêm Giáng Lâm / Vũ Điệu Nghiền Nát, tránh đâm đầu vào Kỵ Sĩ phản đòn!')),
+        actives: bClass === 'knight'
+          ? [
+              base.actives[0],
+              { name: bSeason === 's3' || bSeason === 's4_5' ? 'Tử Chiến (Last Stand)' : 'Khí Thế Dũng Mãnh (Valor Surge)', sub: 'Khóa mục tiêu & bảo vệ đồng minh' },
+              { name: 'Khiên Linh Quang Hồ (Luminous Shield)', sub: 'Tạo lớp Khiên dày chịu sát thương' },
+              base.actives[3]
+            ]
+          : (bClass === 'sage'
+            ? [
+                { name: 'Hồi Phục Rực Rỡ (Radiant Restoration)', sub: 'Hồi máu vùng 4 ô cho cả đội 4v4' },
+                { name: bSeason === 's0' || bSeason === 's1' ? 'Mưa Tái Sinh (Rejuvenating Rain)' : 'Ánh Sáng Ảo Ảnh (Phantom Light)', sub: 'Chuyển máu dư thành Khiên chắn dày' },
+                { name: 'Bùa Suy Yếu (Weakening Hex)', sub: 'Giảm công cả đội hình đối phương' },
+                base.actives[3]
+              ]
+            : base.actives),
+        charms: bClass === 'duelist'
+          ? [base.charms[0], base.charms[1], { name: 'Cuồng Phong Tuyệt Ý (Indomitable Will)', sub: '2 lượt miễn tử khi lao vào đám đông' }, { name: 'Tâm Nhãn Thấu Suốt (Insightful Eye)', sub: 'Bổ sung Chính Xác phá Block Kỵ Sĩ' }]
+          : base.charms
+      };
+
+      const pvpSolo = {
+        mode: '2. PvP Solo (Đấu Trường 1v1)',
+        pill: 'pill-sword',
+        cardCls: 'card-sword',
+        note: 'Đấu 1v1 tự động: Cắt bỏ kỹ năng gom quái thừa, dồn Tốc Độ cướp lượt + chiêu đơn mục tiêu hệ số cao + gắn Pet Kels xóa buff/khiên đối thủ!',
+        actives: bClass === 'duelist'
+          ? [
+              { name: bSeason === 's0' ? 'Xung Kích Đột Phá (Charge Assault)' : 'Bóng Đêm Giáng Lâm (Darkness Descends)', sub: 'Ô 1: Nhảy áp sát & xóa buff địch' },
+              { name: bSeason === 's0' ? 'Đòn Đập Mạnh (Heavy Impact)' : 'Liên Trảm Sư Tử (Lion Combo)', sub: 'Ô 2: Dồn liên hoàn đơn mục tiêu' },
+              base.actives[2],
+              base.actives[3]
+            ]
+          : (bClass === 'knight'
+            ? [
+                { name: 'Khí Thế Dũng Mãnh (Valor Surge)', sub: 'Ô 1: Pre-cast giải xấu & búp giáp' },
+                { name: 'Khiên Linh Quang Hồ (Luminous Shield)', sub: 'Ô 2: Dựng khiên trụ qua 2 lượt đầu' },
+                { name: bSeason === 's4_5' ? 'Thiên Khung Thuẫn Xung (Skyward Shield Bash)' : 'Nhảy Chém Phá Giáp (Leap Attack)', sub: 'Ô 3: Choáng / Phá Giáp trước cú bổ' },
+                { name: 'Trảm Phá Tinh Tú (Star Shattering Slash)', sub: 'Ô 4: 466%+ ST bổ one-shot đối thủ!' }
+              ]
+            : [
+                base.actives[0],
+                { name: bClass === 'sorcerer' ? 'Thuật Rồng Nước (Water Assault)' : 'Bàn Tay Vực Thẳm (Abyssal Hand)', sub: 'Ô 2: Khống chế đơn/tầm trung cực rát' },
+                base.actives[2],
+                base.actives[3]
+              ]),
+        charms: isSword
+          ? (bClass === 'knight'
+            ? [{ name: 'Ý Thức Đỡ Đòn (Block Awareness)', sub: 'Khóa 100% Bạo Kích của địch' }, { name: 'Kiếm Phản Kích (Eye for an Eye)', sub: 'Địch tự mất máu khi đánh vào khiên' }, base.charms[2], base.charms[3]]
+            : base.charms)
+          : [base.charms[0], base.charms[1], { name: 'Khiên Áp Suất Gió (Gale Shield)', sub: 'Bắt buộc chống bị sốc chết lượt 1' }, base.charms[3]]
+      };
+
+      const pveGroup = {
+        mode: '3. PvE Đông (Phó Bản 4 Người / Khe Nứt / Lò Ảo Ảnh / Raid Thánh Thú)',
+        pill: 'pill-cyan',
+        cardCls: 'card-cyan',
+        note: 'Đi Co-op & Raid Thánh Thú (20M–28M+): Tank cầm gom quái + Battle Hymn; DPS tháo chiêu di chuyển thừa thay bằng Dục Huyết / Xuyên Giáp; Hiền Triết bỏ bớt triệu hồi cản đường melee!',
+        actives: bClass === 'knight'
+          ? [
+              { name: 'Tơ Nước Ánh Trăng (Lunarwater Threads)', sub: 'Ô 1: Kéo gom quái khỏi Pháp Sư đội nhà' },
+              { name: 'Khiên Linh Quang Hồ (Shield Wall)', sub: 'Ô 2: Hứng trọn sát thương đầu trận' },
+              base.actives[2],
+              { name: bSeason === 's4_5' ? 'Súc Năng Quang Khiếu (Charged Light Roar)' : 'Nhảy Chém Phá Giáp (Leap Attack)', sub: 'Ô 4: Giảm giáp / Tối đa DPS Raid 3 Quang' }
+            ]
+          : base.actives,
+        charms: bClass === 'duelist' && bSeason === 's4_5'
+          ? base.charms
+          : (bClass === 'sage'
+            ? [{ name: 'Chú Thuật Cộng Hưởng (Resonance Chant)', sub: 'Tối ưu hồi máu & buff tổ đội' }, base.charms[1], base.charms[2], base.charms[3]]
+            : base.charms)
+      };
+
+      const pveSolo = {
+        mode: '4. PvE Solo (Quét Map / Leo Tháp Ảo Mộng / Săn Boss Đơn)',
+        pill: 'pill-emerald',
+        cardCls: 'card-emerald',
+        note: bClass === 'sage'
+          ? 'Leo Tháp Solo cực nhàn bằng bộ Triệu Hồi (Tinh Linh Cây tàng hình 5 lượt + Song Sói Lửa 0 CD + Thạch Tù) đứng sau bơm máu!'
+          : (bClass === 'duelist'
+            ? 'Quét map & leo tháp solo ưu tiên kẹp Bí Thuật Hút Máu (Lưỡi Đao Than Khóc / Hấp Huyết Kiếm) để tự trụ giao tranh dài!'
+            : 'Tối ưu kỹ năng diện rộng (AoE) + Khống chế/Làm chậm giữ khoảng cách quét sạch phòng quái nhanh nhất!'),
+        actives: bClass === 'sage' && bSeason !== 's0'
+          ? [
+              { name: 'Triệu Hồi: Tiểu Tinh Linh Cây (Treantling)', sub: 'Ô 1: 0 CD đầu, tàng hình 5 lượt bắn tỉa' },
+              { name: 'Triệu Hồi: Song Sói Lửa (Flame Wolf)', sub: 'Ô 2: 0 CD đầu, gọi 2 sói lao cắn ngay' },
+              { name: 'Triệu Hồi: Thạch Tù (Stonechief)', sub: 'Ô 3: Dựng tường đá chặn Boss áp sát' },
+              { name: 'Hồi Phục Rực Rỡ (Radiant Restoration)', sub: 'Ô 4: Bơm máu nuôi đàn đệ tử bất tử' }
+            ]
+          : base.actives,
+        charms: bClass === 'duelist' && (bSeason === 's1' || bSeason === 's2')
+          ? [base.charms[0], { name: 'Lưỡi Đao Than Khóc (Blade of Lament)', sub: 'Hút máu hồi tới 50% Max HP khi solo' }, base.charms[2], base.charms[3]]
+          : base.charms
+      };
+
+      return { meta, base, modes: [pvpGroup, pvpSolo, pveGroup, pveSolo] };
+    }
+
+    function renderBuildMatrix() {
+      const { meta, base, modes } = buildFourModes(activeBuildClass, activeBuildSeason);
+      buildHeaderBanner.innerHTML = `
+        <div class="build-hero-head" style="border-bottom:none; padding-bottom:0;">
+          <img src="${meta.portrait}" alt="${meta.names[activeBuildSeason]}" class="build-hero-portrait" loading="lazy" />
           <div style="flex:1;">
             <div class="card-header">
-              <h3 class="card-title">${b.title}</h3>
-              <span class="pill pill-cyan">${b.badge}</span>
+              <h3 class="card-title">${meta.names[activeBuildSeason]}</h3>
+              <span class="pill pill-cyan">${base.badge}</span>
             </div>
-            <p class="section-sub" style="margin-top:6px;"><strong>Thứ Tự Dòng Phụ Trang Bị:</strong> ${b.stats}</p>
-            <p class="section-sub"><strong>Hệ Sinh Thái Đi Kèm:</strong> ${b.relic}</p>
-          </div>
-        </div>
-        <div class="callout callout-warn" style="margin:4px 0;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          <div>${b.rotation}</div>
-        </div>
-        <div class="loadout-grid">
-          <div>
-            <h4 style="margin-bottom:10px; color:var(--sword-primary);">4 Ô Chiến Kỹ Chủ Động (Thứ Tự AI Tung Đòn 1 → 4)</h4>
-            <div class="slot-list">
-              ${b.actives.map((a, i) => `
-                <div class="skill-slot">
-                  <img src="${resolveBuildSkillIcon(a.name)}" alt="${a.name}" class="rpg-icon" loading="lazy" />
-                  <div class="skill-slot-info">
-                    <div class="skill-slot-num">Ô CHIẾN KỸ #${i + 1}</div>
-                    <div class="skill-slot-name">${a.name}</div>
-                    <div class="skill-slot-sub">${a.sub}</div>
-                  </div>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-          <div>
-            <h4 style="margin-bottom:10px; color:var(--staff-primary);">4 Ô Bí Thuật Bị Động</h4>
-            <div class="slot-list">
-              ${b.charms.map((c, i) => `
-                <div class="skill-slot charm">
-                  <img src="${resolveBuildSkillIcon(c.name)}" alt="${c.name}" class="rpg-icon" loading="lazy" />
-                  <div class="skill-slot-info">
-                    <div class="skill-slot-num">Ô BÍ THUẬT #${i + 1}</div>
-                    <div class="skill-slot-name">${c.name}</div>
-                    <div class="skill-slot-sub">${c.sub}</div>
-                  </div>
-                </div>
-              `).join('')}
-            </div>
+            <p class="section-sub" style="margin-top:6px;"><strong>Thứ Tự Dòng Phụ Trang Bị:</strong> ${base.stats}</p>
+            <p class="section-sub"><strong>Hệ Sinh Thái Cổ Vật • Ngọc • Huyễn Thú:</strong> ${base.relic}</p>
           </div>
         </div>
       `;
+
+      buildModesGrid.innerHTML = modes.map(m => `
+        <article class="card ${m.cardCls}">
+          <div class="card-header">
+            <h3 class="card-title">${m.mode}</h3>
+            <span class="pill ${m.pill}">8 Ô Chuẩn</span>
+          </div>
+          <p class="card-body" style="font-size:0.84rem;">${m.note}</p>
+          <div style="font-size:0.78rem; font-weight:700; color:var(--sword-primary); margin-top:2px;">4 Ô Chiến Kỹ Chủ Động (AI 1 → 4)</div>
+          <div class="slot-list">
+            ${m.actives.map((a, i) => `
+              <div class="skill-slot">
+                <img src="${resolveBuildSkillIcon(a.name)}" alt="${a.name}" class="rpg-icon rpg-icon-sm" loading="lazy" />
+                <div class="skill-slot-info">
+                  <div class="skill-slot-num">CK #${i + 1}</div>
+                  <div class="skill-slot-name">${a.name.split('(')[0].trim()}</div>
+                  <div class="skill-slot-sub">${a.sub}</div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+          <div style="font-size:0.78rem; font-weight:700; color:var(--staff-primary); margin-top:4px;">4 Ô Bí Thuật Bị Động</div>
+          <div class="slot-list">
+            ${m.charms.map((c, i) => `
+              <div class="skill-slot charm">
+                <img src="${resolveBuildSkillIcon(c.name)}" alt="${c.name}" class="rpg-icon rpg-icon-sm" loading="lazy" />
+                <div class="skill-slot-info">
+                  <div class="skill-slot-num">BT #${i + 1}</div>
+                  <div class="skill-slot-name">${c.name.split('(')[0].trim()}</div>
+                  <div class="skill-slot-sub">${c.sub}</div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </article>
+      `).join('');
     }
 
-    document.querySelectorAll('[data-build]').forEach(btn => {
+    document.querySelectorAll('[data-bclass]').forEach(btn => {
       btn.addEventListener('click', () => {
-        document.querySelectorAll('[data-build]').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('[data-bclass]').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        renderBuild(btn.dataset.build);
+        activeBuildClass = btn.dataset.bclass;
+        renderBuildMatrix();
       });
     });
-    renderBuild('duelist_pve');
+    document.querySelectorAll('[data-bseason]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('[data-bseason]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeBuildSeason = btn.dataset.bseason;
+        renderBuildMatrix();
+      });
+    });
+    renderBuildMatrix();
 
     // Custom Skill Board + Live 8-Slot Visual Icon Bar
     const customBuildClass = document.getElementById('customBuildClass');
@@ -4923,32 +5106,6 @@
         </tr>
       `).join('');
     }
-
-    // Export / Import Backup JSON
-    document.getElementById('exportDataBtn').addEventListener('click', () => {
-      const payload = {};
-      for (let i = 0; i < localStorage.length; i++) {
-        const k = localStorage.key(i);
-        if (k && k.startsWith('sxs_')) payload[k] = localStorage.getItem(k);
-      }
-      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = 'swordxstaff_wiki_vn_backup.json';
-      a.click();
-      URL.revokeObjectURL(a.href);
-    });
-    const importFile = document.getElementById('importDataFile');
-    document.getElementById('importDataBtn').addEventListener('click', () => importFile.click());
-    importFile.addEventListener('change', async () => {
-      const f = importFile.files?.[0];
-      if (!f) return;
-      try {
-        const obj = JSON.parse(await f.text());
-        Object.entries(obj).forEach(([k, v]) => { if (k.startsWith('sxs_')) localStorage.setItem(k, String(v)); });
-        location.reload();
-      } catch { alert('Tệp backup JSON không hợp lệ.'); }
-    });
 
     // =========================================================================
     // TRUNG TÂM 6 MÁY TÍNH CÔNG THỨC CHUYÊN SÂU
@@ -5202,8 +5359,15 @@
               skillSearchInput.value = p.skillQuery;
               renderSkillsTable();
             } else if (p.buildKey) {
-              document.querySelectorAll('[data-build]').forEach(b => b.classList.toggle('active', b.dataset.build === p.buildKey));
-              renderBuild(p.buildKey);
+              const foundEntry = Object.entries(CLASS_SEASON_META).find(([, m]) => Object.values(m.keys).includes(p.buildKey));
+              if (foundEntry) {
+                activeBuildClass = foundEntry[0];
+                const foundSeason = Object.entries(foundEntry[1].keys).find(([, k]) => k === p.buildKey)?.[0] || 's1';
+                activeBuildSeason = foundSeason;
+                document.querySelectorAll('[data-bclass]').forEach(b => b.classList.toggle('active', b.dataset.bclass === activeBuildClass));
+                document.querySelectorAll('[data-bseason]').forEach(b => b.classList.toggle('active', b.dataset.bseason === activeBuildSeason));
+                renderBuildMatrix();
+              }
             } else if (p.relicQuery) {
               const ri = document.getElementById('relicFilterInput');
               ri.value = p.relicQuery;
