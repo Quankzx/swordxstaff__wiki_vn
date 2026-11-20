@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tổng Quan Các Lớp Nhân Vật — Sword X Staff Wiki tiếng Việt</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* --- Khung Fandom gộp (thêm vào, không sửa CSS gốc) --- */
+.fandom-bar{display:flex;flex-wrap:wrap;gap:4px 20px;align-items:center;background:#20242e;border-bottom:2px solid #ffd75e;padding:8px 20px;font-size:.85rem;font-weight:700;letter-spacing:.06em}
+.fandom-bar a{color:#ffd75e;text-decoration:none}
+.fandom-bar a:hover{text-decoration:underline}
+.fandom-bar .fb-label{color:#8b98b8;font-weight:600;letter-spacing:.02em}
+.crumbs{font-size:.85rem;color:#8494b8;padding:10px 2px 0}
+.crumbs a{color:#4d8fd6}
+.site-footer{border-top:1px solid #ccc;margin-top:28px;padding:16px 20px 28px;font-size:.85rem;color:#666;line-height:1.7}
+.site-footer a{color:#1a5fb4}
+.site-footer--dark{border-top-color:#253055;color:#b8c4e0;background:#0f1322}
+.site-footer--dark a{color:#ffd75e}
+.wiki-link{display:block;padding:5px 10px;border-radius:6px;color:inherit;text-decoration:none;font-size:.86rem;line-height:1.4}
+.wiki-link:hover{background:rgba(128,140,180,.18);text-decoration:underline}
+.wiki-link.active{background:rgba(245,158,11,.18);font-weight:700;color:#f59e0b}
+.wiki-group{font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#8494b8;padding:12px 10px 3px}
+.wiki-topbar{position:sticky;top:0;z-index:60;background:#20242e;color:#fff;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid #3d4e88}
+.wiki-topbar a.brand-link{color:#ffd75e;font-weight:700;font-size:1.05em;text-decoration:none}
+.wiki-topbar .top-actions{display:flex;gap:16px;font-size:.88rem}
+.wiki-topbar .top-actions a{color:#cfe0ff;text-decoration:none}
+.wiki-topbar .top-actions a:hover{text-decoration:underline}
+.wiki-shell{display:flex;align-items:flex-start}
+.wiki-sidebar{width:272px;flex-shrink:0;position:sticky;top:52px;max-height:calc(100vh - 52px);overflow-y:auto;padding:14px 12px;border-right:1px solid #ddd;background:#f7f5ef}
+.wiki-main{flex:1;min-width:0}
+@media(max-width:900px){.wiki-shell{flex-direction:column}.wiki-sidebar{position:static;width:100%;max-height:none;border-right:none;border-bottom:1px solid #ddd}}
+</style></head>
+<body>
+<header class="wiki-topbar"><a class="brand-link" href="../index.html">⚔️ SWORD x STAFF — ĐẠI BÁCH KHOA VN</a><div class="top-actions"><a href="../index.html">🏠 Bách Khoa Chính</a><a href="index.html">📚 Lọc Bài Chi Tiết</a><button type="button" id="wikiThemeToggle" style="padding:4px 11px;border-radius:6px;border:1px solid var(--purple-border);background:var(--sheet-bg);color:var(--text-main);cursor:pointer;font-weight:700;">🌓 Đổi Nền</button></div></header>
+<nav class="fandom-bar" aria-label="Menu Fandom"><span class="fb-label">SWORD X STAFF WIKI</span><a href="index.html">EXPLORE</a><a href="maps.html">KINGDOMS</a><a href="classes-overview.html">COMBAT</a><a href="seasonal-systems.html">EVENTS</a><a href="a-beginner-chaos-invasion-guide.html">BEGINNER GUIDE</a></nav>
+<div class="wiki-shell">
+<nav class="wiki-sidebar" aria-label="Wiki Fandom">
+      <div class="wiki-group">Wiki Fandom — Bản dịch tiếng Việt</div>
+      <a class="wiki-link" href="index.html">📖 Trang chính Wiki</a>
+      <div class="wiki-group">Bắt đầu chơi</div>
+      <a class="wiki-link" href="sword-x-staff.html">Sword X Staff</a>
+      <a class="wiki-link" href="sword-x-staff-launch-faq.html">FAQ Ra Mắt Sword X Staff</a>
+      <a class="wiki-link" href="a-beginner-chaos-invasion-guide.html">Hướng Dẫn Tân Thủ: Cuộc Xâm Lăng Hỗn Mang</a>
+      <a class="wiki-link" href="class-selection.html">Chọn Lớp Nhân Vật</a>
+      <a class="wiki-link active" href="classes-overview.html">Tổng Quan Các Lớp Nhân Vật</a>
+      <a class="wiki-link" href="class-change.html">Chuyển Lớp</a>
+      <a class="wiki-link" href="everything-about-class-change.html">Tất Cả Về Chuyển Lớp</a>
+      <a class="wiki-link" href="progression.html">Tiến Trình Phát Triển</a>
+      <a class="wiki-link" href="seasonal-systems.html">Hệ Thống Theo Mùa</a>
+      <a class="wiki-link" href="skill-overview.html">Tổng Quan Kỹ Năng</a>
+      <a class="wiki-link" href="skill-ascend.html">Thăng Cấp Kỹ Năng</a>
+      <div class="wiki-group">Lớp nhân vật</div>
+      <a class="wiki-link" href="warrior.html">Chiến Binh (Warrior)</a>
+      <a class="wiki-link" href="mage.html">Pháp Sư (Mage)</a>
+      <a class="wiki-link" href="knight.html">Hiệp Sĩ (Knight)</a>
+      <a class="wiki-link" href="duelist.html">Đấu Sĩ (Duelist)</a>
+      <a class="wiki-link" href="sorcerer.html">Thuật Sư (Sorcerer)</a>
+      <a class="wiki-link" href="sage.html">Hiền Giả (Sage)</a>
+      <a class="wiki-link" href="berserker.html">Cuồng Chiến (Berserker)</a>
+      <a class="wiki-link" href="paladin.html">Thánh Hiệp Sĩ (Paladin)</a>
+      <a class="wiki-link" href="archmage.html">Đại Pháp Sư (Archmage)</a>
+      <a class="wiki-link" href="arcanist.html">Bí Thuật Sư (Arcanist)</a>
+      <div class="wiki-group">Kỹ năng theo lớp</div>
+      <a class="wiki-link" href="warrior-skills.html">Kỹ Năng Chiến Binh</a>
+      <a class="wiki-link" href="mage-skills.html">Kỹ Năng Pháp Sư</a>
+      <a class="wiki-link" href="knight-skills.html">Kỹ Năng Hiệp Sĩ</a>
+      <a class="wiki-link" href="duelist-skills.html">Kỹ Năng Đấu Sĩ</a>
+      <a class="wiki-link" href="sorcerer-skills.html">Kỹ Năng Thuật Sư</a>
+      <a class="wiki-link" href="sage-skills.html">Kỹ Năng Hiền Giả</a>
+      <div class="wiki-group">Bạn Đồng Hành & Fantomon</div>
+      <a class="wiki-link" href="companions.html">Bạn Đồng Hành</a>
+      <a class="wiki-link" href="fantamons.html">Fantomon</a>
+      <a class="wiki-link" href="fantomon.html">Fantomon</a>
+      <a class="wiki-link" href="akane.html">Akane</a>
+      <a class="wiki-link" href="molly.html">Molly</a>
+      <a class="wiki-link" href="reina.html">Reina</a>
+      <a class="wiki-link" href="dryason.html">Dryason</a>
+      <a class="wiki-link" href="hermes.html">Hermes</a>
+      <a class="wiki-link" href="narss.html">Narss (Thủ Lĩnh)</a>
+      <a class="wiki-link" href="rolla.html">Rolla</a>
+      <div class="wiki-group">Thế giới & hoạt động</div>
+      <a class="wiki-link" href="maps.html">Bản Đồ</a>
+      <a class="wiki-link" href="material-realm.html">Cõi Vật Chất</a>
+      <a class="wiki-link" href="arena.html">Đấu Trường</a>
+      <a class="wiki-link" href="guild.html">Bang Hội</a>
+      <a class="wiki-link" href="daily-dungeons.html">Phụ Bản Hàng Ngày</a>
+      <a class="wiki-link" href="destiny-fruits.html">Trái Định Mệnh</a>
+      <a class="wiki-link" href="goddess-statues.html">Tượng Nữ Thần</a>
+      <a class="wiki-link" href="commercium.html">Thương Hội Commercium</a>
+      <a class="wiki-link" href="vendor-booth.html">Gian Hàng</a>
+      <a class="wiki-link" href="journey-overture.html">Khúc Dạo Đầu Hành Trình</a>
+      <a class="wiki-link" href="elemental-mystery.html">Bí Ẩn Nguyên Tố</a>
+      <div class="wiki-group">Khác</div>
+      <a class="wiki-link" href="ice-spike.html">Ice Spike</a>
+      <a class="wiki-link" href="water-shot.html">Water Shot</a>
+      <a class="wiki-link" href="discordintegrator.html">DiscordIntegrator</a>
+      <a class="wiki-link" href="boltray-games.html">BOLTRAY GAMES</a>
+      <a class="wiki-link" href="swordxstaff-wiki.html">SwordxStaff Wiki</a>
+    </nav>
+<main class="wiki-main">
+<div class="crumbs"><a href="../index.html">Trang chủ</a> / <a href="index.html">Wiki</a> / Tổng Quan Các Lớp Nhân Vật</div>
+
+<h1>Tổng Quan Các Lớp Nhân Vật</h1>
+<div class="mw-content-ltr mw-parser-output" lang="vi" dir="ltr"><figure class="thumb show-info-icon" typeof="mw:File/Thumb" style="width: 180px"> <img alt="Các lớp nhân vật" src="../assets/fandom/Classes.webp" decoding="async" loading="lazy" width="180" height="120" class="thumbimage" /> <figcaption class="thumbcaption"> <svg><use xlink:href="#wds-icons-info-small"></use></svg> </figcaption> </figure>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="vi" dir="ltr"><h2 id="mw-toc-heading">Mục lục</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Story_of_the_Classes"><span class="tocnumber">1</span> <span class="toctext">Câu Chuyện Về Các Lớp Nhân Vật</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#The_Genesis:_Initial_Classes"><span class="tocnumber">1.1</span> <span class="toctext">Khởi Nguyên: Các Lớp Ban Đầu</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#The_Divergence:_2nd_Advancement"><span class="tocnumber">1.2</span> <span class="toctext">Phân Nhánh: Chuyển Lớp lần 2</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#The_Mastery:_3rd_Advancement"><span class="tocnumber">1.3</span> <span class="toctext">Tinh Thông: Chuyển Lớp lần 3</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#The_Legend:_4th_Advancement"><span class="tocnumber">1.4</span> <span class="toctext">Huyền Thoại: Chuyển Lớp lần 4</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#_(Ascended_from_Berserker)"><span class="tocnumber">1.4.1</span> <span class="toctext"> (Thăng cấp từ Cuồng Chiến (Berserker))</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#_(Ascended_from_Paladin)"><span class="tocnumber">1.4.2</span> <span class="toctext"> (Thăng cấp từ Thánh Hiệp Sĩ (Paladin))</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#_(Ascended_from_Archmage)"><span class="tocnumber">1.4.3</span> <span class="toctext"> (Thăng cấp từ Đại Pháp Sư (Archmage))</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#_(Ascended_from_Arcanist)"><span class="tocnumber">1.4.4</span> <span class="toctext"> (Thăng cấp từ Bí Thuật Sư (Arcanist))</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#General_Class_Comparisons"><span class="tocnumber">2</span> <span class="toctext">So Sánh Tổng Quan Các Lớp</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Story_of_the_Classes">Câu Chuyện Về Các Lớp Nhân Vật</span><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Trong thế giới của <b>Sword x Staff</b>, hành trình của một anh hùng không chỉ là leo lên đỉnh cao sức mạnh — đó là một sự thức tỉnh tâm linh qua sắt thép và huyền thuật. Từ một lưỡi kiếm đơn sơ hay một cây trượng đã mòn, bạn sẽ đi qua bốn tầng định mệnh, cuối cùng thăng hoa thành một thực thể thần thoại giữa những tầng mây của Dragon Realm (Vương Quốc Rồng).
+</p>
+<h3><span class="mw-headline" id="The_Genesis:_Initial_Classes">Khởi Nguyên: Các Lớp Ban Đầu</span><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Mọi huyền thoại đều bắt đầu từ một lựa chọn căn bản. Bạn sẽ tin vào sức nặng của thép lạnh, hay vào sự cộng hưởng của các nguyên tố?
+</p>
+<ul><li><b>Kiếm (<a href="warrior.html">Chiến Binh (Warrior)</a>)</b>: Tiên phong của chiến đấu cận chiến. Mỗi đòn đánh đều nặng trĩu ý chí, ẩn chứa tiềm năng trở thành một pháo đài phòng thủ hoặc một cỗ máy hủy diệt.</li>
+<li><b>Trượng (<a href="mage.html">Pháp Sư (Mage)</a>)</b>: Người tìm kiếm chân lý huyền thuật. Dẫn dắt năng lượng nguyên thủy thô sơ, Pháp Sư có thể triệu hồi những cơn bão sét tàn phá, hoặc một cơn mưa dịu dàng để chữa lành tâm hồn bị thương.</li>
+<li><figure class="mw-halign-center" typeof="mw:File"><img alt="Pháp Sư" src="../assets/fandom/Mage.jpg" decoding="async" loading="lazy" width="800" height="450" class="mw-file-element" /><figcaption></figcaption></figure></li></ul>
+<figure class="mw-halign-center" typeof="mw:File"><img alt="Chiến Binh" src="../assets/fandom/Warrior.jpg" decoding="async" loading="lazy" width="800" height="450" class="mw-file-element" /><figcaption></figcaption></figure>
+<h3><span class="mw-headline" id="The_Divergence:_2nd_Advancement">Phân Nhánh: Chuyển Lớp lần 2</span><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Khi sức mạnh của bạn tăng lên, con đường của bạn sẽ tách ra. Đây là lúc bản sắc thật sự của nhân vật bắt đầu định hình.
+</p>
+<ul><li><b>Chiến Đấu Gia (Fighter)</b>: Rũ bỏ giáp nặng để đổi lấy sự nhanh nhẹn tuyệt đối. Họ nhảy múa trên lưỡi dao, dùng những đòn bùng nổ và khả năng chịu đựng phi thường để biến một vết thương suýt chết thành một đòn phản công chí mạng.</li>
+<li><b>Hiệp Sĩ (Knight)</b>: Một tượng đài bất khuất của ý chí cả đội. Khoác giáp tấm và mang khiên khổng lồ, họ tồn tại để chặn đứng những làn sóng tai họa và bảo vệ đồng đội bằng mọi giá.</li>
+<li><b>Thuật Sư (Sorcerer)</b>: Bậc thầy của sự hủy diệt nguyên tố. Họ đánh đổi độ chính xác để lấy quy mô, triệu hồi những phép thuật diện rộng khổng lồ quét sạch chiến trường trong những màn trình diễn phép thuật ngoạn mục.</li>
+<li><b>Hiền Giả (Sage)</b>: Nhà chiến thuật đa năng tối thượng. Dù là triệu hồi thú quen (familiar), thao túng hiệu ứng trạng thái, hay hồi máu kịp thời, họ chính là điểm xoay chuyển cục diện trận chiến.</li></ul>
+<figure class="mw-default-size mw-halign-center" typeof="mw:File"><img alt="Chuyển Lớp lần 2" src="../assets/fandom/2nd.png" decoding="async" loading="lazy" width="560" height="996" class="mw-file-element lazyload" /><figcaption></figcaption></figure>
+<h3><span class="mw-headline" id="The_Mastery:_3rd_Advancement">Tinh Thông: Chuyển Lớp lần 3</span><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Đến giai đoạn này, các nhà thám hiểm không còn là những người lính đơn thuần — họ là cốt lõi của bất kỳ đội tinh nhuệ nào, đẩy chuyên môn của mình đến giới hạn tuyệt đối.
+</p>
+<ul><li><b>Cuồng Chiến (Berserker)</b>: Đỉnh cao của cơn thịnh nộ của Chiến Đấu Gia (Fighter). Họ sẵn sàng đốt cháy chính sinh mệnh của mình để đổi lấy một khoảnh khắc bùng nổ sức mạnh tận thế. Họ là những con thú cuồng loạn ở tuyến đầu.</li>
+<li><b>Thánh Hiệp Sĩ (Paladin) (Hiệp Sĩ Nặng – Heavy Knight)</b>: Cốt lõi phòng thủ của cả đội. Bất động như núi, nơi nào khiên của họ đặt xuống, nơi đó trở thành "Vùng Cấm Bay" (No-Fly Zone). Họ là những trụ cột an toàn đáng tin cậy nhất.</li>
+<li><b>Đại Pháp Sư (Archmage)</b>: Kiến trúc sư của chân lý nguyên tố. Họ đã nắm vững những bí mật sâu thẳm nhất của sự hủy diệt hàng loạt, có thể phá tan đội hình địch chỉ bằng một câu thần chú.</li>
+<li><b>Bí Thuật Sư (Arcanist)</b>: Đại chiến lược gia. Bằng cách dệt triệu hồi, hồi máu và khống chế đám đông lại với nhau, họ định đoạt nhịp điệu của chiến tranh, điều khiển kẻ địch như một con rối trên sợi dây.</li></ul>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="The_Legend:_4th_Advancement">Huyền Thoại: Chuyển Lớp lần 4</span><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Khi đạt Cấp 106 và tiến vào <b>Unrakumotogo</b> thuộc Dragon Realm, người thầy <b>Mei</b> sẽ dẫn dắt bạn qua lần thăng hoa cuối cùng. Ở đỉnh cao này, mọi ranh giới biến mất, và những lối chơi linh hoạt nhất sẽ xuất hiện.
+</p>
+<h4><span id=".E3.80.90Conqueror.E3.80.91_.28Ascended_from_Berserker.29"></span><span class="mw-headline" id="_(Ascended_from_Berserker)"> (Thăng cấp từ Cuồng Chiến (Berserker))</span><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Vị chúa tể đã vượt qua các định luật vật lý. Lưỡi kiếm của họ giờ đây cộng hưởng với <b>Thông Thạo Nguyên Tố (Elemental Mastery)</b>. Bạn có thể đi theo con đường <b>Combo Vật Lý Truyền Thống (Traditional Physical Combo)</b>, hoặc dệt thép và linh hồn lại với nhau trong một lối build <b>Lai Nguyên Tố (Elemental Hybrid)</b> tàn phá.
+</p>
+<h4><span id=".E3.80.90Guardian.E3.80.91_.28Ascended_from_Paladin.29"></span><span class="mw-headline" id="_(Ascended_from_Paladin)"> (Thăng cấp từ Thánh Hiệp Sĩ (Paladin))</span><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Minh chứng rằng phòng thủ có thể là đòn tấn công tối thượng. Trong khi vẫn duy trì những tấm khiên đẳng cấp thần thánh, họ nhận được các kỹ năng tấn công như <b>Aqua Dance Blade</b> và <b>Luminous Sword Array</b>. Dù bạn chọn <b>Water Knight</b> (Hiệp Sĩ hệ Nước) linh hoạt hay <b>Light Knight</b> (Hiệp Sĩ hệ Ánh Sáng) rực rỡ, kẻ địch sẽ phải học cách sợ hãi cơn thịnh nộ của Thủ Hộ Giả.
+</p>
+<h4><span id=".E3.80.90Destroyer.E3.80.91_.28Ascended_from_Archmage.29"></span><span class="mw-headline" id="_(Ascended_from_Archmage)"> (Thăng cấp từ Đại Pháp Sư (Archmage))</span><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Vật chứa tối thượng của sức mạnh nguyên tố. Khả năng diện rộng (AoE) hệ Ánh Sáng và hệ Lửa của họ được hoàn thiện qua <b>Thunder of Judgment</b> và <b>Secret Fire Core Explosion</b>. Với sự bổ sung của tiện ích <b>Formation Breaker</b>, họ có thể thiêu rụi mối đe dọa đồng thời phá vỡ phòng thủ của kẻ địch.
+</p>
+<h4><span id=".E3.80.90Dominator.E3.80.91_.28Ascended_from_Arcanist.29"></span><span class="mw-headline" id="_(Ascended_from_Arcanist)"> (Thăng cấp từ Bí Thuật Sư (Arcanist))</span><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Chiều không gian cao nhất của sự thống trị chiến trường, với ba con đường riêng biệt:
+</p>
+<ul><li><b>Shadow Priest</b>: Giải phóng áp lực Bóng Tối đơn mục tiêu đáng sợ với <b>Dark Star Burst</b>.</li>
+<li><b>Pure Healer</b> (Người Hồi Máu Thuần Túy): Tạo nên phép màu với <b>Rain of Revival</b> và <b>Phantom Light Strategy</b>, đảm bảo cả đội luôn bất tử.</li>
+<li><b>Summoner</b> (Triệu Hồi Sư): Đánh thức <b>Stone Emperor</b> có độ bền cao, dựng nên một pháo đài sống trên chiến trường mà không bao giờ có thể bị lật đổ.</li></ul>
+<h2><span class="mw-headline" id="General_Class_Comparisons">So Sánh Tổng Quan Các Lớp</span><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Khi chọn một lớp để chơi, cụ thể là một trong bốn hướng phát triển chính, không có lớp nào "tốt nhất" một cách rõ rệt. Mỗi lớp chuyên về những thứ khác nhau và tất cả đều vẫn hoàn toàn hữu dụng trong mọi mặt của gameplay, đặc biệt nếu bạn chỉ cần tăng chỉ số của mình lên, vì vậy đây chủ yếu là lựa chọn theo sở thích của từng người chơi.
+</p>
+<ul><li>Hướng Chiến Binh (Warrior) là hướng đơn giản hơn trong hai loại cốt lõi, vì chủ yếu tập trung vào Sát Thương Vật Lý (Physical damage). Không có gì yếu trước nó, nhưng cũng không có gì kháng nó, vì vậy bạn biết rằng bất cứ thứ gì bạn trang bị cũng sẽ có tác dụng. Vững chắc, đáng tin cậy, phòng thủ nhìn chung khá tốt, với nhánh phụ Hiệp Sĩ (Knight) tập trung nhiều hơn vào phòng thủ và bảo vệ đồng đội, trong khi nhánh phụ Đấu Sĩ (Duelist) tập trung nhiều hơn vào sát thương đầu ra. Tuy nhiên, hướng này có tầm đánh khá ngắn, và ngoài một kỹ thuật kéo địch, nó có thể gặp khó khăn khi đối đầu với đối thủ tầm xa né tránh giỏi.</li>
+<li>Hướng Pháp Sư (Mage) là hướng phức tạp hơn trong hai loại cốt lõi vì một số lý do:
+<ul><li>Sự phức tạp chính là việc sử dụng ba Nguyên Tố chính cho các phép thuật: Gió, Nước và Lửa. Gió khắc Nước, Nước khắc Lửa, Lửa khắc Gió. Nhiều kẻ địch thuộc một trong các nguyên tố này, và tất cả đều ít nhất Kháng nguyên tố mà chúng khắc chế, nghĩa là chúng chỉ nhận một nửa sát thương (ví dụ: một sinh vật hệ Nước sẽ chỉ nhận một nửa sát thương từ đòn tấn công hệ Lửa). Một số kẻ địch như slime nguyên tố thì hoàn toàn MIỄN NHIỄM sát thương từ nguyên tố mà chúng khắc chế. Tuy nhiên, chúng lại nhận sát thương tăng mạnh từ nguyên tố khắc chế chúng (ví dụ: Lửa nhận sát thương lớn hơn nhiều từ đòn tấn công hệ Nước). Vì vậy, Pháp Sư sẽ cần lên kế hoạch build trước, chuẩn bị nhiều Bộ Kỹ Năng (Loadout) đã lưu — vừa cho mục đích chung, vừa chuyên hẳn vào từng Nguyên Tố chính — và chuyển sang bộ phù hợp hơn tùy theo kẻ địch mà họ định đối mặt.</li>
+<li>Sự phức tạp còn lại của Pháp Sư và các nhánh phụ của họ là sự đa dạng gần như choáng ngợp của các lối build khả thi. Đòn tấn công nguyên tố và buff, hồi máu, triệu hồi; chỉ với 4 ô kỹ năng và 4 ô bùa, việc đổi chỉ một vài kỹ năng trong số đó cũng có thể hoàn toàn viết lại cách lớp nhân vật vận hành, vì vậy có thể mất một chút thời gian để tự xây dựng những cách bố trí khả thi cho bản thân.</li>
+<li>Nhánh phụ Hiền Giả (Sage) thiên về hỗ trợ và chiến thuật hơn. Họ có phạm vi hồi máu và buff cho cả đội rộng nhất, và họ có thể triệu hồi nhiều loại tay sai (minion) để hỗ trợ chiến đấu. Sát thương thô của họ nhìn chung thấp hơn các lớp khác (có lẽ trừ Hiệp Sĩ), nhưng khả năng hỗ trợ đồng đội của họ thì không ai sánh bằng.</li>
+<li>Nhánh phụ Thuật Sư (Sorcerer) tập trung vào hỏa lực thuần túy. Họ đánh mạnh, đánh rộng, và dù có lẽ là nhánh phụ mong manh nhất trong bốn nhánh, việc họ tập trung tiêu diệt nhanh hàng loạt kẻ địch trước khi bản thân nhận quá nhiều đòn đã bù đắp cho điểm yếu đó.</li></ul></li></ul>
+</div>
+</main>
+</div>
+<footer class="site-footer"><p>Nguồn: <a href="https://swordxstaff.fandom.com/wiki/Classes_Overview">bài gốc trên SwordxStaff Wiki (Fandom)</a>. Nội dung được dịch sang tiếng Việt; nội dung gốc theo giấy phép CC-BY-SA.</p><p><strong>Sword X Staff — Đại Bách Khoa VN &amp; Wiki Fandom (bản dịch tiếng Việt).</strong> Nội dung Bách khoa, dữ liệu, công thức và công cụ trên trang chủ là nội dung gốc của người biên soạn. Các bài trong mục Wiki được dịch từ <a href="https://swordxstaff.fandom.com">SwordxStaff Wiki trên Fandom</a>; nội dung gốc theo giấy phép <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a> — xem link bài gốc ở cuối mỗi bài wiki.</p><p><a href="../index.html">Trang chủ</a> · <a href="index.html">Trang chính Wiki</a> · <a href="https://swordxstaff.fandom.com">SwordxStaff Wiki (Fandom, tiếng Anh)</a></p></footer>
+<script>(function(){const t=localStorage.getItem('sxs_wiki_theme')||'light';document.documentElement.setAttribute('data-theme',t);const b=document.getElementById('wikiThemeToggle');if(b)b.addEventListener('click',()=>{const n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);localStorage.setItem('sxs_wiki_theme',n);});})();</script>
+</body></html>

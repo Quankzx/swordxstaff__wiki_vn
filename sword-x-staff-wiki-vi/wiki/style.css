@@ -1,0 +1,457 @@
+/* ==========================================================================
+   Sword x Staff Wiki (Tiếng Việt) — Thiết Kế UI Thống Nhất Theo Spec Cộng Đồng
+   Palette: #6865C6 (Outer Indigo) | #FFFFFF (Content Sheet) | #A78BDB (H2 Band)
+            #7D63B8 (Purple Borders) | #6A2FBF (Links) | #2A0A2E / #FFC500 (Footer)
+   ========================================================================== */
+
+:root {
+  --indigo-frame: #6865C6;
+  --indigo-deep: #534FA8;
+  --sheet-bg: #FFFFFF;
+  --sheet-soft: #F6F3FC;
+  --h2-lavender: #A78BDB;
+  --purple-border: #7D63B8;
+  --purple-border-soft: #D6CBEB;
+  --purple-link: #6A2FBF;
+  --text-main: #1F1830;
+  --text-sub: #473E5F;
+  --footer-plum: #2A0A2E;
+  --footer-gold: #FFC500;
+}
+
+/* Dark Mode Tuyệt Đối #000000 (Đồng bộ với Trang Chính qua sxs_wiki_theme) */
+[data-theme="dark"] {
+  --indigo-frame: #000000;
+  --indigo-deep: #000000;
+  --sheet-bg: #000000;
+  --sheet-soft: #080808;
+  --h2-lavender: #161026;
+  --purple-border: #5E4B8B;
+  --purple-border-soft: #262626;
+  --purple-link: #C4A8FF;
+  --text-main: #F8FAFC;
+  --text-sub: #D4D4D8;
+  --footer-plum: #000000;
+  --footer-gold: #FFC500;
+}
+[data-theme="dark"] body { background: #000000 !important; color: #F8FAFC; }
+[data-theme="dark"] .wiki-topbar { background: #000000 !important; color: #F8FAFC !important; }
+[data-theme="dark"] .wiki-sidebar { background: #000000 !important; color: #F8FAFC !important; border-color: #262626 !important; }
+[data-theme="dark"] .wiki-main { background: #000000 !important; color: #F8FAFC !important; }
+[data-theme="dark"] .wiki-topbar .top-actions a,
+[data-theme="dark"] .wiki-topbar button { background: #0A0A0A !important; color: #F8FAFC !important; border-color: #5E4B8B !important; }
+[data-theme="dark"] .fandom-bar { background: #000000 !important; }
+[data-theme="dark"] .wiki-link:hover { background: #151026 !important; color: #FFFFFF !important; }
+[data-theme="dark"] table.fandom-table td,
+[data-theme="dark"] table.wikitable td { background: #050505; color: #D4D4D8; }
+[data-theme="dark"] table.fandom-table tr:nth-child(even) td { background: #0C0C0C; }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x: clip; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-main);
+  background: linear-gradient(180deg, #534FA8 0%, var(--indigo-frame) 260px, var(--indigo-frame) 100%);
+  min-height: 100vh;
+}
+
+/* Sticky Compact Community Topbar */
+.wiki-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: #E9E2F5 !important;
+  color: var(--text-main) !important;
+  padding: 9px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 2px solid var(--purple-border) !important;
+  box-shadow: 0 4px 14px rgba(31, 24, 48, 0.14);
+}
+.wiki-topbar a.brand-link {
+  color: var(--purple-link) !important;
+  font-weight: 800;
+  font-size: 1.02rem;
+  text-decoration: none;
+}
+.wiki-topbar .top-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+.wiki-topbar .top-actions a {
+  color: var(--text-main) !important;
+  background: #FFFFFF;
+  padding: 4px 11px;
+  border-radius: 6px;
+  border: 1px solid var(--purple-border);
+  text-decoration: none;
+}
+.wiki-topbar .top-actions a:hover {
+  background: var(--purple-link);
+  color: #FFFFFF !important;
+}
+
+/* Navigation Ribbon Banner */
+.fandom-bar {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(42, 10, 46, 0.94), rgba(66, 38, 128, 0.92)) !important;
+  border-bottom: 3px solid var(--footer-gold) !important;
+  border-radius: 0 !important;
+  padding: 10px 14px !important;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.fandom-bar .fb-label {
+  color: #FFFFFF !important;
+  font-weight: 800;
+}
+.fandom-bar a {
+  color: var(--footer-gold) !important;
+  text-decoration: none;
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+.fandom-bar a:hover {
+  background: rgba(255, 197, 0, 0.15);
+  text-decoration: none !important;
+}
+
+/* Full-Width White Wiki Content Sheet (không padding 2 bên) */
+.wiki-shell {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 !important;
+  background: var(--sheet-bg);
+  border-bottom: 2px solid var(--purple-border);
+  border-radius: 0 !important;
+  display: flex;
+  align-items: flex-start;
+  overflow-x: clip;
+}
+
+.wiki-sidebar {
+  width: 264px !important;
+  flex-shrink: 0;
+  position: sticky;
+  top: 52px;
+  max-height: calc(100vh - 52px);
+  overflow-y: auto;
+  padding: 14px 12px !important;
+  border-right: 1px solid var(--purple-border-soft) !important;
+  background: var(--sheet-soft) !important;
+}
+
+.wiki-group {
+  font-size: 0.71rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--purple-link) !important;
+  padding: 12px 10px 4px !important;
+}
+
+.wiki-link {
+  display: block;
+  padding: 5px 10px !important;
+  border-radius: 6px;
+  color: var(--text-main) !important;
+  text-decoration: none !important;
+  font-size: 0.85rem !important;
+  line-height: 1.42;
+}
+.wiki-link:hover {
+  background: #E9E2F5 !important;
+  color: var(--purple-link) !important;
+}
+.wiki-link.active {
+  background: var(--h2-lavender) !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+.wiki-main {
+  flex: 1;
+  min-width: 0;
+  padding: 20px 28px 34px !important;
+  background: var(--sheet-bg);
+}
+
+.crumbs {
+  font-size: 0.84rem !important;
+  color: var(--text-sub) !important;
+  padding: 4px 0 10px !important;
+  border-bottom: 1px solid var(--purple-border-soft);
+  margin-bottom: 12px;
+}
+.crumbs a { color: var(--purple-link) !important; font-weight: 600; }
+
+a { color: var(--purple-link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0.4em 0 0.6em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--purple-border);
+}
+
+/* Signature Lavender H2 Bands (#A78BDB with bold centered white text) */
+h2,
+.mw-parser-output > h2 {
+  background: var(--h2-lavender);
+  color: #FFFFFF !important;
+  font-size: 1.18rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 9px 16px;
+  border-radius: 6px;
+  margin: 1.5em 0 0.9em;
+  border: 1px solid var(--purple-border);
+}
+h2 .mw-headline,
+h2 a { color: #FFFFFF !important; }
+h2 .mw-editsection-bracket { display: none; }
+
+h3 {
+  font-size: 1.06rem;
+  color: var(--purple-link);
+  border-bottom: 1px solid var(--purple-border-soft);
+  padding-bottom: 4px;
+  margin: 1.25em 0 0.55em;
+}
+h4 { font-size: 0.96rem; color: var(--text-main); margin: 1em 0 0.4em; }
+
+/* Infobox & TOC with 2px #7D63B8 Border */
+.portable-infobox {
+  float: right;
+  width: 280px;
+  max-width: 100%;
+  margin: 0 0 18px 20px;
+  background: var(--sheet-bg);
+  border: 2px solid var(--purple-border);
+  border-radius: 9px;
+  overflow: hidden;
+  font-size: 0.88rem;
+  box-shadow: 0 6px 18px rgba(104, 101, 198, 0.14);
+}
+.portable-infobox .pi-title {
+  margin: 0;
+  padding: 10px 14px;
+  background: var(--h2-lavender);
+  color: #FFFFFF;
+  font-size: 1.02rem;
+  text-align: center;
+  border: none;
+  border-radius: 0;
+}
+.portable-infobox .pi-data {
+  padding: 8px 12px;
+  border-top: 1px solid var(--purple-border-soft);
+}
+.portable-infobox .pi-data-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--purple-link);
+  margin: 0 0 2px;
+}
+
+.toc {
+  background: var(--sheet-soft);
+  border: 2px solid var(--purple-border);
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin: 14px 0 18px;
+  display: inline-block;
+  min-width: min(320px, 100%);
+}
+.toc .toctitle h2 {
+  background: transparent !important;
+  color: var(--purple-link) !important;
+  border: none !important;
+  padding: 0 0 6px !important;
+  margin: 0 !important;
+  text-align: left !important;
+  font-size: 0.96rem !important;
+}
+.toc ul { margin: 0; padding-left: 18px; }
+
+/* Media, Galleries & Tables */
+figure.thumb,
+figure.mw-halign-center,
+figure.mw-halign-right {
+  margin: 12px 0;
+  background: var(--sheet-soft);
+  border: 2px solid var(--purple-border);
+  border-radius: 9px;
+  padding: 8px;
+  max-width: 100%;
+}
+figure.thumb.show-info-icon { float: right; margin: 4px 0 14px 18px; }
+
+img { max-width: 100%; height: auto; border-radius: 6px; }
+
+.wikia-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 12px 0;
+}
+.wikia-gallery-item {
+  background: var(--sheet-soft);
+  border: 2px solid var(--purple-border);
+  border-radius: 9px;
+  padding: 8px;
+  text-align: center;
+  max-width: 100%;
+}
+
+table.fandom-table,
+table.wikitable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 0.88rem;
+  border: 2px solid var(--purple-border);
+  border-radius: 8px;
+  overflow: hidden;
+  display: block;
+  overflow-x: auto;
+}
+table.fandom-table th,
+table.wikitable th {
+  background: var(--h2-lavender);
+  color: #FFFFFF;
+  font-weight: 700;
+  padding: 9px 11px;
+  border: 1px solid var(--purple-border);
+}
+table.fandom-table td,
+table.wikitable td {
+  border: 1px solid var(--purple-border-soft);
+  padding: 8px 11px;
+  vertical-align: top;
+  background: var(--sheet-bg);
+}
+table.fandom-table tr:nth-child(even) td {
+  background: var(--sheet-soft);
+}
+
+blockquote {
+  background: var(--sheet-soft);
+  border-left: 4px solid var(--purple-border);
+  margin: 12px 0;
+  padding: 10px 14px;
+  border-radius: 0 8px 8px 0;
+  color: var(--text-sub);
+}
+
+/* Signature Royal Plum Footer (#2A0A2E + Gold #FFC500 Links + Black Strip) */
+.site-footer {
+  background: var(--footer-plum) !important;
+  color: #EAE2F0 !important;
+  border-top: 4px solid var(--purple-border) !important;
+  margin-top: 0 !important;
+  padding: 24px 20px 28px !important;
+  font-size: 0.85rem !important;
+  line-height: 1.7;
+  text-align: center;
+}
+.site-footer p {
+  max-width: 1120px;
+  margin: 6px auto;
+}
+.site-footer strong { color: #FFFFFF; }
+.site-footer a {
+  color: var(--footer-gold) !important;
+  font-weight: 600;
+}
+.site-footer a:hover { text-decoration: underline; }
+
+/* Library Filter & Detail Cards ("Lựa chọn theo nội dung") */
+.wiki-filter-controls { display: flex; flex-direction: column; gap: 10px; margin: 14px 0 18px; }
+#wikiIdxSearch {
+  width: 100%; padding: 10px 14px; border-radius: 8px;
+  border: 2px solid var(--purple-border); background: var(--sheet-bg); color: var(--text-main); font-size: 0.92rem;
+}
+.wiki-cat-pills { display: flex; flex-wrap: wrap; gap: 7px; }
+.wiki-cat-btn {
+  padding: 6px 12px; border-radius: 99px; border: 1.5px solid var(--purple-border);
+  background: var(--sheet-soft); color: var(--text-main); font-weight: 700; font-size: 0.8rem; cursor: pointer;
+}
+.wiki-cat-btn.active { background: var(--purple-link); color: #FFFFFF; border-color: var(--purple-link); }
+.wiki-cards-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(min(290px, 100%), 1fr)); gap: 14px; margin-bottom: 24px;
+}
+.wiki-idx-card {
+  display: flex; flex-direction: column; gap: 7px; padding: 14px 16px;
+  background: var(--sheet-soft); border: 2px solid var(--purple-border); border-radius: 9px;
+  color: var(--text-main); text-decoration: none !important; transition: transform 0.14s ease;
+}
+.wiki-idx-card:hover { transform: translateY(-2px); border-color: var(--footer-gold); }
+.wiki-idx-card.is-new { border-left: 5px solid var(--footer-gold); }
+.wiki-idx-meta { display: flex; justify-content: space-between; align-items: center; gap: 6px; font-size: 0.72rem; font-weight: 700; color: var(--purple-link); text-transform: uppercase; }
+.new-badge { background: var(--footer-gold); color: #000000; padding: 2px 7px; border-radius: 99px; font-size: 0.68rem; }
+.wiki-idx-card h3 { margin: 0 !important; padding: 0 !important; border: none !important; font-size: 1rem; color: var(--text-main); }
+.wiki-idx-card p { margin: 0; font-size: 0.83rem; color: var(--text-sub); line-height: 1.45; }
+.wiki-idx-go { margin-top: auto; font-size: 0.8rem; font-weight: 700; color: var(--purple-link); }
+.detail-list { padding-left: 20px; display: flex; flex-direction: column; gap: 8px; }
+.detail-back-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; padding-top: 16px; border-top: 2px solid var(--purple-border); }
+.detail-cta-btn { padding: 9px 16px; border-radius: 8px; background: var(--purple-link); color: #FFFFFF !important; font-weight: 700; text-decoration: none !important; }
+.detail-cta-btn.secondary { background: var(--sheet-soft); color: var(--text-main) !important; border: 2px solid var(--purple-border); }
+
+/* Responsive Mobile Polish */
+@media (max-width: 900px) {
+  .fandom-bar {
+    width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    border-left: none;
+    border-right: none;
+    padding: 10px 12px !important;
+    font-size: 0.78rem;
+  }
+  .wiki-shell {
+    width: 100% !important;
+    flex-direction: column;
+    border-radius: 0 !important;
+    border-left: none;
+    border-right: none;
+  }
+  .wiki-sidebar {
+    position: static !important;
+    width: 100% !important;
+    max-height: 240px !important;
+    border-right: none !important;
+    border-bottom: 2px solid var(--purple-border) !important;
+  }
+  .wiki-main {
+    padding: 12px 10px 24px !important;
+    overflow-wrap: anywhere;
+  }
+  .portable-infobox,
+  figure.thumb.show-info-icon {
+    float: none !important;
+    width: 100% !important;
+    margin: 0 0 14px 0 !important;
+  }
+}

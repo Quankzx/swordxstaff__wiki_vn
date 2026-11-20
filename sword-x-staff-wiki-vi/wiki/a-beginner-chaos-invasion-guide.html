@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hướng Dẫn Tân Thủ: Cuộc Xâm Lăng Hỗn Mang — Sword X Staff Wiki tiếng Việt</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* --- Khung Fandom gộp (thêm vào, không sửa CSS gốc) --- */
+.fandom-bar{display:flex;flex-wrap:wrap;gap:4px 20px;align-items:center;background:#20242e;border-bottom:2px solid #ffd75e;padding:8px 20px;font-size:.85rem;font-weight:700;letter-spacing:.06em}
+.fandom-bar a{color:#ffd75e;text-decoration:none}
+.fandom-bar a:hover{text-decoration:underline}
+.fandom-bar .fb-label{color:#8b98b8;font-weight:600;letter-spacing:.02em}
+.crumbs{font-size:.85rem;color:#8494b8;padding:10px 2px 0}
+.crumbs a{color:#4d8fd6}
+.site-footer{border-top:1px solid #ccc;margin-top:28px;padding:16px 20px 28px;font-size:.85rem;color:#666;line-height:1.7}
+.site-footer a{color:#1a5fb4}
+.site-footer--dark{border-top-color:#253055;color:#b8c4e0;background:#0f1322}
+.site-footer--dark a{color:#ffd75e}
+.wiki-link{display:block;padding:5px 10px;border-radius:6px;color:inherit;text-decoration:none;font-size:.86rem;line-height:1.4}
+.wiki-link:hover{background:rgba(128,140,180,.18);text-decoration:underline}
+.wiki-link.active{background:rgba(245,158,11,.18);font-weight:700;color:#f59e0b}
+.wiki-group{font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#8494b8;padding:12px 10px 3px}
+.wiki-topbar{position:sticky;top:0;z-index:60;background:#20242e;color:#fff;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid #3d4e88}
+.wiki-topbar a.brand-link{color:#ffd75e;font-weight:700;font-size:1.05em;text-decoration:none}
+.wiki-topbar .top-actions{display:flex;gap:16px;font-size:.88rem}
+.wiki-topbar .top-actions a{color:#cfe0ff;text-decoration:none}
+.wiki-topbar .top-actions a:hover{text-decoration:underline}
+.wiki-shell{display:flex;align-items:flex-start}
+.wiki-sidebar{width:272px;flex-shrink:0;position:sticky;top:52px;max-height:calc(100vh - 52px);overflow-y:auto;padding:14px 12px;border-right:1px solid #ddd;background:#f7f5ef}
+.wiki-main{flex:1;min-width:0}
+@media(max-width:900px){.wiki-shell{flex-direction:column}.wiki-sidebar{position:static;width:100%;max-height:none;border-right:none;border-bottom:1px solid #ddd}}
+</style></head>
+<body>
+<header class="wiki-topbar"><a class="brand-link" href="../index.html">⚔️ SWORD x STAFF — ĐẠI BÁCH KHOA VN</a><div class="top-actions"><a href="../index.html">🏠 Bách Khoa Chính</a><a href="index.html">📚 Lọc Bài Chi Tiết</a><button type="button" id="wikiThemeToggle" style="padding:4px 11px;border-radius:6px;border:1px solid var(--purple-border);background:var(--sheet-bg);color:var(--text-main);cursor:pointer;font-weight:700;">🌓 Đổi Nền</button></div></header>
+<nav class="fandom-bar" aria-label="Menu Fandom"><span class="fb-label">SWORD X STAFF WIKI</span><a href="index.html">EXPLORE</a><a href="maps.html">KINGDOMS</a><a href="classes-overview.html">COMBAT</a><a href="seasonal-systems.html">EVENTS</a><a href="a-beginner-chaos-invasion-guide.html">BEGINNER GUIDE</a></nav>
+<div class="wiki-shell">
+<nav class="wiki-sidebar" aria-label="Wiki Fandom">
+      <div class="wiki-group">Wiki Fandom — Bản dịch tiếng Việt</div>
+      <a class="wiki-link" href="index.html">📖 Trang chính Wiki</a>
+      <div class="wiki-group">Bắt đầu chơi</div>
+      <a class="wiki-link" href="sword-x-staff.html">Sword X Staff</a>
+      <a class="wiki-link" href="sword-x-staff-launch-faq.html">FAQ Ra Mắt Sword X Staff</a>
+      <a class="wiki-link active" href="a-beginner-chaos-invasion-guide.html">Hướng Dẫn Tân Thủ: Cuộc Xâm Lăng Hỗn Mang</a>
+      <a class="wiki-link" href="class-selection.html">Chọn Lớp Nhân Vật</a>
+      <a class="wiki-link" href="classes-overview.html">Tổng Quan Các Lớp Nhân Vật</a>
+      <a class="wiki-link" href="class-change.html">Chuyển Lớp</a>
+      <a class="wiki-link" href="everything-about-class-change.html">Tất Cả Về Chuyển Lớp</a>
+      <a class="wiki-link" href="progression.html">Tiến Trình Phát Triển</a>
+      <a class="wiki-link" href="seasonal-systems.html">Hệ Thống Theo Mùa</a>
+      <a class="wiki-link" href="skill-overview.html">Tổng Quan Kỹ Năng</a>
+      <a class="wiki-link" href="skill-ascend.html">Thăng Cấp Kỹ Năng</a>
+      <div class="wiki-group">Lớp nhân vật</div>
+      <a class="wiki-link" href="warrior.html">Chiến Binh (Warrior)</a>
+      <a class="wiki-link" href="mage.html">Pháp Sư (Mage)</a>
+      <a class="wiki-link" href="knight.html">Hiệp Sĩ (Knight)</a>
+      <a class="wiki-link" href="duelist.html">Đấu Sĩ (Duelist)</a>
+      <a class="wiki-link" href="sorcerer.html">Thuật Sư (Sorcerer)</a>
+      <a class="wiki-link" href="sage.html">Hiền Giả (Sage)</a>
+      <a class="wiki-link" href="berserker.html">Cuồng Chiến (Berserker)</a>
+      <a class="wiki-link" href="paladin.html">Thánh Hiệp Sĩ (Paladin)</a>
+      <a class="wiki-link" href="archmage.html">Đại Pháp Sư (Archmage)</a>
+      <a class="wiki-link" href="arcanist.html">Bí Thuật Sư (Arcanist)</a>
+      <div class="wiki-group">Kỹ năng theo lớp</div>
+      <a class="wiki-link" href="warrior-skills.html">Kỹ Năng Chiến Binh</a>
+      <a class="wiki-link" href="mage-skills.html">Kỹ Năng Pháp Sư</a>
+      <a class="wiki-link" href="knight-skills.html">Kỹ Năng Hiệp Sĩ</a>
+      <a class="wiki-link" href="duelist-skills.html">Kỹ Năng Đấu Sĩ</a>
+      <a class="wiki-link" href="sorcerer-skills.html">Kỹ Năng Thuật Sư</a>
+      <a class="wiki-link" href="sage-skills.html">Kỹ Năng Hiền Giả</a>
+      <div class="wiki-group">Bạn Đồng Hành & Fantomon</div>
+      <a class="wiki-link" href="companions.html">Bạn Đồng Hành</a>
+      <a class="wiki-link" href="fantamons.html">Fantomon</a>
+      <a class="wiki-link" href="fantomon.html">Fantomon</a>
+      <a class="wiki-link" href="akane.html">Akane</a>
+      <a class="wiki-link" href="molly.html">Molly</a>
+      <a class="wiki-link" href="reina.html">Reina</a>
+      <a class="wiki-link" href="dryason.html">Dryason</a>
+      <a class="wiki-link" href="hermes.html">Hermes</a>
+      <a class="wiki-link" href="narss.html">Narss (Thủ Lĩnh)</a>
+      <a class="wiki-link" href="rolla.html">Rolla</a>
+      <div class="wiki-group">Thế giới & hoạt động</div>
+      <a class="wiki-link" href="maps.html">Bản Đồ</a>
+      <a class="wiki-link" href="material-realm.html">Cõi Vật Chất</a>
+      <a class="wiki-link" href="arena.html">Đấu Trường</a>
+      <a class="wiki-link" href="guild.html">Bang Hội</a>
+      <a class="wiki-link" href="daily-dungeons.html">Phụ Bản Hàng Ngày</a>
+      <a class="wiki-link" href="destiny-fruits.html">Trái Định Mệnh</a>
+      <a class="wiki-link" href="goddess-statues.html">Tượng Nữ Thần</a>
+      <a class="wiki-link" href="commercium.html">Thương Hội Commercium</a>
+      <a class="wiki-link" href="vendor-booth.html">Gian Hàng</a>
+      <a class="wiki-link" href="journey-overture.html">Khúc Dạo Đầu Hành Trình</a>
+      <a class="wiki-link" href="elemental-mystery.html">Bí Ẩn Nguyên Tố</a>
+      <div class="wiki-group">Khác</div>
+      <a class="wiki-link" href="ice-spike.html">Ice Spike</a>
+      <a class="wiki-link" href="water-shot.html">Water Shot</a>
+      <a class="wiki-link" href="discordintegrator.html">DiscordIntegrator</a>
+      <a class="wiki-link" href="boltray-games.html">BOLTRAY GAMES</a>
+      <a class="wiki-link" href="swordxstaff-wiki.html">SwordxStaff Wiki</a>
+    </nav>
+<main class="wiki-main">
+<div class="crumbs"><a href="../index.html">Trang chủ</a> / <a href="index.html">Wiki</a> / Hướng Dẫn Tân Thủ: Cuộc Xâm Lăng Hỗn Mang</div>
+
+<span id="sanh-hon-mang"></span><h1>Hướng Dẫn Tân Thủ: Cuộc Xâm Lăng Hỗn Mang</h1>
+<div class="mw-content-ltr mw-parser-output" lang="vi" dir="ltr"><figure class="thumb  show-info-icon" typeof="mw:File/Thumb" style="width: 180px"> 	<img alt="Chaos Invasion 1" src="../assets/fandom/Chaos_Invasion_1.webp" decoding="async" loading="lazy" width="180" height="108" class="thumbimage" /> 	 	<figcaption class="thumbcaption"> 			<svg><use xlink:href="#wds-icons-info-small"></use></svg> 	</figcaption> </figure>
+<p>Hôm nay mình sẽ phân tích rõ ràng và thực tế về Cuộc Xâm Lăng Hỗn Mang (Chaos Invasion) — nó là gì, Phần Thưởng nào thực sự quan trọng, và cách cải thiện thứ hạng của bạn một cách hiệu quả. Hướng dẫn này được viết để giúp bạn tránh những sai lầm thường gặp và chỉ tập trung vào những gì thực sự ảnh hưởng đến tiến trình phát triển của bạn. Bắt đầu nào.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="vi" dir="ltr"><h2 id="mw-toc-heading">Mục lục</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#What_Is_Chaos_Invasion?"><span class="tocnumber">1</span> <span class="toctext">Cuộc Xâm Lăng Hỗn Mang Là Gì?</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Ranking_Expectations_(Be_Realistic)"><span class="tocnumber">2</span> <span class="toctext">Kỳ Vọng Về Thứ Hạng (Hãy Thực Tế)</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#The_Single_Most_Important_Reward_(Very_Important)"><span class="tocnumber">3</span> <span class="toctext">Phần Thưởng Quan Trọng Nhất (Rất Quan Trọng)</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Mysterious_NPC_–_What_to_Buy_(And_What_NOT_to_Buy)"><span class="tocnumber">4</span> <span class="toctext">NPC Bí Ẩn – Nên Mua Gì (Và KHÔNG Nên Mua Gì)</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#How_to_Improve_Your_Chaos_Invasion_Damage"><span class="tocnumber">5</span> <span class="toctext">Cách Cải Thiện Sát Thương Trong Cuộc Xâm Lăng Hỗn Mang</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#General_Damage_Principles_(Most_Players)"><span class="tocnumber">6</span> <span class="toctext">Nguyên Tắc Sát Thương Chung (Đa Số Người Chơi)</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Solo_Runs_–_When_to_Use_Them"><span class="tocnumber">7</span> <span class="toctext">Chạy Solo – Khi Nào Nên Dùng</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Ends"><span class="tocnumber">8</span> <span class="toctext">Kết</span></a></li>
+</ul>
+</div>
+
+<h2><span id="bxh-nghe"></span><span id="What_Is_Chaos_Invasion.3F"></span><span class="mw-headline" id="What_Is_Chaos_Invasion?">Cuộc Xâm Lăng Hỗn Mang Là Gì?</span><span class="mw-editsection-bracket">]</span></span></h2>
+<figure class="thumb  show-info-icon" typeof="mw:File/Thumb" style="width: 180px"> 	<img alt="Class Ranking" src="../assets/fandom/Chaos_Invasion_Ranking.webp" decoding="async" loading="lazy" width="180" height="180" class="thumbimage" /> 	 	<figcaption class="thumbcaption"> 			<svg><use xlink:href="#wds-icons-info-small"></use></svg> 			<p class="caption">Xếp Hạng Theo Lớp</p> 	</figcaption> </figure>
+<p>Lối chơi cốt lõi của Cuộc Xâm Lăng Hỗn Mang là cuộc đua xếp hạng sát thương, được tách riêng theo Lớp nhân vật. Để đảm bảo công bằng:
+</p>
+<ul><li>Đấu Sĩ (Duelist) chỉ xếp hạng với Đấu Sĩ</li>
+<li>Thuật Sư (Sorcerer) chỉ xếp hạng với Thuật Sư</li>
+<li>Hiệp Sĩ (Knight) chỉ xếp hạng với Hiệp Sĩ</li>
+<li>Hiền Giả (Sage) chỉ xếp hạng với Hiền Giả</li></ul>
+<p>Trong chế độ này không có chuyện so sánh trực tiếp sát thương giữa các Lớp nhân vật khác nhau.
+</p>
+<h2><span id="Ranking_Expectations_.28Be_Realistic.29"></span><span class="mw-headline" id="Ranking_Expectations_(Be_Realistic)">Kỳ Vọng Về Thứ Hạng (Hãy Thực Tế)</span><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Phần thưởng của Cuộc Xâm Lăng Hỗn Mang không quá hào phóng, vì vậy kỳ vọng rất quan trọng.
+</p>
+<ul><li>Người chơi thường</li>
+<li>Đạt hạng 20–50 đã là hoàn toàn chấp nhận được</li>
+<li>Khi số lượng người chơi giảm dần theo thời gian, thứ hạng này sẽ tự nhiên tăng lên Top 10–20</li>
+<li>Người chơi nạp tiền</li>
+<li>Nên nhắm tới Top 5, nơi phần thưởng mới thực sự đáng giá</li></ul>
+<p>Đừng đầu tư quá mức chỉ để chạy theo chênh lệch thứ hạng nhỏ, trừ khi bạn biết rõ mình đang làm gì.
+</p>
+<h2><span id="phan-thuong"></span><span id="The_Single_Most_Important_Reward_.28Very_Important.29"></span><span class="mw-headline" id="The_Single_Most_Important_Reward_(Very_Important)">Phần Thưởng Quan Trọng Nhất (Rất Quan Trọng)</span><span class="mw-editsection-bracket">]</span></span></h2>
+<figure class="thumb  show-info-icon" typeof="mw:File/Thumb" style="width: 180px"> 	<img alt="Chaos Invasion Rewards" src="../assets/fandom/Chaos_Invasion_Rewards.webp" decoding="async" loading="lazy" width="180" height="323" class="thumbimage" /> 	 	<figcaption class="thumbcaption"> 			<svg><use xlink:href="#wds-icons-info-small"></use></svg> 			<p class="caption">Phần Thưởng Cuộc Xâm Lăng Hỗn Mang</p> 	</figcaption> </figure>
+<p>Nhiều người chơi tin rằng phần thưởng giá trị nhất là:
+</p>
+<ul><li>Covenite</li>
+<li>Legendary Auroral Badges</li></ul>
+<p>Điều này là sai.
+</p><p>Phần thưởng ưu tiên số 1: <b>Primal Forge Shard</b>
+</p><p>Vì sao nó quan trọng:
+</p><p>Tăng sản lượng Quặng Thô (Raw Ore) của Xe Đẩy (Cart) của bạn
+</p>
+<ul><li>Ảnh hưởng trực tiếp đến:</li>
+<li>Xếp hạng cuối mùa</li>
+<li>Cấp trang bị tối đa</li>
+<li>Đặc biệt quan trọng với người chơi nạp nhiều</li></ul>
+<p>Không thứ gì khác trong Cuộc Xâm Lăng Hỗn Mang có giá trị lâu dài sánh được.
+</p>
+<h2><span id="thuong-nhan-bi-an"></span><span id="Mysterious_NPC_.E2.80.93_What_to_Buy_.28And_What_NOT_to_Buy.29"></span><span class="mw-headline" id="Mysterious_NPC_–_What_to_Buy_(And_What_NOT_to_Buy)">NPC Bí Ẩn – Nên Mua Gì (Và KHÔNG Nên Mua Gì)</span><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Vào ngày hôm sau khi Cuộc Xâm Lăng Hỗn Mang kết thúc:
+</p>
+<ul><li>Một NPC Bí Ẩn sẽ xuất hiện trong Nhà (Home) của bạn</li>
+<li>Bạn có thể dùng Chaos Crystals để mua đồ tại đây</li></ul>
+<p>Quy tắc tuyệt đối (không có ngoại lệ)
+</p>
+<figure class="thumb  show-info-icon" typeof="mw:File/Thumb" style="width: 180px"> 	<img alt="Chaos Invasion Merchant" src="../assets/fandom/Chaos_Invasion_Merchant.webp" decoding="async" loading="lazy" width="180" height="194" class="thumbimage lazyload" /> 	<noscript><img alt="Chaos Invasion Merchant" src="../assets/fandom/Chaos_Invasion_Merchant.webp" decoding="async" loading="lazy" width="180" height="194" class="thumbimage" /></noscript> 	<figcaption class="thumbcaption"> 			<svg><use xlink:href="#wds-icons-info-small"></use></svg> 			<p class="caption">Thương Nhân Cuộc Xâm Lăng Hỗn Mang</p> 	</figcaption> </figure>
+<p><b>CHỈ mua Primal Forge.</b>
+</p>
+<ul><li>Đừng mua bất cứ thứ gì khác</li>
+<li>Nâng cấp nó lên tới Immortal</li></ul>
+<p>Nếu bạn không đủ tiền mua:
+</p>
+<ul><li>Hãy giữ lại Chaos Crystals của bạn</li>
+<li>Đuổi NPC đi</li>
+<li>Lần sau tiếp tục đổi</li></ul>
+<p>Quy tắc này áp dụng cho mọi người chơi, bất kể mức độ nạp tiền.
+</p>
+<h2><span class="mw-headline" id="How_to_Improve_Your_Chaos_Invasion_Damage">Cách Cải Thiện Sát Thương Trong Cuộc Xâm Lăng Hỗn Mang</span><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Hãy hiểu sự khác biệt về tiến trình: mỗi lần bạn chuyển Lớp nhân vật: • Bạn nhận được Kỹ Năng (Skill) mới • Cách build tối ưu sẽ thay đổi tùy theo: • Bậc của Lớp nhân vật • Lựa chọn lối build • Giai đoạn phát triển của người chơi. Vì vậy, không có một cách build “tốt nhất” chung cho tất cả mọi người.
+</p>
+<h2><span id="General_Damage_Principles_.28Most_Players.29"></span><span class="mw-headline" id="General_Damage_Principles_(Most_Players)">Nguyên Tắc Sát Thương Chung (Đa Số Người Chơi)</span><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Ngay cả khi chưa có lối build tối ưu, đa số người chơi đều tuân theo các nguyên tắc sau:
+</p><p>Hỗn Mang Có Giáp Rất Thấp
+</p>
+<ul><li>Sát thương trong Cuộc Xâm Lăng Hỗn Mang cao hơn nhiều so với trong phụ bản</li>
+<li>Điều này ưu ái lối đánh dồn sát thương (burst) và phối hợp buff đội</li></ul>
+<p>Rất Khuyến Khích Chơi Theo Đội
+</p><p>Mọi Lớp nhân vật đều có Kỹ Năng buff đội.
+</p><p>Cách xếp đội tối ưu cho mỗi lượt chạy:
+</p>
+<ul><li>1 người gây sát thương chính</li>
+<li>3 người hỗ trợ</li></ul>
+<p>Cách xoay vòng:
+</p>
+<ul><li>Chạy 4 vòng</li>
+<li>Mỗi người chơi lần lượt làm người gây sát thương chính trong một vòng</li></ul>
+<p>Cách này hiệu quả hơn hẳn so với ghép đội ngẫu nhiên.
+</p>
+<h2><span id="Solo_Runs_.E2.80.93_When_to_Use_Them"></span><span class="mw-headline" id="Solo_Runs_–_When_to_Use_Them">Chạy Solo – Khi Nào Nên Dùng</span><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Cuộc Xâm Lăng Hỗn Mang:
+</p>
+<ul><li>Không cho phép mang theo bạn đồng hành</li>
+<li>Có thể chạy solo</li></ul>
+<p>Khi nào chạy solo hữu ích:
+</p>
+<ul><li>Kiểm tra xem cách xếp Kỹ Năng nào cho sát thương cao hơn</li>
+<li>Chạy nhanh trước khi thoát game</li></ul>
+<p>Vì sao chạy solo dễ gây hiểu lầm:
+</p>
+<ul><li>Cơ chế buff đội hoạt động khác đi</li>
+<li>Một số hiệu ứng (ví dụ tương tác Flame Aura của Đấu Sĩ) không thể hiện chính xác</li></ul>
+<p>Vì lý do này:
+</p>
+<ul><li>Đừng dựa vào số sát thương solo để đánh giá hiệu quả thực tế</li>
+<li>Kết quả theo đội mới là thứ quyết định thứ hạng</li></ul>
+<h2><span class="mw-headline" id="Ends">Kết</span><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Cảm ơn bạn đã đọc.
+</p><p>Hẹn gặp bạn ở hướng dẫn tiếp theo.
+</p><p>Tạm biệt
+</p><p><br />
+Viết bởi QY Maple.
+</p>
+</div>
+</main>
+</div>
+<footer class="site-footer"><p>Nguồn: <a href="https://swordxstaff.fandom.com/wiki/A_Beginner_Chaos_Invasion_Guide">bài gốc trên SwordxStaff Wiki (Fandom)</a>. Nội dung được dịch sang tiếng Việt; nội dung gốc theo giấy phép CC-BY-SA.</p><p><strong>Sword X Staff — Đại Bách Khoa VN &amp; Wiki Fandom (bản dịch tiếng Việt).</strong> Nội dung Bách khoa, dữ liệu, công thức và công cụ trên trang chủ là nội dung gốc của người biên soạn. Các bài trong mục Wiki được dịch từ <a href="https://swordxstaff.fandom.com">SwordxStaff Wiki trên Fandom</a>; nội dung gốc theo giấy phép <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a> — xem link bài gốc ở cuối mỗi bài wiki.</p><p><a href="../index.html">Trang chủ</a> · <a href="index.html">Trang chính Wiki</a> · <a href="https://swordxstaff.fandom.com">SwordxStaff Wiki (Fandom, tiếng Anh)</a></p></footer>
+<script>(function(){const t=localStorage.getItem('sxs_wiki_theme')||'light';document.documentElement.setAttribute('data-theme',t);const b=document.getElementById('wikiThemeToggle');if(b)b.addEventListener('click',()=>{const n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);localStorage.setItem('sxs_wiki_theme',n);});})();</script>
+</body></html>

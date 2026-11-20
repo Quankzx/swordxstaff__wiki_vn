@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kỹ Năng Pháp Sư — Sword X Staff Wiki tiếng Việt</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* --- Khung Fandom gộp (thêm vào, không sửa CSS gốc) --- */
+.fandom-bar{display:flex;flex-wrap:wrap;gap:4px 20px;align-items:center;background:#20242e;border-bottom:2px solid #ffd75e;padding:8px 20px;font-size:.85rem;font-weight:700;letter-spacing:.06em}
+.fandom-bar a{color:#ffd75e;text-decoration:none}
+.fandom-bar a:hover{text-decoration:underline}
+.fandom-bar .fb-label{color:#8b98b8;font-weight:600;letter-spacing:.02em}
+.crumbs{font-size:.85rem;color:#8494b8;padding:10px 2px 0}
+.crumbs a{color:#4d8fd6}
+.site-footer{border-top:1px solid #ccc;margin-top:28px;padding:16px 20px 28px;font-size:.85rem;color:#666;line-height:1.7}
+.site-footer a{color:#1a5fb4}
+.site-footer--dark{border-top-color:#253055;color:#b8c4e0;background:#0f1322}
+.site-footer--dark a{color:#ffd75e}
+.wiki-link{display:block;padding:5px 10px;border-radius:6px;color:inherit;text-decoration:none;font-size:.86rem;line-height:1.4}
+.wiki-link:hover{background:rgba(128,140,180,.18);text-decoration:underline}
+.wiki-link.active{background:rgba(245,158,11,.18);font-weight:700;color:#f59e0b}
+.wiki-group{font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#8494b8;padding:12px 10px 3px}
+.wiki-topbar{position:sticky;top:0;z-index:60;background:#20242e;color:#fff;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid #3d4e88}
+.wiki-topbar a.brand-link{color:#ffd75e;font-weight:700;font-size:1.05em;text-decoration:none}
+.wiki-topbar .top-actions{display:flex;gap:16px;font-size:.88rem}
+.wiki-topbar .top-actions a{color:#cfe0ff;text-decoration:none}
+.wiki-topbar .top-actions a:hover{text-decoration:underline}
+.wiki-shell{display:flex;align-items:flex-start}
+.wiki-sidebar{width:272px;flex-shrink:0;position:sticky;top:52px;max-height:calc(100vh - 52px);overflow-y:auto;padding:14px 12px;border-right:1px solid #ddd;background:#f7f5ef}
+.wiki-main{flex:1;min-width:0}
+@media(max-width:900px){.wiki-shell{flex-direction:column}.wiki-sidebar{position:static;width:100%;max-height:none;border-right:none;border-bottom:1px solid #ddd}}
+</style></head>
+<body>
+<header class="wiki-topbar"><a class="brand-link" href="../index.html">⚔️ SWORD x STAFF — ĐẠI BÁCH KHOA VN</a><div class="top-actions"><a href="../index.html">🏠 Bách Khoa Chính</a><a href="index.html">📚 Lọc Bài Chi Tiết</a><button type="button" id="wikiThemeToggle" style="padding:4px 11px;border-radius:6px;border:1px solid var(--purple-border);background:var(--sheet-bg);color:var(--text-main);cursor:pointer;font-weight:700;">🌓 Đổi Nền</button></div></header>
+<nav class="fandom-bar" aria-label="Menu Fandom"><span class="fb-label">SWORD X STAFF WIKI</span><a href="index.html">EXPLORE</a><a href="maps.html">KINGDOMS</a><a href="classes-overview.html">COMBAT</a><a href="seasonal-systems.html">EVENTS</a><a href="a-beginner-chaos-invasion-guide.html">BEGINNER GUIDE</a></nav>
+<div class="wiki-shell">
+<nav class="wiki-sidebar" aria-label="Wiki Fandom">
+      <div class="wiki-group">Wiki Fandom — Bản dịch tiếng Việt</div>
+      <a class="wiki-link" href="index.html">📖 Trang chính Wiki</a>
+      <div class="wiki-group">Bắt đầu chơi</div>
+      <a class="wiki-link" href="sword-x-staff.html">Sword X Staff</a>
+      <a class="wiki-link" href="sword-x-staff-launch-faq.html">FAQ Ra Mắt Sword X Staff</a>
+      <a class="wiki-link" href="a-beginner-chaos-invasion-guide.html">Hướng Dẫn Tân Thủ: Cuộc Xâm Lăng Hỗn Mang</a>
+      <a class="wiki-link" href="class-selection.html">Chọn Lớp Nhân Vật</a>
+      <a class="wiki-link" href="classes-overview.html">Tổng Quan Các Lớp Nhân Vật</a>
+      <a class="wiki-link" href="class-change.html">Chuyển Lớp</a>
+      <a class="wiki-link" href="everything-about-class-change.html">Tất Cả Về Chuyển Lớp</a>
+      <a class="wiki-link" href="progression.html">Tiến Trình Phát Triển</a>
+      <a class="wiki-link" href="seasonal-systems.html">Hệ Thống Theo Mùa</a>
+      <a class="wiki-link" href="skill-overview.html">Tổng Quan Kỹ Năng</a>
+      <a class="wiki-link" href="skill-ascend.html">Thăng Cấp Kỹ Năng</a>
+      <div class="wiki-group">Lớp nhân vật</div>
+      <a class="wiki-link" href="warrior.html">Chiến Binh (Warrior)</a>
+      <a class="wiki-link" href="mage.html">Pháp Sư (Mage)</a>
+      <a class="wiki-link" href="knight.html">Hiệp Sĩ (Knight)</a>
+      <a class="wiki-link" href="duelist.html">Đấu Sĩ (Duelist)</a>
+      <a class="wiki-link" href="sorcerer.html">Thuật Sư (Sorcerer)</a>
+      <a class="wiki-link" href="sage.html">Hiền Giả (Sage)</a>
+      <a class="wiki-link" href="berserker.html">Cuồng Chiến (Berserker)</a>
+      <a class="wiki-link" href="paladin.html">Thánh Hiệp Sĩ (Paladin)</a>
+      <a class="wiki-link" href="archmage.html">Đại Pháp Sư (Archmage)</a>
+      <a class="wiki-link" href="arcanist.html">Bí Thuật Sư (Arcanist)</a>
+      <div class="wiki-group">Kỹ năng theo lớp</div>
+      <a class="wiki-link" href="warrior-skills.html">Kỹ Năng Chiến Binh</a>
+      <a class="wiki-link active" href="mage-skills.html">Kỹ Năng Pháp Sư</a>
+      <a class="wiki-link" href="knight-skills.html">Kỹ Năng Hiệp Sĩ</a>
+      <a class="wiki-link" href="duelist-skills.html">Kỹ Năng Đấu Sĩ</a>
+      <a class="wiki-link" href="sorcerer-skills.html">Kỹ Năng Thuật Sư</a>
+      <a class="wiki-link" href="sage-skills.html">Kỹ Năng Hiền Giả</a>
+      <div class="wiki-group">Bạn Đồng Hành & Fantomon</div>
+      <a class="wiki-link" href="companions.html">Bạn Đồng Hành</a>
+      <a class="wiki-link" href="fantamons.html">Fantomon</a>
+      <a class="wiki-link" href="fantomon.html">Fantomon</a>
+      <a class="wiki-link" href="akane.html">Akane</a>
+      <a class="wiki-link" href="molly.html">Molly</a>
+      <a class="wiki-link" href="reina.html">Reina</a>
+      <a class="wiki-link" href="dryason.html">Dryason</a>
+      <a class="wiki-link" href="hermes.html">Hermes</a>
+      <a class="wiki-link" href="narss.html">Narss (Thủ Lĩnh)</a>
+      <a class="wiki-link" href="rolla.html">Rolla</a>
+      <div class="wiki-group">Thế giới & hoạt động</div>
+      <a class="wiki-link" href="maps.html">Bản Đồ</a>
+      <a class="wiki-link" href="material-realm.html">Cõi Vật Chất</a>
+      <a class="wiki-link" href="arena.html">Đấu Trường</a>
+      <a class="wiki-link" href="guild.html">Bang Hội</a>
+      <a class="wiki-link" href="daily-dungeons.html">Phụ Bản Hàng Ngày</a>
+      <a class="wiki-link" href="destiny-fruits.html">Trái Định Mệnh</a>
+      <a class="wiki-link" href="goddess-statues.html">Tượng Nữ Thần</a>
+      <a class="wiki-link" href="commercium.html">Thương Hội Commercium</a>
+      <a class="wiki-link" href="vendor-booth.html">Gian Hàng</a>
+      <a class="wiki-link" href="journey-overture.html">Khúc Dạo Đầu Hành Trình</a>
+      <a class="wiki-link" href="elemental-mystery.html">Bí Ẩn Nguyên Tố</a>
+      <div class="wiki-group">Khác</div>
+      <a class="wiki-link" href="ice-spike.html">Ice Spike</a>
+      <a class="wiki-link" href="water-shot.html">Water Shot</a>
+      <a class="wiki-link" href="discordintegrator.html">DiscordIntegrator</a>
+      <a class="wiki-link" href="boltray-games.html">BOLTRAY GAMES</a>
+      <a class="wiki-link" href="swordxstaff-wiki.html">SwordxStaff Wiki</a>
+    </nav>
+<main class="wiki-main">
+<div class="crumbs"><a href="../index.html">Trang chủ</a> / <a href="index.html">Wiki</a> / Kỹ Năng Pháp Sư</div>
+
+<h1>Kỹ Năng Pháp Sư</h1>
+<div class="mw-content-ltr mw-parser-output" lang="vi" dir="ltr"><h2><span class="mw-headline" id="Mage_Techniques">Kỹ Thuật Pháp Sư (Mage)</span><span class="mw-editsection-bracket"></span></span></h2>
+<table class="wikitable" style="width:100%; table-layout:fixed; text-align:center;">
+<tbody><tr>
+<th style="width:10%;">Biểu tượng
+</th>
+<th style="width:15%;">Tên
+</th>
+<th style="width:15%;">Loại
+</th>
+<th style="width:50%;">Mô tả
+</th>
+<th style="width:20%;">Hình ảnh
+</th></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Water Shot" src="../assets/fandom/Water_Shot.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element" /></span>
+</td>
+<td style="color:#2e7d32; font-weight:bold;">Water Shot
+</td>
+<td style="color:#c62828;">Sát Thương
+</td>
+<td style="text-align:left; color:#c62828; padding:10px;">Gây Sát Thương Nước 1 lần lên 1 kẻ địch trong phạm vi 4 ô quanh người thi triển.
+</td>
+<td><span typeof="mw:File"><img alt="Water Shot info" src="../assets/fandom/Water_Shot_info.png" decoding="async" loading="lazy" width="50" height="89" class="mw-file-element" /></span>
+</td></tr>
+<tr>
+<td><figure class="mw-halign-center" typeof="mw:File"><img alt="IceSpike" src="../assets/fandom/IceSpike.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element" /><figcaption></figcaption></figure>
+</td>
+<td style="color:#2e7d32; font-weight:bold;">Ice Spike
+</td>
+<td style="color:#c62828;">Sát Thương, Trạng Thái Bất Lợi
+</td>
+<td style="text-align:left; color:#c62828; padding:10px;">Gây Sát Thương Nước 1 lần lên tất cả kẻ địch trong khu vực 1x5 ô phía trước người thi triển, với 40% tỉ lệ cơ bản gây Đóng Băng trong 1 lượt.
+</td>
+<td><div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 4px"><span typeof="mw:File"><img alt="Ice Spike info1" src="../assets/fandom/Ice_Spike_info1.png" decoding="async" loading="lazy" width="40" height="71" class="mw-file-element lazyload" /></span> <span typeof="mw:File"><img alt="Ice Spike info2" src="../assets/fandom/Ice_Spike_info2.png" decoding="async" loading="lazy" width="40" height="71" class="mw-file-element lazyload" /></span> <span typeof="mw:File"><img alt="Ice Spike info3" src="../assets/fandom/Ice_Spike_info3.png" decoding="async" loading="lazy" width="40" height="71" class="mw-file-element lazyload" /></span></div>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Flame Jet" src="../assets/fandom/Flame_Jet.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td>Flame Jet
+</td>
+<td>Sát Thương
+</td>
+<td>Gây Sát Thương Lửa 3 lần lên tất cả kẻ địch trong khu vực 1×3 ô phía trước người thi triển.
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Iron Thorn" src="../assets/fandom/Iron_Thorn.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td>Iron Thorn
+</td>
+<td>Sát Thương, Trạng Thái Bất Lợi
+</td>
+<td>Chọn 1 ô trong phạm vi 3 ô quanh người thi triển. Gây Sát Thương Gió 1 lần lên tất cả kẻ địch trong phạm vi 1 ô quanh ô mục tiêu, với 30% tỉ lệ cơ bản gây Bất Động trong 1 lượt.
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Healing Touch" src="../assets/fandom/Healing_Touch.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td>Healing Touch
+</td>
+<td>Đồng Minh, Hồi Máu, Giải Trừ
+</td>
+<td>Hồi máu cho 1 đồng minh trong phạm vi 5 ô quanh người thi triển và giải trừ 1 trạng thái bất lợi hoặc debuff ngẫu nhiên trên người họ.
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Stonechief Summon" src="../assets/fandom/Stonechief_Summon.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td>Stonechief Summon
+</td>
+<td>Triệu Hồi
+</td>
+<td>Triệu hồi một Stonechief phía trước người thi triển, nó hành động ngay lập tức. Triệu hồi vật thừa hưởng một tỉ lệ chỉ số của người thi triển và tồn tại tối đa 5 lượt. (Không có hồi chiêu ban đầu)
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Fireball" src="../assets/fandom/Fireball.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td>Fireball
+</td>
+<td>Sát Thương
+</td>
+<td>Chọn 1 ô trong phạm vi 5 ô quanh người thi triển. Gây Sát Thương Lửa 1 lần lên tất cả kẻ địch trong hình vuông 1 ô quanh ô mục tiêu.
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Cyclone" src="../assets/fandom/Cyclone.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td>Cyclone
+</td>
+<td>Kéo
+</td>
+<td>Chọn 1 ô trong phạm vi 6 ô quanh người thi triển. Gây Sát Thương Gió 1 lần lên tất cả kẻ địch trong phạm vi 2 ô quanh ô mục tiêu, hất tung chúng và kéo chúng về ô mục tiêu.
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Tempest Sphere" src="../assets/fandom/Tempest_Sphere.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td>Tempest Sphere
+</td>
+<td>Sát Thương
+</td>
+<td>Gây Sát Thương Gió 5 lần lên 1 kẻ địch trong phạm vi 3 đến 5 ô quanh người thi triển.
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Void Blessing" src="../assets/fandom/Void_Blessing.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td>Void Blessing
+</td>
+<td>Đồng Minh, Buff, Hồi Máu
+</td>
+<td>Tăng HP.
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Blazing Fire Ring" src="../assets/fandom/Blazing_Fire_Ring.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td>Blazing Fire Ring
+</td>
+<td>Sát Thương
+</td>
+<td>Gây Sát Thương Lửa 1 lần lên tất cả kẻ địch trong phạm vi 2 ô quanh người thi triển.
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Water Assault" src="../assets/fandom/Water_Assault.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td>Water Assault
+</td>
+<td>Sát Thương
+</td>
+<td>Gây Sát Thương Nước 1 lần lên tất cả kẻ địch trong khu vực 3×4 ô phía trước người thi triển. Sát thương giảm 25% với mỗi đòn trúng tiếp theo lên cùng một mục tiêu. (Gây sát thương nhiều đòn lên mục tiêu lớn.)
+</td>
+<td>
+</td></tr>
+<tr>
+<td><figure class="mw-halign-center" typeof="mw:File"><img alt="Wind&#39;s Delight" src="../assets/fandom/Wind%27s_Delight.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /><figcaption></figcaption></figure>
+</td>
+<td>Wind's Delight
+</td>
+<td>Sát Thương
+</td>
+<td>Chọn 1 ô trong phạm vi 6 ô quanh người thi triển. Phóng 7 đợt lưỡi đao gió vào ô mục tiêu và các kẻ địch ngẫu nhiên trong phạm vi 1 ô ở bên trái và bên phải ô mục tiêu. Mỗi đợt gây Sát Thương Gió 1 lần lên tất cả kẻ địch trong phạm vi 1 ô quanh mục tiêu địch. Sát thương giảm 35% với mỗi đòn trúng tiếp theo lên cùng một mục tiêu.
+</td>
+<td>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Mage_Charms">Bùa Pháp Sư (Mage)</span><span class="mw-editsection-bracket"></span></span></h2>
+<table class="wikitable" style="width:100%; table-layout:fixed; text-align:center;">
+<tbody><tr>
+<th style="width:10%;">Biểu tượng
+</th>
+<th style="width:15%;">Tên
+</th>
+<th style="width:15%;">Loại
+</th>
+<th style="width:50%;">Mô tả
+</th>
+<th style="width:20%;">Hình ảnh
+</th></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Elemental Mystery" src="../assets/fandom/Elemental_Mystery.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td style="color:#2e7d32; font-weight:bold;">Elemental Mystery
+</td>
+<td style="color:#c62828;">Chỉ Số
+</td>
+<td style="text-align:left; color:#c62828; padding:10px;">Tăng Thông Thạo Nguyên Tố của người thi triển.
+</td>
+<td><span typeof="mw:File"><img alt="Elemental Mystery info" src="../assets/fandom/Elemental_Mystery_info.png" decoding="async" loading="lazy" width="50" height="89" class="mw-file-element lazyload" /></span>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Wind&#39;s Whisper icon" src="../assets/fandom/Wind%27s_Whisper_icon.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td style="color:#2e7d32; font-weight:bold;">Wind's Whisper
+</td>
+<td style="color:#c62828;">Chỉ Số
+</td>
+<td style="text-align:left; color:#c62828; padding:10px;">Tăng Sát Thương Gió của người thi triển.
+</td>
+<td><span typeof="mw:File"><img alt="Wind&#39;s Whisper info" src="../assets/fandom/Wind%27s_Whisper_info.png" decoding="async" loading="lazy" width="50" height="89" class="mw-file-element lazyload" /></span>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Dew&#39;s Blessing" src="../assets/fandom/Dew%27s_Blessing.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td>Dew's Blessing
+</td>
+<td>Chỉ Số
+</td>
+<td>Tăng Sát Thương Nước của người thi triển.
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Heart of Flame" src="../assets/fandom/Heart_of_Flame.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td>Heart of Flame
+</td>
+<td>Chỉ Số
+</td>
+<td>Tăng Sát Thương Lửa của người thi triển.
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Unstable Aura" src="../assets/fandom/Unstable_Aura.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td>Unstable Aura
+</td>
+<td>Sát Thương, Đẩy Lùi
+</td>
+<td>Khi Kỹ Thuật của người thi triển gây sát thương lên kẻ địch, có 25% tỉ lệ kích hoạt Aura, gây thêm Sát Thương Gió 1 lần, với 60% tỉ lệ cơ bản đẩy lùi chúng 1 ô.
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Elemental Body" src="../assets/fandom/Elemental_Body.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td>Elemental Body
+</td>
+<td>Chỉ Số
+</td>
+<td>Tăng Kháng Nguyên Tố của người thi triển.
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Curse Resonance" src="../assets/fandom/Curse_Resonance.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td>Curse Resonance
+</td>
+<td>Buff
+</td>
+<td>Với mỗi trạng thái bất lợi hoặc debuff mà mục tiêu đang mang, Sát Thương Kỹ Thuật mà người thi triển gây lên mục tiêu đó tăng lên. Cộng dồn tối đa 3 lần.
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Insight" src="../assets/fandom/Insight.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td>Insight
+</td>
+<td>Chỉ Số
+</td>
+<td>Tăng Tỉ Lệ Trúng Hiệu Ứng của người thi triển.
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Tough Soul" src="../assets/fandom/Tough_Soul.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td>Tough Soul
+</td>
+<td>Chỉ Số
+</td>
+<td>Tăng HP của người thi triển.
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Flaming Path" src="../assets/fandom/Flaming_Path.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td>Flaming Path
+</td>
+<td>Thiêu Đốt
+</td>
+<td>Khi người thi triển bắt đầu di chuyển trong lượt của mình, có 30% tỉ lệ gây Thiêu Đốt lên các ô trong phạm vi 1 ô quanh người thi triển.
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Water to Ice" src="../assets/fandom/Water_to_Ice.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td>Water to Ice
+</td>
+<td>Chỉ Số
+</td>
+<td>Tăng Sát Thương Nước của người thi triển.
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Mana Surge" src="../assets/fandom/Mana_Surge.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td>Mana Surge
+</td>
+<td>Chỉ Số
+</td>
+<td>Tăng Tỉ Lệ Chí Mạng của người thi triển.
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Gale Shield" src="../assets/fandom/Gale_Shield.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td>Gale Shield
+</td>
+<td>Khiên, Đẩy Lùi
+</td>
+<td>Ban một khiên dựa trên HP tối đa của người thi triển khi bắt đầu trận đấu. Khi khiên biến mất, gây Sát Thương Gió 1 lần lên tất cả kẻ địch trong khu vực hình vuông 1 ô quanh người thi triển, với 100% tỉ lệ cơ bản đẩy lùi chúng 1 ô.
+</td>
+<td>
+</td></tr></tbody></table>
+<p>Được viết bởi: <u><span class="new" title="QY Maple (page does not exist)">QY Maple</span></u>, <u><span class="new" title="Jinjiko (page does not exist)">Jinjiko</span></u>
+</p>
+
+
+
+
+</div>
+</main>
+</div>
+<footer class="site-footer"><p>Nguồn: <a href="https://swordxstaff.fandom.com/wiki/Mage_Skills">bài gốc trên SwordxStaff Wiki (Fandom)</a>. Nội dung được dịch sang tiếng Việt; nội dung gốc theo giấy phép CC-BY-SA.</p><p><strong>Sword X Staff — Đại Bách Khoa VN &amp; Wiki Fandom (bản dịch tiếng Việt).</strong> Nội dung Bách khoa, dữ liệu, công thức và công cụ trên trang chủ là nội dung gốc của người biên soạn. Các bài trong mục Wiki được dịch từ <a href="https://swordxstaff.fandom.com">SwordxStaff Wiki trên Fandom</a>; nội dung gốc theo giấy phép <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a> — xem link bài gốc ở cuối mỗi bài wiki.</p><p><a href="../index.html">Trang chủ</a> · <a href="index.html">Trang chính Wiki</a> · <a href="https://swordxstaff.fandom.com">SwordxStaff Wiki (Fandom, tiếng Anh)</a></p></footer>
+<script>(function(){const t=localStorage.getItem('sxs_wiki_theme')||'light';document.documentElement.setAttribute('data-theme',t);const b=document.getElementById('wikiThemeToggle');if(b)b.addEventListener('click',()=>{const n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);localStorage.setItem('sxs_wiki_theme',n);});})();</script>
+</body></html>

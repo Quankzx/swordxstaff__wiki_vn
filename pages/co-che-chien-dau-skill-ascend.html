@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Công Thức Chiến Đấu 4 Giai Đoạn, 5 Loại Kỹ Năng & Toán Học Skill Ascend — Sword x Staff Đại Bách Khoa VN</title>
+  <link rel="icon" href="../assets/fandom/Site-favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/main.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Mở danh mục điều hướng" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <a href="../index.html" class="brand" style="gap:11px;">
+        <div class="brand-crest">
+          <img src="../assets/fandom/Site-logo.png" alt="Biểu tượng cộng đồng Sword x Staff" />
+        </div>
+        <div>
+          <div class="brand-title font-display">SWORD <span class="x-mark">x</span> STAFF — ĐẠI BÁCH KHOA VN</div>
+          <span class="brand-sub">Cơ Sở Dữ Liệu Minh Họa Game, Phân Tích Meta &amp; Chuyên Đề Đồng Bộ UI</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="topbar-actions">
+      <div class="global-search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5" stroke-linecap="round"/>
+        </svg>
+        <input type="search" id="globalSearchInput" class="global-search-input" placeholder="Tìm nhanh chuyên đề hoặc nhảy về 11 mục Trang Chính (Ctrl+K)..." aria-label="Tìm kiếm toàn trang" autocomplete="off" />
+        <span class="kbd-hint" aria-hidden="true">Ctrl+K</span>
+        <div id="searchDropdown" class="search-dropdown" role="listbox" aria-label="Kết quả tìm kiếm nhanh"></div>
+      </div>
+
+      <a href="index.html" class="icon-btn" style="text-decoration:none; white-space:nowrap;">
+        <span>14 Chuyên Đề</span>
+      </a>
+      <a href="../index.html" class="icon-btn" style="text-decoration:none; white-space:nowrap;">
+        <span>Trang Chính</span>
+      </a>
+
+      <button class="icon-btn" id="themeToggleBtn" aria-label="Đổi giao diện Sáng hoặc Tối">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41" stroke-linecap="round"/>
+        </svg>
+        <span id="themeLabel">Tối</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="wiki-page-frame">
+    <section class="community-banner" aria-label="Biểu ngữ cộng đồng Sword x Staff">
+      <img src="../assets/fandom/Banner.jpg" alt="Sword x Staff Community Banner" class="community-banner-bg" />
+      <div class="community-banner-scrim">
+        <div class="community-banner-id">
+          <img src="../assets/fandom/Site-logo.png" alt="Logo Sword x Staff Wiki VN" class="community-logo" />
+          <div>
+            <div class="community-title">Sword x Staff — Đại Bách Khoa Toàn Thư Tiếng Việt</div>
+            <div class="community-tagline">Hệ thống Trang Chính &amp; Chuyên Đề Chi Tiết đồng nhất 100% bố cục, thanh điều hướng và chế độ Sáng / Đen tuyệt đối</div>
+          </div>
+        </div>
+        <nav class="community-nav" aria-label="Điều hướng nhanh chuyên mục Wiki">
+          <a class="community-nav-btn" href="../index.html#tab-overview">KHÁM PHÁ</a>
+          <a class="community-nav-btn" href="../index.html#tab-world">VƯƠNG QUỐC</a>
+          <a class="community-nav-btn" href="../index.html#tab-mechanics">CHIẾN ĐẤU</a>
+          <a class="community-nav-btn" href="../index.html#tab-classes">NGHỀ NGHIỆP</a>
+          <a class="community-nav-btn" href="../index.html#tab-builds">BUILD &amp; KỸ NĂNG</a>
+          <a class="community-nav-btn" href="../index.html#tab-companions-life">ĐỒNG HÀNH &amp; MÓN</a>
+          <a class="community-nav-btn" href="../index.html#tab-seasons">SỰ KIỆN &amp; MÙA</a>
+          <a class="community-nav-btn" href="../index.html#tab-calculators" style="margin-left:auto; background:rgba(255,197,0,0.2); border-color:#FFC500; color:#FFC500;">6 MÁY TÍNH CÔNG THỨC</a>
+        </nav>
+      </div>
+    </section>
+
+    <div class="app-shell">
+      <nav class="sidebar" id="sidebarNav" aria-label="Danh mục chuyên đề">
+        <div class="nav-group-label">Nhập Môn &amp; Cơ Chế Cốt Lõi</div>
+      <a class="nav-btn" href="../index.html#tab-overview"><span>1. Tân Thủ, Kinh Tế & Giftcode</span></a>
+      <a class="nav-btn active" href="../index.html#tab-mechanics"><span>2. Cơ Chế Chiến Đấu & Công Thức</span></a>
+      
+      <div class="nav-group-label">Nghề Nghiệp, Kỹ Năng &amp; Build</div>
+      <a class="nav-btn" href="../index.html#tab-classes"><span>3. 26 Nghề (Bậc 1–8) & Icon Game</span></a>
+      <a class="nav-btn" href="../index.html#tab-skills"><span>4. Kho 120 Kỹ Năng & Bí Thuật</span></a>
+      <a class="nav-btn" href="../index.html#tab-builds"><span>5. Bộ Build Meta 4 Chế Độ PvP/PvE</span></a>
+      
+      <div class="nav-group-label">Trang Bị, Sức Mạnh &amp; Đời Sống</div>
+      <a class="nav-btn" href="../index.html#tab-gear"><span>6. Trang Bị, Đá Thần Tạo & 8 Ngọc</span></a>
+      <a class="nav-btn" href="../index.html#tab-relics-pets"><span>7. 30 Cổ Vật & 12 Huyễn Thú</span></a>
+      <a class="nav-btn" href="../index.html#tab-companions-life"><span>8. 75 Đồng Hành, 26 Món & Collab</span></a>
+      
+      <div class="nav-group-label">Mùa Giải, Thế Giới &amp; Giả Lập</div>
+      <a class="nav-btn" href="../index.html#tab-seasons"><span>9. Lịch Mùa Giải, Kho Báu & Reset</span></a>
+      <a class="nav-btn" href="../index.html#tab-world"><span>10. 7 Vương Quốc, Phó Bản & PvP</span></a>
+      <a class="nav-btn" href="../index.html#tab-calculators"><span>11. Trung Tâm 6 Máy Tính</span></a>
+        <div class="nav-group-label">Chuyên Đề Mở Rộng</div>
+        <a class="nav-btn" href="index.html"><span>📚 Thư Viện 14 Chuyên Đề</span></a>
+        <div class="sidebar-footer">
+          <strong>Sword x Staff — Đại Bách Khoa VN</strong><br/>
+          Giao diện đồng bộ 100% cùng Trang Chính. Bấm <code>Ctrl + K</code> để tra cứu nhanh.
+        </div>
+      </nav>
+
+      <main class="main-content">
+        
+    <div class="detail-crumb-bar">
+      <div class="detail-crumb-links">
+        <a href="../index.html">🏠 Trang Chính Đại Bách Khoa</a>
+        <span>/</span>
+        <a href="../index.html#tab-mechanics">2. Cơ Chế Chiến Đấu & Công Thức</a>
+        <span>/</span>
+        <span>2. Công Thức & Skill Ascend</span>
+      </div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <a href="../index.html#tab-mechanics" class="detail-jump-link" style="margin:0;">← Về Mục Gốc Trang Chính</a>
+        <a href="index.html" class="detail-jump-link" style="margin:0;">📚 Lọc 14 Chuyên Đề</a>
+      </div>
+    </div>
+    
+    <div class="detail-topic-strip" aria-label="Chuyển nhanh giữa 14 chuyên đề">
+      <a href="tan-thu-kinh-te-giftcode.html" class="chip-btn" style="text-decoration:none;">1. Tân Thủ, Căn Cứ & 17 Code</a><a href="co-che-chien-dau-skill-ascend.html" class="chip-btn active" style="text-decoration:none;">2. Công Thức & Skill Ascend</a><a href="chon-nghe-style-build-chuyen-lop.html" class="chip-btn" style="text-decoration:none;">3. Chọn Nghề & Đổi Lớp Lv.100</a><a href="ho-so-chien-binh-dau-si-cuong-chien.html" class="chip-btn" style="text-decoration:none;">4. Hồ Sơ Kiếm Công (48 Skill)</a><a href="ho-so-hiep-si-thanh-ky-si.html" class="chip-btn" style="text-decoration:none;">5. Hồ Sơ Khiên Thủ (Hiệp Sĩ)</a><a href="ho-so-phap-su-thuat-su-dai-phap-su.html" class="chip-btn" style="text-decoration:none;">6. Hồ Sơ Trượng Công (48 Skill)</a><a href="ho-so-hien-gia-bi-thuat-su.html" class="chip-btn" style="text-decoration:none;">7. Hồ Sơ Hiền Giả & Bí Thuật</a><a href="bo-build-meta-4-che-do.html" class="chip-btn" style="text-decoration:none;">8. Bộ Build Meta 4 Chế Độ</a><a href="trang-bi-da-than-tao-ngoc.html" class="chip-btn" style="text-decoration:none;">9. Trang Bị, Đá Thần Tạo & Ngọc</a><a href="co-vat-trai-dinh-menh-huyen-thu.html" class="chip-btn" style="text-decoration:none;">10. Cổ Vật & 12 Huyễn Thú</a><a href="dong-hanh-dryason-mon-an-collab.html" class="chip-btn" style="text-decoration:none;">11. Tiểu Sử 13 NPC, Collab & Món</a><a href="he-thong-mua-giai-lo-trinh-reset.html" class="chip-btn" style="text-decoration:none;">12. Hệ Thống Mùa, Bingo & Reset</a><a href="xam-lang-hon-mang-chaos-invasion.html" class="chip-btn" style="text-decoration:none;">13. Xâm Lăng Hỗn Mang (Full)</a><a href="ban-do-kanstein-pho-ban-coop.html" class="chip-btn" style="text-decoration:none;">14. Bản Đồ Kanstein & Co-op</a>
+    </div>
+  
+  
+        <div class="showcase-banner" style="margin-bottom:18px;">
+          <img src="../assets/fandom/Skill_Full_Value_Example.webp" alt="Công Thức Chiến Đấu 4 Giai Đoạn, 5 Loại Kỹ Năng & Toán Học Skill Ascend" class="showcase-bg" loading="lazy" />
+          <div class="showcase-overlay">
+            <h1 style="font-size:clamp(1.25rem, 2.4vw, 1.75rem); color:#FFFFFF; margin-bottom:6px;">Công Thức Chiến Đấu 4 Giai Đoạn, 5 Loại Kỹ Năng & Toán Học Skill Ascend</h1>
+            <p>Giải mã toàn bộ công thức ATK/(ATK+DEF)×0.625, thứ tự kiểm định Block trước Crit, 4 nhóm sát thương độc lập, thẻ Skill Tags và bài toán Sao (★) vs Phẩm Chất (Rare → Immortal).</p>
+          </div>
+        </div>
+        
+      <div class="card card-staff" id="dmg-formula" style="margin-bottom:18px;">
+        <div class="card-header">
+          <h3 class="card-title">1. Công Thức Tính Sát Thương 4 Giai Đoạn, Đỡ Đòn vs Chính Xác &amp; Đánh Kép</h3>
+          <span class="pill pill-staff">Combat Math</span>
+        </div>
+        <div class="formula-banner">
+          ST_Cuối = [ (ATK × Hệ_Số_%) + Basic_DMG ] × [ (ATK / (ATK + DEF_Địch)) × 0.625 ] × (1 + Tinh_Thông / 4000) × (1 + Σ%Tăng − Σ%Giảm) × Block/Crit
+        </div>
+        <div class="grid-2">
+          <ul class="clean-list">
+            <li><strong>Giá trị kép của ATK &amp; Xuyên Giáp:</strong> Khi <code>ATK = DEF</code>, bội số phòng ngự bằng <code>0.3125</code>. Nếu ATK tụt sâu dưới DEF Boss, sát thương bị bóp nghẹt nặng nề — vì vậy kỹ năng bỏ qua DEF như <em>Piercing Assault</em> hay trừ giáp từ <em>Nyxarchon</em> mang lại lượng sát thương đột biến.</li>
+            <li><strong>Quy đổi Tinh Thông &amp; Trần Giảm ST:</strong> Mỗi <strong><code>40 Tinh Thông = +1% Sát Thương</code></strong> đúng hệ; trần tổng Giảm Sát Thương tối đa đạt <strong><code>-90%</code></strong>.</li>
+          </ul>
+          <ul class="clean-list staff-bullets">
+            <li><strong>Đỡ Đòn (Block) kiểm tra TRƯỚC Bạo Kích:</strong> <code>Block_Thực = Block_Địch − Accuracy_Bạn</code>. Bị Block đồng nghĩa mất ngay <strong>50%+ sát thương</strong> VÀ <strong>0% cơ hội nổ Bạo Kích</strong>!</li>
+            <li><strong>Accuracy vs Effect Hit &amp; Cướp Lượt Kép:</strong> <em>Accuracy</em> chống Block; <em>Effect Hit Rate</em> chống <em>Status Resistance</em> khi gắn DoT/Đóng Băng/Khiêu Khích. Khi <code>SPD ≈ 2× đối thủ</code>, bạn được đánh 2 lượt liên tiếp trong 1 chu kỳ.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card card-cyan" id="skill-overview" style="margin-bottom:18px;">
+        <div class="card-header">
+          <h3 class="card-title">2. Năm Loại Kỹ Năng, 4 Nhóm Sát Thương (Buckets) &amp; Hệ Thống Skill Tags</h3>
+          <span class="pill pill-cyan">Skill Architecture</span>
+        </div>
+        <div class="grid-2">
+          <ul class="clean-list">
+            <li><strong>5 Loại Kỹ Năng Trong Game:</strong> Gồm <strong>Chiến Kỹ (Technique)</strong> lắp 4 ô chủ động bên trái, <strong>Bí Thuật (Charm)</strong> lắp 4 ô bị động bên phải, <strong>Nội Tại Lớp (Passive)</strong>, <strong>Kỹ Năng Trang Bị (Gear Skill)</strong> và kỹ năng Đồng Hành/Huyễn Thú.</li>
+            <li><strong>4 Nhóm Sát Thương Tách Biệt:</strong> Gồm <code>Sát Thương Chiến Kỹ (Technique DMG)</code>, <code>Sát Thương Bí Thuật (Charm DMG)</code>, <code>Sát Thương Buff (Buff DMG)</code> và <code>Sát Thương Không Phân Loại (Unclassified DMG — Pet, NPC, Gear Skill)</code>.</li>
+          </ul>
+          <ul class="clean-list staff-bullets">
+            <li><strong>Thẻ Kỹ Năng (Skill Tags):</strong> Mỗi chiêu gắn các nhãn như <code>DMG</code>, <code>Knock Back (Đẩy lùi)</code>, <code>Self Buff</code>, <code>Ally Buff Heal</code>, <code>Debuff</code>. Nhiều Bí Thuật chỉ kích hoạt khi dùng đúng thẻ tag.</li>
+            <li><strong>Tăng Cấp Ô Kỹ Năng Bằng Essential:</strong> Nâng cấp trực tiếp phần <strong>Basic Damage (số phẳng bên phải)</strong> — tạo mức sát thương sàn bảo hiểm khi nhân vật dính debuff giảm ATK! Lưu ý một số Bí Thuật và kỹ năng bậc thấp có biên độ tăng Basic DMG kém hơn kỹ năng bậc hiện tại.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card card-sword" id="skill-ascend" style="margin-bottom:18px;">
+        <div class="card-header">
+          <h3 class="card-title">3. Toán Học Thăng Cấp Kỹ Năng (Skill Ascend): Sao (★) vs Phẩm Chất (Rarity)</h3>
+          <span class="pill pill-sword">Rare → Immortal</span>
+        </div>
+        <ul class="clean-list" style="margin-bottom:12px;">
+          <li><strong>Lộ trình 6 bậc Phẩm Chất:</strong> <code>Rare (Lam) → Epic (Tím) → Legendary (Cam) → Mythic (Đỏ) → Divine (Thần) → Immortal (Bất Tử)</code>.</li>
+          <li><strong>Vì sao Phẩm Chất quan trọng gấp nhiều lần Sao ★?</strong> Thăng 1 Sao trong cùng phẩm chất tăng <code>15%–30%</code> phần số phẳng bên phải (thường chỉ chiếm nửa giá trị chiêu → nếu chiêu chiếm 30% tổng DPS thì 1 sao chỉ tăng <strong>~5% tổng sát thương</strong>!). Ngược lại, <strong>đột phá lên Phẩm Chất mới tăng CẢ hệ số % bên trái lẫn số phẳng bên phải</strong>: trung bình <strong>Chiến Kỹ tăng +25%/bậc</strong> và <strong>Bí Thuật tăng +20%/bậc</strong>!</li>
+          <li><strong>Ví dụ kiểm chứng trực tiếp trong game:</strong> <em>Boiling Bloodlust</em> ở bậc Tím cho <code>30% Crit Rate</code> → nhân 1.25 qua các bậc sẽ thành <code>30% → 38% → 47% → 59% → 73%</code> (sát giá trị thực tế <code>70%</code> ở Immortal!). Với Bí Thuật <em>Blade of Lament</em> bậc Cam <code>2.44% Hút Máu</code> → nhân 1.20 thành <code>2.44% → 2.93% → 3.51% → 4.22%</code>! <strong>Mẹo dùng Phiếu Mảnh Kỹ Năng (Skill Shard Voucher):</strong> Đẩy chạm ngưỡng phẩm chất mới rồi dừng ngay để chuyển phiếu sang kỹ năng trụ cột kế tiếp!</li>
+        </ul>
+        <div class="wiki-diagram-grid">
+          <figure class="wiki-diagram-card contain"><img src="../assets/fandom/Skill_Ascend_Left_Pct.webp" alt="Hệ số % bên trái" loading="lazy" /><figcaption><strong>Cột Bên Trái (% ATK):</strong> Chỉ tăng mạnh khi đột phá Phẩm Chất (+25% Chiến Kỹ / +20% Bí Thuật).</figcaption></figure>
+          <figure class="wiki-diagram-card contain"><img src="../assets/fandom/Skill_Assend_Right_Value.webp" alt="Giá trị cố định bên phải" loading="lazy" /><figcaption><strong>Cột Bên Phải (Basic DMG):</strong> Tăng theo Cấp Ô Kỹ Năng (Essential) và số Sao (★).</figcaption></figure>
+          <figure class="wiki-diagram-card contain"><img src="../assets/fandom/Skill_Full_Value_Example.webp" alt="Bảng tổng hợp giá trị kỹ năng" loading="lazy" /><figcaption><strong>Ví Dụ Đầy Đủ 2 Nhánh Giá Trị:</strong> Luôn ưu tiên nâng Phẩm Chất đồng đều cho các chiêu chủ lực.</figcaption></figure>
+        </div>
+      </div>
+
+      <div class="card card-emerald" id="elemental-mystery">
+        <div class="card-header">
+          <h3 class="card-title">4. Nội Tại Bí Ẩn Nguyên Tố &amp; Sơ Đồ Ô Lưới Tầm Đánh Thực Chiến</h3>
+          <span class="pill pill-emerald">Grid &amp; Elements</span>
+        </div>
+        <p class="card-body">Hệ Pháp Sư xoay quanh vòng khắc chế <code>Gió → Nước → Lửa → Gió</code> (kẻ địch kháng nguyên tố bị khắc chỉ nhận <strong>50% sát thương</strong>, thậm chí Slime nguyên tố <strong>miễn nhiễm 100%</strong>, nhưng nhận sát thương khổng lồ từ hệ khắc nó!). Hãy lưu sẵn nhiều Loadout nguyên tố và canh chuẩn ô lưới:</p>
+        <div class="wiki-diagram-grid">
+          <figure class="wiki-diagram-card contain"><img src="../assets/fandom/Elemental_Mystery_info.png" alt="Bí Ẩn Nguyên Tố" loading="lazy" /><figcaption><strong>Elemental Mystery:</strong> Phối đa nguyên tố kích bội số sát thương nội tại Pháp Sư.</figcaption></figure>
+          <figure class="wiki-diagram-card contain"><img src="../assets/fandom/Water_Shot_info.png" alt="Tầm đánh Water Shot" loading="lazy" /><figcaption><strong>Water Shot (4 ô):</strong> Phép đơn mục tiêu tầm 4 ô mở đầu chuẩn cho Pháp Sư.</figcaption></figure>
+          <figure class="wiki-diagram-card contain"><img src="../assets/fandom/Ice_Spike_info1.png" alt="Vùng 1x5 Ice Spike" loading="lazy" /><figcaption><strong>Ice Spike (1×5 ô):</strong> Phóng dải băng xuyên 5 ô thẳng mặt kèm 40% tỷ lệ gốc Đóng Băng.</figcaption></figure>
+          <figure class="wiki-diagram-card contain"><img src="../assets/fandom/Wind's_Whisper_info.png" alt="Wind's Whisper" loading="lazy" /><figcaption><strong>Wind's Whisper &amp; Canh Góc:</strong> Kiểm soát vị trí đẩy lùi cắt năng lượng ra chiêu của cận chiến địch.</figcaption></figure>
+        </div>
+      </div>
+    
+    <div class="detail-inline-actions" style="margin-top:20px; padding-top:14px; border-top:1px solid var(--border-subtle);">
+      <a class="detail-jump-link" href="../index.html#tab-mechanics">← Quay Lại 2. Cơ Chế Chiến Đấu & Công Thức (Trang Chính)</a>
+      <a class="detail-jump-link" href="index.html">📚 Mở Bộ Lọc 14 Chuyên Đề Theo Chủ Đề →</a>
+    </div>
+  
+      </main>
+    </div>
+
+    <footer class="site-main-footer" aria-label="Chân trang Điều Hướng Toàn Bộ Wiki">
+      <div class="site-footer-grid">
+        <div class="site-footer-col">
+          <h4>Đại Bách Khoa Chính</h4>
+          <ul class="site-footer-links">
+            <li><a href="../index.html#tab-overview">1. Tân Thủ, Kinh Tế &amp; 17 Giftcode</a></li>
+            <li><a href="../index.html#tab-mechanics">2. Công Thức Chiến Đấu &amp; Thăng Cấp Skill</a></li>
+            <li><a href="../index.html#tab-classes">3. Cây 26 Nghề (Bậc 1–8) &amp; Đổi Nghề Lv.100</a></li>
+            <li><a href="../index.html#tab-skills">4. Kho 120 Kỹ Năng Kèm Icon Game</a></li>
+            <li><a href="../index.html#tab-builds">5. Bộ Build Meta 4 Chế Độ PvP / PvE</a></li>
+          </ul>
+        </div>
+        <div class="site-footer-col">
+          <h4>Sức Mạnh, Mùa Giải &amp; Máy Tính</h4>
+          <ul class="site-footer-links">
+            <li><a href="../index.html#tab-gear">6. Trang Bị, Đá Thần Tạo &amp; 8 Ngọc T1–T15</a></li>
+            <li><a href="../index.html#tab-relics-pets">7. 30 Cổ Vật &amp; 12 Huyễn Thú (Auto-Loot)</a></li>
+            <li><a href="../index.html#tab-companions-life">8. 75 Đồng Hành, Collab &amp; 26 Món Ăn</a></li>
+            <li><a href="../index.html#tab-seasons">9. Lịch Ngày Server S0–S7, Bingo &amp; Reset</a></li>
+            <li><a href="../index.html#tab-calculators">11. Trung Tâm 6 Máy Tính Công Thức</a></li>
+          </ul>
+        </div>
+        <div class="site-footer-col">
+          <h4>Chuyên Đề Chi Tiết Nổi Bật</h4>
+          <ul class="site-footer-links">
+            <li><a href="index.html">📚 Bộ Lọc 14 Chuyên Đề Theo Chủ Đề →</a></li>
+            <li><a href="xam-lang-hon-mang-chaos-invasion.html">⚔️ Chuyên Đề Xâm Lăng Hỗn Mang (Chaos Invasion)</a></li>
+            <li><a href="chon-nghe-style-build-chuyen-lop.html">🧭 Chọn Lớp, Style vs Build &amp; Đổi Nghề Lv.100</a></li>
+            <li><a href="he-thong-mua-giai-lo-trinh-reset.html">📅 Hệ Thống Theo Mùa, Bingo 32 Vé &amp; 128 ★</a></li>
+            <li><a href="bo-build-meta-4-che-do.html">🛡️ Bộ Build Meta 4 Chế Độ PvP / PvE &amp; Xoay Chiêu</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <div class="site-copyright-bar">
+      <strong>Sword x Staff — Đại Bách Khoa Toàn Thư Tiếng Việt</strong> • Hệ thống Trang Chính &amp; Chuyên Đề Đồng Bộ UI • Bấm <code>Ctrl + K</code> để tra cứu tức thì.
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const sidebarNav = document.getElementById('sidebarNav');
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      if (mobileMenuBtn && sidebarNav) {
+        mobileMenuBtn.addEventListener('click', () => {
+          const open = sidebarNav.classList.toggle('mobile-open');
+          mobileMenuBtn.setAttribute('aria-expanded', String(open));
+        });
+      }
+
+      const themeToggleBtn = document.getElementById('themeToggleBtn');
+      const themeLabel = document.getElementById('themeLabel');
+      const initTheme = localStorage.getItem('sxs_wiki_theme') || 'light';
+      document.documentElement.setAttribute('data-theme', initTheme);
+      if (themeLabel) themeLabel.textContent = initTheme === 'dark' ? 'Sáng' : 'Tối';
+      if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+          const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('sxs_wiki_theme', next);
+          if (themeLabel) themeLabel.textContent = next === 'dark' ? 'Sáng' : 'Tối';
+        });
+      }
+
+      const SUB_SEARCH = [{"title":"1. Tân Thủ, Kinh Tế & Giftcode (Trang Chính)","cat":"Mục Chính","href":"../index.html#tab-overview","icon":"../assets/fandom/Site-logo.png","desc":"Quay về bảng tra cứu & công cụ tương tác trên Trang Chính Đại Bách Khoa."},{"title":"2. Cơ Chế Chiến Đấu & Công Thức (Trang Chính)","cat":"Mục Chính","href":"../index.html#tab-mechanics","icon":"../assets/fandom/Site-logo.png","desc":"Quay về bảng tra cứu & công cụ tương tác trên Trang Chính Đại Bách Khoa."},{"title":"3. 26 Nghề (Bậc 1–8) & Icon Game (Trang Chính)","cat":"Mục Chính","href":"../index.html#tab-classes","icon":"../assets/fandom/Site-logo.png","desc":"Quay về bảng tra cứu & công cụ tương tác trên Trang Chính Đại Bách Khoa."},{"title":"4. Kho 120 Kỹ Năng & Bí Thuật (Trang Chính)","cat":"Mục Chính","href":"../index.html#tab-skills","icon":"../assets/fandom/Site-logo.png","desc":"Quay về bảng tra cứu & công cụ tương tác trên Trang Chính Đại Bách Khoa."},{"title":"5. Bộ Build Meta 4 Chế Độ PvP/PvE (Trang Chính)","cat":"Mục Chính","href":"../index.html#tab-builds","icon":"../assets/fandom/Site-logo.png","desc":"Quay về bảng tra cứu & công cụ tương tác trên Trang Chính Đại Bách Khoa."},{"title":"6. Trang Bị, Đá Thần Tạo & 8 Ngọc (Trang Chính)","cat":"Mục Chính","href":"../index.html#tab-gear","icon":"../assets/fandom/Site-logo.png","desc":"Quay về bảng tra cứu & công cụ tương tác trên Trang Chính Đại Bách Khoa."},{"title":"7. 30 Cổ Vật & 12 Huyễn Thú (Trang Chính)","cat":"Mục Chính","href":"../index.html#tab-relics-pets","icon":"../assets/fandom/Site-logo.png","desc":"Quay về bảng tra cứu & công cụ tương tác trên Trang Chính Đại Bách Khoa."},{"title":"8. 75 Đồng Hành, 26 Món & Collab (Trang Chính)","cat":"Mục Chính","href":"../index.html#tab-companions-life","icon":"../assets/fandom/Site-logo.png","desc":"Quay về bảng tra cứu & công cụ tương tác trên Trang Chính Đại Bách Khoa."},{"title":"9. Lịch Mùa Giải, Kho Báu & Reset (Trang Chính)","cat":"Mục Chính","href":"../index.html#tab-seasons","icon":"../assets/fandom/Site-logo.png","desc":"Quay về bảng tra cứu & công cụ tương tác trên Trang Chính Đại Bách Khoa."},{"title":"10. 7 Vương Quốc, Phó Bản & PvP (Trang Chính)","cat":"Mục Chính","href":"../index.html#tab-world","icon":"../assets/fandom/Site-logo.png","desc":"Quay về bảng tra cứu & công cụ tương tác trên Trang Chính Đại Bách Khoa."},{"title":"11. Trung Tâm 6 Máy Tính (Trang Chính)","cat":"Mục Chính","href":"../index.html#tab-calculators","icon":"../assets/fandom/Site-logo.png","desc":"Quay về bảng tra cứu & công cụ tương tác trên Trang Chính Đại Bách Khoa."},{"title":"Cẩm Nang Tân Thủ 7 Ngày Đầu, Tiến Trình Căn Cứ, Journey Overture & 17 Giftcode","cat":"Nhập Môn & Kinh Tế","href":"tan-thu-kinh-te-giftcode.html","icon":"../assets/fandom/Journey_Overture.jpg","desc":"Tổng hợp toàn bộ chiến lược khởi đầu F2P, quản lý Xe Đẩy 36h, Giường EXP, Gian Hàng Lv.20, Thương Hội Commercium Lv.40, sự kiện ra mắt 14 ngày và FAQ chính thức."},{"title":"Công Thức Chiến Đấu 4 Giai Đoạn, 5 Loại Kỹ Năng & Toán Học Skill Ascend","cat":"Cơ Chế & Kỹ Năng","href":"co-che-chien-dau-skill-ascend.html","icon":"../assets/fandom/Skill_Full_Value_Example.webp","desc":"Giải mã toàn bộ công thức ATK/(ATK+DEF)×0.625, thứ tự kiểm định Block trước Crit, 4 nhóm sát thương độc lập, thẻ Skill Tags và bài toán Sao (★) vs Phẩm Chất (Rare → Immortal)."},{"title":"Cẩm Nang Chọn Nghề (Bậc 1 → Bậc 4 Sư Phụ Mei), Style vs Build & Đổi Lớp Không Mất Mát Lv.100","cat":"Nghề & Bộ Build","href":"chon-nghe-style-build-chuyen-lop.html","icon":"../assets/fandom/Classes.webp","desc":"Hành trình thức tỉnh 4 tầng định mệnh, sự khác biệt cốt lõi giữa Phong Cách (Style) – Lối Build – Cơ Chế (Mechanic), biên độ sát thương 4 lớp và cẩm nang toàn tập Chuyển Lớp Không Mất Mát ở Aqualis Lv.100."},{"title":"Hồ Sơ Chi Tiết Nhánh Kiếm Công: Chiến Binh (Warrior) → Đấu Sĩ (Duelist) → Cuồng Chiến (Berserker)","cat":"Nghề & Bộ Build","href":"ho-so-chien-binh-dau-si-cuong-chien.html","icon":"../assets/fandom/Warrior.jpg","desc":"Tranh chân dung Nam/Nữ chính thức cùng bảng dữ liệu đầy đủ 48 Chiến Kỹ & Bí Thuật (26 Warrior + 11 Duelist + 11 Berserker) kèm biểu tượng thật trong game."},{"title":"Hồ Sơ Chi Tiết Nhánh Khiên Thủ: Hiệp Sĩ (Knight) → Thánh Hiệp Sĩ (Paladin) → Đền Thánh","cat":"Nghề & Bộ Build","href":"ho-so-hiep-si-thanh-ky-si.html","icon":"../assets/art/class_templar.jpg","desc":"Pháo đài di động \"Vùng Cấm Bay\" bảo vệ tổ đội: tranh chân dung Nam/Nữ chính thức cùng bảng đầy đủ 22 Chiến Kỹ & Bí Thuật chuyên biệt của Hiệp Sĩ và Thánh Hiệp Sĩ."},{"title":"Hồ Sơ Chi Tiết Nhánh Trượng Công: Pháp Sư (Mage) → Thuật Sư (Sorcerer) → Đại Pháp Sư (Archmage)","cat":"Nghề & Bộ Build","href":"ho-so-phap-su-thuat-su-dai-phap-su.html","icon":"../assets/fandom/Mage.jpg","desc":"Bậc thầy bão nguyên tố diện rộng: chân dung Nam/Nữ chính thức cùng toàn bộ 48 Chiến Kỹ & Bí Thuật (26 Mage + 11 Sorcerer + 11 Archmage) kèm icon trong game."},{"title":"Hồ Sơ Chi Tiết Nhánh Hỗ Trợ & Ám Thuật: Hiền Giả (Sage) → Bí Thuật Sư (Arcanist) → Tiên Tri","cat":"Nghề & Bộ Build","href":"ho-so-hien-gia-bi-thuat-su.html","icon":"../assets/art/class_prophet.jpg","desc":"Đại chiến lược gia làm chủ Trị Liệu, Triệu Hồi và Ăn Mòn Bóng Tối: chân dung Nam/Nữ chính thức cùng bảng đầy đủ 22 kỹ năng Hiền Giả & Bí Thuật Sư."},{"title":"Cẩm Nang Bộ Build Chuẩn Meta Theo Nghề & Mùa (4 Chế Độ PvP Đông / PvP Solo / PvE Đông / PvE Solo)","cat":"Nghề & Bộ Build","href":"bo-build-meta-4-che-do.html","icon":"../assets/art/hero_banner.jpg","desc":"Nguyên tắc vàng xếp thứ tự ưu tiên 4 ô Chiến Kỹ AI ra đòn, cách né bẫy kỹ năng Knock Back và ma trận thay đổi kỹ năng/Pet cho từng chế độ thực chiến."},{"title":"Trang Bị 5 Ô, Bảng Chi Phí Đá Thần Tạo & Lộ Trình Ghép 8 Loại Ngọc (T1 → T15)","cat":"Trang Bị, Ngọc & Cổ Vật","href":"trang-bi-da-than-tao-ngoc.html","icon":"../assets/art/gear_showcase.jpg","desc":"Quy tắc nâng đều Cộng Hưởng +5/+10, bảng chi phí khóa dòng tẩy tại lò rèn Micaela (100–3,200 Đá), các dòng Độc Nhất (Unique) và mẹo mồi Năng Lượng Lò Cơ Khí ghép Ngọc T7–T15."},{"title":"Bảo Tàng 30 Cổ Vật Vĩnh Viễn, Chiến Thuật Trái Định Mệnh & Hồ Sơ 12 Huyễn Thú (Fantomons)","cat":"Huyễn Thú & Đồng Hành","href":"co-vat-trai-dinh-menh-huyen-thu.html","icon":"../assets/art/relic_showcase.jpg","desc":"Đầu tư đúng hơn 35% Lực Chiến vĩnh viễn không bao giờ reset: quy tắc dò Trái Định Mệnh, cơ chế Auto-Loot Lv.50, 3 vật liệu Tư Chất và chi tiết kỹ năng 12 Huyễn Thú."},{"title":"Tiểu Sử Nguyên Bản 13 Nhân Vật & Tộc Dryason, Collab KonoSuba / Hoa Sơn & 26 Món Ăn Vĩnh Viễn","cat":"Huyễn Thú & Đồng Hành","href":"dong-hanh-dryason-mon-an-collab.html","icon":"../assets/art/tavern_recipes.jpg","desc":"Trọn bộ hồ sơ cốt truyện chính thức của 13 nhân vật đại lục Kanstein kèm chân dung lớn, chủng tộc Dryason, quy tắc Thiện Cảm Lv.60 mở Skin và Quy tắc 30 Đĩa Món Đỏ/Cam/Tím."},{"title":"Hệ Thống Theo Mùa (< Lv.100 vs > Lv.100), Lộ Trình S0–S7, Toán Học Bingo 32 Vé & Reset 128 ★","cat":"Sự Kiện, Hỗn Mang & Mùa Giải","href":"he-thong-mua-giai-lo-trinh-reset.html","icon":"../assets/official/official_trailer_thumb.jpg","desc":"Phân tách rõ đầu tư Vĩnh Viễn (< Lv.100) và Theo Mùa (> Lv.100), ví dụ thực tế độ sụt giảm CP Trang Bị Mùa, bài toán 32 vé Lucky Bingo và 3 nhóm tài nguyên chốt mùa."},{"title":"Cẩm Nang Toàn Tập Xâm Lăng Hỗn Mang (Chaos Invasion): Đội Hình 4 Vòng, BXH Nghề & Primal Forge","cat":"Sự Kiện, Hỗn Mang & Mùa Giải","href":"xam-lang-hon-mang-chaos-invasion.html","icon":"../assets/fandom/Chaos_Invasion_1.webp","desc":"Chiến thuật chuẩn từ A–Z cho sự kiện đua sát thương quan trọng nhất: tách BXH công bằng theo từng Nghề, xoay tua 4 trận (1 DPS + 3 Support), giá trị tuyệt đối của Primal Forge Shard và quy tắc Thương Nhân Bí Ẩn."},{"title":"Truyền Thuyết & Bản Đồ Đại Lục Kanstein, Phó Bản Hàng Ngày, Split Mirage & Raid Thánh Thú","cat":"Sự Kiện, Hỗn Mang & Mùa Giải","href":"ban-do-kanstein-pho-ban-coop.html","icon":"../assets/fandom/World_of_Kanstein.png","desc":"Bí ẩn Nữ Thần sáng tạo thế giới trú ẩn Kanstein, tranh bản đồ chính thức của các đại lục, bảng Lực Chiến Phó Bản Hàng Ngày và chiến thuật vượt Wave 11–12+ Lò Ảo Ảnh."}];
+      const globalSearchInput = document.getElementById('globalSearchInput');
+      const searchDropdown = document.getElementById('searchDropdown');
+      if (globalSearchInput && searchDropdown) {
+        globalSearchInput.addEventListener('input', () => {
+          const q = globalSearchInput.value.trim().toLowerCase();
+          if (!q) { searchDropdown.classList.remove('open'); return; }
+          const matches = SUB_SEARCH.filter(m =>
+            m.title.toLowerCase().includes(q) || m.desc.toLowerCase().includes(q) || m.cat.toLowerCase().includes(q)
+          ).slice(0, 10);
+          if (!matches.length) {
+            searchDropdown.innerHTML = '<div style="padding:14px; color:var(--text-muted); font-size:0.86rem;">Không tìm thấy nội dung khớp từ khóa.</div>';
+          } else {
+            searchDropdown.innerHTML = matches.map(m => `
+              <a href="${m.href}" class="search-item" style="text-decoration:none; color:inherit;">
+                <img src="${m.icon}" alt="" class="search-item-icon" loading="lazy" />
+                <div class="search-item-body">
+                  <div class="search-item-top">
+                    <span>${m.title}</span>
+                    <span class="search-item-cat">${m.cat}</span>
+                  </div>
+                  <div class="search-item-desc">${m.desc}</div>
+                </div>
+              </a>
+            `).join('');
+          }
+          searchDropdown.classList.add('open');
+        });
+        document.addEventListener('click', e => {
+          if (!e.target.closest('.global-search-wrap')) searchDropdown.classList.remove('open');
+        });
+        document.addEventListener('keydown', e => {
+          if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+            e.preventDefault();
+            globalSearchInput.focus();
+          } else if (e.key === 'Escape') {
+            searchDropdown.classList.remove('open');
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

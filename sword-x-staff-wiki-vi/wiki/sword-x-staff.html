@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sword X Staff — Sword X Staff Wiki tiếng Việt</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* --- Khung Fandom gộp (thêm vào, không sửa CSS gốc) --- */
+.fandom-bar{display:flex;flex-wrap:wrap;gap:4px 20px;align-items:center;background:#20242e;border-bottom:2px solid #ffd75e;padding:8px 20px;font-size:.85rem;font-weight:700;letter-spacing:.06em}
+.fandom-bar a{color:#ffd75e;text-decoration:none}
+.fandom-bar a:hover{text-decoration:underline}
+.fandom-bar .fb-label{color:#8b98b8;font-weight:600;letter-spacing:.02em}
+.crumbs{font-size:.85rem;color:#8494b8;padding:10px 2px 0}
+.crumbs a{color:#4d8fd6}
+.site-footer{border-top:1px solid #ccc;margin-top:28px;padding:16px 20px 28px;font-size:.85rem;color:#666;line-height:1.7}
+.site-footer a{color:#1a5fb4}
+.site-footer--dark{border-top-color:#253055;color:#b8c4e0;background:#0f1322}
+.site-footer--dark a{color:#ffd75e}
+.wiki-link{display:block;padding:5px 10px;border-radius:6px;color:inherit;text-decoration:none;font-size:.86rem;line-height:1.4}
+.wiki-link:hover{background:rgba(128,140,180,.18);text-decoration:underline}
+.wiki-link.active{background:rgba(245,158,11,.18);font-weight:700;color:#f59e0b}
+.wiki-group{font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#8494b8;padding:12px 10px 3px}
+.wiki-topbar{position:sticky;top:0;z-index:60;background:#20242e;color:#fff;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid #3d4e88}
+.wiki-topbar a.brand-link{color:#ffd75e;font-weight:700;font-size:1.05em;text-decoration:none}
+.wiki-topbar .top-actions{display:flex;gap:16px;font-size:.88rem}
+.wiki-topbar .top-actions a{color:#cfe0ff;text-decoration:none}
+.wiki-topbar .top-actions a:hover{text-decoration:underline}
+.wiki-shell{display:flex;align-items:flex-start}
+.wiki-sidebar{width:272px;flex-shrink:0;position:sticky;top:52px;max-height:calc(100vh - 52px);overflow-y:auto;padding:14px 12px;border-right:1px solid #ddd;background:#f7f5ef}
+.wiki-main{flex:1;min-width:0}
+@media(max-width:900px){.wiki-shell{flex-direction:column}.wiki-sidebar{position:static;width:100%;max-height:none;border-right:none;border-bottom:1px solid #ddd}}
+</style></head>
+<body>
+<header class="wiki-topbar"><a class="brand-link" href="../index.html">⚔️ SWORD x STAFF — ĐẠI BÁCH KHOA VN</a><div class="top-actions"><a href="../index.html">🏠 Bách Khoa Chính</a><a href="index.html">📚 Lọc Bài Chi Tiết</a><button type="button" id="wikiThemeToggle" style="padding:4px 11px;border-radius:6px;border:1px solid var(--purple-border);background:var(--sheet-bg);color:var(--text-main);cursor:pointer;font-weight:700;">🌓 Đổi Nền</button></div></header>
+<nav class="fandom-bar" aria-label="Menu Fandom"><span class="fb-label">SWORD X STAFF WIKI</span><a href="index.html">EXPLORE</a><a href="maps.html">KINGDOMS</a><a href="classes-overview.html">COMBAT</a><a href="seasonal-systems.html">EVENTS</a><a href="a-beginner-chaos-invasion-guide.html">BEGINNER GUIDE</a></nav>
+<div class="wiki-shell">
+<nav class="wiki-sidebar" aria-label="Wiki Fandom">
+      <div class="wiki-group">Wiki Fandom — Bản dịch tiếng Việt</div>
+      <a class="wiki-link" href="index.html">📖 Trang chính Wiki</a>
+      <div class="wiki-group">Bắt đầu chơi</div>
+      <a class="wiki-link active" href="sword-x-staff.html">Sword X Staff</a>
+      <a class="wiki-link" href="sword-x-staff-launch-faq.html">FAQ Ra Mắt Sword X Staff</a>
+      <a class="wiki-link" href="a-beginner-chaos-invasion-guide.html">Hướng Dẫn Tân Thủ: Cuộc Xâm Lăng Hỗn Mang</a>
+      <a class="wiki-link" href="class-selection.html">Chọn Lớp Nhân Vật</a>
+      <a class="wiki-link" href="classes-overview.html">Tổng Quan Các Lớp Nhân Vật</a>
+      <a class="wiki-link" href="class-change.html">Chuyển Lớp</a>
+      <a class="wiki-link" href="everything-about-class-change.html">Tất Cả Về Chuyển Lớp</a>
+      <a class="wiki-link" href="progression.html">Tiến Trình Phát Triển</a>
+      <a class="wiki-link" href="seasonal-systems.html">Hệ Thống Theo Mùa</a>
+      <a class="wiki-link" href="skill-overview.html">Tổng Quan Kỹ Năng</a>
+      <a class="wiki-link" href="skill-ascend.html">Thăng Cấp Kỹ Năng</a>
+      <div class="wiki-group">Lớp nhân vật</div>
+      <a class="wiki-link" href="warrior.html">Chiến Binh (Warrior)</a>
+      <a class="wiki-link" href="mage.html">Pháp Sư (Mage)</a>
+      <a class="wiki-link" href="knight.html">Hiệp Sĩ (Knight)</a>
+      <a class="wiki-link" href="duelist.html">Đấu Sĩ (Duelist)</a>
+      <a class="wiki-link" href="sorcerer.html">Thuật Sư (Sorcerer)</a>
+      <a class="wiki-link" href="sage.html">Hiền Giả (Sage)</a>
+      <a class="wiki-link" href="berserker.html">Cuồng Chiến (Berserker)</a>
+      <a class="wiki-link" href="paladin.html">Thánh Hiệp Sĩ (Paladin)</a>
+      <a class="wiki-link" href="archmage.html">Đại Pháp Sư (Archmage)</a>
+      <a class="wiki-link" href="arcanist.html">Bí Thuật Sư (Arcanist)</a>
+      <div class="wiki-group">Kỹ năng theo lớp</div>
+      <a class="wiki-link" href="warrior-skills.html">Kỹ Năng Chiến Binh</a>
+      <a class="wiki-link" href="mage-skills.html">Kỹ Năng Pháp Sư</a>
+      <a class="wiki-link" href="knight-skills.html">Kỹ Năng Hiệp Sĩ</a>
+      <a class="wiki-link" href="duelist-skills.html">Kỹ Năng Đấu Sĩ</a>
+      <a class="wiki-link" href="sorcerer-skills.html">Kỹ Năng Thuật Sư</a>
+      <a class="wiki-link" href="sage-skills.html">Kỹ Năng Hiền Giả</a>
+      <div class="wiki-group">Bạn Đồng Hành & Fantomon</div>
+      <a class="wiki-link" href="companions.html">Bạn Đồng Hành</a>
+      <a class="wiki-link" href="fantamons.html">Fantomon</a>
+      <a class="wiki-link" href="fantomon.html">Fantomon</a>
+      <a class="wiki-link" href="akane.html">Akane</a>
+      <a class="wiki-link" href="molly.html">Molly</a>
+      <a class="wiki-link" href="reina.html">Reina</a>
+      <a class="wiki-link" href="dryason.html">Dryason</a>
+      <a class="wiki-link" href="hermes.html">Hermes</a>
+      <a class="wiki-link" href="narss.html">Narss (Thủ Lĩnh)</a>
+      <a class="wiki-link" href="rolla.html">Rolla</a>
+      <div class="wiki-group">Thế giới & hoạt động</div>
+      <a class="wiki-link" href="maps.html">Bản Đồ</a>
+      <a class="wiki-link" href="material-realm.html">Cõi Vật Chất</a>
+      <a class="wiki-link" href="arena.html">Đấu Trường</a>
+      <a class="wiki-link" href="guild.html">Bang Hội</a>
+      <a class="wiki-link" href="daily-dungeons.html">Phụ Bản Hàng Ngày</a>
+      <a class="wiki-link" href="destiny-fruits.html">Trái Định Mệnh</a>
+      <a class="wiki-link" href="goddess-statues.html">Tượng Nữ Thần</a>
+      <a class="wiki-link" href="commercium.html">Thương Hội Commercium</a>
+      <a class="wiki-link" href="vendor-booth.html">Gian Hàng</a>
+      <a class="wiki-link" href="journey-overture.html">Khúc Dạo Đầu Hành Trình</a>
+      <a class="wiki-link" href="elemental-mystery.html">Bí Ẩn Nguyên Tố</a>
+      <div class="wiki-group">Khác</div>
+      <a class="wiki-link" href="ice-spike.html">Ice Spike</a>
+      <a class="wiki-link" href="water-shot.html">Water Shot</a>
+      <a class="wiki-link" href="discordintegrator.html">DiscordIntegrator</a>
+      <a class="wiki-link" href="boltray-games.html">BOLTRAY GAMES</a>
+      <a class="wiki-link" href="swordxstaff-wiki.html">SwordxStaff Wiki</a>
+    </nav>
+<main class="wiki-main">
+<div class="crumbs"><a href="../index.html">Trang chủ</a> / <a href="index.html">Wiki</a> / Sword X Staff</div>
+
+<h1>Sword X Staff</h1>
+<div class="mw-content-ltr mw-parser-output" lang="vi" dir="ltr"><figure class="mw-halign-right" typeof="mw:File"><img alt="STORE1" src="../assets/fandom/STORE1.jpg" decoding="async" loading="lazy" width="180" height="320" class="mw-file-element" /><figcaption></figcaption></figure>
+<p>Sword x Staff là một tựa RPG độc nhất vô nhị — một “RPG Con Đường Thứ Ba” (Third Way RPG). Chiến thuật, khám phá thế giới rộng lớn, chơi nhàn rỗi (idle) — sao phải chọn một khi bạn có thể có tất cả? Chơi hardcore cũng được, hay chỉ chill cũng được — dù thế nào bạn cũng sẽ tìm thấy niềm vui của riêng mình. Cái cảm giác thực sự khác biệt. Không áp lực, không có một cách chơi duy nhất — cứ nhảy vào, khám phá, và để cuộc phiêu lưu cuốn theo cách của bạn.
+</p><p>Tò mò không biết lối chơi thực sự ra sao?
+</p><p>Chào mừng bạn đến với thế giới độc đáo của Kanstein, và trải nghiệm cuộc phiêu lưu Con Đường Thứ Ba có một không hai. Tại đây, bạn là Nhà Thám Hiểm Được Chọn, được đưa tới thế giới isekai này! Hãy hợp sức cùng Cặp Song Sinh Kiếm và Trượng (Staff and Sword Twins) và lao vào hành trình cứu lấy thế giới. Xuyên qua màn sương dày đặc, đào lên những kho báu đã bị lãng quên, và khám phá một thế giới tương tác rộng lớn theo nhịp độ của riêng bạn. Kết hợp hơn 200 kỹ năng để tạo ra phong cách chiến đấu độc nhất của riêng bạn. Tuyệt vời nhất là bạn sẽ gặp những đồng minh tuyệt vời cùng chiến đấu bên cạnh mình chống lại các Hieromon huyền thoại! Và tất nhiên — hãy nhớ rằng, tất cả những điều này đều có thể tận hưởng hoàn toàn không áp lực, vì lối chơi nhàn rỗi giúp việc thu thập tài nguyên trở nên nhẹ nhàng!
+</p><p><b>Game nhàn rỗi (idle), nhưng với một thế giới tương tác rộng lớn</b>
+</p><p>Hầu hết game nhàn rỗi chỉ bắt bạn chờ đợi. <i><b>Sword x Staff</b></i> thì cho bạn thực sự đi đến một nơi nào đó.
+</p><p>Hãy bước vào một bản đồ thế giới rộng lớn, nơi mỗi vùng đất đều có nét riêng và bí mật để khám phá. Lang thang qua vùng hoang dã tươi tốt của Verdantglade, đối mặt với cuộc va chạm giữa thép và bản năng tại Cinder Ridge, trôi dạt qua vùng nước phủ sương mù của Aqualis, và khám phá tàn tích đồng cổ xưa ẩn giấu trong Loong Haven.
+</p><p>Mỗi vùng đất mang đến những cảnh đẹp mới, bạn đồng hành mới, kho báu mới, và những khoảnh khắc “nhìn thêm một chút nữa thôi”. Và ngay cả khi bạn ngoại tuyến, cuộc phiêu lưu của bạn cũng không dừng lại. Tài nguyên vẫn tiếp tục tích lũy trong lúc bạn nghỉ ngơi, và Thương Nhân Du Hành (Traveling Merchant) sẽ xuất hiện với những món hàng hiếm trong lúc bạn vắng mặt. Đăng nhập lại, nhận thưởng, và tiếp tục lên đường.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="vi" dir="ltr"><h2 id="mw-toc-heading">Mục lục</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Deep_strategy,_but_easy_to_jump_in"><span class="tocnumber">1</span> <span class="toctext">Chiến thuật sâu, nhưng dễ làm quen</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Progress_Without_the_Grind"><span class="tocnumber">2</span> <span class="toctext">Tiến bộ mà không cần cày cuốc</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Auto-Battles_Are_Easy,_But_Never_Boring"><span class="tocnumber">3</span> <span class="toctext">Tự động chiến đấu dễ dàng, nhưng không bao giờ nhàm chán</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Unique_avatars,_without_looking_the_same"><span class="tocnumber">4</span> <span class="toctext">Avatar độc đáo, không ai giống ai</span></a></li>
+</ul>
+</div>
+
+<h2><span id="Deep_strategy.2C_but_easy_to_jump_in"></span><span class="mw-headline" id="Deep_strategy,_but_easy_to_jump_in">Chiến thuật sâu, nhưng dễ làm quen</span><span class="mw-editsection-bracket">]</span></span></h2>
+<figure class="thumb  show-info-icon" typeof="mw:File/Thumb" style="width: 180px"> 	<img alt="Store5" src="../assets/fandom/Store5.jpg" decoding="async" loading="lazy" width="180" height="320" class="thumbimage" /> 	 	<figcaption class="thumbcaption"> 			<svg><use xlink:href="#wds-icons-info-small"></use></svg> 	</figcaption> </figure>
+<p>Chiến thuật thú vị là nhờ sự tự do, chứ không phải vì cần một bảng tính.
+</p><p>Mọi thứ bắt đầu với hệ thống song lớp kinh điển Chiến Binh (Warrior) &amp; Pháp Sư (Mage), phân nhánh thành hơn 200 tổ hợp kỹ năng và lối chơi. Kết hợp các kỹ năng, thay đổi thứ tự tung chiêu, đổi lối build nguyên tố, và tinh chỉnh cách chơi theo ý thích của bạn.
+</p><p>Không có meta cố định. Không có một đáp án “đúng” duy nhất. Chỉ có sự đa dạng thực sự, tính linh hoạt thực sự, và rất nhiều không gian để thử nghiệm.
+</p><p>Chơi cho vui cũng được, hoặc đào sâu nghiên cứu lý thuyết (theorycraft) cũng được. Đi sâu đến đâu hoàn toàn tùy thuộc vào bạn.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Progress_Without_the_Grind">Tiến bộ mà không cần cày cuốc</span><span class="mw-editsection-bracket">]</span></span></h2>
+<figure class="thumb  show-info-icon" typeof="mw:File/Thumb" style="width: 180px"> 	<img alt="Store4" src="../assets/fandom/Store4.jpg" decoding="async" loading="lazy" width="180" height="320" class="thumbimage" /> 	 	<figcaption class="thumbcaption"> 			<svg><use xlink:href="#wds-icons-info-small"></use></svg> 	</figcaption> </figure>
+<p>Mạnh lên mà không cần farm vô tận. Ngay cả khi bạn ngoại tuyến, tài nguyên vẫn tích lũy, nhân vật vẫn mạnh lên, và tiến trình vẫn tiếp tục.
+</p><p>Cứ nằm dài, nghỉ ngơi, rồi tỉnh dậy mạnh mẽ hơn! Ngắm mây trôi qua Quần Đảo Bay (Floating Islands), ngắm sao từ căn nhà gỗ ấm cúng của bạn, săn tìm kho báu ẩn giấu, hoặc lên cấp trong lúc chẳng làm gì anh hùng cả.
+</p><p>Tiến bộ dễ dàng, ít căng thẳng, phần thưởng đều đặn — đó chính là thứ chúng tôi gọi là tiến trình thư giãn mà hiệu quả.
+</p><p><br />
+</p>
+<h2><span id="Auto-Battles_Are_Easy.2C_But_Never_Boring"></span><span class="mw-headline" id="Auto-Battles_Are_Easy,_But_Never_Boring">Tự động chiến đấu dễ dàng, nhưng không bao giờ nhàm chán</span><span class="mw-editsection-bracket">]</span></span></h2>
+<figure class="thumb  show-info-icon" typeof="mw:File/Thumb" style="width: 180px"> 	<img alt="Store3" src="../assets/fandom/Store3.jpg" decoding="async" loading="lazy" width="180" height="320" class="thumbimage lazyload" /> 	<noscript><img alt="Store3" src="../assets/fandom/Store3.jpg" decoding="async" loading="lazy" width="180" height="320" class="thumbimage" /></noscript> 	<figcaption class="thumbcaption"> 			<svg><use xlink:href="#wds-icons-info-small"></use></svg> 	</figcaption> </figure>
+<p>Chán những game nhàn rỗi mà anh hùng chỉ đứng yên một chỗ? Tại đây, các nhân vật do AI điều khiển sẽ thích ứng với chiến trường — di chuyển vị trí, đoán trước kẻ địch, truy đuổi mục tiêu, và tung ra kỹ năng tối thượng. Tự động chiến đấu không hề nhàm chán — chúng mang tính chiến thuật, bắt mắt, và đầy những combo hoành tráng.
+</p><p><br />
+</p><p><br />
+</p>
+<h2><span id="Unique_avatars.2C_without_looking_the_same"></span><span class="mw-headline" id="Unique_avatars,_without_looking_the_same">Avatar độc đáo, không ai giống ai</span><span class="mw-editsection-bracket">]</span></span></h2>
+<figure class="thumb  show-info-icon" typeof="mw:File/Thumb" style="width: 180px"> 	<img alt="STORE2" src="../assets/fandom/STORE2.jpg" decoding="async" loading="lazy" width="180" height="320" class="thumbimage lazyload" /> 	<noscript><img alt="STORE2" src="../assets/fandom/STORE2.jpg" decoding="async" loading="lazy" width="180" height="320" class="thumbimage" /></noscript> 	<figcaption class="thumbcaption"> 			<svg><use xlink:href="#wds-icons-info-small"></use></svg> 	</figcaption> </figure>
+<p>Avatar của bạn là của riêng bạn, không cần bàn cãi. Hãy táo bạo với những kiểu tóc hoang dại, những đặc điểm khác lạ, vẻ ngoài nổi bật, hay những lựa chọn hơi hỗn loạn theo cách tuyệt vời nhất. Tạo ra thứ gì đó ngầu, kỳ lạ, phong cách, hài hước — hoặc cả bốn cùng lúc! Không có chuyện “cùng một khuôn mặt, khác bộ đồ”. Hãy làm cho nó độc đáo 100%. Bước vào thị trấn và nổi bật giữa đám đông. Ở Kanstein, việc không thể quên được cũng là một phần của niềm vui.
+</p>
+</div>
+</main>
+</div>
+<footer class="site-footer"><p>Nguồn: <a href="https://swordxstaff.fandom.com/wiki/Sword_X_Staff">bài gốc trên SwordxStaff Wiki (Fandom)</a>. Nội dung được dịch sang tiếng Việt; nội dung gốc theo giấy phép CC-BY-SA.</p><p><strong>Sword X Staff — Đại Bách Khoa VN &amp; Wiki Fandom (bản dịch tiếng Việt).</strong> Nội dung Bách khoa, dữ liệu, công thức và công cụ trên trang chủ là nội dung gốc của người biên soạn. Các bài trong mục Wiki được dịch từ <a href="https://swordxstaff.fandom.com">SwordxStaff Wiki trên Fandom</a>; nội dung gốc theo giấy phép <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a> — xem link bài gốc ở cuối mỗi bài wiki.</p><p><a href="../index.html">Trang chủ</a> · <a href="index.html">Trang chính Wiki</a> · <a href="https://swordxstaff.fandom.com">SwordxStaff Wiki (Fandom, tiếng Anh)</a></p></footer>
+<script>(function(){const t=localStorage.getItem('sxs_wiki_theme')||'light';document.documentElement.setAttribute('data-theme',t);const b=document.getElementById('wikiThemeToggle');if(b)b.addEventListener('click',()=>{const n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);localStorage.setItem('sxs_wiki_theme',n);});})();</script>
+</body></html>

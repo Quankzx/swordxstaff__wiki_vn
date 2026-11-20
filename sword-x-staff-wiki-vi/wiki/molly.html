@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Molly — Sword X Staff Wiki tiếng Việt</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* --- Khung Fandom gộp (thêm vào, không sửa CSS gốc) --- */
+.fandom-bar{display:flex;flex-wrap:wrap;gap:4px 20px;align-items:center;background:#20242e;border-bottom:2px solid #ffd75e;padding:8px 20px;font-size:.85rem;font-weight:700;letter-spacing:.06em}
+.fandom-bar a{color:#ffd75e;text-decoration:none}
+.fandom-bar a:hover{text-decoration:underline}
+.fandom-bar .fb-label{color:#8b98b8;font-weight:600;letter-spacing:.02em}
+.crumbs{font-size:.85rem;color:#8494b8;padding:10px 2px 0}
+.crumbs a{color:#4d8fd6}
+.site-footer{border-top:1px solid #ccc;margin-top:28px;padding:16px 20px 28px;font-size:.85rem;color:#666;line-height:1.7}
+.site-footer a{color:#1a5fb4}
+.site-footer--dark{border-top-color:#253055;color:#b8c4e0;background:#0f1322}
+.site-footer--dark a{color:#ffd75e}
+.wiki-link{display:block;padding:5px 10px;border-radius:6px;color:inherit;text-decoration:none;font-size:.86rem;line-height:1.4}
+.wiki-link:hover{background:rgba(128,140,180,.18);text-decoration:underline}
+.wiki-link.active{background:rgba(245,158,11,.18);font-weight:700;color:#f59e0b}
+.wiki-group{font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#8494b8;padding:12px 10px 3px}
+.wiki-topbar{position:sticky;top:0;z-index:60;background:#20242e;color:#fff;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid #3d4e88}
+.wiki-topbar a.brand-link{color:#ffd75e;font-weight:700;font-size:1.05em;text-decoration:none}
+.wiki-topbar .top-actions{display:flex;gap:16px;font-size:.88rem}
+.wiki-topbar .top-actions a{color:#cfe0ff;text-decoration:none}
+.wiki-topbar .top-actions a:hover{text-decoration:underline}
+.wiki-shell{display:flex;align-items:flex-start}
+.wiki-sidebar{width:272px;flex-shrink:0;position:sticky;top:52px;max-height:calc(100vh - 52px);overflow-y:auto;padding:14px 12px;border-right:1px solid #ddd;background:#f7f5ef}
+.wiki-main{flex:1;min-width:0}
+@media(max-width:900px){.wiki-shell{flex-direction:column}.wiki-sidebar{position:static;width:100%;max-height:none;border-right:none;border-bottom:1px solid #ddd}}
+</style></head>
+<body>
+<header class="wiki-topbar"><a class="brand-link" href="../index.html">⚔️ SWORD x STAFF — ĐẠI BÁCH KHOA VN</a><div class="top-actions"><a href="../index.html">🏠 Bách Khoa Chính</a><a href="index.html">📚 Lọc Bài Chi Tiết</a><button type="button" id="wikiThemeToggle" style="padding:4px 11px;border-radius:6px;border:1px solid var(--purple-border);background:var(--sheet-bg);color:var(--text-main);cursor:pointer;font-weight:700;">🌓 Đổi Nền</button></div></header>
+<nav class="fandom-bar" aria-label="Menu Fandom"><span class="fb-label">SWORD X STAFF WIKI</span><a href="index.html">EXPLORE</a><a href="maps.html">KINGDOMS</a><a href="classes-overview.html">COMBAT</a><a href="seasonal-systems.html">EVENTS</a><a href="a-beginner-chaos-invasion-guide.html">BEGINNER GUIDE</a></nav>
+<div class="wiki-shell">
+<nav class="wiki-sidebar" aria-label="Wiki Fandom">
+      <div class="wiki-group">Wiki Fandom — Bản dịch tiếng Việt</div>
+      <a class="wiki-link" href="index.html">📖 Trang chính Wiki</a>
+      <div class="wiki-group">Bắt đầu chơi</div>
+      <a class="wiki-link" href="sword-x-staff.html">Sword X Staff</a>
+      <a class="wiki-link" href="sword-x-staff-launch-faq.html">FAQ Ra Mắt Sword X Staff</a>
+      <a class="wiki-link" href="a-beginner-chaos-invasion-guide.html">Hướng Dẫn Tân Thủ: Cuộc Xâm Lăng Hỗn Mang</a>
+      <a class="wiki-link" href="class-selection.html">Chọn Lớp Nhân Vật</a>
+      <a class="wiki-link" href="classes-overview.html">Tổng Quan Các Lớp Nhân Vật</a>
+      <a class="wiki-link" href="class-change.html">Chuyển Lớp</a>
+      <a class="wiki-link" href="everything-about-class-change.html">Tất Cả Về Chuyển Lớp</a>
+      <a class="wiki-link" href="progression.html">Tiến Trình Phát Triển</a>
+      <a class="wiki-link" href="seasonal-systems.html">Hệ Thống Theo Mùa</a>
+      <a class="wiki-link" href="skill-overview.html">Tổng Quan Kỹ Năng</a>
+      <a class="wiki-link" href="skill-ascend.html">Thăng Cấp Kỹ Năng</a>
+      <div class="wiki-group">Lớp nhân vật</div>
+      <a class="wiki-link" href="warrior.html">Chiến Binh (Warrior)</a>
+      <a class="wiki-link" href="mage.html">Pháp Sư (Mage)</a>
+      <a class="wiki-link" href="knight.html">Hiệp Sĩ (Knight)</a>
+      <a class="wiki-link" href="duelist.html">Đấu Sĩ (Duelist)</a>
+      <a class="wiki-link" href="sorcerer.html">Thuật Sư (Sorcerer)</a>
+      <a class="wiki-link" href="sage.html">Hiền Giả (Sage)</a>
+      <a class="wiki-link" href="berserker.html">Cuồng Chiến (Berserker)</a>
+      <a class="wiki-link" href="paladin.html">Thánh Hiệp Sĩ (Paladin)</a>
+      <a class="wiki-link" href="archmage.html">Đại Pháp Sư (Archmage)</a>
+      <a class="wiki-link" href="arcanist.html">Bí Thuật Sư (Arcanist)</a>
+      <div class="wiki-group">Kỹ năng theo lớp</div>
+      <a class="wiki-link" href="warrior-skills.html">Kỹ Năng Chiến Binh</a>
+      <a class="wiki-link" href="mage-skills.html">Kỹ Năng Pháp Sư</a>
+      <a class="wiki-link" href="knight-skills.html">Kỹ Năng Hiệp Sĩ</a>
+      <a class="wiki-link" href="duelist-skills.html">Kỹ Năng Đấu Sĩ</a>
+      <a class="wiki-link" href="sorcerer-skills.html">Kỹ Năng Thuật Sư</a>
+      <a class="wiki-link" href="sage-skills.html">Kỹ Năng Hiền Giả</a>
+      <div class="wiki-group">Bạn Đồng Hành & Fantomon</div>
+      <a class="wiki-link" href="companions.html">Bạn Đồng Hành</a>
+      <a class="wiki-link" href="fantamons.html">Fantomon</a>
+      <a class="wiki-link" href="fantomon.html">Fantomon</a>
+      <a class="wiki-link" href="akane.html">Akane</a>
+      <a class="wiki-link active" href="molly.html">Molly</a>
+      <a class="wiki-link" href="reina.html">Reina</a>
+      <a class="wiki-link" href="dryason.html">Dryason</a>
+      <a class="wiki-link" href="hermes.html">Hermes</a>
+      <a class="wiki-link" href="narss.html">Narss (Thủ Lĩnh)</a>
+      <a class="wiki-link" href="rolla.html">Rolla</a>
+      <div class="wiki-group">Thế giới & hoạt động</div>
+      <a class="wiki-link" href="maps.html">Bản Đồ</a>
+      <a class="wiki-link" href="material-realm.html">Cõi Vật Chất</a>
+      <a class="wiki-link" href="arena.html">Đấu Trường</a>
+      <a class="wiki-link" href="guild.html">Bang Hội</a>
+      <a class="wiki-link" href="daily-dungeons.html">Phụ Bản Hàng Ngày</a>
+      <a class="wiki-link" href="destiny-fruits.html">Trái Định Mệnh</a>
+      <a class="wiki-link" href="goddess-statues.html">Tượng Nữ Thần</a>
+      <a class="wiki-link" href="commercium.html">Thương Hội Commercium</a>
+      <a class="wiki-link" href="vendor-booth.html">Gian Hàng</a>
+      <a class="wiki-link" href="journey-overture.html">Khúc Dạo Đầu Hành Trình</a>
+      <a class="wiki-link" href="elemental-mystery.html">Bí Ẩn Nguyên Tố</a>
+      <div class="wiki-group">Khác</div>
+      <a class="wiki-link" href="ice-spike.html">Ice Spike</a>
+      <a class="wiki-link" href="water-shot.html">Water Shot</a>
+      <a class="wiki-link" href="discordintegrator.html">DiscordIntegrator</a>
+      <a class="wiki-link" href="boltray-games.html">BOLTRAY GAMES</a>
+      <a class="wiki-link" href="swordxstaff-wiki.html">SwordxStaff Wiki</a>
+    </nav>
+<main class="wiki-main">
+<div class="crumbs"><a href="../index.html">Trang chủ</a> / <a href="index.html">Wiki</a> / Molly</div>
+
+<h1>Molly</h1>
+<div class="mw-content-ltr mw-parser-output" lang="vi" dir="ltr"><aside role="region" class="portable-infobox pi-background pi-border-color pi-theme-wikia pi-layout-default"><h2 class="pi-item pi-item-spacing pi-title pi-secondary-background">Molly</h2>
+<figure class="pi-item pi-image">
+	
+		<img src="../assets/fandom/Molly.png" class="pi-image-thumbnail" alt="Molly" width="270" height="270" />
+	
+	
+</figure>
+<div class="pi-item pi-data pi-item-spacing pi-border-color">
+		<h3 class="pi-data-label pi-secondary-font">Tuổi</h3>
+	<div class="pi-data-value pi-font">"trẻ trung và ngây thơ"</div>
+</div>
+<div class="pi-item pi-data pi-item-spacing pi-border-color">
+		<h3 class="pi-data-label pi-secondary-font">Chiều cao</h3>
+	<div class="pi-data-value pi-font">140 cm</div>
+</div>
+<div class="pi-item pi-data pi-item-spacing pi-border-color">
+		<h3 class="pi-data-label pi-secondary-font">Chủng tộc</h3>
+	<div class="pi-data-value pi-font"><a href="dryason.html">dryason</a></div>
+</div>
+<div class="pi-item pi-data pi-item-spacing pi-border-color">
+		<h3 class="pi-data-label pi-secondary-font">Sinh nhật</h3>
+	<div class="pi-data-value pi-font">22 tháng 11</div>
+</div>
+<div class="pi-item pi-data pi-item-spacing pi-border-color">
+		<h3 class="pi-data-label pi-secondary-font">Cốt truyện</h3>
+	<div class="pi-data-value pi-font">Dù có một khởi đầu khó khăn, Molly lại được ban phước với vận may. Cô là một đứa trẻ vui vẻ không ngừng, giải quyết mọi rắc rối bằng vận may kỳ diệu. Là một thương nhân du hành, Molly xuất hiện ở khắp mọi nơi. Nếu có một con đường, cô sẽ tìm ra nó, chiếc ba lô của cô lúc nào cũng đầy những món hàng kỳ lạ mà bạn có thể chưa từng thấy trước đây.</div>
+</div>
+<figure class="pi-item pi-image">
+	
+		<img src="../assets/fandom/Kanstein_chronicals_molly.png" class="pi-image-thumbnail" alt="Kanstein chronicals molly" width="270" height="480" />
+	
+	
+</figure>
+</aside>
+
+
+<blockquote><p>Một đứa trẻ được vận mệnh ưu ái. Một thương nhân du hành xuất hiện ở bất cứ nơi nào bạn đến. Như người ta vẫn nói, không có nơi nào Molly không thể đến — chỉ có những món hàng mà các nhà thám hiểm chưa từng thấy mà thôi.</p></blockquote><p>Molly là một <a href="companions.html">Bạn Đồng Hành (Companion)</a> trong game. Cô là một cô bé thương nhân du hành được mô tả là có vận may kỳ diệu. Trang của cô nói cô là một <a href="dryason.html">Dryason</a>, dù cô không có đôi tai giống thỏ đặc trưng, điều này khiến người ta không rõ liệu tất cả các dryason đều có đôi tai đó hay không.</p>
+</div>
+</main>
+</div>
+<footer class="site-footer"><p>Nguồn: <a href="https://swordxstaff.fandom.com/wiki/Molly">bài gốc trên SwordxStaff Wiki (Fandom)</a>. Nội dung được dịch sang tiếng Việt; nội dung gốc theo giấy phép CC-BY-SA.</p><p><strong>Sword X Staff — Đại Bách Khoa VN &amp; Wiki Fandom (bản dịch tiếng Việt).</strong> Nội dung Bách khoa, dữ liệu, công thức và công cụ trên trang chủ là nội dung gốc của người biên soạn. Các bài trong mục Wiki được dịch từ <a href="https://swordxstaff.fandom.com">SwordxStaff Wiki trên Fandom</a>; nội dung gốc theo giấy phép <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a> — xem link bài gốc ở cuối mỗi bài wiki.</p><p><a href="../index.html">Trang chủ</a> · <a href="index.html">Trang chính Wiki</a> · <a href="https://swordxstaff.fandom.com">SwordxStaff Wiki (Fandom, tiếng Anh)</a></p></footer>
+<script>(function(){const t=localStorage.getItem('sxs_wiki_theme')||'light';document.documentElement.setAttribute('data-theme',t);const b=document.getElementById('wikiThemeToggle');if(b)b.addEventListener('click',()=>{const n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);localStorage.setItem('sxs_wiki_theme',n);});})();</script>
+</body></html>

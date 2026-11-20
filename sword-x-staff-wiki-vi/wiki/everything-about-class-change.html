@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tất Cả Về Chuyển Lớp — Sword X Staff Wiki tiếng Việt</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* --- Khung Fandom gộp (thêm vào, không sửa CSS gốc) --- */
+.fandom-bar{display:flex;flex-wrap:wrap;gap:4px 20px;align-items:center;background:#20242e;border-bottom:2px solid #ffd75e;padding:8px 20px;font-size:.85rem;font-weight:700;letter-spacing:.06em}
+.fandom-bar a{color:#ffd75e;text-decoration:none}
+.fandom-bar a:hover{text-decoration:underline}
+.fandom-bar .fb-label{color:#8b98b8;font-weight:600;letter-spacing:.02em}
+.crumbs{font-size:.85rem;color:#8494b8;padding:10px 2px 0}
+.crumbs a{color:#4d8fd6}
+.site-footer{border-top:1px solid #ccc;margin-top:28px;padding:16px 20px 28px;font-size:.85rem;color:#666;line-height:1.7}
+.site-footer a{color:#1a5fb4}
+.site-footer--dark{border-top-color:#253055;color:#b8c4e0;background:#0f1322}
+.site-footer--dark a{color:#ffd75e}
+.wiki-link{display:block;padding:5px 10px;border-radius:6px;color:inherit;text-decoration:none;font-size:.86rem;line-height:1.4}
+.wiki-link:hover{background:rgba(128,140,180,.18);text-decoration:underline}
+.wiki-link.active{background:rgba(245,158,11,.18);font-weight:700;color:#f59e0b}
+.wiki-group{font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#8494b8;padding:12px 10px 3px}
+.wiki-topbar{position:sticky;top:0;z-index:60;background:#20242e;color:#fff;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid #3d4e88}
+.wiki-topbar a.brand-link{color:#ffd75e;font-weight:700;font-size:1.05em;text-decoration:none}
+.wiki-topbar .top-actions{display:flex;gap:16px;font-size:.88rem}
+.wiki-topbar .top-actions a{color:#cfe0ff;text-decoration:none}
+.wiki-topbar .top-actions a:hover{text-decoration:underline}
+.wiki-shell{display:flex;align-items:flex-start}
+.wiki-sidebar{width:272px;flex-shrink:0;position:sticky;top:52px;max-height:calc(100vh - 52px);overflow-y:auto;padding:14px 12px;border-right:1px solid #ddd;background:#f7f5ef}
+.wiki-main{flex:1;min-width:0}
+@media(max-width:900px){.wiki-shell{flex-direction:column}.wiki-sidebar{position:static;width:100%;max-height:none;border-right:none;border-bottom:1px solid #ddd}}
+</style></head>
+<body>
+<header class="wiki-topbar"><a class="brand-link" href="../index.html">⚔️ SWORD x STAFF — ĐẠI BÁCH KHOA VN</a><div class="top-actions"><a href="../index.html">🏠 Bách Khoa Chính</a><a href="index.html">📚 Lọc Bài Chi Tiết</a><button type="button" id="wikiThemeToggle" style="padding:4px 11px;border-radius:6px;border:1px solid var(--purple-border);background:var(--sheet-bg);color:var(--text-main);cursor:pointer;font-weight:700;">🌓 Đổi Nền</button></div></header>
+<nav class="fandom-bar" aria-label="Menu Fandom"><span class="fb-label">SWORD X STAFF WIKI</span><a href="index.html">EXPLORE</a><a href="maps.html">KINGDOMS</a><a href="classes-overview.html">COMBAT</a><a href="seasonal-systems.html">EVENTS</a><a href="a-beginner-chaos-invasion-guide.html">BEGINNER GUIDE</a></nav>
+<div class="wiki-shell">
+<nav class="wiki-sidebar" aria-label="Wiki Fandom">
+      <div class="wiki-group">Wiki Fandom — Bản dịch tiếng Việt</div>
+      <a class="wiki-link" href="index.html">📖 Trang chính Wiki</a>
+      <div class="wiki-group">Bắt đầu chơi</div>
+      <a class="wiki-link" href="sword-x-staff.html">Sword X Staff</a>
+      <a class="wiki-link" href="sword-x-staff-launch-faq.html">FAQ Ra Mắt Sword X Staff</a>
+      <a class="wiki-link" href="a-beginner-chaos-invasion-guide.html">Hướng Dẫn Tân Thủ: Cuộc Xâm Lăng Hỗn Mang</a>
+      <a class="wiki-link" href="class-selection.html">Chọn Lớp Nhân Vật</a>
+      <a class="wiki-link" href="classes-overview.html">Tổng Quan Các Lớp Nhân Vật</a>
+      <a class="wiki-link" href="class-change.html">Chuyển Lớp</a>
+      <a class="wiki-link active" href="everything-about-class-change.html">Tất Cả Về Chuyển Lớp</a>
+      <a class="wiki-link" href="progression.html">Tiến Trình Phát Triển</a>
+      <a class="wiki-link" href="seasonal-systems.html">Hệ Thống Theo Mùa</a>
+      <a class="wiki-link" href="skill-overview.html">Tổng Quan Kỹ Năng</a>
+      <a class="wiki-link" href="skill-ascend.html">Thăng Cấp Kỹ Năng</a>
+      <div class="wiki-group">Lớp nhân vật</div>
+      <a class="wiki-link" href="warrior.html">Chiến Binh (Warrior)</a>
+      <a class="wiki-link" href="mage.html">Pháp Sư (Mage)</a>
+      <a class="wiki-link" href="knight.html">Hiệp Sĩ (Knight)</a>
+      <a class="wiki-link" href="duelist.html">Đấu Sĩ (Duelist)</a>
+      <a class="wiki-link" href="sorcerer.html">Thuật Sư (Sorcerer)</a>
+      <a class="wiki-link" href="sage.html">Hiền Giả (Sage)</a>
+      <a class="wiki-link" href="berserker.html">Cuồng Chiến (Berserker)</a>
+      <a class="wiki-link" href="paladin.html">Thánh Hiệp Sĩ (Paladin)</a>
+      <a class="wiki-link" href="archmage.html">Đại Pháp Sư (Archmage)</a>
+      <a class="wiki-link" href="arcanist.html">Bí Thuật Sư (Arcanist)</a>
+      <div class="wiki-group">Kỹ năng theo lớp</div>
+      <a class="wiki-link" href="warrior-skills.html">Kỹ Năng Chiến Binh</a>
+      <a class="wiki-link" href="mage-skills.html">Kỹ Năng Pháp Sư</a>
+      <a class="wiki-link" href="knight-skills.html">Kỹ Năng Hiệp Sĩ</a>
+      <a class="wiki-link" href="duelist-skills.html">Kỹ Năng Đấu Sĩ</a>
+      <a class="wiki-link" href="sorcerer-skills.html">Kỹ Năng Thuật Sư</a>
+      <a class="wiki-link" href="sage-skills.html">Kỹ Năng Hiền Giả</a>
+      <div class="wiki-group">Bạn Đồng Hành & Fantomon</div>
+      <a class="wiki-link" href="companions.html">Bạn Đồng Hành</a>
+      <a class="wiki-link" href="fantamons.html">Fantomon</a>
+      <a class="wiki-link" href="fantomon.html">Fantomon</a>
+      <a class="wiki-link" href="akane.html">Akane</a>
+      <a class="wiki-link" href="molly.html">Molly</a>
+      <a class="wiki-link" href="reina.html">Reina</a>
+      <a class="wiki-link" href="dryason.html">Dryason</a>
+      <a class="wiki-link" href="hermes.html">Hermes</a>
+      <a class="wiki-link" href="narss.html">Narss (Thủ Lĩnh)</a>
+      <a class="wiki-link" href="rolla.html">Rolla</a>
+      <div class="wiki-group">Thế giới & hoạt động</div>
+      <a class="wiki-link" href="maps.html">Bản Đồ</a>
+      <a class="wiki-link" href="material-realm.html">Cõi Vật Chất</a>
+      <a class="wiki-link" href="arena.html">Đấu Trường</a>
+      <a class="wiki-link" href="guild.html">Bang Hội</a>
+      <a class="wiki-link" href="daily-dungeons.html">Phụ Bản Hàng Ngày</a>
+      <a class="wiki-link" href="destiny-fruits.html">Trái Định Mệnh</a>
+      <a class="wiki-link" href="goddess-statues.html">Tượng Nữ Thần</a>
+      <a class="wiki-link" href="commercium.html">Thương Hội Commercium</a>
+      <a class="wiki-link" href="vendor-booth.html">Gian Hàng</a>
+      <a class="wiki-link" href="journey-overture.html">Khúc Dạo Đầu Hành Trình</a>
+      <a class="wiki-link" href="elemental-mystery.html">Bí Ẩn Nguyên Tố</a>
+      <div class="wiki-group">Khác</div>
+      <a class="wiki-link" href="ice-spike.html">Ice Spike</a>
+      <a class="wiki-link" href="water-shot.html">Water Shot</a>
+      <a class="wiki-link" href="discordintegrator.html">DiscordIntegrator</a>
+      <a class="wiki-link" href="boltray-games.html">BOLTRAY GAMES</a>
+      <a class="wiki-link" href="swordxstaff-wiki.html">SwordxStaff Wiki</a>
+    </nav>
+<main class="wiki-main">
+<div class="crumbs"><a href="../index.html">Trang chủ</a> / <a href="index.html">Wiki</a> / Tất Cả Về Chuyển Lớp</div>
+
+<h1>Tất Cả Về Chuyển Lớp</h1>
+<div class="mw-content-ltr mw-parser-output" lang="vi" dir="ltr"><div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="vi" dir="ltr"><h2 id="mw-toc-heading">Mục lục</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Preface"><span class="tocnumber">1</span> <span class="toctext">Lời Mở Đầu</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Start"><span class="tocnumber">2</span> <span class="toctext">Bắt Đầu</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Important_Warning:_Do_NOT_Change_Classes_Too_Early"><span class="tocnumber">3</span> <span class="toctext">Cảnh Báo Quan Trọng: ĐỪNG Chuyển Lớp Quá Sớm</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Class_Change_Options_in_Aqualis_(Level_100)"><span class="tocnumber">4</span> <span class="toctext">Các Lựa Chọn Chuyển Lớp tại Aqualis (Cấp 100)</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Lossless_Class_Change_(Conversion)"><span class="tocnumber">5</span> <span class="toctext">Chuyển Lớp Không Mất Mát (Chuyển Đổi)</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#How_Skill_Conversion_Works"><span class="tocnumber">6</span> <span class="toctext">Cách Chuyển Đổi Kỹ Năng Hoạt Động</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Conversion_Safety_Mechanism"><span class="tocnumber">7</span> <span class="toctext">Cơ Chế An Toàn Khi Chuyển Đổi</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Common_Use_Cases_for_Lossless_Class_Change"><span class="tocnumber">8</span> <span class="toctext">Các Trường Hợp Thường Dùng Của Chuyển Lớp Không Mất Mát</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Class_Rollback_(No_Conversion)"><span class="tocnumber">9</span> <span class="toctext">Hoàn Lớp Về Ban Đầu (Không Chuyển Đổi)</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Closing"><span class="tocnumber">10</span> <span class="toctext">Kết</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Preface">Lời Mở Đầu</span><span class="mw-editsection-bracket">]</span></span></h2>
+<figure class="thumb  show-info-icon" typeof="mw:File/Thumb" style="width: 180px"> 	<img alt="Chuyển Lớp" src="../assets/fandom/Class_Change.webp" decoding="async" loading="lazy" width="180" height="121" class="thumbimage" /> 	 	<figcaption class="thumbcaption"> 			<svg><use xlink:href="#wds-icons-info-small"></use></svg> 	</figcaption> </figure>
+<p>Bạn có đang không hài lòng với lớp hiện tại của mình?
+</p><p>Bạn có cảm thấy Thuật Sư (Sorcerer) của mình quá mong manh, vỡ tan ngay khi vừa bị chạm vào?
+</p><p>Bạn có cảm thấy Đấu Sĩ (Duelist) của mình chẳng nạp được bao nhiêu, không gây được sát thương, và chẳng ai muốn lập đội cùng bạn?
+</p><p>Bạn có cảm thấy Hiệp Sĩ (Knight) của mình cứng nhắc và chậm chạp, như một khúc gỗ biết đi?
+</p><p>Bạn có cảm thấy Hiền Giả (Sage) của mình chẳng đẩy được nội dung nào cả, khiến bạn sắp phát khóc?
+</p><p>Bạn có ghen tị với những Thuật Sư (Sorcerer) quét sạch cả màn hình chỉ bằng một combo hào nhoáng và phá hủy mọi thứ trong tầm mắt?
+</p><p>Bạn có ghen tị với những Đấu Sĩ (Duelist) lướt qua kẻ địch với ánh kiếm loang loáng, lật ngược những trận đấu tưởng chừng không thể thắng?
+</p><p>Bạn có ghen tị với những Hiệp Sĩ (Knight) đứng hiên ngang với thân thể bất khả xâm phạm, thắng trận mà không cần nhấc một ngón tay?
+</p><p>Bạn có ghen tị với những Hiền Giả (Sage) vừa gây sát thương vừa hồi máu, chơi như một vị thần toàn năng?
+</p><p>Bạn muốn chuyển lớp.
+</p><p>Bạn muốn trải nghiệm thứ gì đó khác biệt.
+</p><p>Nhưng… liệu có hệ thống chuyển lớp nào không?
+</p><p>Có đấy.
+</p><p>Có chứ, anh em — có đấy.
+</p><p>CHUYỂN LỚP KHÔNG MẤT MÁT (LOSSLESS CLASS TRANSFER)
+</p><p>Không phải $9.99
+</p><p>Không phải $19.99
+</p><p>Thậm chí không lấy của bạn một xu nào.
+</p><p>Miễn phí. Miễn phí. MIỄN PHÍ!
+</p><p>Được rồi, không nói nhảm nữa.
+</p><p>Đi thẳng vào vấn đề và nói về chuyển lớp không mất mát.
+</p>
+<h2><span class="mw-headline" id="Start">Bắt Đầu</span><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Nhiều người chơi cuối cùng cũng gặp phải cùng một vấn đề: sau khi chơi một thời gian, bạn nhận ra mình không thích lớp hiện tại và muốn đổi lớp. Trong hướng dẫn này<sup id="cite&#95;ref-1" class="reference"><a href="#cite_note-1"><span class="cite-bracket">[</span>1<span class="cite-bracket">]</span></a></sup>, tôi sẽ giải thích hệ thống Chuyển Lớp hoạt động như thế nào, khi nào thì thích hợp để chuyển lớp, và những người chơi nào nên cân nhắc làm điều đó. Được rồi — bắt đầu nào.
+</p>
+<h2><span class="mw-headline" id="Important_Warning:_Do_NOT_Change_Classes_Too_Early">Cảnh Báo Quan Trọng: ĐỪNG Chuyển Lớp Quá Sớm</span><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Trước khi đến Aqualis, hay Cấp 100, nếu bạn chuyển lớp ở Verdantglade hay Cinder Ridge, kỹ năng của bạn sẽ không được giữ lại. Ví dụ, nếu bạn đổi từ Chiến Binh (Warrior) sang Pháp Sư (Mage), bạn sẽ chỉ còn hai Kỹ Năng mặc định của Pháp Sư. Tất cả Kỹ Năng của Chiến Binh sẽ bị khóa, buộc bạn phải quay lại Kỹ Năng của Pháp Sư từ đầu. Vì vậy, tôi đặc biệt khuyên mọi người chơi nên đợi đến khi đến Aqualis và mở khóa Chuyển Lớp lần 3 rồi mới đổi lớp.
+</p><p><b>Khi bạn đã đến được thời điểm đó:</b>
+</p><p>•    Kỹ năng hiện có của bạn sẽ được chuyển đổi khi bạn chuyển lớp
+</p><p>•    Ngay cả khi sau đó bạn quay lại Verdantglade hay Cinder Ridge để chuyển lớp lần nữa, bạn cũng sẽ không mất kỹ năng.
+</p>
+<h2><span id="Class_Change_Options_in_Aqualis_.28Level_100.29"></span><span class="mw-headline" id="Class_Change_Options_in_Aqualis_(Level_100)">Các Lựa Chọn Chuyển Lớp tại Aqualis (Cấp 100)</span><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Khi bạn đến Aqualis và chuyển lớp ở cấp 100, bạn sẽ được đưa ra hai lựa chọn: Chuyển Lớp Không Mất Mát (Chuyển Đổi) (Lossless Class Change (Conversion)) và Hoàn Lớp Về Ban Đầu (Không Chuyển Đổi) (Class Rollback (No Conversion)). Hãy bắt đầu với Chuyển Lớp Không Mất Mát.
+</p>
+<h2><span id="Lossless_Class_Change_.28Conversion.29"></span><span class="mw-headline" id="Lossless_Class_Change_(Conversion)">Chuyển Lớp Không Mất Mát (Chuyển Đổi)</span><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Với Chuyển Lớp Không Mất Mát, bạn có thể tự do đổi sang bất kỳ lớp nào trừ lớp hiện tại của mình.
+</p>
+<ul><li>Mỗi lần Chuyển Lớp tiêu tốn một Slate</li>
+<li>Bạn nhận được một Slate miễn phí mỗi tuần</li>
+<li>Slate chưa dùng sẽ không cộng dồn</li>
+<li>Nói đơn giản: bạn được một lần Chuyển Lớp miễn phí mỗi tuần</li></ul>
+<p>Nếu bạn chuyển lớp nhiều lần trong cùng một tuần, những lần chuyển thêm sẽ tốn Dawnium. Thỉnh thoảng, nhiệm vụ cốt truyện chính có thể thưởng Slate, nhưng những lần đó cực kỳ hiếm. Khi bạn chuyển lớp, vũ khí hiện tại của bạn sẽ bị khóa, và hệ thống sẽ tặng bạn một vũ khí mới phẩm chất xanh (blue) của lớp hiện tại. Vũ khí cũ sẽ không biến mất, nó sẽ nằm trong túi đồ của bạn.
+</p>
+<h2><span class="mw-headline" id="How_Skill_Conversion_Works">Cách Chuyển Đổi Kỹ Năng Hoạt Động</span><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Khi chuyển lớp, hệ thống sẽ chuyển đổi Kỹ Năng dựa trên độ hiếm cơ bản và bậc lớp.
+</p><p><b>Quy tắc quan trọng:</b>
+</p>
+<ul><li>Chuyển đổi dựa trên độ hiếm cơ bản, không phải độ hiếm cuối cùng</li>
+<li>Không chuyển đổi hoàn toàn ngẫu nhiên</li>
+<li>Không chuyển đổi kỹ năng chéo lớp</li>
+<li>Kỹ Thuật (Technique) chỉ chuyển thành Kỹ Thuật (Technique)</li>
+<li>Bùa (Charm) chỉ chuyển thành Bùa (Charm)</li></ul>
+<figure class="thumb  show-info-icon" typeof="mw:File/Thumb" style="width: 180px"> 	<img alt="Hai Bùa Huyền Thoại của Thánh Hiệp Sĩ (Paladin)" src="../assets/fandom/Two_Paladin_Legendary_Charms.webp" decoding="async" loading="lazy" width="180" height="107" class="thumbimage" /> 	 	<figcaption class="thumbcaption"> 			<svg><use xlink:href="#wds-icons-info-small"></use></svg> 			<p class="caption">Hai Bùa Huyền Thoại của Thánh Hiệp Sĩ (Paladin)</p> 	</figcaption> </figure>
+<p><b>Ví dụ</b>
+</p><p>Nếu bạn đổi từ Đấu Sĩ lần 3 (Cuồng Chiến (Berserker)) sang Hiệp Sĩ lần 3 (Thánh Hiệp Sĩ (Paladin)):
+</p>
+<ul><li>Đấu Sĩ lần 3 có bốn Kỹ Năng Huyền Thoại (Legendary)</li>
+<li>2 Kỹ Thuật (Technique)</li>
+<li>2 Bùa (Charm)</li>
+<li><figure class="thumb  show-info-icon" typeof="mw:File/Thumb" style="width: 180px"> 	<img alt="Hai Bùa Huyền Thoại của Cuồng Chiến (Berserker)" src="../assets/fandom/Two_Berserker_Legendary_Charms.webp" decoding="async" loading="lazy" width="180" height="106" class="thumbimage" /> 	 	<figcaption class="thumbcaption"> 			<svg><use xlink:href="#wds-icons-info-small"></use></svg> 			<p class="caption">Hai Bùa Huyền Thoại của Cuồng Chiến (Berserker)</p> 	</figcaption> </figure>Hai Bùa Huyền Thoại (Legendary Charm) sẽ được chuyển đổi ngẫu nhiên thành hai Bùa Huyền Thoại của Hiệp Sĩ lần 3</li>
+<li>Điều tương tự cũng áp dụng cho Kỹ Thuật (Technique) và các độ hiếm khác</li></ul>
+<p><br />
+Vì vậy, Đấu Sĩ lần 3 nhìn chung là ứng viên kém để chuyển sang Hiệp Sĩ. Một trong những Bùa Huyền Thoại (Legendary Charm) của Đấu Sĩ là kỹ năng sát thương cốt lõi, trong khi cả hai Bùa Huyền Thoại của Hiệp Sĩ đều là những kỹ năng bỏ đi.
+</p>
+<h2><span class="mw-headline" id="Conversion_Safety_Mechanism">Cơ Chế An Toàn Khi Chuyển Đổi</span><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Trong quá trình chuyển đổi, hệ thống sẽ cung cấp ba kết quả chuyển đổi khác nhau để bạn lựa chọn.
+</p><p><b>Điều này đảm bảo:</b>
+</p>
+<ul><li>Bạn không bị ép phải nhận một bộ kỹ năng duy nhất</li>
+<li>Bạn có cơ hội sửa những lần quay xấu</li>
+<li>Những người chơi trước đây quay kém sẽ không bị phạt khi chuyển lớp</li></ul>
+<p><b>Thời Gian Hoàn Tác 8 Giờ: Sau khi chuyển lớp, bạn có 8 giờ để hoàn tác về lớp ban đầu.</b>
+</p>
+<ul><li>Tất cả kỹ năng sẽ trở về trạng thái trước khi chuyển</li>
+<li>Sau 8 giờ, lớp mới sẽ tự động được khóa</li>
+<li>Hoàn tác sau thời điểm đó sẽ tốn thêm một Slate nữa</li></ul>
+<h2><span class="mw-headline" id="Common_Use_Cases_for_Lossless_Class_Change">Các Trường Hợp Thường Dùng Của Chuyển Lớp Không Mất Mát</span><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Loại Chuyển Lớp này thường được dùng cho:
+</p>
+<ol><li>Trận Đấu Thử Thách 4v4 (4v4 Challenge Matches)</li>
+<li>Phụ bản độ khó cao, nơi một số lớp đang thiếu</li>
+<li>Đẩy thứ hạng Gem Tower ở Loog Haven</li>
+<li>Đua thứ hạng theo mùa (không phải Power Rank thường), khi trang bị vũ khí chính hoặc vũ khí phụ có điểm cao hơn từ các lớp khác</li>
+<li>Đơn giản là trải nghiệm một lớp khác</li></ol>
+<h2><span id="Class_Rollback_.28No_Conversion.29"></span><span class="mw-headline" id="Class_Rollback_(No_Conversion)">Hoàn Lớp Về Ban Đầu (Không Chuyển Đổi)</span><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Bây giờ hãy nói về Hoàn Lớp Về Ban Đầu (Class Rollback). Hoàn Lớp Về Ban Đầu sẽ đưa bạn trở lại lớp khởi đầu — Chiến Binh (Warrior) hoặc Pháp Sư (Mage). Mục đích chính của tính năng này là quay lại các kỹ năng bậc thấp bằng cách thu hẹp bể kỹ năng của bạn.
+</p><p><b>Ví dụ 1</b>
+</p><p>Nếu bạn hiện đang ở Chuyển Lớp lần 3, nhưng kỹ năng lớp 1 của bạn là Insightful Eye mới chỉ ở mức Mythic, và bạn muốn đẩy nó lên Immortal, bạn có thể:
+</p>
+<ul><li>Hoàn lớp về lớp 1</li>
+<li>Vô hiệu hóa tất cả kỹ năng lớp 2 và lớp 3</li>
+<li>Chỉ quay lại các kỹ năng bậc thấp</li></ul>
+<p><b>Ví dụ 2</b>
+</p><p>Nếu kỹ năng lớp 2 của bạn là Resurrection có Champion Rank thấp:
+</p>
+<ul><li>Hoàn lớp về Pháp Sư (Mage) lớp 1</li>
+<li>Sau đó chuyển thành Hiền Giả (Sage) lớp 2</li></ul>
+<p>Điều này giúp tránh việc quay phải bất kỳ kỹ năng lớp 3 nào. Nhìn chung, Hoàn Lớp Về Ban Đầu hiếm khi được dùng, nhưng nó tồn tại cho những trường hợp tối ưu rất cụ thể.
+</p>
+<h2><span class="mw-headline" id="Closing">Kết</span><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Đó là tất cả những gì bạn cần biết về Chuyển Lớp. Hẹn gặp lại sau nhé.
+</p><p>Tạm biệt.
+</p><p><br />
+Người viết: QY Maple
+</p>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite&#95;note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text"><a target="_blank" rel="nofollow noreferrer noopener" class="external free" href="https://discord.gg/RQcTyr66Y3">https://discord.gg/RQcTyr66Y3</a></span>
+</li>
+</ol></div>
+</div>
+</main>
+</div>
+<footer class="site-footer"><p>Nguồn: <a href="https://swordxstaff.fandom.com/wiki/Everything_about_Class_Change">bài gốc trên SwordxStaff Wiki (Fandom)</a>. Nội dung được dịch sang tiếng Việt; nội dung gốc theo giấy phép CC-BY-SA.</p><p><strong>Sword X Staff — Đại Bách Khoa VN &amp; Wiki Fandom (bản dịch tiếng Việt).</strong> Nội dung Bách khoa, dữ liệu, công thức và công cụ trên trang chủ là nội dung gốc của người biên soạn. Các bài trong mục Wiki được dịch từ <a href="https://swordxstaff.fandom.com">SwordxStaff Wiki trên Fandom</a>; nội dung gốc theo giấy phép <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a> — xem link bài gốc ở cuối mỗi bài wiki.</p><p><a href="../index.html">Trang chủ</a> · <a href="index.html">Trang chính Wiki</a> · <a href="https://swordxstaff.fandom.com">SwordxStaff Wiki (Fandom, tiếng Anh)</a></p></footer>
+<script>(function(){const t=localStorage.getItem('sxs_wiki_theme')||'light';document.documentElement.setAttribute('data-theme',t);const b=document.getElementById('wikiThemeToggle');if(b)b.addEventListener('click',()=>{const n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);localStorage.setItem('sxs_wiki_theme',n);});})();</script>
+</body></html>

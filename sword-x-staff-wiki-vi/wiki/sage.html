@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hiền Giả (Sage) — Sword X Staff Wiki tiếng Việt</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* --- Khung Fandom gộp (thêm vào, không sửa CSS gốc) --- */
+.fandom-bar{display:flex;flex-wrap:wrap;gap:4px 20px;align-items:center;background:#20242e;border-bottom:2px solid #ffd75e;padding:8px 20px;font-size:.85rem;font-weight:700;letter-spacing:.06em}
+.fandom-bar a{color:#ffd75e;text-decoration:none}
+.fandom-bar a:hover{text-decoration:underline}
+.fandom-bar .fb-label{color:#8b98b8;font-weight:600;letter-spacing:.02em}
+.crumbs{font-size:.85rem;color:#8494b8;padding:10px 2px 0}
+.crumbs a{color:#4d8fd6}
+.site-footer{border-top:1px solid #ccc;margin-top:28px;padding:16px 20px 28px;font-size:.85rem;color:#666;line-height:1.7}
+.site-footer a{color:#1a5fb4}
+.site-footer--dark{border-top-color:#253055;color:#b8c4e0;background:#0f1322}
+.site-footer--dark a{color:#ffd75e}
+.wiki-link{display:block;padding:5px 10px;border-radius:6px;color:inherit;text-decoration:none;font-size:.86rem;line-height:1.4}
+.wiki-link:hover{background:rgba(128,140,180,.18);text-decoration:underline}
+.wiki-link.active{background:rgba(245,158,11,.18);font-weight:700;color:#f59e0b}
+.wiki-group{font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#8494b8;padding:12px 10px 3px}
+.wiki-topbar{position:sticky;top:0;z-index:60;background:#20242e;color:#fff;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid #3d4e88}
+.wiki-topbar a.brand-link{color:#ffd75e;font-weight:700;font-size:1.05em;text-decoration:none}
+.wiki-topbar .top-actions{display:flex;gap:16px;font-size:.88rem}
+.wiki-topbar .top-actions a{color:#cfe0ff;text-decoration:none}
+.wiki-topbar .top-actions a:hover{text-decoration:underline}
+.wiki-shell{display:flex;align-items:flex-start}
+.wiki-sidebar{width:272px;flex-shrink:0;position:sticky;top:52px;max-height:calc(100vh - 52px);overflow-y:auto;padding:14px 12px;border-right:1px solid #ddd;background:#f7f5ef}
+.wiki-main{flex:1;min-width:0}
+@media(max-width:900px){.wiki-shell{flex-direction:column}.wiki-sidebar{position:static;width:100%;max-height:none;border-right:none;border-bottom:1px solid #ddd}}
+</style></head>
+<body>
+<header class="wiki-topbar"><a class="brand-link" href="../index.html">⚔️ SWORD x STAFF — ĐẠI BÁCH KHOA VN</a><div class="top-actions"><a href="../index.html">🏠 Bách Khoa Chính</a><a href="index.html">📚 Lọc Bài Chi Tiết</a><button type="button" id="wikiThemeToggle" style="padding:4px 11px;border-radius:6px;border:1px solid var(--purple-border);background:var(--sheet-bg);color:var(--text-main);cursor:pointer;font-weight:700;">🌓 Đổi Nền</button></div></header>
+<nav class="fandom-bar" aria-label="Menu Fandom"><span class="fb-label">SWORD X STAFF WIKI</span><a href="index.html">EXPLORE</a><a href="maps.html">KINGDOMS</a><a href="classes-overview.html">COMBAT</a><a href="seasonal-systems.html">EVENTS</a><a href="a-beginner-chaos-invasion-guide.html">BEGINNER GUIDE</a></nav>
+<div class="wiki-shell">
+<nav class="wiki-sidebar" aria-label="Wiki Fandom">
+      <div class="wiki-group">Wiki Fandom — Bản dịch tiếng Việt</div>
+      <a class="wiki-link" href="index.html">📖 Trang chính Wiki</a>
+      <div class="wiki-group">Bắt đầu chơi</div>
+      <a class="wiki-link" href="sword-x-staff.html">Sword X Staff</a>
+      <a class="wiki-link" href="sword-x-staff-launch-faq.html">FAQ Ra Mắt Sword X Staff</a>
+      <a class="wiki-link" href="a-beginner-chaos-invasion-guide.html">Hướng Dẫn Tân Thủ: Cuộc Xâm Lăng Hỗn Mang</a>
+      <a class="wiki-link" href="class-selection.html">Chọn Lớp Nhân Vật</a>
+      <a class="wiki-link" href="classes-overview.html">Tổng Quan Các Lớp Nhân Vật</a>
+      <a class="wiki-link" href="class-change.html">Chuyển Lớp</a>
+      <a class="wiki-link" href="everything-about-class-change.html">Tất Cả Về Chuyển Lớp</a>
+      <a class="wiki-link" href="progression.html">Tiến Trình Phát Triển</a>
+      <a class="wiki-link" href="seasonal-systems.html">Hệ Thống Theo Mùa</a>
+      <a class="wiki-link" href="skill-overview.html">Tổng Quan Kỹ Năng</a>
+      <a class="wiki-link" href="skill-ascend.html">Thăng Cấp Kỹ Năng</a>
+      <div class="wiki-group">Lớp nhân vật</div>
+      <a class="wiki-link" href="warrior.html">Chiến Binh (Warrior)</a>
+      <a class="wiki-link" href="mage.html">Pháp Sư (Mage)</a>
+      <a class="wiki-link" href="knight.html">Hiệp Sĩ (Knight)</a>
+      <a class="wiki-link" href="duelist.html">Đấu Sĩ (Duelist)</a>
+      <a class="wiki-link" href="sorcerer.html">Thuật Sư (Sorcerer)</a>
+      <a class="wiki-link active" href="sage.html">Hiền Giả (Sage)</a>
+      <a class="wiki-link" href="berserker.html">Cuồng Chiến (Berserker)</a>
+      <a class="wiki-link" href="paladin.html">Thánh Hiệp Sĩ (Paladin)</a>
+      <a class="wiki-link" href="archmage.html">Đại Pháp Sư (Archmage)</a>
+      <a class="wiki-link" href="arcanist.html">Bí Thuật Sư (Arcanist)</a>
+      <div class="wiki-group">Kỹ năng theo lớp</div>
+      <a class="wiki-link" href="warrior-skills.html">Kỹ Năng Chiến Binh</a>
+      <a class="wiki-link" href="mage-skills.html">Kỹ Năng Pháp Sư</a>
+      <a class="wiki-link" href="knight-skills.html">Kỹ Năng Hiệp Sĩ</a>
+      <a class="wiki-link" href="duelist-skills.html">Kỹ Năng Đấu Sĩ</a>
+      <a class="wiki-link" href="sorcerer-skills.html">Kỹ Năng Thuật Sư</a>
+      <a class="wiki-link" href="sage-skills.html">Kỹ Năng Hiền Giả</a>
+      <div class="wiki-group">Bạn Đồng Hành & Fantomon</div>
+      <a class="wiki-link" href="companions.html">Bạn Đồng Hành</a>
+      <a class="wiki-link" href="fantamons.html">Fantomon</a>
+      <a class="wiki-link" href="fantomon.html">Fantomon</a>
+      <a class="wiki-link" href="akane.html">Akane</a>
+      <a class="wiki-link" href="molly.html">Molly</a>
+      <a class="wiki-link" href="reina.html">Reina</a>
+      <a class="wiki-link" href="dryason.html">Dryason</a>
+      <a class="wiki-link" href="hermes.html">Hermes</a>
+      <a class="wiki-link" href="narss.html">Narss (Thủ Lĩnh)</a>
+      <a class="wiki-link" href="rolla.html">Rolla</a>
+      <div class="wiki-group">Thế giới & hoạt động</div>
+      <a class="wiki-link" href="maps.html">Bản Đồ</a>
+      <a class="wiki-link" href="material-realm.html">Cõi Vật Chất</a>
+      <a class="wiki-link" href="arena.html">Đấu Trường</a>
+      <a class="wiki-link" href="guild.html">Bang Hội</a>
+      <a class="wiki-link" href="daily-dungeons.html">Phụ Bản Hàng Ngày</a>
+      <a class="wiki-link" href="destiny-fruits.html">Trái Định Mệnh</a>
+      <a class="wiki-link" href="goddess-statues.html">Tượng Nữ Thần</a>
+      <a class="wiki-link" href="commercium.html">Thương Hội Commercium</a>
+      <a class="wiki-link" href="vendor-booth.html">Gian Hàng</a>
+      <a class="wiki-link" href="journey-overture.html">Khúc Dạo Đầu Hành Trình</a>
+      <a class="wiki-link" href="elemental-mystery.html">Bí Ẩn Nguyên Tố</a>
+      <div class="wiki-group">Khác</div>
+      <a class="wiki-link" href="ice-spike.html">Ice Spike</a>
+      <a class="wiki-link" href="water-shot.html">Water Shot</a>
+      <a class="wiki-link" href="discordintegrator.html">DiscordIntegrator</a>
+      <a class="wiki-link" href="boltray-games.html">BOLTRAY GAMES</a>
+      <a class="wiki-link" href="swordxstaff-wiki.html">SwordxStaff Wiki</a>
+    </nav>
+<main class="wiki-main">
+<div class="crumbs"><a href="../index.html">Trang chủ</a> / <a href="index.html">Wiki</a> / Hiền Giả (Sage)</div>
+
+<h1>Hiền Giả (Sage)</h1>
+<div class="mw-content-ltr mw-parser-output" lang="vi" dir="ltr"><aside role="region" class="portable-infobox pi-background pi-border-color pi-theme-wikia pi-layout-default type-Character"><h2 class="pi-item pi-item-spacing pi-title pi-secondary-background">Hiền Giả Nam (Sage)</h2>
+<figure class="pi-item pi-image">
+	
+		<img src="../assets/fandom/%E4%BA%8C%E9%98%B6-%E7%94%B7%E8%B4%A4%E8%80%85.png" class="pi-image-thumbnail" alt="二阶-男贤者" width="270" height="263" />
+	
+	
+</figure>
+</aside>
+<aside role="region" class="portable-infobox pi-background pi-border-color pi-theme-wikia pi-layout-default type-Character"><h2 class="pi-item pi-item-spacing pi-title pi-secondary-background">Hiền Giả Nữ (Sage)</h2>
+<figure class="pi-item pi-image">
+	
+		<img src="../assets/fandom/%E4%BA%8C%E9%98%B6-%E5%A5%B3%E8%B4%A4%E8%80%85.png" class="pi-image-thumbnail" alt="二阶-女贤者" width="270" height="309" />
+	
+	
+</figure>
+</aside>
+
+
+<h2><span class="mw-headline" id="OVERVIEW">TỔNG QUAN</span><span class="mw-editsection-bracket"></span></span></h2>
+<p>Một chiến lược gia làm chủ chiến trường bằng những khả năng và kỹ thuật chuyên biệt, xuất sắc trong việc xoay chuyển cán cân chiến thắng bằng các phép buff và debuff tài tình.
+</p><p> <b>Hiền Giả (Sage)</b> đóng vai trò chỉ huy chiến trường, vừa có thể bao phủ đồng đội trong phước lành rạng rỡ của những lời cầu nguyện thánh thiện, vừa có thể trói buộc kẻ địch bằng những xiềng xích suy yếu của các lời nguyền xảo quyệt.
+</p><p>Họ còn có thể chỉ huy các sinh vật totem huyền bí chiến đấu cùng mình, trở thành một đội quân một người.
+</p><p>Một bậc thầy đa năng thực thụ của chiến trường và là người triệu hồi totem, họ dùng ánh sáng để chữa lành đồng minh và bóng tối để trừng phạt quân địch.
+</p>
+<figure class="mw-halign-center" typeof="mw:File"><img alt="Sage ss" src="../assets/fandom/Sage_ss.png" decoding="async" loading="lazy" width="500" height="889" class="mw-file-element" /><figcaption></figcaption></figure>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Sage_Techniques">Kỹ Thuật Hiền Giả (Sage)</span><span class="mw-editsection-bracket"></span></span></h2>
+<table class="wikitable" style="width:100%; table-layout:fixed; text-align:center;">
+<tbody><tr>
+<th style="width:10%;">Biểu tượng
+</th>
+<th style="width:20%;">Tên
+</th>
+<th style="width:15%;">Loại
+</th>
+<th style="width:45%;">Mô tả
+</th>
+<th style="width:20%;">Hình ảnh
+</th></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Treantling Summon" src="../assets/fandom/Treantling_Summon.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element" /></span>
+</td>
+<td style="color:#2e7d32; font-weight:bold;">Treantling Summon
+</td>
+<td style="color:#c62828;">Triệu Hồi, Sát Thương
+</td>
+<td style="text-align:left; color:#c62828; padding:10px;">Triệu hồi một Treantling phía sau người thi triển, nó hành động ngay lập tức. Triệu hồi vật thừa hưởng một tỉ lệ chỉ số của người thi triển, nhưng không thể là mục tiêu chính của các đòn tấn công hoặc hồi máu. Nó tồn tại tối đa 5 lượt. (Không có hồi chiêu ban đầu)
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Shadow Impact" src="../assets/fandom/Shadow_Impact.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element" /></span>
+</td>
+<td style="color:#2e7d32; font-weight:bold;">Shadow Impact
+</td>
+<td style="color:#c62828;">Sát Thương
+</td>
+<td style="text-align:left; color:#c62828; padding:10px;">Chọn 1 ô trong phạm vi 3 ô quanh người thi triển. Gây Sát Thương Bóng Tối 1 lần lên tất cả kẻ địch trong phạm vi 2 ô quanh ô mục tiêu đó. Nếu mục tiêu địch đang mang Ăn Mòn (Erosion), kích hoạt hiệu ứng Ăn Mòn ngay lập tức 2 lần.
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Flame Wolf Summon" src="../assets/fandom/Flame_Wolf_Summon.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td style="color:#2e7d32; font-weight:bold;">Flame Wolf Summon
+</td>
+<td style="color:#c62828;">Triệu Hồi, Sát Thương
+</td>
+<td style="text-align:left; color:#c62828; padding:10px;">Triệu hồi 2 Flame Wolf phía trước người thi triển, chúng hành động ngay lập tức. Các triệu hồi vật thừa hưởng một tỉ lệ chỉ số của người thi triển, nhưng không thể là mục tiêu chính của các đòn tấn công hoặc hồi máu. Chúng tồn tại tối đa 2 lượt. (Không có hồi chiêu ban đầu)
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Dark Bullet" src="../assets/fandom/Dark_Bullet.png" decoding="async" loading="lazy" width="59" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td style="color:#2e7d32; font-weight:bold;">Dark Bullet
+</td>
+<td style="color:#c62828;">Sát Thương, Debuff
+</td>
+<td style="text-align:left; color:#c62828; padding:10px;">Tấn công 1 kẻ địch trong phạm vi 4 ô quanh người thi triển, gây Sát Thương Bóng Tối 1 lần, với 50% tỉ lệ cơ bản gây Ăn Mòn (Erosion).
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Radiant Restoration" src="../assets/fandom/Radiant_Restoration.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td style="color:#2e7d32; font-weight:bold;">Radiant Restoration
+</td>
+<td style="color:#c62828;">Đồng Minh, Hồi Máu
+</td>
+<td style="text-align:left; color:#c62828; padding:10px;">Hồi máu cho tất cả đồng minh trong phạm vi 4 ô quanh người thi triển 1 lần.
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Weakening Hex" src="../assets/fandom/Weakening_Hex.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td style="color:#2e7d32; font-weight:bold;">Weakening Hex
+</td>
+<td style="color:#c62828;">Sát Thương, Debuff
+</td>
+<td style="text-align:left; color:#c62828; padding:10px;">Chọn 1 ô trong phạm vi 3 ô quanh người thi triển. Gây Sát Thương Bóng Tối 1 lần lên tất cả kẻ địch trong phạm vi 2 ô quanh ô mục tiêu, với 50% tỉ lệ cơ bản gây Suy Yếu (Weakened) 1 trong 2 lượt.
+</td>
+<td>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Sage_Charms">Bùa Hiền Giả (Sage)</span><span class="mw-editsection-bracket"></span></span></h2>
+<table class="wikitable" style="width:100%; table-layout:fixed; text-align:center;">
+<tbody><tr>
+<th style="width:10%;">Biểu tượng
+</th>
+<th style="width:20%;">Tên
+</th>
+<th style="width:15%;">Loại
+</th>
+<th style="width:45%;">Mô tả
+</th>
+<th style="width:20%;">Hình ảnh
+</th></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Soul lmpact" src="../assets/fandom/Soul_lmpact.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td style="color:#2e7d32; font-weight:bold;">Soul lmpact
+</td>
+<td style="color:#c62828;">Sát Thương
+</td>
+<td style="text-align:left; color:#c62828; padding:10px;">Khi triệu hồi vật của người thi triển chết hoặc hết hạn, gây Sát Thương Bóng Tối 1 lần lên tất cả kẻ địch trong phạm vi 2 ô quanh nó.
+</td>
+<td>
+</td></tr>
+<tr>
+<td><figure class="mw-halign-center" typeof="mw:File"><img alt="Resurrection" src="../assets/fandom/Resurrection.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /><figcaption></figcaption></figure>
+</td>
+<td style="color:#2e7d32; font-weight:bold;">Resurrection
+</td>
+<td style="color:#c62828;">Đồng Minh, Hồi Sinh
+<p>Buff, Hồi Máu
+</p>
+</td>
+<td style="text-align:left; color:#c62828; padding:10px;">Khi một nhà thám hiểm đồng minh chết, ngay lập tức hồi sinh và hồi máu cho họ 1 lần, ban Hồi Sinh (Revitalization) trong 2 lượt (không thể bị giải trừ). Bùa này chỉ có thể kích hoạt 1 lần mỗi trận đấu. Khi bắt đầu trận đấu, nếu nhiều nhà thám hiểm đồng minh đã chết, hồi sinh người có Power cao nhất trước.
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Shadow Erosion" src="../assets/fandom/Shadow_Erosion.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td style="color:#2e7d32; font-weight:bold;">Shadow Erosion
+</td>
+<td style="color:#c62828;">Debuff, Sát Thương
+</td>
+<td style="text-align:left; color:#c62828; padding:10px;">Mỗi khi Kỹ Thuật của người thi triển gây Sát Thương Bóng Tối lên kẻ địch, có 40% tỉ lệ cơ bản gây Ăn Mòn (Erosion).
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Soul Spark" src="../assets/fandom/Soul_Spark.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td style="color:#2e7d32; font-weight:bold;">Soul Spark
+</td>
+<td style="color:#c62828;">Triệu Hồi, Chỉ Số
+</td>
+<td style="text-align:left; color:#c62828; padding:10px;">Tăng ATK của các triệu hồi vật của người thi triển nhưng giảm thời gian tồn tại của chúng 2 lượt. (Triệu hồi vật tồn tại ít nhất 1 lượt; Bùa này không ảnh hưởng tới triệu hồi vật không có giới hạn lượt.)
+</td>
+<td>
+</td></tr>
+<tr>
+<td><span typeof="mw:File"><img alt="Healing Mastery" src="../assets/fandom/Healing_Mastery.png" decoding="async" loading="lazy" width="50" height="50" class="mw-file-element lazyload" /></span>
+</td>
+<td style="color:#2e7d32; font-weight:bold;">Healing Mastery
+</td>
+<td style="color:#c62828;">Chỉ Số
+</td>
+<td style="text-align:left; color:#c62828; padding:10px;">Cường hóa các hiệu ứng hồi máu của người thi triển.
+</td>
+<td>
+</td></tr></tbody></table>
+
+
+
+
+</div>
+</main>
+</div>
+<footer class="site-footer"><p>Nguồn: <a href="https://swordxstaff.fandom.com/wiki/Sage">bài gốc trên SwordxStaff Wiki (Fandom)</a>. Nội dung được dịch sang tiếng Việt; nội dung gốc theo giấy phép CC-BY-SA.</p><p><strong>Sword X Staff — Đại Bách Khoa VN &amp; Wiki Fandom (bản dịch tiếng Việt).</strong> Nội dung Bách khoa, dữ liệu, công thức và công cụ trên trang chủ là nội dung gốc của người biên soạn. Các bài trong mục Wiki được dịch từ <a href="https://swordxstaff.fandom.com">SwordxStaff Wiki trên Fandom</a>; nội dung gốc theo giấy phép <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a> — xem link bài gốc ở cuối mỗi bài wiki.</p><p><a href="../index.html">Trang chủ</a> · <a href="index.html">Trang chính Wiki</a> · <a href="https://swordxstaff.fandom.com">SwordxStaff Wiki (Fandom, tiếng Anh)</a></p></footer>
+<script>(function(){const t=localStorage.getItem('sxs_wiki_theme')||'light';document.documentElement.setAttribute('data-theme',t);const b=document.getElementById('wikiThemeToggle');if(b)b.addEventListener('click',()=>{const n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);localStorage.setItem('sxs_wiki_theme',n);});})();</script>
+</body></html>

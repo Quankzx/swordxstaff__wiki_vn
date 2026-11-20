@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SwordxStaff Wiki — Sword X Staff Wiki tiếng Việt</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* --- Khung Fandom gộp (thêm vào, không sửa CSS gốc) --- */
+.fandom-bar{display:flex;flex-wrap:wrap;gap:4px 20px;align-items:center;background:#20242e;border-bottom:2px solid #ffd75e;padding:8px 20px;font-size:.85rem;font-weight:700;letter-spacing:.06em}
+.fandom-bar a{color:#ffd75e;text-decoration:none}
+.fandom-bar a:hover{text-decoration:underline}
+.fandom-bar .fb-label{color:#8b98b8;font-weight:600;letter-spacing:.02em}
+.crumbs{font-size:.85rem;color:#8494b8;padding:10px 2px 0}
+.crumbs a{color:#4d8fd6}
+.site-footer{border-top:1px solid #ccc;margin-top:28px;padding:16px 20px 28px;font-size:.85rem;color:#666;line-height:1.7}
+.site-footer a{color:#1a5fb4}
+.site-footer--dark{border-top-color:#253055;color:#b8c4e0;background:#0f1322}
+.site-footer--dark a{color:#ffd75e}
+.wiki-link{display:block;padding:5px 10px;border-radius:6px;color:inherit;text-decoration:none;font-size:.86rem;line-height:1.4}
+.wiki-link:hover{background:rgba(128,140,180,.18);text-decoration:underline}
+.wiki-link.active{background:rgba(245,158,11,.18);font-weight:700;color:#f59e0b}
+.wiki-group{font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#8494b8;padding:12px 10px 3px}
+.wiki-topbar{position:sticky;top:0;z-index:60;background:#20242e;color:#fff;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid #3d4e88}
+.wiki-topbar a.brand-link{color:#ffd75e;font-weight:700;font-size:1.05em;text-decoration:none}
+.wiki-topbar .top-actions{display:flex;gap:16px;font-size:.88rem}
+.wiki-topbar .top-actions a{color:#cfe0ff;text-decoration:none}
+.wiki-topbar .top-actions a:hover{text-decoration:underline}
+.wiki-shell{display:flex;align-items:flex-start}
+.wiki-sidebar{width:272px;flex-shrink:0;position:sticky;top:52px;max-height:calc(100vh - 52px);overflow-y:auto;padding:14px 12px;border-right:1px solid #ddd;background:#f7f5ef}
+.wiki-main{flex:1;min-width:0}
+@media(max-width:900px){.wiki-shell{flex-direction:column}.wiki-sidebar{position:static;width:100%;max-height:none;border-right:none;border-bottom:1px solid #ddd}}
+</style></head>
+<body>
+<header class="wiki-topbar"><a class="brand-link" href="../index.html">⚔️ SWORD x STAFF — ĐẠI BÁCH KHOA VN</a><div class="top-actions"><a href="../index.html">🏠 Bách Khoa Chính</a><a href="index.html">📚 Lọc Bài Chi Tiết</a><button type="button" id="wikiThemeToggle" style="padding:4px 11px;border-radius:6px;border:1px solid var(--purple-border);background:var(--sheet-bg);color:var(--text-main);cursor:pointer;font-weight:700;">🌓 Đổi Nền</button></div></header>
+<nav class="fandom-bar" aria-label="Menu Fandom"><span class="fb-label">SWORD X STAFF WIKI</span><a href="index.html">EXPLORE</a><a href="maps.html">KINGDOMS</a><a href="classes-overview.html">COMBAT</a><a href="seasonal-systems.html">EVENTS</a><a href="a-beginner-chaos-invasion-guide.html">BEGINNER GUIDE</a></nav>
+<div class="wiki-shell">
+<nav class="wiki-sidebar" aria-label="Wiki Fandom">
+      <div class="wiki-group">Wiki Fandom — Bản dịch tiếng Việt</div>
+      <a class="wiki-link" href="index.html">📖 Trang chính Wiki</a>
+      <div class="wiki-group">Bắt đầu chơi</div>
+      <a class="wiki-link" href="sword-x-staff.html">Sword X Staff</a>
+      <a class="wiki-link" href="sword-x-staff-launch-faq.html">FAQ Ra Mắt Sword X Staff</a>
+      <a class="wiki-link" href="a-beginner-chaos-invasion-guide.html">Hướng Dẫn Tân Thủ: Cuộc Xâm Lăng Hỗn Mang</a>
+      <a class="wiki-link" href="class-selection.html">Chọn Lớp Nhân Vật</a>
+      <a class="wiki-link" href="classes-overview.html">Tổng Quan Các Lớp Nhân Vật</a>
+      <a class="wiki-link" href="class-change.html">Chuyển Lớp</a>
+      <a class="wiki-link" href="everything-about-class-change.html">Tất Cả Về Chuyển Lớp</a>
+      <a class="wiki-link" href="progression.html">Tiến Trình Phát Triển</a>
+      <a class="wiki-link" href="seasonal-systems.html">Hệ Thống Theo Mùa</a>
+      <a class="wiki-link" href="skill-overview.html">Tổng Quan Kỹ Năng</a>
+      <a class="wiki-link" href="skill-ascend.html">Thăng Cấp Kỹ Năng</a>
+      <div class="wiki-group">Lớp nhân vật</div>
+      <a class="wiki-link" href="warrior.html">Chiến Binh (Warrior)</a>
+      <a class="wiki-link" href="mage.html">Pháp Sư (Mage)</a>
+      <a class="wiki-link" href="knight.html">Hiệp Sĩ (Knight)</a>
+      <a class="wiki-link" href="duelist.html">Đấu Sĩ (Duelist)</a>
+      <a class="wiki-link" href="sorcerer.html">Thuật Sư (Sorcerer)</a>
+      <a class="wiki-link" href="sage.html">Hiền Giả (Sage)</a>
+      <a class="wiki-link" href="berserker.html">Cuồng Chiến (Berserker)</a>
+      <a class="wiki-link" href="paladin.html">Thánh Hiệp Sĩ (Paladin)</a>
+      <a class="wiki-link" href="archmage.html">Đại Pháp Sư (Archmage)</a>
+      <a class="wiki-link" href="arcanist.html">Bí Thuật Sư (Arcanist)</a>
+      <div class="wiki-group">Kỹ năng theo lớp</div>
+      <a class="wiki-link" href="warrior-skills.html">Kỹ Năng Chiến Binh</a>
+      <a class="wiki-link" href="mage-skills.html">Kỹ Năng Pháp Sư</a>
+      <a class="wiki-link" href="knight-skills.html">Kỹ Năng Hiệp Sĩ</a>
+      <a class="wiki-link" href="duelist-skills.html">Kỹ Năng Đấu Sĩ</a>
+      <a class="wiki-link" href="sorcerer-skills.html">Kỹ Năng Thuật Sư</a>
+      <a class="wiki-link" href="sage-skills.html">Kỹ Năng Hiền Giả</a>
+      <div class="wiki-group">Bạn Đồng Hành & Fantomon</div>
+      <a class="wiki-link" href="companions.html">Bạn Đồng Hành</a>
+      <a class="wiki-link" href="fantamons.html">Fantomon</a>
+      <a class="wiki-link" href="fantomon.html">Fantomon</a>
+      <a class="wiki-link" href="akane.html">Akane</a>
+      <a class="wiki-link" href="molly.html">Molly</a>
+      <a class="wiki-link" href="reina.html">Reina</a>
+      <a class="wiki-link" href="dryason.html">Dryason</a>
+      <a class="wiki-link" href="hermes.html">Hermes</a>
+      <a class="wiki-link" href="narss.html">Narss (Thủ Lĩnh)</a>
+      <a class="wiki-link" href="rolla.html">Rolla</a>
+      <div class="wiki-group">Thế giới & hoạt động</div>
+      <a class="wiki-link" href="maps.html">Bản Đồ</a>
+      <a class="wiki-link" href="material-realm.html">Cõi Vật Chất</a>
+      <a class="wiki-link" href="arena.html">Đấu Trường</a>
+      <a class="wiki-link" href="guild.html">Bang Hội</a>
+      <a class="wiki-link" href="daily-dungeons.html">Phụ Bản Hàng Ngày</a>
+      <a class="wiki-link" href="destiny-fruits.html">Trái Định Mệnh</a>
+      <a class="wiki-link" href="goddess-statues.html">Tượng Nữ Thần</a>
+      <a class="wiki-link" href="commercium.html">Thương Hội Commercium</a>
+      <a class="wiki-link" href="vendor-booth.html">Gian Hàng</a>
+      <a class="wiki-link" href="journey-overture.html">Khúc Dạo Đầu Hành Trình</a>
+      <a class="wiki-link" href="elemental-mystery.html">Bí Ẩn Nguyên Tố</a>
+      <div class="wiki-group">Khác</div>
+      <a class="wiki-link" href="ice-spike.html">Ice Spike</a>
+      <a class="wiki-link" href="water-shot.html">Water Shot</a>
+      <a class="wiki-link" href="discordintegrator.html">DiscordIntegrator</a>
+      <a class="wiki-link" href="boltray-games.html">BOLTRAY GAMES</a>
+      <a class="wiki-link active" href="swordxstaff-wiki.html">SwordxStaff Wiki</a>
+    </nav>
+<main class="wiki-main">
+<div class="crumbs"><a href="../index.html">Trang chủ</a> / <a href="index.html">Wiki</a> / SwordxStaff Wiki</div>
+
+<h1>SwordxStaff Wiki</h1>
+<div class="mw-content-ltr mw-parser-output" lang="vi" dir="ltr"><div class="main-page-tag-lcs main-page-tag-lcs-exploded"><div class="lcs-container">
+<table style="width:100%; border-radius: 10px; border:solid 3px #5D50AB; background:transparent; margin-bottom: 15px; text-align: center;">
+<tbody><tr>
+<td><div class="roundtop" style="background: #A690D1; text-align: center; border:2px solid #5D50AB; padding:3px; vertical-align:top; border-radius: 7px 7px 0px 0px;"><span style="color:white;" class="nounderlines;"><b>Chào mừng bạn đến với Sword x Staff Wiki!</b></span></div>
+</td></tr>
+<tr>
+<td style="border-radius: 10px; padding:5px;"><div style="text-align:center"><br /><div class="fandom-slider orientation-bottom">
+	<div class="fandom-slider__controls">
+<p>		<a class="fandom-slider__controls__prev" aria-label="Ảnh trước">
+			<svg class="wds-icon wds-icon-tiny" aria-hidden="true" focusable="false"><use xlink:href="#wds-icons-arrow-tiny"></use></svg>		</a>
+</p><p>		<a class="fandom-slider__controls__next" aria-label="Ảnh trước">
+			<svg class="wds-icon wds-icon-tiny" aria-hidden="true" focusable="false"><use xlink:href="#wds-icons-arrow-tiny"></use></svg>		</a>
+</p>
+	</div>
+	<div class="fandom-slider__list">
+					<div class="gallerybox">
+				<span><img alt="" src="../assets/fandom/Site-background-light" decoding="async" loading="lazy" width="670" height="377" /></span>			</div>
+					<div class="gallerybox">
+				<span><img alt="" src="../assets/fandom/Dragon.png" decoding="async" loading="lazy" width="670" height="420" /></span>			</div>
+					<div class="gallerybox">
+				<span><img alt="" src="../assets/fandom/20251029-132856.jpg" decoding="async" loading="lazy" width="670" height="412" class="lazyload" /></span>			</div>
+					<div class="gallerybox">
+				<span><img alt="" src="../assets/fandom/KV.png" decoding="async" loading="lazy" width="670" height="377" class="lazyload" /></span>			</div>
+			</div>
+	<div class="fandom-slider__nav">
+		<div class="fandom-slider__nav__caption">
+							<div class="fandom-slider__nav__caption-0">
+					<h2></h2>
+					
+									</div>
+							<div class="fandom-slider__nav__caption-1">
+					<h2></h2>
+					
+									</div>
+							<div class="fandom-slider__nav__caption-2">
+					<h2></h2>
+					
+									</div>
+							<div class="fandom-slider__nav__caption-3">
+					<h2></h2>
+					
+									</div>
+					</div>
+		<div class="fandom-slider__nav__thumbs">
+							<div class="fandom-slider__nav__thumb-0">
+											<span><img alt="" src="../assets/fandom/Site-background-light" decoding="async" loading="lazy" width="89" height="50" /></span>									</div>
+							<div class="fandom-slider__nav__thumb-1">
+											<span><img alt="" src="../assets/fandom/Dragon.png" decoding="async" loading="lazy" width="80" height="50" class="lazyload" /></span>									</div>
+							<div class="fandom-slider__nav__thumb-2">
+											<span><img alt="" src="../assets/fandom/20251029-132856.jpg" decoding="async" loading="lazy" width="82" height="50" class="lazyload" /></span>									</div>
+							<div class="fandom-slider__nav__thumb-3">
+											<span><img alt="" src="../assets/fandom/KV.png" decoding="async" loading="lazy" width="89" height="50" class="lazyload" /></span>									</div>
+					</div>
+	</div>
+</div>
+<p><a href="sword-x-staff.html">Giới thiệu</a> • <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://game.boltray.com/SwordxStaff?lang=en">Trang Web Chính Thức</a> • <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.facebook.com/profile.php?id=61579592385490#">Facebook Chính Thức</a>
+</p><p>Sword x Staff là một tựa RPG độc nhất vô nhị — một “RPG Con Đường Thứ Ba” (Third Way RPG). Chiến thuật, khám phá thế giới rộng lớn, chơi nhàn rỗi (idle) — sao phải chọn một khi bạn có thể có tất cả? Chơi hardcore cũng được, hay chỉ chill cũng được — dù thế nào bạn cũng sẽ tìm thấy niềm vui của riêng mình. Cái cảm giác thực sự khác biệt. Không áp lực, không có một cách chơi duy nhất — cứ nhảy vào, khám phá, và để cuộc phiêu lưu cuốn theo cách của bạn.
+Tò mò không biết lối chơi thực sự ra sao?
+</p><p>Hơn <a href="skill-overview.html">200+ kỹ năng</a> đang chờ bạn kết hợp, phối trộn và thử nghiệm, để trận chiến của bạn mang đậm dấu ấn 100% của riêng bạn. Và bạn không hề đơn độc! Bạn sẽ gặp những <a href="companions.html">bạn đồng hành</a> từ khắp nơi và cùng nhau đối đầu với các Hieromon bí ẩn!
+</p><p><b><big>Vui lòng đọc Trang Cộng Đồng và Nội Quy trước khi chỉnh sửa và thảo luận!</big></b>
+</p>
+<div id="gallery-0" hash="e17ec763f40667d43620e86d93a82c5e" class="wikia-gallery wikia-gallery-caption-below wikia-gallery-position-left wikia-gallery-spacing-medium wikia-gallery-border-none wikia-gallery-captions-left wikia-gallery-caption-size-medium"><div class="wikia-gallery-caption"></div><div class="wikia-gallery-item" style="width:50px; "><div class="thumb" style="height:50px;"><div class="gallery-image-wrapper accent" id="https---www-facebook-com-profile-php-id-61579592385490-7CFacebook" style="position: relative; height:50px; width:50px;"><a class="image link-external" href="https://www.facebook.com/profile.php?id=61579592385490%7CFacebook" title="https://www.facebook.com/profile.php?id=61579592385490%7CFacebook (2 KB)" style="height:50px; width:50px;"><noscript><img style="" src="../assets/fandom/Facebook_Icon.png" title="https://www.facebook.com/profile.php?id=61579592385490%7CFacebook (2 KB)" class="thumbimage" alt="" height="50" width="50"></noscript><img style="" src="../assets/fandom/Facebook_Icon.png" title="https://www.facebook.com/profile.php?id=61579592385490%7CFacebook (2 KB)" class="thumbimage lazyload" alt="" height="50" width="50" /></a></div></div></div><div class="wikia-gallery-item" style="width:50px; "><div class="thumb" style="height:50px;"><div class="gallery-image-wrapper accent" id="https---discord-gg-b6xekW7U8z-7CDiscord" style="position: relative; height:50px; width:50px;"><a class="image link-external" href="https://discord.gg/b6xekW7U8z%7CDiscord" title="https://discord.gg/b6xekW7U8z%7CDiscord (2 KB)" style="height:50px; width:50px;"><noscript><img style="" src="../assets/fandom/Discord_Logo.png" title="https://discord.gg/b6xekW7U8z%7CDiscord (2 KB)" class="thumbimage" alt="" height="50" width="50"></noscript><img style="" src="../assets/fandom/Discord_Logo.png" title="https://discord.gg/b6xekW7U8z%7CDiscord (2 KB)" class="thumbimage lazyload" alt="" height="50" width="50" /></a></div></div></div><div class="wikia-gallery-item" style="width:50px; "><div class="thumb" style="height:50px;"><div class="gallery-image-wrapper accent" id="https---x-com-SwordxStaff-7CX" style="position: relative; height:50px; width:50px;"><a class="image link-external" href="https://x.com/SwordxStaff%7CX" title="https://x.com/SwordxStaff%7CX (14 KB)" style="height:50px; width:50px;"><noscript><img style="" src="../assets/fandom/X.png" title="https://x.com/SwordxStaff%7CX (14 KB)" class="thumbimage" alt="" height="50" width="50"></noscript><img style="" src="../assets/fandom/X.png" title="https://x.com/SwordxStaff%7CX (14 KB)" class="thumbimage lazyload" alt="" height="50" width="50" /></a></div></div></div></div></div>
+</td></tr></tbody></table>
+<p><br />
+</p>
+<table style="width:100%; border-radius: 10px; border:solid 3px #5D50AB; background:transparent; margin-bottom: 15px; text-align: center;">
+<tbody><tr>
+<td><div class="roundtop" style="background: #A690D1; text-align: center; border:2px solid #5D50AB; padding:3px; vertical-align:top; border-radius: 7px 7px 0px 0px;"><span style="color:white;" class="nounderlines;"><b>Kết Hợp &amp; Phối Trộn! Bậc Thầy Kỹ Năng</b></span></div>
+</td></tr>
+<tr>
+<td style="border-radius: 10px; padding:5px;"><div style="text-align:center"><figure class="thumb  show-info-icon" typeof="mw:File/Thumb" style="width: 275px"> 	<img alt="2 STORE PHOTO" src="../assets/fandom/2_STORE_PHOTO.jpg" decoding="async" loading="lazy" width="275" height="490" class="thumbimage lazyload" /> 	<noscript><img alt="2 STORE PHOTO" src="../assets/fandom/2_STORE_PHOTO.jpg" decoding="async" loading="lazy" width="275" height="490" class="thumbimage" /></noscript> 	<figcaption class="thumbcaption"> 			<svg><use xlink:href="#wds-icons-info-small"></use></svg> 	</figcaption> </figure>
+<p><br />Quên chuyện “nhiều kỹ năng” thông thường đi. Đây là về chiến thuật, chiến lược, và đúng vậy, cả những combo điên rồ nữa! Với hệ thống song lớp kinh điển, bạn có thể kết hợp và phối trộn tùy thích. Sắp xếp thứ tự kỹ thuật, chuyển đổi nguyên tố, và thử một phong cách mới trong mỗi trận đấu với hơn 200 kỹ năng!
+</p><p>Game có nền tảng song lớp Chiến Binh – Pháp Sư kinh điển<sup id="cite&#95;ref-1" class="reference"><a href="#cite_note-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup>, được mở rộng qua nhiều nhánh lớp và chuyên môn nâng cao. Phiên bản hiện tại có 6 bậc lớp, và bậc thứ 7 đang được phát triển.
+</p><p>Người chơi có thể chuyển lớp miễn phí một lần mỗi tuần<sup id="cite&#95;ref-2" class="reference"><a href="#cite_note-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup>, và giữ nguyên toàn bộ cấp độ tổng thể cùng tiến trình kỹ năng.
+</p><p><br />Cuộc xâm lăng đang đến gần, hãy bảo vệ vương quốc!
+</p>
+<div id="gallery-1" hash="b56c845412bf30c68a1640d563678d11" class="wikia-gallery wikia-gallery-caption-below wikia-gallery-position-left wikia-gallery-spacing-medium wikia-gallery-border-small wikia-gallery-captions-left wikia-gallery-caption-size-medium"><div class="wikia-gallery-caption"></div><div class="wikia-gallery-item" style="width:152px; "><div class="thumb" style="height:60px;"><div class="gallery-image-wrapper accent" id="https---play-google-com-store-apps-details-id-com-zjcs-android-us" style="position: relative; height:43px; width:150px; top:7.5px;"><a class="image link-external" href="https://play.google.com/store/apps/details?id=com.zjcs.android.us" title="https://play.google.com/store/apps/details?id=com.zjcs.android.us (5 KB)" style="height:43px; width:150px;"><noscript><img style="" src="../assets/fandom/Googleplay.png" title="https://play.google.com/store/apps/details?id=com.zjcs.android.us (5 KB)" class="thumbimage" alt="" height="44" width="150"></noscript><img style="" src="../assets/fandom/Googleplay.png" title="https://play.google.com/store/apps/details?id=com.zjcs.android.us (5 KB)" class="thumbimage lazyload" alt="" height="44" width="150" /></a></div></div></div><div class="wikia-gallery-item" style="width:152px; "><div class="thumb" style="height:60px;"><div class="gallery-image-wrapper accent" id="https---apps-apple-com-app-id6751270546" style="position: relative; height:58px; width:150px;"><a class="image link-external" href="https://apps.apple.com/app/id6751270546" title="https://apps.apple.com/app/id6751270546 (94 KB)" style="height:58px; width:150px;"><noscript><img style="" src="../assets/fandom/AppStore.png" title="https://apps.apple.com/app/id6751270546 (94 KB)" class="thumbimage" alt="" height="58" width="150"></noscript><img style="" src="../assets/fandom/AppStore.png" title="https://apps.apple.com/app/id6751270546 (94 KB)" class="thumbimage lazyload" alt="" height="58" width="150" /></a></div></div></div></div></div>
+</td></tr></tbody></table>
+<p><br />
+</p>
+</div></div>
+<div class="main-page-tag-rcs">	<div class="fandom-ad-placeholder fandom-ad-wrapper">
+<p>	<fandom-ad id="top_boxad"></fandom-ad>
+</p>
+	<div id="label-top_boxad" class="fandom-ad-label">
+<p>		Quảng cáo
+</p>
+	</div>
+</div><div class="rcs-container">
+<table style="width:100%; border-radius: 10px; border:solid 3px #5D50AB; background:transparent; margin-bottom: 15px; text-align: center;">
+<tbody><tr>
+<td><div class="roundtop" style="background: #A690D1; text-align: center; border:2px solid #5D50AB; padding:3px; vertical-align:top; border-radius: 7px 7px 0px 0px;"><span style="color:white;" class="nounderlines;"><b>Bắt Đầu</b></span></div>
+</td></tr>
+<tr>
+<td style="border-radius: 10px; padding:5px;"><div style="text-align:center"><figure class="mw-halign-center" typeof="mw:File"><img alt="Join Us" src="../assets/fandom/Join_Us.png" decoding="async" loading="lazy" width="150" height="165" class="mw-file-element lazyload" /><figcaption></figcaption></figure>
+<p>Chúng tôi là một cộng đồng không ngừng lớn mạnh với rất nhiều điều để mang đến, và vì vậy chúng tôi chào đón bạn bổ sung bất kỳ thông tin liên quan nào vào các bài viết của chúng tôi.
+</p>
+Tạo tài khoản và tham gia cùng chúng tôi! Hiện tại chúng tôi đang chỉnh sửa hơn 56 bài viết và 228 tập tin</div>
+</td></tr></tbody></table>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite&#95;note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text"><a href="classes-overview.html">Tổng Quan Lớp Nhân Vật</a></span>
+</li>
+<li id="cite&#95;note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text"><a href="class-change.html">Chuyển Lớp</a></span>
+</li>
+</ol></div></div></div>
+</div>
+</main>
+</div>
+<footer class="site-footer"><p>Nguồn: <a href="https://swordxstaff.fandom.com/wiki/SwordxStaff_Wiki">bài gốc trên SwordxStaff Wiki (Fandom)</a>. Nội dung được dịch sang tiếng Việt; nội dung gốc theo giấy phép CC-BY-SA.</p><p><strong>Sword X Staff — Đại Bách Khoa VN &amp; Wiki Fandom (bản dịch tiếng Việt).</strong> Nội dung Bách khoa, dữ liệu, công thức và công cụ trên trang chủ là nội dung gốc của người biên soạn. Các bài trong mục Wiki được dịch từ <a href="https://swordxstaff.fandom.com">SwordxStaff Wiki trên Fandom</a>; nội dung gốc theo giấy phép <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a> — xem link bài gốc ở cuối mỗi bài wiki.</p><p><a href="../index.html">Trang chủ</a> · <a href="index.html">Trang chính Wiki</a> · <a href="https://swordxstaff.fandom.com">SwordxStaff Wiki (Fandom, tiếng Anh)</a></p></footer>
+<script>(function(){const t=localStorage.getItem('sxs_wiki_theme')||'light';document.documentElement.setAttribute('data-theme',t);const b=document.getElementById('wikiThemeToggle');if(b)b.addEventListener('click',()=>{const n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);localStorage.setItem('sxs_wiki_theme',n);});})();</script>
+</body></html>

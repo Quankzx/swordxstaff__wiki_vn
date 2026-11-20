@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <defs>
+    <radialGradient id="bg_sk97" cx="50%" cy="42%" r="62%">
+      <stop offset="0%" stop-color="#4c1118"/>
+      <stop offset="100%" stop-color="#16070a"/>
+    </radialGradient>
+    <linearGradient id="rim_sk97" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff6b81"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#991b1b"/>
+    </linearGradient>
+    <linearGradient id="art_sk97" x1="15%" y1="10%" x2="85%" y2="90%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="45%" stop-color="#fb7185"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+    <radialGradient id="glow_sk97" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fb7185" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="sh_sk97" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.2" flood-color="#000000" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+  <!-- Outer Base & Metallic Bevel Frame -->
+  <rect x="2" y="2" width="76" height="76" rx="22" fill="url(#rim_sk97)" stroke="#05070e" stroke-width="2"/>
+  <rect x="6" y="6" width="68" height="68" rx="18" fill="url(#bg_sk97)" stroke="#fde047" stroke-width="1" stroke-opacity="0.62"/>
+  <!-- Arcane Inner Ring & Glow -->
+  <circle cx="40" cy="40" r="28" fill="url(#glow_sk97)"/>
+  <circle cx="40" cy="40" r="25" fill="none" stroke="#fb7185" stroke-opacity="0.38" stroke-width="1" stroke-dasharray="3 2"/>
+  <!-- Glossy Top Highlight -->
+  <path d="M12 9 H68 A6 6 0 0 1 73 14 V24 Q40 16 7 24 V14 A6 6 0 0 1 12 9 Z" fill="#ffffff" fill-opacity="0.06"/>
+  <!-- Corner Studs -->
+  <polygon points="8,8 13,8 8,13" fill="#fef08a" opacity="0.85"/>
+  <polygon points="72,8 67,8 72,13" fill="#fef08a" opacity="0.85"/>
+  <polygon points="8,72 13,72 8,67" fill="#fef08a" opacity="0.85"/>
+  <polygon points="72,72 67,72 72,67" fill="#fef08a" opacity="0.85"/>
+  <!-- Main Shaded Illustration -->
+  <g filter="url(#sh_sk97)">
+    <path d="M56 14 L64 16 L40 48 L33 41 Z" fill="url(#art_sk97)" stroke="#fef08a" stroke-width="1"/>
+              <path d="M27 36 L45 54 L41 58 L23 40 Z" fill="#fbbf24" stroke="#fef3c7" stroke-width="1"/>
+              <path d="M31 49 L21 59 L17 55 L27 45 Z" fill="#92400e"/>
+              <circle cx="18" cy="58" r="3.5" fill="#fde047"/>
+              <path d="M16 64 Q40 54 64 64" fill="none" stroke="#fb7185" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <circle cx="65" cy="65" r="8" fill="#090d16" stroke="#ef4444" stroke-width="1.6"/>
+    <text x="65" y="68" text-anchor="middle" font-family="Arial,sans-serif" font-weight="bold" font-size="8.5" fill="#fef08a">BT</text>
+</svg>

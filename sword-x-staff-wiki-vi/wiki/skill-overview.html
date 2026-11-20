@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tổng Quan Kỹ Năng — Sword X Staff Wiki tiếng Việt</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* --- Khung Fandom gộp (thêm vào, không sửa CSS gốc) --- */
+.fandom-bar{display:flex;flex-wrap:wrap;gap:4px 20px;align-items:center;background:#20242e;border-bottom:2px solid #ffd75e;padding:8px 20px;font-size:.85rem;font-weight:700;letter-spacing:.06em}
+.fandom-bar a{color:#ffd75e;text-decoration:none}
+.fandom-bar a:hover{text-decoration:underline}
+.fandom-bar .fb-label{color:#8b98b8;font-weight:600;letter-spacing:.02em}
+.crumbs{font-size:.85rem;color:#8494b8;padding:10px 2px 0}
+.crumbs a{color:#4d8fd6}
+.site-footer{border-top:1px solid #ccc;margin-top:28px;padding:16px 20px 28px;font-size:.85rem;color:#666;line-height:1.7}
+.site-footer a{color:#1a5fb4}
+.site-footer--dark{border-top-color:#253055;color:#b8c4e0;background:#0f1322}
+.site-footer--dark a{color:#ffd75e}
+.wiki-link{display:block;padding:5px 10px;border-radius:6px;color:inherit;text-decoration:none;font-size:.86rem;line-height:1.4}
+.wiki-link:hover{background:rgba(128,140,180,.18);text-decoration:underline}
+.wiki-link.active{background:rgba(245,158,11,.18);font-weight:700;color:#f59e0b}
+.wiki-group{font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#8494b8;padding:12px 10px 3px}
+.wiki-topbar{position:sticky;top:0;z-index:60;background:#20242e;color:#fff;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid #3d4e88}
+.wiki-topbar a.brand-link{color:#ffd75e;font-weight:700;font-size:1.05em;text-decoration:none}
+.wiki-topbar .top-actions{display:flex;gap:16px;font-size:.88rem}
+.wiki-topbar .top-actions a{color:#cfe0ff;text-decoration:none}
+.wiki-topbar .top-actions a:hover{text-decoration:underline}
+.wiki-shell{display:flex;align-items:flex-start}
+.wiki-sidebar{width:272px;flex-shrink:0;position:sticky;top:52px;max-height:calc(100vh - 52px);overflow-y:auto;padding:14px 12px;border-right:1px solid #ddd;background:#f7f5ef}
+.wiki-main{flex:1;min-width:0}
+@media(max-width:900px){.wiki-shell{flex-direction:column}.wiki-sidebar{position:static;width:100%;max-height:none;border-right:none;border-bottom:1px solid #ddd}}
+</style></head>
+<body>
+<header class="wiki-topbar"><a class="brand-link" href="../index.html">⚔️ SWORD x STAFF — ĐẠI BÁCH KHOA VN</a><div class="top-actions"><a href="../index.html">🏠 Bách Khoa Chính</a><a href="index.html">📚 Lọc Bài Chi Tiết</a><button type="button" id="wikiThemeToggle" style="padding:4px 11px;border-radius:6px;border:1px solid var(--purple-border);background:var(--sheet-bg);color:var(--text-main);cursor:pointer;font-weight:700;">🌓 Đổi Nền</button></div></header>
+<nav class="fandom-bar" aria-label="Menu Fandom"><span class="fb-label">SWORD X STAFF WIKI</span><a href="index.html">EXPLORE</a><a href="maps.html">KINGDOMS</a><a href="classes-overview.html">COMBAT</a><a href="seasonal-systems.html">EVENTS</a><a href="a-beginner-chaos-invasion-guide.html">BEGINNER GUIDE</a></nav>
+<div class="wiki-shell">
+<nav class="wiki-sidebar" aria-label="Wiki Fandom">
+      <div class="wiki-group">Wiki Fandom — Bản dịch tiếng Việt</div>
+      <a class="wiki-link" href="index.html">📖 Trang chính Wiki</a>
+      <div class="wiki-group">Bắt đầu chơi</div>
+      <a class="wiki-link" href="sword-x-staff.html">Sword X Staff</a>
+      <a class="wiki-link" href="sword-x-staff-launch-faq.html">FAQ Ra Mắt Sword X Staff</a>
+      <a class="wiki-link" href="a-beginner-chaos-invasion-guide.html">Hướng Dẫn Tân Thủ: Cuộc Xâm Lăng Hỗn Mang</a>
+      <a class="wiki-link" href="class-selection.html">Chọn Lớp Nhân Vật</a>
+      <a class="wiki-link" href="classes-overview.html">Tổng Quan Các Lớp Nhân Vật</a>
+      <a class="wiki-link" href="class-change.html">Chuyển Lớp</a>
+      <a class="wiki-link" href="everything-about-class-change.html">Tất Cả Về Chuyển Lớp</a>
+      <a class="wiki-link" href="progression.html">Tiến Trình Phát Triển</a>
+      <a class="wiki-link" href="seasonal-systems.html">Hệ Thống Theo Mùa</a>
+      <a class="wiki-link active" href="skill-overview.html">Tổng Quan Kỹ Năng</a>
+      <a class="wiki-link" href="skill-ascend.html">Thăng Cấp Kỹ Năng</a>
+      <div class="wiki-group">Lớp nhân vật</div>
+      <a class="wiki-link" href="warrior.html">Chiến Binh (Warrior)</a>
+      <a class="wiki-link" href="mage.html">Pháp Sư (Mage)</a>
+      <a class="wiki-link" href="knight.html">Hiệp Sĩ (Knight)</a>
+      <a class="wiki-link" href="duelist.html">Đấu Sĩ (Duelist)</a>
+      <a class="wiki-link" href="sorcerer.html">Thuật Sư (Sorcerer)</a>
+      <a class="wiki-link" href="sage.html">Hiền Giả (Sage)</a>
+      <a class="wiki-link" href="berserker.html">Cuồng Chiến (Berserker)</a>
+      <a class="wiki-link" href="paladin.html">Thánh Hiệp Sĩ (Paladin)</a>
+      <a class="wiki-link" href="archmage.html">Đại Pháp Sư (Archmage)</a>
+      <a class="wiki-link" href="arcanist.html">Bí Thuật Sư (Arcanist)</a>
+      <div class="wiki-group">Kỹ năng theo lớp</div>
+      <a class="wiki-link" href="warrior-skills.html">Kỹ Năng Chiến Binh</a>
+      <a class="wiki-link" href="mage-skills.html">Kỹ Năng Pháp Sư</a>
+      <a class="wiki-link" href="knight-skills.html">Kỹ Năng Hiệp Sĩ</a>
+      <a class="wiki-link" href="duelist-skills.html">Kỹ Năng Đấu Sĩ</a>
+      <a class="wiki-link" href="sorcerer-skills.html">Kỹ Năng Thuật Sư</a>
+      <a class="wiki-link" href="sage-skills.html">Kỹ Năng Hiền Giả</a>
+      <div class="wiki-group">Bạn Đồng Hành & Fantomon</div>
+      <a class="wiki-link" href="companions.html">Bạn Đồng Hành</a>
+      <a class="wiki-link" href="fantamons.html">Fantomon</a>
+      <a class="wiki-link" href="fantomon.html">Fantomon</a>
+      <a class="wiki-link" href="akane.html">Akane</a>
+      <a class="wiki-link" href="molly.html">Molly</a>
+      <a class="wiki-link" href="reina.html">Reina</a>
+      <a class="wiki-link" href="dryason.html">Dryason</a>
+      <a class="wiki-link" href="hermes.html">Hermes</a>
+      <a class="wiki-link" href="narss.html">Narss (Thủ Lĩnh)</a>
+      <a class="wiki-link" href="rolla.html">Rolla</a>
+      <div class="wiki-group">Thế giới & hoạt động</div>
+      <a class="wiki-link" href="maps.html">Bản Đồ</a>
+      <a class="wiki-link" href="material-realm.html">Cõi Vật Chất</a>
+      <a class="wiki-link" href="arena.html">Đấu Trường</a>
+      <a class="wiki-link" href="guild.html">Bang Hội</a>
+      <a class="wiki-link" href="daily-dungeons.html">Phụ Bản Hàng Ngày</a>
+      <a class="wiki-link" href="destiny-fruits.html">Trái Định Mệnh</a>
+      <a class="wiki-link" href="goddess-statues.html">Tượng Nữ Thần</a>
+      <a class="wiki-link" href="commercium.html">Thương Hội Commercium</a>
+      <a class="wiki-link" href="vendor-booth.html">Gian Hàng</a>
+      <a class="wiki-link" href="journey-overture.html">Khúc Dạo Đầu Hành Trình</a>
+      <a class="wiki-link" href="elemental-mystery.html">Bí Ẩn Nguyên Tố</a>
+      <div class="wiki-group">Khác</div>
+      <a class="wiki-link" href="ice-spike.html">Ice Spike</a>
+      <a class="wiki-link" href="water-shot.html">Water Shot</a>
+      <a class="wiki-link" href="discordintegrator.html">DiscordIntegrator</a>
+      <a class="wiki-link" href="boltray-games.html">BOLTRAY GAMES</a>
+      <a class="wiki-link" href="swordxstaff-wiki.html">SwordxStaff Wiki</a>
+    </nav>
+<main class="wiki-main">
+<div class="crumbs"><a href="../index.html">Trang chủ</a> / <a href="index.html">Wiki</a> / Tổng Quan Kỹ Năng</div>
+
+<h1>Tổng Quan Kỹ Năng</h1>
+<div class="mw-content-ltr mw-parser-output" lang="vi" dir="ltr"><div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="vi" dir="ltr"><h2 id="mw-toc-heading">Mục lục</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Types_of_Skills"><span class="tocnumber">1</span> <span class="toctext">Các Loại Kỹ Năng</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Skill_Tags"><span class="tocnumber">2</span> <span class="toctext">Thẻ Kỹ Năng (Skill Tags)</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Skill_Level"><span class="tocnumber">3</span> <span class="toctext">Cấp Độ Kỹ Năng</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Skill_Ascend"><span class="tocnumber">4</span> <span class="toctext">Thăng Cấp Kỹ Năng (Skill Ascend)</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Types_of_Skills">Các Loại Kỹ Năng</span><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Hiện tại Sword x Staff có năm loại kỹ năng: Kỹ Thuật (Technique), Bùa (Charm), Nội Tại (Passive) và Kỹ Năng Trang Bị (Gear Skill). Sát thương mà chúng gây ra được phân thành ba nhóm: Sát Thương Kỹ Thuật (Technique Damage), Sát Thương Bùa (Charm Damage), Sát Thương Buff (Buff Damage) và Sát Thương Không Phân Loại (Unclassified Damage), bao gồm kỹ năng của Fantomon, kỹ năng của NPC và sát thương của Kỹ Năng Trang Bị (Gear Skill), v.v.
+</p><p>Tất cả kỹ năng đều được tạo thành từ Sát Thương Cơ Bản (Basic Damage) và Sát Thương Theo Phần Trăm (Percentage Damage), hoặc chỉ một trong hai. Bạn có thể tăng cấp kỹ năng để tăng Sát Thương Cơ Bản (Basic Damage), và thăng cấp kỹ năng để tăng cả Sát Thương Cơ Bản (Basic Damage) lẫn Sát Thương Theo Phần Trăm (Percentage Damage).
+</p>
+<h2><span class="mw-headline" id="Skill_Tags">Thẻ Kỹ Năng (Skill Tags)</span><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Mỗi kỹ năng đều có thẻ (tag) riêng, ví dụ như DMG (sát thương), knock back (đẩy lùi), self buff (tự buff), ally buff heal (buff hồi máu cho đồng đội), debuff (hiệu ứng bất lợi), v.v. Mô tả của một số kỹ năng sẽ chỉ ảnh hưởng đến một số thẻ nhất định.
+</p>
+<h2><span class="mw-headline" id="Skill_Level">Cấp Độ Kỹ Năng</span><span class="mw-editsection-bracket">]</span></span></h2>
+<figure class="thumb  show-info-icon" typeof="mw:File/Thumb" style="width: 180px"> 	<img alt="Giá trị bên phải khi Thăng Cấp Kỹ Năng" src="../assets/fandom/Skill_Assend_Right_Value.webp" decoding="async" loading="lazy" width="180" height="163" class="thumbimage" /> 	 	<figcaption class="thumbcaption"> 			<svg><use xlink:href="#wds-icons-info-small"></use></svg> 	</figcaption> </figure>
+<p>Người chơi có thể chọn dùng Essential để tăng cấp kỹ năng của mình, bao gồm Kỹ Thuật (Technique) và Bùa (Charm). Khi người chơi làm vậy, giá trị ở phía bên phải sẽ tăng lên, được gọi là: Sát Thương Cơ Bản (Basic Damage). Đôi khi người chơi sẽ nhận debuff khiến họ mất giá trị tấn công, và Sát Thương Cơ Bản (Basic Damage) có thể đảm bảo giới hạn dưới cho người chơi. Ngoài ra, cấp kỹ năng cao là một trong những cách rẻ nhất để tăng mạnh khả năng chiến đấu của người chơi. Có ưu điểm, tất nhiên cũng có nhược điểm. Không phải kỹ năng nào cũng có tiềm năng tăng trưởng sát thương cơ bản. Một số Bùa (Charm) có giá trị tăng trưởng thấp, nghĩa là bạn sẽ không nhận được nhiều lợi ích khi tăng cấp những kỹ năng đó. Ngoài ra, khi bạn so sánh kỹ năng lớp thấp với kỹ năng lớp hiện tại, bạn sẽ thấy kỹ năng lớp thấp cũng có tiềm năng tăng trưởng thấp.
+</p>
+<h2><span class="mw-headline" id="Skill_Ascend">Thăng Cấp Kỹ Năng (Skill Ascend)</span><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Người chơi nhận thêm Sát Thương Cơ Bản (Basic Damage) khi thăng cấp kỹ năng trong cùng một phẩm chất, hay còn gọi là sao. Thường là khoảng 15% cho mỗi sao. Khi người chơi thăng cấp từ một phẩm chất này sang phẩm chất tiếp theo, ví dụ từ Rare lên Epic, người chơi sẽ nhận được cả Sát Thương Cơ Bản (Basic Damage) và Sát Thương Theo Phần Trăm (Percentage Damage). Thường thì giá trị tăng này nằm trong khoảng 15%~30%, tùy thuộc vào từng kỹ năng của bạn.
+</p><p>Hiện tại kỹ năng của người chơi có các loại phẩm chất sau: Rare -&gt; Epic -&gt; Legendary -&gt; Mythic -&gt; Divine -&gt; Immortal
+</p><p>Để biết thêm thông tin, mời đọc: <a href="skill-ascend.html"><u>Thăng Cấp Kỹ Năng (Skill Ascend)</u></a>
+</p><p><br />
+Người viết: QY Maple<a target="_blank" rel="noreferrer noopener" class="autonumber" href="https://community.fandom.com/wiki/User:QY_Maple2233">[1]</a>
+</p>
+</div>
+</main>
+</div>
+<footer class="site-footer"><p>Nguồn: <a href="https://swordxstaff.fandom.com/wiki/Skill_Overview">bài gốc trên SwordxStaff Wiki (Fandom)</a>. Nội dung được dịch sang tiếng Việt; nội dung gốc theo giấy phép CC-BY-SA.</p><p><strong>Sword X Staff — Đại Bách Khoa VN &amp; Wiki Fandom (bản dịch tiếng Việt).</strong> Nội dung Bách khoa, dữ liệu, công thức và công cụ trên trang chủ là nội dung gốc của người biên soạn. Các bài trong mục Wiki được dịch từ <a href="https://swordxstaff.fandom.com">SwordxStaff Wiki trên Fandom</a>; nội dung gốc theo giấy phép <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a> — xem link bài gốc ở cuối mỗi bài wiki.</p><p><a href="../index.html">Trang chủ</a> · <a href="index.html">Trang chính Wiki</a> · <a href="https://swordxstaff.fandom.com">SwordxStaff Wiki (Fandom, tiếng Anh)</a></p></footer>
+<script>(function(){const t=localStorage.getItem('sxs_wiki_theme')||'light';document.documentElement.setAttribute('data-theme',t);const b=document.getElementById('wikiThemeToggle');if(b)b.addEventListener('click',()=>{const n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);localStorage.setItem('sxs_wiki_theme',n);});})();</script>
+</body></html>
