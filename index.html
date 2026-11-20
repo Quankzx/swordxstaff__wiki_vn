@@ -782,6 +782,9 @@
     table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.86rem; }
 
     th {
+      position: sticky;
+      top: 0;
+      z-index: 2;
       background: var(--bg-surface);
       color: var(--text-primary);
       font-family: 'Chakra Petch', sans-serif;
@@ -1148,6 +1151,7 @@
       .gift-grid { grid-template-columns: 1fr; }
       .hero-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .equip-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .wiki-kpi-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .card { padding: 14px 12px; overflow-wrap: anywhere; }
       .card-header { flex-wrap: wrap; gap: 6px; }
       .section-head { flex-direction: column; align-items: flex-start; gap: 8px; }
@@ -1171,9 +1175,96 @@
     }
 
     @media (max-width: 480px) {
-      .grid-4, .equip-strip, .hero-stats, .calc-result-box { grid-template-columns: 1fr; }
+      .grid-4, .equip-strip, .hero-stats, .calc-result-box, .wiki-kpi-strip { grid-template-columns: 1fr; }
       .custom-visual-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       #themeLabel { display: none; }
+    }
+
+    /* Wiki Editorial Architecture Components */
+    .wiki-toc {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      margin-bottom: 18px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+    }
+    .wiki-toc-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      margin-right: 4px;
+    }
+    .wiki-toc a {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      text-decoration: none;
+      padding: 4px 10px;
+      border-radius: 99px;
+      background: var(--accent-cyan-soft);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .wiki-toc a:hover {
+      border-color: var(--accent-cyan);
+      background: rgba(56, 189, 248, 0.22);
+    }
+
+    .wiki-callout {
+      padding: 12px 15px;
+      border-radius: 10px;
+      border: 1px solid var(--border-subtle);
+      border-left-width: 4px;
+      background: var(--bg-surface);
+      font-size: 0.84rem;
+      line-height: 1.55;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+    .wiki-callout strong { color: var(--text-primary); }
+    .wiki-callout-warn { border-left-color: var(--accent-rose); background: rgba(244, 63, 94, 0.06); }
+    .wiki-callout-tip { border-left-color: var(--accent-emerald); background: rgba(16, 185, 129, 0.06); }
+    .wiki-callout-info { border-left-color: var(--accent-cyan); background: rgba(56, 189, 248, 0.06); }
+
+    .wiki-kpi-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .wiki-kpi {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 10px 12px;
+      min-width: 0;
+    }
+    .wiki-kpi-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 3px;
+    }
+    .wiki-kpi-title {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+    .wiki-kpi-desc {
+      font-size: 0.76rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+    @media (max-width: 1060px) {
+      .wiki-kpi-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
   </style>
 </head>
@@ -1456,7 +1547,7 @@
               <tr>
                 <td><div class="media-row"><img src="assets/icons/items/cur-treasure.svg" alt="Năng Lượng Kho Báu" class="rpg-icon rpg-icon-sm" loading="lazy" /><div><strong>Năng Lượng Kho Báu</strong><br/><span class="section-sub">Auroradrasil Energy</span></div></div></td>
                 <td><code>Auroradrasil Energy</code> (~2,250 NL/tuần từ nhiệm vụ)</td>
-                <td>Tích đủ <code>≥ 3,240 NL</code> xả vào tuần có <strong>Tượng May Mắn</strong> (Tuần 2), <strong>Ngọc Nguyên Thủy</strong> (Tuần 4), <strong>Cây Thần Vàng</strong> (Mùa 3+).</td>
+                <td>Tích đủ <code>≥ 3,240 NL</code> cho các kỳ trọng điểm: <strong>Tượng Thần May Mắn</strong> (Kỳ 2 &amp; Kỳ 6), <strong>Ngọc Khởi Nguyên</strong> (Kỳ 4), <strong>Cây Thần Vàng</strong> (Mùa 3+).</td>
                 <td>Xả hàng tuần khi chưa đủ 3,240 NL hoặc lấy mảnh kỹ năng thường ở ô giữa Tầng 5.</td>
               </tr>
             </tbody>
@@ -2540,19 +2631,30 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
               Tra Cứu Mốc Mở Sự Kiện, Phó Bản &amp; Chuyển Nghề Theo Ngày Máy Chủ
             </h2>
-            <p class="section-sub">Nhập ngày mở server hoặc số ngày tuổi server hiện tại để xem ngay mốc đã mở, đếm ngược sự kiện sắp tới &amp; lịch tích trữ</p>
+            <p class="section-sub">Nhập ngày mở server hoặc tuổi server để tra cứu mốc mở khóa, lịch Đại Chiến Báu Vật, chu kỳ 3 tuần Bingo/Cào Thẻ/Giải Đố và ma trận giữ/xả tài nguyên cuối mùa</p>
           </div>
         </div>
 
-        <!-- BỘ TRA CỨU & ĐẾM NGƯỢC MỐC SERVER THEO NGÀY -->
-        <div class="card card-cyan" style="margin-bottom:20px;">
+        <!-- MỤC LỤC WIKI (QUICK-JUMP TOC) -->
+        <nav class="wiki-toc" aria-label="Mục lục trang Lịch Mùa Giải">
+          <span class="wiki-toc-label">Mục lục trang:</span>
+          <a href="#wiki-srv-checker">1. Tra Cứu Ngày Server</a>
+          <a href="#wiki-s1-checkpoints">2. Bốn Mốc Vàng Mùa 1</a>
+          <a href="#wiki-treasure-events">3. Đại Chiến Báu Vật &amp; Chu Kỳ 3 Tuần</a>
+          <a href="#wiki-resource-matrix">4. Ma Trận 3 Nhóm Tài Nguyên</a>
+          <a href="#wiki-reset-rules">5. Hợp Ước &amp; Quy Tắc Reset</a>
+          <a href="#wiki-checklist">6. Checklist Chốt Mùa</a>
+        </nav>
+
+        <!-- MỤC 1: BỘ TRA CỨU & ĐẾM NGƯỢC MỐC SERVER THEO NGÀY -->
+        <div class="card card-cyan" id="wiki-srv-checker" style="margin-bottom:20px;">
           <div class="grid-3" style="margin-bottom:14px; align-items:end;">
             <div class="form-field">
               <label for="srvDayInput">Tuổi Server Hiện Tại (Ngày 1 → 450+)</label>
-              <input type="number" id="srvDayInput" min="1" max="600" value="25" />
+              <input type="number" id="srvDayInput" min="1" max="600" value="14" />
             </div>
             <div class="form-field">
-              <label for="srvOpenDateInput">Hoặc Chọn Ngày Khai Mở Server (Tự tính ngày)</label>
+              <label for="srvOpenDateInput">Hoặc Chọn Ngày Khai Mở Server (Tự tính ngày lịch)</label>
               <input type="date" id="srvOpenDateInput" />
             </div>
             <div class="form-field">
@@ -2561,11 +2663,15 @@
                 <option value="">-- Chọn mốc nhanh --</option>
                 <option value="1">Ngày 1 — Khởi Đầu (Thung Lũng Xanh)</option>
                 <option value="4">Ngày 4 — Rặng Núi Tro Tàn (Bậc 2 / Pet)</option>
-                <option value="12">Ngày 12 — Season 1: Thủy Quốc Aqualis</option>
+                <option value="12">Ngày 12 — Season 1: Vùng Đầm Lầy Aqualis</option>
+                <option value="14">Ngày 14 — S1 Kỳ 2: Tượng Thần May Mắn + Bingo</option>
+                <option value="20">Ngày 20–21 — Lv.90 Anh Hùng III + Cào Thẻ + Kỳ 3</option>
+                <option value="24">Ngày 24 — Lv.100: Đền Nguyên Thủy &amp; Đổi Nghề</option>
+                <option value="33">Ngày 33 — Gác Hoàng Tuyền (Endgame Mùa 1)</option>
                 <option value="47">Ngày 47 — Season 2: Long Cảng Loong Haven</option>
                 <option value="114">Ngày 114 — Season 3: Thiên Không Giới Aethyris</option>
-                <option value="215">Ngày 215 — Season 4: Vũ Quốc Harpadia</option>
-                <option value="316">Ngày 316 — Season 5: Hỏa Quốc Ignis</option>
+                <option value="226">Ngày 226 — Season 4: Vũ Quốc Harpadia</option>
+                <option value="335">Ngày 335 — Season 5: Hỏa Quốc Ignis</option>
               </select>
             </div>
           </div>
@@ -2577,14 +2683,14 @@
               <button type="button" class="chip-btn active" data-mfilter="all">Tất cả mốc</button>
               <button type="button" class="chip-btn" data-mfilter="upcoming">Sắp mở (≤ 14 ngày)</button>
               <button type="button" class="chip-btn" data-mfilter="unlocked">Đã mở</button>
-              <button type="button" class="chip-btn" data-mfilter="dungeon">Phó Bản &amp; Boss</button>
-              <button type="button" class="chip-btn" data-mfilter="event">Gacha / Pet / Sự Kiện</button>
-              <button type="button" class="chip-btn" data-mfilter="system">Chuyển Nghề &amp; Tính Năng</button>
+              <button type="button" class="chip-btn" data-mfilter="dungeon">Phó Bản &amp; Lực Chiến</button>
+              <button type="button" class="chip-btn" data-mfilter="event">Báu Vật / Sự Kiện / Pet</button>
+              <button type="button" class="chip-btn" data-mfilter="system">Chuyển Chức &amp; Đột Phá</button>
             </div>
           </div>
 
-          <div style="font-size:0.82rem; font-weight:700; color:var(--accent-cyan); margin-bottom:8px;">
-            MỐC SẮP MỞ &amp; ĐẾM NGƯỢC CHUẨN BỊ TÀI NGUYÊN
+          <div style="font-size:0.8rem; font-weight:700; color:var(--accent-cyan); margin-bottom:8px; letter-spacing:0.03em;">
+            ĐẾM NGƯỢC CÁC MỐC SẮP MỞ TIẾP THEO
           </div>
           <div class="grid-3" id="srvUpcomingGrid" style="margin-bottom:16px;"></div>
 
@@ -2594,9 +2700,9 @@
                 <tr>
                   <th>Ngày Server</th>
                   <th>Trạng Thái</th>
-                  <th>Mùa / Vương Quốc</th>
-                  <th>Loại</th>
-                  <th>Mốc Mở Khóa • Cấp / Lực Chiến • Vật Phẩm Chuẩn Bị</th>
+                  <th>Vùng / Mùa</th>
+                  <th>Phân Loại</th>
+                  <th>Chi Tiết Mốc • Điều Kiện / Lực Chiến • Chuẩn Bị</th>
                 </tr>
               </thead>
               <tbody id="officialTimelineBody"></tbody>
@@ -2604,107 +2710,187 @@
           </div>
         </div>
 
-        <!-- ĐẠI TRUY TÌM KHO BÁU (GỘP 1 KHỐI DUY NHẤT: LỊCH 4 TUẦN + BẢNG 8 PHASE) -->
-        <div class="grid-2" style="margin-bottom:20px;">
+        <!-- MỤC 2: 4 MỐC VÀNG MÙA 1 TỚI NGÀY RESET (WIKI CHECKPOINTS) -->
+        <div class="section-head" id="wiki-s1-checkpoints">
+          <div>
+            <h2 class="section-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Bốn Mốc Vàng Cần Nhớ Từ Đầu Mùa 1 Tới Ngày Reset (~Ngày 45–47)
+            </h2>
+            <p class="section-sub">Các mốc chuẩn hóa theo tuổi server — lệch ±1–2 ngày tùy cụm gộp máy chủ</p>
+          </div>
+        </div>
+
+        <div class="wiki-kpi-strip">
+          <div class="wiki-kpi">
+            <div class="wiki-kpi-tag">~NGÀY 14 • KỲ 2 + BINGO</div>
+            <div class="wiki-kpi-title">Tượng Thần May Mắn (+10%)</div>
+            <div class="wiki-kpi-desc">Bắt buộc lấy (0★ đã cho +10% x2 thưởng phó bản). Chuyển Bậc 3 trước Lv.100: <strong>Lv.82</strong> + Tổng Nghề 48 + Bậc 2 Lv.16 + Aqualis 9.</div>
+          </div>
+          <div class="wiki-kpi">
+            <div class="wiki-kpi-tag">~NGÀY 20–21 • CẤP 90</div>
+            <div class="wiki-kpi-title">Anh Hùng III &amp; Cào Thẻ</div>
+            <div class="wiki-kpi-desc">Xả <strong>Dụng Cụ Bí Cảnh (~400 lượt)</strong> ăn Sự Kiện Cào Thẻ &amp; đẩy vừa đủ <strong>128 Sao Nguyên Thủy</strong> rồi dừng. Kỳ 3 thưởng 180 Mảnh Skill Bậc 3.</div>
+          </div>
+          <div class="wiki-kpi">
+            <div class="wiki-kpi-tag">NGÀY 24 • CẤP 100</div>
+            <div class="wiki-kpi-title">Đền Nguyên Thủy &amp; Đổi Nghề</div>
+            <div class="wiki-kpi-desc">Mở đồng loạt 3 thứ: <strong>Đền Nguyên Thủy</strong> (930K / 1.45M / 2M+), <strong>Đổi Nghề Bảo Toàn Kỹ Năng</strong> &amp; Lực Chiến Mùa. Ngày 26 mở bản đồ mùa mới.</div>
+          </div>
+          <div class="wiki-kpi">
+            <div class="wiki-kpi-tag">NGÀY 33 → 45–47 • END S1</div>
+            <div class="wiki-kpi-title">Gác Hoàng Tuyền &amp; Hết Mùa</div>
+            <div class="wiki-kpi-desc">Gác Hoàng Tuyền (2.25M / 2.75M / 6M+ Top). Chừa NL Kho Báu cho <strong>Kỳ 5 (Cổ Vật Đỏ Đầm Lầy)</strong> &amp; <strong>Kỳ 6 (Tượng May Mắn lần 2)</strong>.</div>
+          </div>
+        </div>
+
+        <!-- MỤC 3: ĐẠI CHIẾN BÁU VẬT & CHU KỲ 3 TUẦN SỰ KIỆN PHỤ -->
+        <div class="section-head" id="wiki-treasure-events">
+          <div>
+            <h2 class="section-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              Đại Chiến Báu Vật &amp; Chu Kỳ 3 Tuần Sự Kiện Phụ (Bingo → Cào Thẻ → Giải Đố)
+            </h2>
+            <p class="section-sub">Toàn bộ các mốc Kho Báu theo tuần (mốc Cấp 5 = 3,240 NL) và bài toán vé Bingo chính xác từng Quả Vận Mệnh</p>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-bottom:14px;">
           <div class="card card-sword">
             <div class="media-row">
-              <img src="assets/icons/relics/relic-0.svg" alt="Tượng May Mắn Đại Truy Tìm Kho Báu" class="rpg-icon" loading="lazy" />
+              <img src="assets/icons/relics/relic-0.svg" alt="Tượng Thần May Mắn" class="rpg-icon" loading="lazy" />
               <div style="flex:1;">
                 <div class="card-header">
-                  <h3 class="card-title">Đại Truy Tìm Kho Báu: Chu Kỳ 4 Tuần &amp; Mốc 3,240 NL</h3>
-                  <span class="pill pill-sword">3,240 NL / Lần Xả</span>
+                  <h3 class="card-title">Bài Toán Bingo, Cào Thẻ &amp; Giải Đố (Xoay Vòng 3 Tuần)</h3>
+                  <span class="pill pill-sword">32 Vé Bingo</span>
                 </div>
               </div>
             </div>
             <ul class="clean-list">
-              <li><strong>Chi phí chạm Bậc 5:</strong> B1 (<code>240</code>) + B2 (<code>400</code>) + B3 (<code>600</code>) + B4 (<code>800</code>) + B5 (<code>1,200</code>) = <strong><code>3,240 NL</code></strong> (1 tuần nhiệm vụ chỉ cho ~<code>2,250 NL</code> → bắt buộc nhịn cách tuần).</li>
-              <li><strong>Nhịp xả chuẩn 4 tuần:</strong> Tuần 1 Rương Cổ Vật (<strong style="color:var(--accent-rose);">NHỊN</strong>) → Tuần 2 <strong>Tượng May Mắn</strong> (<strong style="color:var(--accent-emerald);">XẢ</strong>) → Tuần 3 Mảnh Kỹ Năng (<strong style="color:var(--accent-rose);">NHỊN</strong>) → Tuần 4 <strong>Ngọc Nguyên Thủy</strong> (<strong style="color:var(--accent-emerald);">XẢ</strong>).</li>
-              <li><strong>Tích 2–3 tuần &amp; Quy tắc Bậc 5:</strong> Dọn cả 2 món Tầng 5 cần tích <code>4,440 NL</code> (2 tuần) hoặc <code>5,640 NL</code> (3 tuần). Luôn mở <strong>Ô Ngoài Cùng Bên Trái</strong> trước, dư mới lấy Ô Phải!</li>
+              <li><strong>Tuần A — Lucky Bingo (~Ngày 14, ~Ngày 35):</strong> Có 2 bảng × 16 ô = <strong><code>32 vé</code></strong>. Nhiệm vụ ngày cho 4 vé/ngày × 7 = <strong><code>28 vé</code></strong> (Đăng nhập + Tiêu 60 Thể Lực + 3 trận Đấu Trường + Quay Fantomon 1 lần). Còn thiếu 4 vé = 80 lượt Dò Tìm Vận Mệnh (<code>20 lượt = 1 vé</code>), trừ ~60 Quả tặng trong tuần → trong túi chỉ cần thủ sẵn <strong><code>20 – 30 Quả Vận Mệnh</code></strong>!</li>
+              <li><strong>Tuần B — Sự Kiện Cào Thẻ (~Ngày 21):</strong> Yêu cầu đào Bí Cảnh khoảng <strong><code>400 lượt</code></strong> — khớp đúng thời điểm Cấp 90 (Anh Hùng III) để xả Dụng Cụ Bí Cảnh.</li>
+              <li><strong>Tuần C — Sự Kiện Giải Đố (~Ngày 28):</strong> Tặng miễn phí <strong><code>18 Quả Vận Mệnh</code> + <code>6 Khế Ước Sao</code></strong> cho toàn server.</li>
+              <li><strong>Mốc Tầng 5 Đại Chiến Báu Vật (3,240 NL):</strong> Tổng chi phí <code>240 + 400 + 600 + 800 + 1,200 = 3,240 NL</code>. Luôn ưu tiên <strong>Ô Ngoài Cùng Bên Trái</strong> ở Tầng 5 trước, dư mới lấy Ô Phải.</li>
             </ul>
           </div>
 
           <div class="card card-sword">
             <div class="card-header">
-              <h3 class="card-title">Bảng Quà Tầng 5 Grand Treasure Hunt (Phase 1 → 8)</h3>
-              <span class="pill pill-sword">Event Rotation</span>
+              <h3 class="card-title">Bảng Quà Mốc Cấp 5 Đại Chiến Báu Vật (Kỳ 1 → 8)</h3>
+              <span class="pill pill-sword">Reward Schedule</span>
             </div>
-            <div class="table-wrap" style="max-height:260px; overflow-y:auto;">
+            <div class="table-wrap" style="max-height:285px; overflow-y:auto;">
               <table>
-                <thead><tr><th>Vùng</th><th>Phase &amp; Quà Tầng 5</th><th>Sự Kiện &amp; Thời Điểm</th></tr></thead>
+                <thead><tr><th>Vùng / Mốc</th><th>Kỳ &amp; Quà Mốc Cấp 5</th><th>Sự Kiện Phụ &amp; Ghi Chú</th></tr></thead>
                 <tbody id="treasurePhasesBody"></tbody>
               </table>
             </div>
           </div>
         </div>
 
-        <!-- HỢP ƯỚC TINH TƯỢNG & CHUỖI SỰ KIỆN XOAY TUA / GỘP SERVER -->
+        <div class="wiki-callout wiki-callout-warn" style="margin-bottom:20px;">
+          <strong>Lưu ý bắt buộc để không mất vé:</strong>
+          (1) <strong>Vé Bingo KHÔNG tích sang ngày hôm sau</strong> — quên 1 ngày mất trắng 4 vé và phải dò bù tới 80 Quả;
+          (2) <strong>Chờ sự kiện Bingo mở rồi mới bấm Dò Tìm Vận Mệnh</strong>, dò dư Quả mới đi gom Cổ Vật còn thiếu;
+          (3) Ở <strong>Kỳ 3 (180 Mảnh Kỹ Năng Bậc 3)</strong>, hãy chọn mảnh chiêu của nghề bạn dự định gắn bó lâu dài sau khi mở Đổi Nghề ở Lv.100!
+        </div>
+
+        <!-- MỤC 4: MA TRẬN 3 NHÓM QUYẾT ĐỊNH TÀI NGUYÊN CUỐI MÙA -->
+        <div class="section-head" id="wiki-resource-matrix">
+          <div>
+            <h2 class="section-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+              Ma Trận Quản Lý Tài Nguyên Cuối Mùa: Xả Liền • Xả Ở Cấp 90 • Giữ Qua Mùa Mới
+            </h2>
+            <p class="section-sub">Phân loại rành mạch từng vật phẩm để tối ưu 128 Sao Nguyên Thủy mà vẫn lời lớn khi sang mùa mới</p>
+          </div>
+        </div>
+
+        <div class="table-wrap" style="margin-bottom:14px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Nhóm Hành Động</th>
+                <th>Tài Nguyên / Vật Phẩm</th>
+                <th>Quy Tắc Xử Lý &amp; Lý Do Chiến Thuật</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="pill pill-rose">Nhóm 1: Xả &amp; Bán Sớm</span></td>
+                <td><strong>Mảnh Trang Bị dư</strong></td>
+                <td>Sang mùa mới Mảnh Trang Bị <strong>mất giá cực mạnh</strong> → thanh lý bán sớm khi còn giá, chỉ <strong>chừa lại ~300 mảnh</strong> (đủ phí mang dòng phụ đầu tiên sang mùa sau).</td>
+              </tr>
+              <tr>
+                <td><span class="pill pill-sword">Nhóm 2: Xả Ở Cấp 90</span></td>
+                <td><strong>Dụng Cụ Bí Cảnh (nhịp Anh Hùng III)</strong></td>
+                <td>Đợi chạm <strong>Cấp 90 (~Ngày 20, trùng Sự Kiện Cào Thẻ ~400 lượt)</strong> thì xả Dụng Cụ Bí Cảnh <strong>VỪA ĐỦ đẩy điểm mùa đạt mốc Sao Nguyên Thủy mục tiêu</strong> (F2P nhắm <strong><code>128 ★</code></strong>). Chạm đủ là <strong>DỪNG NGAY</strong>!</td>
+              </tr>
+              <tr>
+                <td><span class="pill pill-emerald">Nhóm 3: Giữ Qua Mùa Mới</span></td>
+                <td><strong>Bí Cảnh dư, Đá Thô, Cát Thời Gian, Thẻ Nữ Thần, 20–30 Quả Vận Mệnh, Năng Lượng Kho Báu, Khế Ước Sao</strong></td>
+                <td>Dụng Cụ Bí Cảnh <strong>không bị reset</strong> và sang mùa mới mỗi lượt rớt nhiều hơn hẳn! Tương tự <strong>Đá Thô / Cát Thời Gian / Thẻ Nữ Thần</strong> sang mùa lên bậc mới dùng sẽ lời hơn; chừa <strong>20–30 Quả</strong> cho Bingo quay lại, chừa <strong>NL Kho Báu</strong> cho Kỳ 5 &amp; Kỳ 6, và giữ <strong>Vé + Khế Ước Sao</strong> cho lúc Đổi Nghề Lv.100.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="wiki-callout wiki-callout-tip" style="margin-bottom:20px;">
+          <strong>Hai Mẹo Sống Còn 24 Giờ Cuối Mùa:</strong>
+          (1) <strong>Mặc bộ trang bị điểm cao nhất lên người</strong> trước khi đồng hồ mùa đếm về 0 vì <strong>Tủ Trưng Bày</strong> (Gear Rating Snapshot D → SSS) sẽ khóa cố định bộ đồ đang mặc để tính buff cả mùa sau;
+          (2) <strong>Thể Lực chỉ tích đúng mốc 300</strong> trước giờ chốt mùa — ôm vượt 300 sớm sẽ làm ngưng hồi tự nhiên suốt nhiều ngày, cực kỳ lãng phí!
+        </div>
+
+        <!-- MỤC 5: HỢP ƯỚC TINH TƯỢNG, RESET MÙA & SỰ KIỆN KHÁC -->
+        <div class="section-head" id="wiki-reset-rules">
+          <div>
+            <h2 class="section-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/></svg>
+              Hợp Ước Tinh Tượng, Quy Tắc Reset Về Sàn &amp; Gộp Máy Chủ
+            </h2>
+            <p class="section-sub">Sao Nguyên Thủy được cộng dồn vĩnh viễn qua mọi mùa để mở khóa cây thiên phú Hợp Ước Tinh Tượng</p>
+          </div>
+        </div>
+
         <div class="grid-3" style="margin-bottom:20px;">
           <div class="card card-staff">
             <div class="card-header">
               <h3 class="card-title">Hợp Ước Tinh Tượng (Astral Destiny)</h3>
-              <span class="pill pill-staff">Primostar Tree</span>
+              <span class="pill pill-staff">128 ★ F2P</span>
             </div>
             <ul class="clean-list staff-bullets">
               <li><strong>3 Bảng Kế Tiếp:</strong> <code>Witching Hours</code> (5–48+ ★) → <code>Crossed Paths</code> (505–770+ ★) → <code>Finale of Chaos</code> (1,940–2,555+ ★).</li>
               <li><strong>Chu kỳ 9 nút:</strong> <code>ATK</code> → <code>Ascension</code> → <code>DEF</code> → <code>Gem Drop</code> → <code>HP</code> → <code>2× Dungeon</code> → <code>SPD</code> → <code>EXP Gain</code>.</li>
-              <li><strong>Mục tiêu mỗi mùa:</strong> F2P nhắm <strong><code>88–128 ★</code></strong> (%ATK/DEF/HP &amp; 2× Dungeon); Nạp vừa nhắm <strong><code>150–176 ★</code></strong> (Tinh Thông/Đỡ Đòn/Chính Xác).</li>
+              <li><strong>Mục tiêu mỗi mùa (cộng dồn):</strong> F2P cố đạt <strong><code>128 ★</code></strong> (%ATK/DEF/HP &amp; 2× Dungeon); Nạp vừa nhắm <strong><code>150–176 ★</code></strong>; Đại gia <strong><code>200–230+ ★</code></strong>.</li>
             </ul>
           </div>
-          <div class="card card-cyan">
-            <div class="card-header">
-              <h3 class="card-title">Lucky Bingo, Puzzle &amp; Vòng Quay</h3>
-              <span class="pill pill-cyan">Event Rules</span>
-            </div>
-            <ul class="clean-list staff-bullets">
-              <li><strong>Lucky Bingo (80 Trái Định Mệnh):</strong> Nhiệm vụ ngày cho ~28 vé, dọn 2 bảng cần ~32 vé → tích sẵn <strong>≥ 80 Trái Định Mệnh</strong> và chỉ bù vé vào ngày cuối.</li>
-              <li><strong>Lucky Cards &amp; Fonik's Puzzle:</strong> Đếm tổng vé miễn phí trước khi xả ngày 1; thiếu mốc thưởng lớn thì giữ sang kỳ sau.</li>
-              <li><strong>Vòng Quay Vận Mệnh:</strong> Luôn dồn vé vào <strong>Vòng Quay Kỹ Năng</strong> trước để chốt chiêu trấn phái.</li>
-            </ul>
-          </div>
-          <div class="card card-rose">
-            <div class="card-header">
-              <h3 class="card-title">Chuẩn Bị Gộp Máy Chủ (Server Merge)</h3>
-              <span class="pill pill-rose">Merge Prep</span>
-            </div>
-            <ul class="clean-list">
-              <li><strong>Nhịp gộp cụm:</strong> Server gộp theo cụm <code>2 → 4 → 8 → 16</code> khi mở <em>Aqualis, Loong Haven, Aethyris, Harpadia</em>.</li>
-              <li><strong>Mẹo trước giờ gộp:</strong> Đẩy hạng Đấu Trường sớm để chốt mốc thưởng trước khi đại gia cụm khác nhập vào; thống nhất Bang Hội tránh tan rã đội hình.</li>
-            </ul>
-          </div>
-        </div>
 
-        <!-- ĐỐI CHIẾU RESET MÙA & CÔNG THỨC SAO NGUYÊN THỦY -->
-        <div class="grid-2" style="margin-bottom:20px;">
           <div class="card card-rose">
             <div class="card-header">
-              <h3 class="card-title">Bảng Đối Chiếu 100%: Giữ Lại Vĩnh Viễn vs Reset Về Sàn</h3>
-              <span class="pill pill-rose">Season Reset Rules</span>
+              <h3 class="card-title">Giữ Vĩnh Viễn vs Reset Về Sàn + Điểm Mùa</h3>
+              <span class="pill pill-rose">Season Reset</span>
             </div>
             <ul class="clean-list">
-              <li><strong style="color:var(--accent-emerald);">GIỮ LẠI 100% VĨNH VIỄN:</strong> Kỹ năng &amp; bậc sao, Huyễn Thú &amp; tư chất, Cổ Vật (+ mảnh dư), Cấp Bí Cảnh Nguyên Liệu, Món Ăn &amp; Bang Hội, Thiện Cảm Đồng Hành, Xe Hàng, Tiền tệ/Vé quay/Đá &amp; Hợp Ước Tinh Tượng!</li>
-              <li><strong style="color:var(--accent-rose);">RESET VỀ SÀN MÙA:</strong> Cấp nhân vật vượt sàn (S1→Lv.100, S2→Lv.130, S3→Lv.160), Cường hóa đồ, Ô kỹ năng, Cấp Huyễn Thú và Cấp Cổ Vật vượt sàn (+10/+13/+16) — quy đổi thành <strong>Sao Nguyên Thủy</strong>.</li>
+              <li><strong style="color:var(--accent-emerald);">GIỮ 100% VĨNH VIỄN:</strong> Kỹ năng &amp; sao, Huyễn Thú, Cổ Vật (+ mảnh), Dụng Cụ Bí Cảnh, Món Ăn, Bang Hội, Đồng Hành, Xe Hàng, Đá Thô/Cát/Thẻ Nữ Thần, Hợp Ước Tinh Tượng.</li>
+              <li><strong style="color:var(--accent-rose);">KÉO VỀ SÀN &amp; ĐỔI SAO:</strong> Cấp NV (S1→Lv.100, S2→Lv.130, S3→Lv.160), Cường Hóa đồ, Ô Skill, Cấp Pet &amp; Cấp Cổ Vật vượt sàn (+10/+13/+16) → đổi ra <strong>Sao Nguyên Thủy</strong> (<code>NV +100</code> • <code>CV +33</code> • <code>CĐ +18</code> • <code>Pet/Ô +10</code>, chia <code>~27</code>).</li>
             </ul>
           </div>
 
           <div class="card card-cyan">
-            <div class="media-row">
-              <img src="assets/icons/items/cur-stellatie.svg" alt="Sao Nguyên Thủy Cuối Mùa" class="rpg-icon" loading="lazy" />
-              <div style="flex:1;">
-                <div class="card-header">
-                  <h3 class="card-title">Công Thức Điểm Mùa Giải &amp; Chụp Ảnh Xếp Hạng SSS</h3>
-                  <span class="pill pill-cyan">Primostar Payout</span>
-                </div>
-              </div>
+            <div class="card-header">
+              <h3 class="card-title">Vòng Quay, Khế Ước &amp; Gộp Server</h3>
+              <span class="pill pill-cyan">Merge &amp; Wheel</span>
             </div>
             <ul class="clean-list staff-bullets">
-              <li><strong>Trọng số điểm:</strong> Cấp NV <code>+100đ</code> • Cổ Vật <code>+33đ</code> • Cường Hóa <code>+18đ</code> • Huyễn Thú <code>+10đ</code> • Ô Kỹ Năng <code>+10đ</code> → Chia <code>~27</code> ra số <strong>Sao Nguyên Thủy</strong> đầu mùa mới.</li>
-              <li><strong>Chụp Ảnh Trang Bị (Gear Rating D → SSS):</strong> Đúng giờ đóng mùa, hệ thống chụp bộ đồ đang mặc để xếp hạng — <strong>luôn mặc bộ điểm cao nhất</strong> để ăn buff %HP, %ATK, %DEF, %SPD cả mùa sau!</li>
+              <li><strong>Vòng Quay Vận Mệnh:</strong> Luôn dồn Vé vào <strong>Vòng Quay Kỹ Năng</strong> trước để chốt chiêu trấn phái cho nghề chơi chính.</li>
+              <li><strong>Nhịp gộp cụm:</strong> Server gộp theo cụm <code>2 → 4 → 8 → 16</code> khi mở <em>Aqualis, Loong Haven, Aethyris, Harpadia</em> (làm lệch 1–2 ngày mở mùa kế).</li>
+              <li><strong>Mẹo trước gộp:</strong> Đẩy hạng Đấu Trường sớm lấy mốc thưởng và thống nhất Bang Hội tránh tách team.</li>
             </ul>
           </div>
         </div>
 
-        <!-- CHECKLIST 10 BƯỚC CHUYỂN MÙA -->
-        <div class="section-head">
+        <!-- MỤC 6: CHECKLIST CHUYỂN MÙA -->
+        <div class="section-head" id="wiki-checklist">
           <div>
             <h2 class="section-title">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
@@ -2712,20 +2898,20 @@
             </h2>
             <p class="section-sub">Lưu tự động trên trình duyệt để bạn kiểm tra từng mục trong tuần cuối mùa</p>
           </div>
-          <button class="icon-btn" id="resetChecklistBtn">Đặt lại Checklist</button>
+          <button type="button" class="icon-btn" id="resetChecklistBtn">Đặt lại Checklist</button>
         </div>
 
         <div class="grid-2" id="seasonPrepChecklist">
-          <label class="check-item"><input type="checkbox" data-check="s1" /><div><div class="check-title">1. Mặc bộ Trang Bị có Điểm Đánh Giá cao nhất (Chốt SSS Snapshot)</div><div class="check-desc">Không để bộ đồ farm phụ hoặc đồ tháo ngọc trên người khi đồng hồ đếm ngược kết thúc mùa.</div></div></label>
-          <label class="check-item"><input type="checkbox" data-check="s2" /><div><div class="check-title">2. Tích Thể Lực dự trữ tiệm cận trần cứng 1,200</div><div class="check-desc">Dùng quét sạch mỏ tài nguyên và nguyên liệu nấu ăn vùng mới đem bán Chợ trong 24h đầu.</div></div></label>
+          <label class="check-item"><input type="checkbox" data-check="s1" /><div><div class="check-title">1. Mặc bộ Trang Bị xịn nhất lên người (Khóa Tủ Trưng Bày SSS)</div><div class="check-desc">Tủ Trưng Bày khóa theo bộ đồ đang mặc khi đồng hồ kết thúc mùa — không để đồ farm phụ hay thiếu ngọc!</div></div></label>
+          <label class="check-item"><input type="checkbox" data-check="s2" /><div><div class="check-title">2. Tích Thể Lực đúng mốc 300 sát giờ kết thúc mùa</div><div class="check-desc">Không ôm vượt 300 từ sớm kẻo ngưng hồi tự nhiên nhiều ngày; giữ vừa 300 để vào mỏ/nguyên liệu mùa mới ngay giờ mở.</div></div></label>
           <label class="check-item"><input type="checkbox" data-check="s3" /><div><div class="check-title">3. Để dành đủ 6/6 lượt Phó Bản Trang Bị Hàng Ngày</div><div class="check-desc">Ngưng đi 2 ngày cuối mùa để vừa sang mùa mới có sẵn 6 lượt rớt đồ bậc cấp mới.</div></div></label>
-          <label class="check-item"><input type="checkbox" data-check="s4" /><div><div class="check-title">4. Ngưng bấm thu hoạch EXP Treo Máy / Tượng Nữ Thần sát giờ Reset</div><div class="check-desc">Chờ bước qua mùa mới mới bấm nhận để hưởng trọn hệ số nhân EXP của vùng đất mới.</div></div></label>
-          <label class="check-item"><input type="checkbox" data-check="s5" /><div><div class="check-title">5. Ngưng xài Đá Tăng Tốc, Cát Thời Gian &amp; Đạo Cụ Bí Cảnh trong 2 tuần cuối</div><div class="check-desc">Giữ lại toàn bộ vật phẩm tua nhanh cho tới khi mở Tượng Nữ Thần mới ở mùa kế tiếp.</div></div></label>
-          <label class="check-item"><input type="checkbox" data-check="s6" /><div><div class="check-title">6. Bán hoặc phân rã hết Mảnh Trang Bị cũ lấy Đá Thần Tạo</div><div class="check-desc">Mảnh Đỏ = 2 Đá Thần Tạo, Mảnh Thần = 3 Đá; thanh lý sớm trước khi rớt giá trên Chợ.</div></div></label>
-          <label class="check-item"><input type="checkbox" data-check="s7" /><div><div class="check-title">7. Tính điểm Sao Nguyên Thủy chạm đúng nút chẵn (104 / 128 / 176 ★)</div><div class="check-desc">Dùng Máy Tính #5 bên tab Công Cụ xem có cần đập thêm vài cấp Cổ Vật để tròn nút sao không.</div></div></label>
-          <label class="check-item"><input type="checkbox" data-check="s8" /><div><div class="check-title">8. Chuẩn bị Đá Thần Tạo cho dòng phụ định Kế Thừa (300 – 8,000 Đá)</div><div class="check-desc">F2P chỉ nên chọn kế thừa 1 dòng quý nhất (300 Đá) thay vì gồng 8,000 Đá cho cả 4 dòng.</div></div></label>
-          <label class="check-item"><input type="checkbox" data-check="s9" /><div><div class="check-title">9. Tích trữ Vé Cổ Vật, Trái Định Mệnh &amp; Đá Khế Ước (Covenite)</div><div class="check-desc">Dành bung ngay vào hồ Cổ Vật mới và bảng kỹ năng Bậc 4 / Bậc 5 vừa mở khóa.</div></div></label>
-          <label class="check-item"><input type="checkbox" data-check="s10" /><div><div class="check-title">10. Đẩy thứ hạng Đấu Trường &amp; Thang Ảo Mộng lên bậc cao nhất có thể</div><div class="check-desc">Ăn Món Buff Chiến Đấu leo nốt bậc Tổng Kết Gameplay Rating cuối mùa nhận thêm Sao Nguyên Thủy &amp; Tín Vật.</div></div></label>
+          <label class="check-item"><input type="checkbox" data-check="s4" /><div><div class="check-title">4. Ngưng thu hoạch EXP Treo Máy / Thẻ Nữ Thần sát giờ Reset</div><div class="check-desc">Giữ Thẻ Nữ Thần sang mùa mới mới dùng để ăn trọn hệ số nhân EXP của vùng đất mới.</div></div></label>
+          <label class="check-item"><input type="checkbox" data-check="s5" /><div><div class="check-title">5. Giữ lại Đá Thô, Cát Thời Gian &amp; Dụng Cụ Bí Cảnh còn dư</div><div class="check-desc">Dụng Cụ Bí Cảnh không bị reset; sau khi đã xả ở Cấp 90 đủ 128 ★ thì dừng ngay để sang mùa sau ăn sản lượng cao hơn!</div></div></label>
+          <label class="check-item"><input type="checkbox" data-check="s6" /><div><div class="check-title">6. Bán Mảnh Trang Bị dư lúc còn giá — chỉ chừa ~300 mảnh</div><div class="check-desc">Mảnh trang bị rớt giá thê thảm ở mùa mới; bán sớm phần dư và giữ ~300 mảnh mang dòng phụ đầu tiên sang mùa.</div></div></label>
+          <label class="check-item"><input type="checkbox" data-check="s7" /><div><div class="check-title">7. Chạm đúng mốc 128 Sao Nguyên Thủy (hoặc 104 / 176 ★)</div><div class="check-desc">Dùng Máy Tính #5 bên tab Công Cụ kiểm tra tổng điểm trước khi xả thêm Bí Cảnh ở Anh Hùng III.</div></div></label>
+          <label class="check-item"><input type="checkbox" data-check="s8" /><div><div class="check-title">8. Chừa NL Kho Báu cho Kỳ 5 (Cổ Vật Vùng 3) &amp; Kỳ 6 (Tượng May Mắn 2)</div><div class="check-desc">Không xả lặt vặt mỗi tuần nếu chưa chạm ngưỡng 3,240 NL tầng 5.</div></div></label>
+          <label class="check-item"><input type="checkbox" data-check="s9" /><div><div class="check-title">9. Giữ 20–30 Quả Vận Mệnh (Bingo) + Vé &amp; Khế Ước Sao (Đổi Nghề)</div><div class="check-desc">Thủ sẵn 20–30 Quả cho Bingo chu kỳ 3 tuần và Vé + Khế Ước Sao rút kỹ năng khi chuyển/đổi nghề Lv.100+.</div></div></label>
+          <label class="check-item"><input type="checkbox" data-check="s10" /><div><div class="check-title">10. Đẩy hạng Đấu Trường &amp; Thang Ảo Mộng trước giờ Gộp/Reset</div><div class="check-desc">Ăn Món Buff Chiến Đấu leo nốt bậc Tổng Kết cuối mùa nhận thêm Sao Nguyên Thủy &amp; Tín Vật.</div></div></label>
         </div>
       </section>
 
@@ -4275,13 +4461,20 @@
       { day: 4,  sDay: "Ngày 4", kingdom: "Rặng Núi Tro Tàn (S0)", cat: "dungeon", title: "Mở Rặng Núi Tro Tàn & Mecha Summit (180K CP)", detail: "Mở Đấu Trường (Lv.40), Thợ Rèn Micaela & 70 Cổ Vật Dò Tìm Vận Mệnh.", prep: "Mở Thủy Quốc Aqualis cần: 4 Chìa + 3 Thuốc + 5 Mũi Khoan + 3 Thủy Lôi." },
       { day: 5,  sDay: "Ngày 5", kingdom: "Rặng Núi Tro Tàn (S0)", cat: "system",  title: "Chuyển Nghề Bậc 2 (Lv.44) & Huyễn Thú (Lv.50)", detail: "Yêu cầu: Nhân vật Lv.44 + Nghề Lv.20 + Bậc 1 Lv.18 + Cinder Ridge 5.", prep: "Tích Trái Định Mệnh mở Huyễn Thú ngay khi chạm Lv.50." },
       { day: 7,  sDay: "Ngày 7", kingdom: "Rặng Núi Tro Tàn (S0)", cat: "event",   title: "Grand Treasure Hunt — Phase 1 (Cổ Vật Đỏ Vùng 2)", detail: "Đợt Kho Báu đầu tiên: phần thưởng Tầng 5 là Cổ Vật Đỏ tự chọn Vùng 2.", prep: "Cân nhắc nhịn NL nếu chưa đủ mốc 3,240 NL." },
-      { day: 12, sDay: "S1 • Ngày 1", kingdom: "Thủy Quốc Aqualis (S1)", cat: "dungeon", title: "Mở Season 1: Ocean Palace Ruins (580K CP) + Gộp Cụm 2", detail: "Gộp server theo cặp (01+02, 03+04...). Kéo dài ~35 ngày (tới ngày 46).", prep: "Đẩy hạng Đấu Trường sớm trước giờ gộp; mở Long Cảng cần: 5 Chìa + 2 Thuốc + 3 Khoan + 6 Thủy Lôi." },
-      { day: 14, sDay: "S1 • Ngày 3", kingdom: "Thủy Quốc Aqualis (S1)", cat: "system",  title: "Chuyển Nghề Bậc 3 (Lv.82)", detail: "Cuồng Chiến / Thánh Kỵ / Đại Pháp / Bí Pháp (Lv.82 + Nghề Lv.48 + Bậc 2 Lv.16 + Aqualis 9).", prep: "Dồn Vé Quay Kỹ Năng lấy bộ chiêu Bậc 3." },
-      { day: 19, sDay: "S1 • Ngày 8", kingdom: "Thủy Quốc Aqualis (S1)", cat: "event",   title: "Kho Báu Phase 2: Tượng May Mắn + Lucky Bingo", detail: "Quà Tầng 5 là Tượng May Mắn (Lucky Statue) — cực kỳ đáng xả.", prep: "Chuẩn bị đủ 3,240 NL Kho Báu & ≥80 Trái Định Mệnh cho Bingo." },
-      { day: 24, sDay: "S1 • Ngày 13", kingdom: "Thủy Quốc Aqualis (S1)", cat: "dungeon", title: "Aquorigin Shrine (930K → 2.05M) + Lv.100 Đổi Nghề Miễn Phí", detail: "Đạt Lv.100 mở Sức Mạnh Mùa (Season Power) & Đổi Nghề Bảo Toàn Kỹ Năng!", prep: "Tận dụng Lv.100 test đổi nhánh sang class phù hợp meta." },
-      { day: 26, sDay: "S1 • Ngày 15", kingdom: "Thủy Quốc Aqualis (S1)", cat: "event",   title: "Bản Đồ Mùa Whaleback + Kho Báu Phase 3 (180 Mảnh Skill)", detail: "Whaleback Season Map mở khóa; Lucky Cards kèm Kho Báu 180 Mảnh Kỹ Năng Bậc 3.", prep: "Tính kỹ số vé Lucky Cards miễn phí trước khi nạp/xả bù." },
-      { day: 33, sDay: "S1 • Ngày 22", kingdom: "Thủy Quốc Aqualis (S1)", cat: "dungeon", title: "Hellhold (2.25M → 6.2M CP) + Kho Báu Phase 4 (Primal Gem)", detail: "Phó bản Hellhold kéo dài ~2 tuần; Fonik's Puzzle kèm Ngọc Nguyên Thủy Tầng 5.", prep: "Chuẩn bị 3,240 NL lấy Ngọc Nguyên Thủy; bắt đầu tích Thể Lực tuần cuối S1." },
-      { day: 40, sDay: "S1 • Ngày 29", kingdom: "Thủy Quốc Aqualis (S1)", cat: "event",   title: "Kho Báu Phase 5 (Cổ Vật Đỏ S1) + Chuẩn Bị Reset S1", detail: "Lucky Bingo + Cổ Vật Đỏ Thủy Quốc. Chú ý chốt sàn S1: Lv.100 & Cổ Vật +10.", prep: "Mặc bộ đồ điểm cao nhất để ăn SSS Snapshot; ngưng mở EXP treo máy 24h cuối." },
+      { day: 12, sDay: "S1 • Ngày 1", kingdom: "Thủy Quốc Aqualis / Đầm Lầy (S1)", cat: "dungeon", title: "Mở Season 1: Di Tích Cung Điện Biển (580K CP) + Gộp Cụm 2", detail: "Gộp server theo cặp (01+02, 03+04...). Mở Long Cảng cần: 5 Chìa + 2 Thuốc + 3 Khoan + 6 Thủy Lôi.", prep: "Đẩy hạng Đấu Trường sớm trước giờ gộp; bắt đầu tích Năng Lượng Đại Chiến Báu Vật." },
+      { day: 14, sDay: "S1 • Ngày 3", kingdom: "Thủy Quốc Aqualis / Đầm Lầy (S1)", cat: "event",   title: "Đại Chiến Báu Vật Kỳ 2: Tượng Thần May Mắn + Lucky Bingo", detail: "Tượng Thần May Mắn ở 0★ đã cho +10% nhân đôi thưởng phó bản! Bingo 2 bảng 16 ô = 32 vé (28 vé free + 80 lượt dò bù).", prep: "Làm đủ 4 vé Bingo/ngày (vé không tích!). Thủ sẵn 20–30 Quả Vận Mệnh & đợi event mở mới bấm dò." },
+      { day: 16, sDay: "S1 • Ngày 5", kingdom: "Thủy Quốc Aqualis / Đầm Lầy (S1)", cat: "system",  title: "Chuyển Chức Bậc 3 (Cấp 82)", detail: "Yêu cầu: Nhân vật Lv.82 + Tổng Cấp Nghề 48 + Nghề Bậc 2 đang chơi Lv.16 + Mở Mốc 9 Vùng Đầm Lầy.", prep: "Chuẩn bị sẵn Vé Quay & Khế Ước Sao nếu định xoay sang nhánh khác." },
+      { day: 20, sDay: "S1 • Ngày 9", kingdom: "Thủy Quốc Aqualis / Đầm Lầy (S1)", cat: "system",  title: "Đột Phá Cấp 90 — Bậc Anh Hùng III", detail: "Chạm Lv.90 đột phá Anh Hùng III & mở chuỗi nhiệm vụ sự kiện. Điểm xả Dụng Cụ Bí Cảnh lý tưởng cho F2P.", prep: "Chờ sang Ngày 21 (Cào Thẻ) xả Bí Cảnh vừa đủ đạt 128 Sao Nguyên Thủy rồi dừng!" },
+      { day: 21, sDay: "S1 • Ngày 10", kingdom: "Thủy Quốc Aqualis / Đầm Lầy (S1)", cat: "event",  title: "Đại Chiến Báu Vật Kỳ 3 (180 Mảnh Skill Bậc 3) + Sự Kiện Cào Thẻ", detail: "Kỳ 3 Tầng 5 chọn 180 Mảnh Kỹ Năng Bậc 3. Sự Kiện Cào Thẻ cần đào Bí Cảnh ~400 lượt.", prep: "Xả Bí Cảnh chạm 128 ★ rồi giữ phần dư cho S2; mảnh skill Bậc 3 nhớ chọn cho nghề chơi lâu dài!" },
+      { day: 24, sDay: "S1 • Ngày 13", kingdom: "Thủy Quốc Aqualis / Đầm Lầy (S1)", cat: "dungeon", title: "Cấp 100: Đền Nguyên Thủy (930K / 1.45M / 2M+) + Đổi Nghề Miễn Phí", detail: "Mở đồng loạt 3 hệ thống: Đền Nguyên Thủy (Thường 930K, Khó 1.45M, Ác Mộng >2M), Đổi Nghề Không Mất Kỹ Năng & Lực Chiến Mùa.", prep: "F2P farm đồ Cung Điện Biển đi mức Thường trước; dùng Vé + Khế Ước Sao test đổi nghề ở Lv.100." },
+      { day: 26, sDay: "S1 • Ngày 15", kingdom: "Thủy Quốc Aqualis / Đầm Lầy (S1)", cat: "event",   title: "Bản Đồ Mùa Giải Mới (Whaleback Season Map)", detail: "Bản đồ sự kiện mùa giải mở khóa — nguồn cung nguyên liệu, vé quay và mảnh thưởng lớn.", prep: "Hoàn thành khám phá bản đồ sớm để lấy lợi thế tiến độ." },
+      { day: 28, sDay: "S1 • Ngày 17", kingdom: "Thủy Quốc Aqualis / Đầm Lầy (S1)", cat: "event",   title: "Sự Kiện Giải Đố (Fonik's Puzzle — Tuần C)", detail: "Sự kiện giải đố chu kỳ 3 tuần — phát miễn phí 18 Quả Vận Mệnh + 6 Khế Ước Sao.", prep: "Gom trọn 18 Quả + 6 Khế Ước Sao làm vốn cho đợt Bingo kế tiếp (Ngày 35)!" },
+      { day: 29, sDay: "S1 • Ngày 18", kingdom: "Thủy Quốc Aqualis / Đầm Lầy (S1)", cat: "event",   title: "Đại Chiến Báu Vật Kỳ 4: Cổ Vật Ngọc Khởi Nguyên", detail: "Quà mốc Cấp 5 là Ngọc Khởi Nguyên (Primal Gem) — tăng tỷ lệ nhận Ngọc khảm trang bị.", prep: "Xả 3,240 NL nếu dư, nhưng nhớ tính toán giữ NL cho Kỳ 5 (Ngày 36) & Kỳ 6 (Ngày 43)!" },
+      { day: 33, sDay: "S1 • Ngày 22", kingdom: "Thủy Quốc Aqualis / Đầm Lầy (S1)", cat: "dungeon", title: "Gác Hoàng Tuyền / Hellhold (2.25M / 2.75M / 6M+ CP)", detail: "Phó bản cuối Mùa 1 kéo dài ~2 tuần (Thường 2.25M, Khó 2.75M, Cực Hạn >6M dành cho đua top).", prep: "F2P không cần cố quá sức vào 6M; tập trung tối ưu Tủ Trưng Bày & 128 Sao Nguyên Thủy." },
+      { day: 35, sDay: "S1 • Ngày 24", kingdom: "Thủy Quốc Aqualis / Đầm Lầy (S1)", cat: "event",   title: "Bingo Xoay Vòng Quay Lại (20–30 Quả Vận Mệnh)", detail: "Sau 3 tuần (Bingo → Cào Thẻ → Giải Đố), Bingo mở lại với 2 bảng 32 vé.", prep: "Dùng đúng số 20–30 Quả tích từ Giải Đố + làm đủ 4 vé nhiệm vụ mỗi ngày!" },
+      { day: 36, sDay: "S1 • Ngày 25", kingdom: "Thủy Quốc Aqualis / Đầm Lầy (S1)", cat: "event",   title: "Đại Chiến Báu Vật Kỳ 5: Rương Cổ Vật Vàng Vùng Đầm Lầy", detail: "Quà Tầng 5 là rương chọn Cổ Vật Vàng/Đỏ tự chọn của Thủy Quốc (Vùng Đầm Lầy).", prep: "Chốt mảnh Cổ Vật thiếu của Vùng 3 bằng 3,240 NL." },
+      { day: 43, sDay: "S1 • Ngày 32", kingdom: "Thủy Quốc Aqualis / Đầm Lầy (S1)", cat: "event",   title: "Đại Chiến Báu Vật Kỳ 6: Tượng Thần May Mắn Lần 2!", detail: "Xuất hiện thêm một Tượng Thần May Mắn nữa ngay trước thềm kết thúc Mùa 1!", prep: "Đừng xài cạn năng lượng ở các tuần lẻ — dồn 3,240 NL nâng cấp Tượng Thần May Mắn!" },
+      { day: 45, sDay: "S1 • Ngày 34", kingdom: "Thủy Quốc Aqualis / Đầm Lầy (S1)", cat: "system",  title: "Chốt Mùa 1 (Ngày 45–47) • Reset Sàn Lv.100 & Chốt Tủ Trưng Bày", detail: "Cấp, Ô Skill, Cổ Vật (+10) vượt mốc bị kéo về sàn để đổi Sao Nguyên Thủy; Món Ăn/Kỹ Năng/Pet/Bí Cảnh/Đá Thô giữ 100%.", prep: "Bán Mảnh dư (chừa ~300 mảnh), giữ Đá Thô/Cát/Thẻ Nữ Thần, mặc đồ xịn nhất khóa Tủ Trưng Bày & tích đúng 300 Thể Lực!" },
       { day: 47, sDay: "S2 • Ngày 1", kingdom: "Long Cảng Loong Haven (S2)", cat: "dungeon", title: "Mở Season 2: Demonseal Gorge (2.35M CP) + Gộp Cụm 4", detail: "Gộp cụm 4 server (01..04). Mùa 2 kéo dài ~67 ngày. Mở Aethyris cần: 5 Chìa + 1 Thuốc + 1 Khoan + 2 Thủy Lôi + 7 Chìa Mây.", prep: "Bung Thể Lực & 6 lượt Phó Bản tích trữ từ S1 ngay ngày đầu." },
       { day: 48, sDay: "S2 • Ngày 2", kingdom: "Long Cảng Loong Haven (S2)", cat: "system",  title: "Chuyển Nghề Bậc 4 (Lv.106)", detail: "Chinh Phục / Hộ Vệ / Hủy Diệt / Thống Trị (Lv.106 + Nghề Lv.89 + Bậc 3 Lv.19 + Loong Haven 5).", prep: "Mở khóa bộ kỹ năng chủ lực Bậc 4." },
       { day: 50, sDay: "S2 • Ngày 4", kingdom: "Long Cảng Loong Haven (S2)", cat: "system",  title: "Huyễn Thú Trưởng Thành (Lv.108) & 10 Ô Khảm Ngọc", detail: "Mở tiến hóa Pet Adult & nâng trần lên 10 ô khảm Ngọc trang bị.", prep: "Bắt đầu tích Ngọc & đá cường hóa." },
@@ -4636,7 +4829,7 @@
     function getSeasonMeta(day) {
       if (day < 4)   return { name: "Giai Đoạn 1: Thung Lũng Xanh (Verdantglade)", cap: "Lv.1–39 • Bậc 1", nextReset: 12, tip: "Tập trung nâng Căn Cứ, Xe Hàng & gom 3 Chìa + 5 Thuốc + 3 Mũi Khoan mở Rặng Núi Tro Tàn." };
       if (day < 12)  return { name: "Giai Đoạn 2: Rặng Núi Tro Tàn (Cinder Ridge)", cap: "Lv.40–75 • Bậc 2 + Huyễn Thú", nextReset: 12, tip: "Mở Đấu Trường (Lv.40), chuyển Bậc 2 (Lv.44), tích 4 Chìa + 3 Thuốc + 5 Khoan + 3 Thủy Lôi vào Aqualis." };
-      if (day < 47)  return { name: `Season 1: Thủy Quốc Aqualis (Ngày ${day - 11}/35)`, cap: "Lv.75–105 • Bậc 3 • Sàn cuối mùa Lv.100", nextReset: 47, tip: day >= 38 ? "TUẦN CUỐI S1: Mặc đồ điểm cao nhất chốt SSS Snapshot, tích 1,200 Thể Lực & 6/6 lượt Phó Bản!" : "Ưu tiên Đổi Nghề miễn phí ở Lv.100 và ăn Kho Báu Tượng May Mắn (Phase 2)." };
+      if (day < 47)  return { name: `Season 1: Thủy Quốc Aqualis / Đầm Lầy (Ngày ${day - 11}/35)`, cap: "Lv.75–105 • Bậc 3 (Lv.82) • Anh Hùng III (Lv.90) • Đổi Nghề Lv.100", nextReset: 47, tip: day >= 40 ? "CHỐT MÙA 1 (Ngày 45–47): Bán Mảnh dư (chừa ~300 mảnh), giữ Đá Thô/Cát/Thẻ Nữ Thần/Bí Cảnh dư, mặc đồ khóa Tủ Trưng Bày & giữ đúng 300 Thể Lực!" : (day >= 19 && day <= 23 ? "NHỊP CẤP 90 + CÀO THẺ (Ngày 20–21): Xả Dụng Cụ Bí Cảnh (~400 lượt) vừa đủ chạm 128 ★ rồi dừng; Kỳ 3 chọn 180 Mảnh Skill cho nghề lâu dài!" : "Thủ 20–30 Quả Vận Mệnh cho Bingo & chừa NL Đại Chiến Báu Vật cho Kỳ 2 (Ngày 14) / Kỳ 4 (Ngày 29) / Kỳ 5 (Ngày 36) / Kỳ 6 (Ngày 43)!") };
       if (day < 114) return { name: `Season 2: Long Cảng Loong Haven (Ngày ${day - 46}/67)`, cap: "Lv.106–135 • Bậc 4 • Pet Trưởng Thành", nextReset: 114, tip: day >= 100 ? "CUỐI MÙA S2: Chốt sàn Lv.130 & Cổ Vật +13, tích Đá Thần Tạo kế thừa dòng sang Thiên Không Giới!" : "Leo Tháp Ngọc Demonbind Tower mỗi ngày & tích vé/Kim Cương chờ Pet Đỏ Pandariel (Ngày 92)." };
       if (day < 226) return { name: `Season 3: Thiên Không Giới Aethyris (Ngày ${day - 113}/112)`, cap: "Lv.136–171 • Bậc 5 • Khế Ước", nextReset: 226, tip: day >= 210 ? "CUỐI MÙA S3: Chốt sàn Lv.160 & Cổ Vật +16, tích Tài Nguyên mở Vũ Quốc Harpadia!" : "Bắt buộc xả 3,240 NL lấy Cây Thần Vàng (Ngày 144) & tích vé chờ Pet Hồ Ly Prismora (Ngày 159)." };
       if (day < 335) return { name: `Season 4: Vũ Quốc Harpadia (Ngày ${day - 225}/109)`, cap: "Lv.172–197 • Bậc 6 • Cộng Hưởng Pet", nextReset: 335, tip: "Đẩy Cộng Hưởng Huyễn Thú (Lv.180), nâng trần Ngọc T10–T15 & hoàn thiện Hợp Ước Tinh Tượng." };
@@ -4689,7 +4882,7 @@
               const cal = openDateStr ? ` • ${fmtCalDate(openDateStr, m.day)}` : '';
               return `
                 <div class="card ${m.cat === 'event' ? 'card-sword' : (m.cat === 'system' ? 'card-staff' : 'card-cyan')}" style="padding:12px;">
-                  <div style="display:flex; justify-content:space-between; align-items:center; gap:6px; margin-bottom:6px;">
+                  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:6px; margin-bottom:6px;">
                     ${badge}
                     <span style="font-size:0.72rem; color:var(--text-muted);">Ngày ${m.day} (${m.sDay})${cal}</span>
                   </div>
@@ -4698,7 +4891,7 @@
                 </div>
               `;
             }).join('')
-          : '<div class="card card-emerald" style="grid-column:1/-1;"><strong>Chúc mừng!</strong> Máy chủ của bạn đã mở toàn bộ 57 mốc lịch trình hiện có tới cuối Season 5.</div>';
+          : `<div class="card card-emerald" style="grid-column:1/-1;"><strong>Chúc mừng!</strong> Máy chủ của bạn đã mở toàn bộ ${SERVER_MILESTONES.length} mốc lịch trình hiện có tới cuối Season 5.</div>`;
       }
 
       const catLabels = { dungeon: 'Phó Bản', event: 'Sự Kiện / Gacha', system: 'Chuyển Nghề / Hệ Thống' };
@@ -5294,14 +5487,14 @@
 
     // Grand Treasure Hunt Phase Table
     const TREASURE_PHASES = [
-      { reg: "Cinder Ridge", phase: "Phase 1 • Cổ Vật Đỏ Tự Chọn Vùng 2", ev: "Mecha Summit" },
-      { reg: "Aqualis (S1)", phase: "Phase 2 • Tượng May Mắn (Lucky Statue)", ev: "Lucky Bingo • Ocean Palace Ruins" },
-      { reg: "Aqualis (S1)", phase: "Phase 3 • 180 Mảnh Kỹ Năng Bậc 3 Tự Chọn", ev: "Lucky Cards • Trước Aquorigin Shrine" },
-      { reg: "Aqualis (S1)", phase: "Phase 4 • Ngọc Nguyên Thủy (Primal Gem)", ev: "Fonik's Puzzle • Aquorigin Shrine" },
-      { reg: "Aqualis (S1)", phase: "Phase 5 • Cổ Vật Đỏ Thủy Quốc Tự Chọn", ev: "Lucky Bingo • Trong Hellhold" },
-      { reg: "Loong Haven (S2)", phase: "Phase 6 • Đá Thời Gian / Cổ Vật Đỏ Long Cảng", ev: "Lucky Cards • Warlord's Rest" },
-      { reg: "Aethyris (S3)", phase: "Phase 7 • Cây Thần Vàng (+10% Căn Cứ)", ev: "Fonik's Puzzle • Thiên Không Giới" },
-      { reg: "Aethyris (S3)", phase: "Phase 8 • Hòn Đá Phù Thủy (Philosopher's Stone)", ev: "Lucky Bingo • Sunspire / Regal Lair" }
+      { reg: "Cinder Ridge (~N7)", phase: "Kỳ 1 • Rương Cổ Vật Vàng Vùng 2", ev: "Mecha Summit • Chọn mảnh còn thiếu" },
+      { reg: "Đầm Lầy (~N14)", phase: "Kỳ 2 • Tượng Thần May Mắn (+10% x2 Phó Bản)", ev: "Lucky Bingo (32 vé • 20–30 Quả)" },
+      { reg: "Đầm Lầy (~N21)", phase: "Kỳ 3 • 180 Mảnh Kỹ Năng Bậc 3 Tự Chọn", ev: "Cào Thẻ (~400 Bí Cảnh) • Chọn cho nghề lâu dài" },
+      { reg: "Đầm Lầy (~N29)", phase: "Kỳ 4 • Cổ Vật Ngọc Khởi Nguyên (Primal Gem)", ev: "Giải Đố (+18 Quả & +6 Khế Ước Sao ở N28)" },
+      { reg: "Hoàng Tuyền (~N36)", phase: "Kỳ 5 • Rương Cổ Vật Vàng Vùng Đầm Lầy", ev: "Bingo quay lại (~N35) • Chốt bộ S1" },
+      { reg: "Hoàng Tuyền (~N43)", phase: "Kỳ 6 • Tượng Thần May Mắn Lần 2!", ev: "Rất đáng chừa NL trước khi Reset Mùa 1" },
+      { reg: "Long Cảng (S2)", phase: "Kỳ 7 • Đá Thời Gian / Cổ Vật Đỏ Long Cảng", ev: "Lucky Cards • Warlord's Rest" },
+      { reg: "Thiên Không (S3)", phase: "Kỳ 8 • Cây Thần Vàng & Hòn Đá Phù Thủy", ev: "Fonik's Puzzle (N144) & Lucky Bingo (N174)" }
     ];
     const tpBody = document.getElementById('treasurePhasesBody');
     if (tpBody) {
