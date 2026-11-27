@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sword x Staff (Kiếm x Trượng) — Đại Bách Khoa Toàn Thư, Cơ Sở Dữ Liệu &amp; Trạm Công Cụ</title>
-  <meta name="description" content="Cổng dữ liệu chuyên sâu có minh họa đầy đủ bằng Tiếng Việt cho Sword x Staff (Kiếm x Trượng): 26 nghề Bậc 1-8, 125 Kỹ năng & Bí thuật có icon game, Bộ Build 4 chế độ PvP/PvE, Trang bị & 8 loại Ngọc T1-T15, 30 Cổ vật, 12 Huyễn thú, 75 Đồng hành, 26 Món Ăn, 7 Vương quốc và 6 Máy tính công thức." />
+  <meta name="description" content="Cổng dữ liệu chuyên sâu có minh họa đầy đủ bằng Tiếng Việt cho Sword x Staff (Kiếm x Trượng): 26 nghề Bậc 1-8, 125 Kỹ năng & Bí thuật có icon game, Bộ Build 4 chế độ PvP/PvE, Trang bị & 8 loại Ngọc T1-T15, 30 Cổ vật, 12 Huyễn thú, 75 Đồng hành, 26 Món Ăn, 7 Vương quốc và 7 Máy tính công thức." />
   <link rel="icon" href="assets/fandom/Site-favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,7 +26,7 @@
       </div>
       <div>
         <div class="brand-title font-display">SWORD <span class="x-mark">x</span> STAFF — ĐẠI BÁCH KHOA VN</div>
-        <span class="brand-sub">Cơ Sở Dữ Liệu Minh Họa Game, Phân Tích Meta &amp; 6 Máy Tính Công Thức</span>
+        <span class="brand-sub">Cơ Sở Dữ Liệu Game, Phân Tích Meta &amp; 7 Máy Tính Công Thức</span>
       </div>
     </div>
 
@@ -40,8 +40,15 @@
         <div id="searchDropdown" class="search-dropdown" role="listbox" aria-label="Kết quả tìm kiếm nhanh"></div>
       </div>
 
-      <a href="pages/index.html" class="icon-btn" style="text-decoration:none; white-space:nowrap;" title="Mở thư viện 14 chuyên đề chi tiết đồng bộ giao diện">
-        <span>14 Chuyên Đề</span>
+      <button type="button" class="icon-btn char-profile-btn" id="charProfileTriggerBtn" title="Hồ sơ nhân vật &amp; theo dõi lịch trình cá nhân (Lưu trên Cookie trình duyệt)">
+        <span class="cookie-dot" aria-hidden="true"></span>
+        <img src="assets/icons/classes/duelist.svg" alt="" id="topbarCharIcon" />
+        <span class="char-name-txt" id="topbarCharName">Nhà Thám Hiểm</span>
+        <span class="char-srv-chip" id="topbarCharSrv">N15</span>
+      </button>
+
+      <a href="pages/index.html" class="icon-btn" style="text-decoration:none; white-space:nowrap;" title="Mở thư viện 18 chuyên đề chuyên sâu">
+        <span>18 Chuyên Đề</span>
       </a>
 
       <button class="icon-btn" id="themeToggleBtn" aria-label="Đổi giao diện Sáng hoặc Tối">
@@ -53,31 +60,9 @@
     </div>
   </header>
 
-  <div class="wiki-page-frame">
-    <!-- COMMUNITY HERO ARTWORK BANNER (Banner.jpg + Site-logo.png) -->
-    <section class="community-banner" aria-label="Biểu ngữ cộng đồng Sword x Staff">
-      <img src="assets/fandom/Banner.jpg" alt="Sword x Staff Community Banner" class="community-banner-bg" />
-      <div class="community-banner-scrim">
-        <div class="community-banner-id">
-          <img src="assets/fandom/Site-logo.png" alt="Logo Sword x Staff Wiki VN" class="community-logo" />
-          <div>
-            <div class="community-title">Sword x Staff — Đại Bách Khoa Toàn Thư Tiếng Việt</div>
-            <div class="community-tagline">Cổng Wiki &amp; Công Cụ Hợp Nhất Duy Nhất — Đầy đủ dữ liệu Meta, Lộ Trình S0–S7, Cốt Truyện Kanstein &amp; Assets gốc trong game</div>
-          </div>
-        </div>
-        <nav class="community-nav" aria-label="Điều hướng nhanh chuyên mục Wiki">
-          <button type="button" class="community-nav-btn" data-tab="overview">KHÁM PHÁ</button>
-          <button type="button" class="community-nav-btn" data-tab="world">VƯƠNG QUỐC</button>
-          <button type="button" class="community-nav-btn" data-tab="mechanics">CHIẾN ĐẤU</button>
-          <button type="button" class="community-nav-btn" data-tab="classes">NGHỀ NGHIỆP</button>
-          <button type="button" class="community-nav-btn" data-tab="builds">BUILD &amp; KỸ NĂNG</button>
-          <button type="button" class="community-nav-btn" data-tab="companions-life">ĐỒNG HÀNH &amp; MÓN</button>
-          <button type="button" class="community-nav-btn" data-tab="seasons">SỰ KIỆN &amp; MÙA</button>
-          <button type="button" class="community-nav-btn" data-tab="calculators" style="margin-left:auto; background:rgba(255,197,0,0.2); border-color:#FFC500; color:#FFC500;">6 MÁY TÍNH CÔNG THỨC</button>
-        </nav>
-      </div>
-    </section>
+  <div class="sidebar-backdrop" id="sidebarBackdrop" aria-hidden="true"></div>
 
+  <div class="wiki-page-frame">
     <div class="app-shell">
     <!-- 11-MODULE SIDEBAR -->
     <nav class="sidebar" id="sidebarNav" aria-label="Danh mục chuyên đề">
@@ -130,7 +115,21 @@
       </button>
       <button class="nav-btn" data-tab="calculators">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg>
-        <span>11. Trung Tâm 6 Máy Tính</span>
+        <span>11. Trung Tâm 7 Máy Tính</span>
+      </button>
+
+      <div class="nav-group-label">Hoạch Định Tích Trữ &amp; Event</div>
+      <button class="nav-btn" data-tab="rank-yield">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 6-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>12. Tính Tài Nguyên &amp; % Rank</span>
+      </button>
+      <button class="nav-btn" data-tab="item-hoard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        <span>13. Tích Lũy Skill, Cổ Vật &amp; Tâm Giao</span>
+      </button>
+      <button class="nav-btn" data-tab="events-hub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15" stroke-linecap="round"/></svg>
+        <span>14. Event Xoay Vòng &amp; Event Lớn</span>
       </button>
 
       <div class="sidebar-footer">
@@ -150,34 +149,39 @@
           <img src="assets/art/hero_banner.jpg" alt="Tranh minh họa Kiếm x Trượng trên đại lục Kanstein" class="hero-bg-art" />
           <div class="hero-scrim">
             <div class="hero-badges">
-              <span class="pill pill-sword">Hệ Kiếm — Chiến Binh (Bậc 1 → 7)</span>
-              <span class="pill pill-staff">Hệ Trượng — Pháp Sư (Bậc 1 → 7)</span>
-              <span class="pill pill-cyan">7 Vương Quốc Đại Lục Kanstein</span>
-              <span class="pill pill-emerald">Bách Khoa Có Hình Ảnh &amp; Công Cụ Thực Chiến</span>
+              <span class="pill pill-sword">Hệ Kiếm — Chiến Binh</span>
+              <span class="pill pill-staff">Hệ Trượng — Pháp Sư</span>
+              <span class="pill pill-cyan">7 Vương Quốc Kanstein</span>
+              <span class="pill pill-emerald">Bách Khoa Tiếng Việt S0 → S7</span>
             </div>
-            <h1 class="hero-title" id="heading-overview">Đại Bách Khoa Toàn Thư &amp; Trạm Công Cụ Sword x Staff (Kiếm x Trượng)</h1>
+            <h1 class="hero-title" id="heading-overview">Đại Bách Khoa Toàn Thư &amp; Trạm Công Cụ Sword x Staff</h1>
             <p class="hero-desc">
-              Hệ thống cơ sở dữ liệu trực quan bằng Tiếng Việt dành cho người chơi <strong>Sword x Staff</strong>: tích hợp hình ảnh chính thức trong game cho 26 nghề Bậc 1–8, 125 Chiến Kỹ &amp; Bí Thuật, Bộ Build 4 chế độ PvP/PvE, 5 Ô Trang Bị &amp; 8 Ngọc T1–T15, 30 Cổ Vật, 12 Huyễn Thú, 75 Đồng Hành (gồm Collab), 26 Món Ăn, Lộ Trình Ngày Server S0–S7 và 6 máy tính công thức trực tiếp.
+              Tra cứu nhanh toàn bộ dữ liệu thực chiến <strong>Sword x Staff (Kiếm x Trượng)</strong>: 26 nghề Bậc 1–8, 125 kỹ năng &amp; bí thuật, bộ Build Meta 4 chế độ PvP/PvE, ngọc T1–T15, cổ vật, huyễn thú, lịch server S0–S7 và 7 máy tính công thức trực tiếp.
             </p>
+            <div class="hero-cta-row">
+              <button type="button" class="hero-cta-btn hero-cta-primary" onclick="switchTab('builds')">Xem Bộ Build Meta →</button>
+              <button type="button" class="hero-cta-btn hero-cta-secondary" onclick="switchTab('calculators')">Mở 7 Máy Tính Công Thức</button>
+              <a href="pages/index.html" class="hero-cta-btn hero-cta-secondary">18 Chuyên Đề Chi Tiết</a>
+            </div>
             <div class="stat-strip">
-              <div class="stat-box"><div class="stat-num">26 Nghề</div><div class="stat-label">Tiến Hóa Bậc 1 → 8 &amp; 304 Icon Game</div></div>
-              <div class="stat-box"><div class="stat-num">125 Skill</div><div class="stat-label">Minh Họa Trực Quan &amp; Lọc 6 Chiều</div></div>
-              <div class="stat-box"><div class="stat-num">75 NPC</div><div class="stat-label">Chân Dung Thật + Collab + 30 Code</div></div>
-              <div class="stat-box"><div class="stat-num">8 Ngọc</div><div class="stat-label">Minh Họa T1 → T15 (+1,037%)</div></div>
-              <div class="stat-box"><div class="stat-num">30 Cổ Vật</div><div class="stat-label">&amp; 12 Hồ Sơ Huyễn Thú</div></div>
-              <div class="stat-box"><div class="stat-num">S0 → S7</div><div class="stat-label">Route Line Server &amp; 6 Máy Tính</div></div>
+              <div class="stat-box"><div class="stat-num">26 Nghề</div><div class="stat-label">Tiến hóa Bậc 1 → 8</div></div>
+              <div class="stat-box"><div class="stat-num">125 Skill</div><div class="stat-label">Lọc 6 chiều kèm icon</div></div>
+              <div class="stat-box"><div class="stat-num">75 NPC</div><div class="stat-label">Collab &amp; 30 Giftcode</div></div>
+              <div class="stat-box"><div class="stat-num">8 Ngọc</div><div class="stat-label">Bậc T1 → T15</div></div>
+              <div class="stat-box"><div class="stat-num">30 Cổ Vật</div><div class="stat-label">&amp; 12 Huyễn Thú</div></div>
+              <div class="stat-box"><div class="stat-num">S0 → S7</div><div class="stat-label">Lộ trình &amp; 7 Máy tính</div></div>
             </div>
           </div>
         </div>
 
-        <!-- LỘ TRÌNH 7 NGÀY ĐẦU & KINH TẾ DAWNIUM (WIKI ARTICLE + OFFICIAL INFOBOX) -->
+        <!-- LỘ TRÌNH 7 NGÀY ĐẦU & KINH TẾ DAWNIUM -->
         <div class="section-head">
           <div>
             <h2 class="section-title">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
               Cẩm Nang Nhập Môn 7 Ngày Đầu, Reroll &amp; Kinh Tế Cho Cày Chay
             </h2>
-            <p class="section-sub">Trình bày dạng bài Wiki tham chiếu nhanh kèm hình ảnh thực tế trong game để dễ đọc, không rối thẻ</p>
+            <p class="section-sub">Lộ trình khởi đầu chuẩn F2P, thứ tự tiêu Dawnium, Căn Cứ 36h và điểm mở khóa quan trọng</p>
           </div>
         </div>
 
@@ -224,18 +228,18 @@
           <aside class="wiki-infobox" aria-label="Hộp thông tin nhanh và ảnh thực tế trong game">
             <div class="wiki-infobox-head">
               <span>Tư Liệu Chính Thức &amp; Ra Mắt</span>
-              <span class="pill pill-cyan">Wiki Infobox</span>
+              <span class="pill pill-cyan">Tóm Tắt Nhanh</span>
             </div>
             <figure class="wiki-figure">
-              <a href="pages/tan-thu-kinh-te-giftcode.html#journey-overture"><img src="assets/fandom/Journey_Overture.jpg" alt="Sự kiện Khúc Dạo Đầu Hành Trình (Journey Overture) và Di Vật Sword x Staff" loading="lazy" /></a>
+              <a href="pages/tan-thu-kinh-te-giftcode.html#journey-overture"><img src="assets/fandom/Journey_Overture.jpg" alt="Sự kiện Khúc Dạo Đầu Hành Trình (Journey Overture) và Di Vật Sword x Staff" width="640" height="360" loading="lazy" /></a>
               <figcaption><strong>Khúc Dạo Đầu Hành Trình:</strong> Sự kiện 14 ngày nhận Di Vật Thần Thoại <em>Sword × Staff</em> &amp; <em>Merri Doll</em>. <a href="pages/tan-thu-kinh-te-giftcode.html#journey-overture">Xem trang chi tiết →</a></figcaption>
             </figure>
             <figure class="wiki-figure">
-              <a href="pages/tan-thu-kinh-te-giftcode.html#launch-faq"><img src="assets/fandom/Faq.png" alt="Thông báo FAQ Ra Mắt Sword x Staff — Boltray Games" loading="lazy" /></a>
+              <a href="pages/tan-thu-kinh-te-giftcode.html#launch-faq"><img src="assets/fandom/Faq.png" alt="Thông báo FAQ Ra Mắt Sword x Staff — Boltray Games" width="640" height="360" loading="lazy" /></a>
               <figcaption><strong>FAQ &amp; Cộng Đồng Kanstein Hub:</strong> Cấu hình Google Play, App Store &amp; Hoàn Tiền Nạp. <a href="pages/tan-thu-kinh-te-giftcode.html#launch-faq">Xem FAQ chi tiết →</a></figcaption>
             </figure>
             <figure class="wiki-figure">
-              <a href="pages/tan-thu-kinh-te-giftcode.html#home-progression"><img src="assets/official/official_ss3.jpg" alt="Tượng Nữ Thần cấp 25 và Giường Ngủ tăng EXP treo máy tại Căn Cứ" loading="lazy" /></a>
+              <a href="pages/tan-thu-kinh-te-giftcode.html#home-progression"><img src="assets/official/official_ss3.jpg" alt="Tượng Nữ Thần cấp 25 và Giường Ngủ tăng EXP treo máy tại Căn Cứ" width="640" height="360" loading="lazy" /></a>
               <figcaption><strong>Tượng Nữ Thần &amp; Căn Cứ (Bed EXP):</strong> Nâng giới hạn Xe Đẩy và EXP Giường Ngủ. <a href="pages/tan-thu-kinh-te-giftcode.html#home-progression">Xem chi tiết →</a></figcaption>
             </figure>
             <div class="wiki-kv-list">
@@ -250,20 +254,21 @@
           </aside>
         </div>
 
-        <!-- THƯ VIỆN 14 TRANG CHUYÊN ĐỀ CHI TIẾT ĐỒNG BỘ UI — LỰA CHỌN THEO NỘI DUNG -->
+        <!-- THƯ VIỆN 18 CHUYÊN ĐỀ CHUYÊN SÂU -->
         <div class="section-head" id="detailLibSection">
           <div>
             <h2 class="section-title">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
-              Thư Viện 14 Chuyên Đề Chi Tiết Đồng Bộ Giao Diện (Lựa Chọn Theo Chủ Đề)
+              Thư Viện 18 Chuyên Đề Chuyên Sâu
             </h2>
-            <p class="section-sub">Tất cả trang chi tiết dưới đây dùng chung 100% bố cục Header, Sidebar cố định và Nền Sáng/Đen của Trang Chính — không tách rời menu hay phá vỡ layout</p>
+            <p class="section-sub">Tra cứu phân tích chi tiết theo từng nhánh nghề, cơ chế chiến đấu, trang bị, tích trữ và lộ trình mùa giải</p>
           </div>
         </div>
         <div class="filter-bar">
-          <input type="search" id="detailLibSearchInput" class="filter-input" placeholder="Tìm nhanh chuyên đề chi tiết (VD: Hỗn Mang, Skill Ascend, Cuồng Chiến, Thánh Kỵ, Ngọc T15, Dryason...)..." aria-label="Tìm trang chi tiết" />
+          <input type="search" id="detailLibSearchInput" class="filter-input" placeholder="Tìm nhanh trong 18 chuyên đề (VD: Dự Đoán Level, Rank Bí Cảnh, Tâm Giao, Event Xoay Vòng, Hỗn Mang, Ngọc T15...)..." aria-label="Tìm trang chi tiết" />
           <div class="chip-group" id="detailLibCatGroup">
-            <button type="button" class="chip-btn active" data-dcat="all">Tất Cả (14)</button>
+            <button type="button" class="chip-btn active" data-dcat="all">Tất Cả (18)</button>
+            <button type="button" class="chip-btn" data-dcat="Tích Trữ & Chu Kỳ Event">Tích Trữ &amp; Chu Kỳ Event (Mới)</button>
             <button type="button" class="chip-btn" data-dcat="Nhập Môn & Kinh Tế">Nhập Môn &amp; Kinh Tế</button>
             <button type="button" class="chip-btn" data-dcat="Cơ Chế & Kỹ Năng">Cơ Chế &amp; Kỹ Năng</button>
             <button type="button" class="chip-btn" data-dcat="Nghề & Bộ Build">Nghề &amp; Bộ Build</button>
@@ -381,18 +386,25 @@
           </table>
         </div>
 
-        <!-- DANH SÁCH 14 GIFTCODE DẠNG THẺ RƯƠNG QUÀ -->
+        <!-- KHO 30 GIFTCODE (CÓ BỘ LỌC & THU GỌN) -->
         <div class="section-head">
           <div>
             <h2 class="section-title">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 01-2 2H7a2 2 0 01-2-2v-7"/></svg>
-              Kho 30 Rương Giftcode (Global &amp; VN/SEA) &amp; Hướng Dẫn Nhập Nhận Thưởng
+              Kho 30 Giftcode (Global &amp; VN/SEA) &amp; Hướng Dẫn Nhập
             </h2>
-            <p class="section-sub">Chơi xong 100% Đảo Khởi Nguyên (Originisle) → Menu góc dưới phải → User Center → Gift Code → Nhận thư tại Chim Cú</p>
+            <p class="section-sub">Hoàn thành 100% Đảo Khởi Nguyên → Menu góc dưới phải → User Center → Gift Code → Nhận thư tại Chim Cú</p>
+          </div>
+          <div class="chip-group" id="giftcodeFilterGroup">
+            <button type="button" class="chip-btn active" data-gf="all">Tất Cả</button>
+            <button type="button" class="chip-btn" data-gf="sea">VN / SEA</button>
+            <button type="button" class="chip-btn" data-gf="global">Global</button>
+            <button type="button" class="chip-btn" data-gf="vip">Dawnium &amp; Vé</button>
           </div>
         </div>
 
         <div class="giftcode-grid" id="giftcodeGrid"></div>
+        <div class="giftcode-toggle-wrap" id="giftcodeToggleWrap"></div>
 
         <!-- TỪ ĐIỂN THUẬT NGỮ MỞ RỘNG -->
         <div class="section-head">
@@ -637,7 +649,7 @@
         <div class="card card-cyan" style="margin-bottom:20px;">
           <div class="card-header">
             <h3 class="card-title">Phân Biệt Phong Cách (Style) • Lối Build • Cơ Chế &amp; Biên Độ Sát Thương 4 Đại Nhánh</h3>
-            <span class="pill pill-cyan">Class Selection Guide</span>
+            <span class="pill pill-cyan">Cẩm Nang Chọn Nghề</span>
           </div>
           <div class="grid-2">
             <ul class="clean-list">
@@ -1629,6 +1641,8 @@
 
         <!-- MỤC 1: BỘ TRA CỨU & TUYẾN LỘ TRÌNH NGÀY SERVER S0 → S7 (WIDE HORIZONTAL ROUTE LINE) -->
         <div id="wiki-srv-checker" style="margin-bottom:24px;">
+          <div id="charPersonalBar" class="char-session-strip" aria-live="polite"></div>
+
           <div class="grid-3" style="margin-bottom:12px; align-items:end;">
             <div class="form-field">
               <label for="srvDayInput">Tuổi Server Hiện Tại (Ngày 1 → 550+)</label>
@@ -1675,6 +1689,7 @@
           <div class="filter-bar" style="margin-bottom:12px;">
             <div class="chip-group" id="srvMilestoneFilter">
               <button type="button" class="chip-btn active" data-mfilter="all">Tất cả mốc (S0→S7)</button>
+              <button type="button" class="chip-btn" data-mfilter="pinned">📌 Mốc Đang Theo Dõi (<span id="pinnedMsCount">0</span>)</button>
               <button type="button" class="chip-btn" data-mfilter="season">Chỉ mùa đang xem</button>
               <button type="button" class="chip-btn" data-mfilter="upcoming">Sắp mở (≤ 14 ngày)</button>
               <button type="button" class="chip-btn" data-mfilter="unlocked">Đã mở</button>
@@ -2128,7 +2143,7 @@
           <div>
             <h2 class="section-title" id="heading-calculators">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/></svg>
-              Trung Tâm 6 Máy Tính Công Thức Chiến Đấu &amp; Hoạch Định Tài Nguyên
+              Trung Tâm 7 Máy Tính Công Thức Chiến Đấu, Dự Đoán Level &amp; Hoạch Định Tài Nguyên
             </h2>
             <p class="section-sub">Tất cả công thức vận hành trực tiếp theo thông số thực của trò chơi</p>
           </div>
@@ -2144,7 +2159,7 @@
                   <h3 class="card-title">1. Máy Tính Sát Thương Toàn Diện, Xác Suất Phá Đỡ Đòn &amp; Tư Vấn Nâng Chỉ Số</h3>
                   <span class="section-sub">Tích hợp kiểm định thực chiến: Xác suất bị Block = Max(0, Block_Địch − Accuracy_Bạn) • Bị Block cắt 50% ST &amp; khóa Crit!</span>
                 </div>
-                <span class="pill pill-staff">Combat Simulator</span>
+                <span class="pill pill-staff">Mô Phỏng Sát Thương</span>
               </div>
             </div>
           </div>
@@ -2183,7 +2198,7 @@
                     <h3 class="card-title">2. Máy Tính Đá Thần Tạo (Tẩy Dòng &amp; Kế Thừa Mùa)</h3>
                     <span class="section-sub">Khóa 0/1/2/3 dòng: 100 / 300 / 1,200 / 3,200 Đá • Mảnh Đỏ=2, Mảnh Thần=3</span>
                   </div>
-                  <span class="pill pill-rose">Divinecraft</span>
+                  <span class="pill pill-rose">Đá Thần Tạo</span>
                 </div>
               </div>
             </div>
@@ -2218,7 +2233,7 @@
                     <h3 class="card-title">3. Máy Tính Hồi Thể Lực (5p = 1) &amp; Đào Mỏ</h3>
                     <span class="section-sub">12 Thể lực/giờ (288/ngày) • Trần mềm 300 • Trần tích cứng 1,200</span>
                   </div>
-                  <span class="pill pill-cyan">Stamina</span>
+                  <span class="pill pill-cyan">Thể Lực</span>
                 </div>
               </div>
             </div>
@@ -2247,7 +2262,7 @@
                     <h3 class="card-title">4. Máy Tính Năng Lượng Đại Truy Tìm Kho Báu</h3>
                     <span class="section-sub">Tầng 5 (1 món): 3,240 NL • 2 món Tầng 5: 4,440 NL • Vét 3 tuần: 5,640 NL</span>
                   </div>
-                  <span class="pill pill-sword">Treasure Hunt</span>
+                  <span class="pill pill-sword">Kho Báu</span>
                 </div>
               </div>
             </div>
@@ -2264,7 +2279,7 @@
             <hr style="border:none; border-top:1px solid var(--border-subtle); margin:6px 0;" />
             <div class="media-row">
               <img src="assets/icons/dishes/dish-0.svg" alt="Quy Tắc 30 Món Ăn" class="rpg-icon rpg-icon-sm" loading="lazy" />
-              <h3 class="card-title">6. Máy Tính Quy Tắc 30 Món Ăn Vĩnh Viễn</h3>
+              <h3 class="card-title">5. Máy Tính Quy Tắc 30 Món Ăn Vĩnh Viễn</h3>
             </div>
             <div class="calc-grid">
               <div class="form-field"><label for="foodBaseStat">Chỉ số vĩnh viễn gốc 1 đĩa (VD 7% hoặc 50)</label><input type="number" id="foodBaseStat" value="7" min="1" step="1" /></div>
@@ -2284,10 +2299,10 @@
               <div style="flex:1;">
                 <div class="card-header">
                   <div>
-                    <h3 class="card-title">5. Máy Tính Điểm Dưỡng Thành &amp; Sao Nguyên Thủy Cuối Mùa</h3>
+                    <h3 class="card-title">6. Máy Tính Điểm Dưỡng Thành &amp; Sao Nguyên Thủy Cuối Mùa</h3>
                     <span class="section-sub">Chuẩn 100 Điểm = +1 ★ (+10 ★ nền): Cấp NV (×100) + 5 Món Đồ TB (×190, tức 38đ/món) + Cổ Vật (×40) + Skill/Pet (×10)</span>
                   </div>
-                  <span class="pill pill-emerald">Primostar</span>
+                  <span class="pill pill-emerald">Sao Nguyên Thủy</span>
                 </div>
               </div>
             </div>
@@ -2316,6 +2331,420 @@
             <p class="section-sub" id="outPsMilestoneNote"></p>
           </div>
         </div>
+      
+        <!-- MÁY TÍNH 7: DỰ ĐOÁN LEVEL THEO NGÀY, TƯỢNG NỮ THẦN c(B) & TINH THỂ THỜI GIAN -->
+        <div class="card card-emerald" id="calc-level-predictor" style="margin-top:20px;">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">7. Máy Tính Dự Đoán Level Theo Ngày, Đường Cong Tượng Nữ Thần c(B) &amp; Tinh Thể Thời Gian</h3>
+              <span class="section-sub">Mô phỏng chính xác từng giờ theo công thức gốc <code>EXP/giờ = 50 × c(B) × (1 + (n + Pass)/100)</code>, khóa ngày mở Vương Quốc &amp; cổng cấp độ S0 → S5 (<a href="pages/co-che-tang-cap-tuong-nu-than-du-doan-lv.html">Xem chuyên đề phân tích toán học →</a>)</span>
+            </div>
+            <span class="pill pill-emerald">Dự Đoán Level</span>
+          </div>
+
+          <div class="calc-grid">
+            <div class="form-field"><label for="lvCurDay">Ngày Máy Chủ Hiện Tại (1 → 416)</label><input type="number" id="lvCurDay" value="12" min="1" max="416" step="1" /></div>
+            <div class="form-field"><label for="lvTargetDay">Ngày Đích Muốn Dự Đoán (1 → 416)</label><input type="number" id="lvTargetDay" value="24" min="1" max="416" step="1" /></div>
+            <div class="form-field"><label for="lvCurLevel">Level Nhân Vật Hiện Tại (0 = Tự tính từ Ngày 1)</label><input type="number" id="lvCurLevel" value="75" min="0" max="370" step="1" /></div>
+            <div class="form-field"><label for="lvCurPct">% Thanh EXP Hiện Tại (0 → 99%)</label><input type="number" id="lvCurPct" value="25" min="0" max="99" step="1" /></div>
+            <div class="form-field"><label for="lvGoalLevel">Cấp Mục Tiêu Cần Đo Giờ (VD: 82, 100, 130...)</label><input type="number" id="lvGoalLevel" value="100" min="2" max="370" step="1" /></div>
+            <div class="form-field"><label for="lvCrystals">Số Tinh Thể Thời Gian Sẵn Dùng (+2h/viên)</label><input type="number" id="lvCrystals" value="4" min="0" max="200" step="1" /></div>
+            <div class="form-field">
+              <label for="lvPassSel">Thẻ Tháng &amp; Bonus Cộng Thêm (%)</label>
+              <select id="lvPassSel">
+                <option value="0">F2P — Không Thẻ Tháng (+0%)</option>
+                <option value="5" selected>Có Thẻ Tháng (+5% EXP Giường)</option>
+                <option value="7">Thẻ Tháng + Sao Nguyên Thủy (+7%)</option>
+              </select>
+            </div>
+            <div class="form-field"><label for="lvCustomB">Ghi Đè Phước Lành B (0 = Tự động theo Map &amp; Lv)</label><input type="number" id="lvCustomB" value="0" min="0" max="162" step="1" /></div>
+            <div class="form-field"><label for="lvCustomN">Ghi Đè Tượng Nhỏ n (-1 = Tự động theo Map &amp; Mùa)</label><input type="number" id="lvCustomN" value="-1" min="-1" max="1600" step="1" /></div>
+          </div>
+
+          <div class="calc-result-box">
+            <div><div class="calc-metric-label">Phước Lành B &amp; Tượng Nhỏ n</div><div class="calc-metric-val" id="outLvBlessing">B=40 • n=131</div></div>
+            <div><div class="calc-metric-label">Sản Lượng Giường Hiện Tại</div><div class="calc-metric-val" id="outLvRateHour" style="color:var(--accent-emerald);">33,937 /h</div></div>
+            <div><div class="calc-metric-label">1 Đá / Ngủ Nhanh (2h)</div><div class="calc-metric-val" id="outLvCrystalVal">67,874 EXP</div></div>
+            <div><div class="calc-metric-label">Dự Đoán Ở Ngày Đích</div><div class="calc-metric-val" id="outLvAtTargetDay" style="color:var(--staff-primary);">Lv.104</div></div>
+            <div><div class="calc-metric-label">Chạm Cấp Mục Tiêu Sau</div><div class="calc-metric-val" id="outLvGoalEta" style="color:var(--sword-primary);">~9.1 ngày</div></div>
+          </div>
+          <p class="section-sub" id="outLvGateAdvice" style="margin-top:10px;"></p>
+          <div class="table-wrap" style="margin-top:10px; max-height:300px; overflow-y:auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Ngày Server</th>
+                  <th>Mùa &amp; Trần Cấp</th>
+                  <th>Level Dự Đoán Cuối Ngày</th>
+                  <th>Phước Lành B &amp; Tượng n</th>
+                  <th>Sản Lượng Giường (EXP/h)</th>
+                  <th>Tổng EXP Thu Trong Ngày (26h+)</th>
+                </tr>
+              </thead>
+              <tbody id="outLvDailyRows"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           TAB 12: TÍNH TÀI NGUYÊN CẦN TÍCH & SO SÁNH % SẢN LƯỢNG THEO TỪNG RANK
+           ===================================================================== -->
+      <section class="tab-panel" id="tab-rank-yield" aria-labelledby="heading-rank-yield">
+        <div class="showcase-banner">
+          <img src="assets/art/gear_showcase.jpg" alt="Tính tài nguyên Bí Cảnh và so sánh % sản lượng theo từng Rank" class="showcase-bg" loading="lazy" />
+          <div class="showcase-overlay">
+            <h2 id="heading-rank-yield">Tính Tài Nguyên Cần Tích Cho Các Mốc &amp; % Tăng / Giảm Sản Lượng Giữa Từng Rank</h2>
+            <p>Giải mã cơ chế 4 Bí Cảnh Nguyên Liệu (Búa Sắt • Xẻng Cát • Đốt Ngón Tay • Cuốc Vàng), đối chiếu % lời/lỗ giữa 10 bậc Rank và định lượng số ngày cần gom đủ mốc 400 Cào Thẻ &amp; 128–176 ★.</p>
+          </div>
+        </div>
+
+        <div id="charRankBar" class="char-session-strip"></div>
+
+        <!-- 4 BÍ CẢNH NGUYÊN LIỆU & NGUYÊN TẮC MUA 2-2-2-2 -->
+        <div class="grid-2" style="margin-bottom:18px;">
+          <div class="card card-sword">
+            <div class="card-header">
+              <h3 class="card-title">1. Bốn Bí Cảnh Nguyên Liệu (Material Realms) &amp; Cơ Cấu Rơi Gốc</h3>
+              <span class="pill pill-sword">Không Reset Cuối Mùa</span>
+            </div>
+            <ul class="clean-list">
+              <li><strong>Hầm Mỏ Mạch Sắt (<em>Ironvein Pit</em> • 12 Tầng — Dùng <code>Búa Sắt / Iron Hammer</code>):</strong> Xác suất gặp mỏ chuẩn <code>80% Mỏ Quặng Thô (Raw Ore)</code> + <code>15% Mỏ Quặng Tinh Luyện (Refined Ore)</code> + <code>5% Rương Quặng Bỏ Hoang</code>. Nguồn quyết định cấp cường hóa 5 món đồ &amp; Điểm Dưỡng Thành cuối mùa.</li>
+              <li><strong>Thung Lũng Cát Rơi (<em>Dustfall Dune</em> • 11 Tầng — Dùng <code>Xẻng Cát / Sand Shovel</code>):</strong> Khai thác <code>Cát Thời Gian (Chrono Sand)</code> để nâng 4 ô Cộng Hưởng Cổ Vật (mỗi cấp vượt +10 cuối mùa quy đổi trực tiếp ra Sao Nguyên Thủy).</li>
+              <li><strong>Hang Động Kinh Hoàng (<em>Dread Hollow</em> • 18 Tầng — Dùng <code>Đốt Ngón Tay Mòn / Worn Knuckles</code>):</strong> Khai thác <code>Tinh Hoa Chiến Đấu (Battle Essence)</code> nâng cấp trực tiếp 8 Ô Kỹ Năng.</li>
+              <li><strong>Vực Sâu Mạ Vàng (<em>Gilded Depths</em> • 12 Tầng — Dùng <code>Cuốc Vàng / Gold Pickaxe</code>):</strong> Khai thác <code>Đồng Rolla</code> — <em>loại duy nhất được phép dùng cầm chừng hàng ngày</em> để vét sạch Gỗ/Đá/Dụng cụ giảm giá tại Gian Hàng &amp; Rolla Shop!</li>
+            </ul>
+          </div>
+
+          <div class="card card-cyan">
+            <div class="card-header">
+              <h3 class="card-title">2. Kỷ Luật "Mua Đều Hàng Ngày – Nhịn Xả Đợi Rank Đỉnh"</h3>
+              <span class="pill pill-cyan">Chiến Thuật 2-2-2-2</span>
+            </div>
+            <ul class="clean-list staff-bullets">
+              <li><strong>Nhịp mua lượt mỗi ngày:</strong> Người chơi Cày Chay / Thẻ Tháng áp dụng chuẩn <strong><code>2-2-2-2</code></strong> (mua thêm 2 lượt ở mỗi loại Bí Cảnh = 8 dụng cụ cất túi/ngày + vét thêm ở Kho Vault Gian Hàng Lv.20). Người nạp vừa dùng <strong><code>4-2-2-4</code></strong> (ưu tiên Búa Sắt &amp; Cuốc Vàng/Xẻng Cát) hoặc <strong><code>4-4-4-4</code></strong>.</li>
+              <li><strong>Vì sao xả sớm ở Rank thấp là tự đốt tài khoản?</strong> Sản lượng mỗi nhát Búa/Xẻng nhân trực tiếp theo <strong>Hạng (Rank) &amp; Vương Quốc hiện tại</strong>: từ ~<code>220 Quặng/búa</code> ở Thung Lũng Xanh (Rank 1) vọt lên ~<code>420</code> ở Rặng Tro (+91%), ~<code>680</code> ở Anh Hùng III Lv.90 (+209%), và ~<code>1,100+</code> ở Truyền Thuyết S2 (+400%)!</li>
+              <li><strong>3 thời điểm vàng duy nhất được phép mở kho xả:</strong> (1) Đang kẹt vài nghìn Lực Chiến trước cửa Phó Bản mốc mới; (2) Đã chạm **Rank cao nhất của mùa hiện tại** (VD: <em>Anh Hùng III Lv.90</em> ở S1 hoặc <em>Truyền Thuyết III Lv.120</em> ở S2) trùng tuần **Sự Kiện Cào Thẻ (~400 lượt)**; (3) Vừa đủ mốc Sao Nguyên Thủy mục tiêu (`128 ★` F2P) là **lập tức khóa kho mang toàn bộ phần dư sang mùa sau**!</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- MÁY TÍNH ĐỐI CHIẾU 2 CHIỀU % TĂNG / GIẢM GIỮA CÁC RANK & ĐỊNH LƯỢNG MỐC -->
+        <div class="card card-staff" style="margin-bottom:18px;">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">3. Máy Tính So Sánh % Tăng / Giảm Sản Lượng Giữa 2 Rank &amp; Định Lượng Tài Nguyên Cho Mốc Đích</h3>
+              <span class="section-sub">Chọn bất kỳ 2 Rank để xem ngay: đợi lên Rank cao lời bao nhiêu % — hoặc xả non ở Rank thấp lỗ mất bao nhiêu % tài nguyên!</span>
+            </div>
+            <span class="pill pill-staff">Rank Yield Engine</span>
+          </div>
+
+          <div class="calc-grid">
+            <div class="form-field">
+              <label for="ryCurrentRank">Rank Đang Đứng (Hoặc Rank Xả Sớm)</label>
+              <select id="ryCurrentRank"></select>
+            </div>
+            <div class="form-field">
+              <label for="ryTargetRank">Rank Đối Chiếu (Cao Hơn hoặc Thấp Hơn)</label>
+              <select id="ryTargetRank"></select>
+            </div>
+            <div class="form-field">
+              <label for="ryHammerHave">Búa Sắt (Quặng Thô) đang tích</label>
+              <input type="number" id="ryHammerHave" value="120" min="0" step="10" />
+            </div>
+            <div class="form-field">
+              <label for="ryShovelHave">Xẻng Cát (Cát Thời Gian) đang tích</label>
+              <input type="number" id="ryShovelHave" value="95" min="0" step="10" />
+            </div>
+            <div class="form-field">
+              <label for="ryKnuckleHave">Đốt Ngón Tay (Tinh Hoa) đang tích</label>
+              <input type="number" id="ryKnuckleHave" value="90" min="0" step="10" />
+            </div>
+            <div class="form-field">
+              <label for="ryPickaxeHave">Cuốc Vàng (Rolla) đang tích</label>
+              <input type="number" id="ryPickaxeHave" value="45" min="0" step="10" />
+            </div>
+            <div class="form-field">
+              <label for="ryDailyBuyMode">Nhịp tích thêm dụng cụ / ngày</label>
+              <select id="ryDailyBuyMode">
+                <option value="6">Tiết kiệm (Free + Gian Hàng ~6 cái/ngày)</option>
+                <option value="12" selected>Chuẩn F2P 2-2-2-2 + Gian Hàng (~12 cái/ngày)</option>
+                <option value="16">Thẻ Tháng 4-2-2-4 + Gian Hàng (~16 cái/ngày)</option>
+                <option value="22">Đua Top 4-4-4-4 + Sự Kiện (~22 cái/ngày)</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="ryMilestoneGoal">Mốc Mục Tiêu Cần Tích Đủ</label>
+              <select id="ryMilestoneGoal">
+                <option value="scratch400" selected>Mốc Sự Kiện Cào Thẻ (400 lượt Dụng Cụ Bí Cảnh)</option>
+                <option value="star128">Mốc 128 ★ Sao Nguyên Thủy F2P (~85,000 Quặng Thô vượt sàn)</option>
+                <option value="star152">Mốc 152 ★ Thẻ Tháng (~140,000 Quặng Thô vượt sàn)</option>
+                <option value="star176">Mốc 176 ★ Đua Top (~210,000 Quặng Thô vượt sàn)</option>
+                <option value="double800">Mốc Kép 2 Kỳ Cào Thẻ Liên Tiếp (800 lượt Dụng Cụ)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="calc-result-box">
+            <div><div class="calc-metric-label">% Chênh Lệch (Rank Đích vs Đang Đứng)</div><div class="calc-metric-val" id="outRyGainPct">+0%</div></div>
+            <div><div class="calc-metric-label">% Thiệt Hại Nếu Xả Ở Rank Thấp Hơn</div><div class="calc-metric-val" id="outRyLossPct" style="color:var(--accent-rose);">-0%</div></div>
+            <div><div class="calc-metric-label">Quặng Thô Nhận (Rank Đang Đứng → Đích)</div><div class="calc-metric-val" id="outRyOreCompare">0 → 0</div></div>
+            <div><div class="calc-metric-label">Tổng Dụng Cụ Đang Có / Mốc Cần</div><div class="calc-metric-val" id="outRyToolsProgress">350 / 400</div></div>
+            <div><div class="calc-metric-label">Thời Gian Tích Đủ Mốc</div><div class="calc-metric-val" id="outRyDaysNeeded">4 ngày</div></div>
+          </div>
+          <div class="callout callout-info" id="outRyDetailedVerdict" style="margin-top:10px; margin-bottom:0;"></div>
+        </div>
+
+        <!-- BẢNG MA TRẬN 10 RANK ĐẦY ĐỦ -->
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 6-7"/></svg>
+              Bảng Ma Trận 10 Mốc Rank (S0 → S5): Sản Lượng Từng Lượt &amp; % Tăng / Giảm Động
+            </h2>
+            <p class="section-sub">Cột cuối tự động tính % tăng thêm (màu xanh) hoặc % giảm đi (màu đỏ) của mọi Rank so với <strong>Rank Đang Đứng</strong> bạn chọn phía trên</p>
+          </div>
+        </div>
+        <div class="table-wrap" style="margin-bottom:16px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Rank / Bậc Tiến Trình</th>
+                <th>Mùa &amp; Cấp Mở</th>
+                <th>Búa Sắt (Quặng)</th>
+                <th>Xẻng Cát (Chrono)</th>
+                <th>Quyền Sáo (Tinh Hoa)</th>
+                <th>Cuốc Vàng (Rolla)</th>
+                <th>% vs Rank Dưới</th>
+                <th>% So Với Rank Bạn Chọn</th>
+              </tr>
+            </thead>
+            <tbody id="rankYieldMatrixBody"></tbody>
+          </table>
+        </div>
+        <div class="detail-inline-actions">
+          <a class="detail-jump-link" href="pages/tinh-tai-nguyen-theo-rank-bi-canh.html">📊 Mở Chuyên Đề Chi Tiết: Tính Tài Nguyên Theo Rank &amp; Toán Học Bí Cảnh →</a>
+          <button type="button" class="detail-jump-link" onclick="switchTab('item-hoard')" style="cursor:pointer;">📦 Xem Tiếp: Tích Lũy Roll Skill, Cổ Vật &amp; Đào Tâm Giao →</button>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           TAB 13: PHÂN TÍCH TÍCH LŨY ROLL SKILL, ROLL CỔ VẬT & ĐÀO TÂM GIAO
+           ===================================================================== -->
+      <section class="tab-panel" id="tab-item-hoard" aria-labelledby="heading-item-hoard">
+        <div class="showcase-banner">
+          <img src="assets/art/relic_showcase.jpg" alt="Phân tích tích lũy Roll Skill, Roll Cổ Vật và Đào Tâm Giao" class="showcase-bg" loading="lazy" />
+          <div class="showcase-overlay">
+            <h2 id="heading-item-hoard">Phân Tích Tích Lũy Dài Hạn: Roll Kỹ Năng, Roll Cổ Vật, Đào Tâm Giao &amp; Huyễn Thú</h2>
+            <p>Khi nào nên dừng tay găm vé, ngưỡng dừng 50–70% Cổ Vật, chiến thuật gom Nhật Ký / Quà / Vòng Quay Tâm Giao và trình dự toán bảo hiểm lưu trực tiếp trên Cookie nhân vật.</p>
+          </div>
+        </div>
+
+        <div id="charHoardBar" class="char-session-strip"></div>
+
+        <!-- 4 TRỤ CỘT TÍCH LŨY ITEM CỐT LÕI -->
+        <div class="grid-2" style="margin-bottom:18px;">
+          <div class="card card-staff">
+            <div class="media-row">
+              <img src="assets/icons/items/cur-covenite.svg" alt="Đá Khế Ước & Tinh Cầu" class="rpg-icon" loading="lazy" />
+              <div>
+                <h3 class="card-title">1. Tích Lũy Roll Kỹ Năng (<code>Stellatie</code> • <code>Covenite</code> • <code>Phiếu Mảnh</code>)</h3>
+                <span class="pill pill-staff">Đúng Nhịp Chuyển Nghề</span>
+              </div>
+            </div>
+            <ul class="clean-list">
+              <li><strong>Tinh Cầu Cầu Nguyện (<code>Stellatie</code> — Hồ chung, 70 lượt bảo hiểm Cam):</strong> Giai đoạn đầu chỉ xả tới khi đạt <strong>Tổng Cấp Nghề 20 (Nghề Bậc 1 Lv.18)</strong> và chạm mốc <strong><code>200 lượt</code> nhận Rương Tự Chọn Cam Bậc 1</strong>. Từ sau mốc đó, găm vé chờ mở bậc nghề mới hoặc sự kiện tuần có nhiệm vụ cầu nguyện!</li>
+              <li><strong>Đá Khế Ước (<code>Covenite</code> — Hồ chuyên nghề 100%, mở Lv.44):</strong> Nguyên tắc sắt đá của cao thủ là <strong>"Đủ cấp nghề chuyển chức là DỪNG NGAY LẬP TỨC"</strong>:
+                <br/>• <em>Trước Lv.82 (Bậc 3):</em> Chạm <code>Tổng Nghề 48 + Bậc 2 Lv.16</code> → khóa kho tích sạch Covenite để ngày chạm Lv.82 rút ngay đại chiêu Bậc 3 (<em>Trảm Phá Tinh Tú, Thiên Phạt, Trảo A Tu La</em>).
+                <br/>• <em>Trước Lv.106 (Bậc 4):</em> Chạm <code>Tổng Nghề 89 + Bậc 3 Lv.19</code> → tích sạch cho Sư Phụ Mei ở Long Cảng.
+                <br/>• <em>Trước Lv.136 (Bậc 5):</em> Chạm <code>Tổng Nghề 180 + Bậc 4 Lv.40</code> → tích sạch đón Ravager / Templar / Magister / Prophet!</li>
+              <li><strong>Phiếu Mảnh Kỹ Năng Tự Chọn (<em>Skill Shard Voucher</em>):</strong> Tuyệt đối không rải đều nâng Sao lẻ (+5% DPS thực); gom đủ đẩy kỹ năng trụ cột **nhảy bậc Phẩm Chất** (<em>Cam → Đỏ → Thần → Bất Tử</em>, ăn +25% Chiến Kỹ / +20% Bí Thuật) rồi dừng chuyển sang chiêu tiếp theo!</li>
+            </ul>
+          </div>
+
+          <div class="card card-sword">
+            <div class="media-row">
+              <img src="assets/fandom/Destiny_Fruits.png" alt="Trái Định Mệnh & Cổ Vật" class="rpg-icon" loading="lazy" />
+              <div>
+                <h3 class="card-title">2. Tích Lũy Roll Cổ Vật (<code>Vé Cổ Vật</code> &amp; <code>Trái Định Mệnh</code>)</h3>
+                <span class="pill pill-sword">Quy Tắc Dừng 50%–70%</span>
+              </div>
+            </div>
+            <ul class="clean-list staff-bullets">
+              <li><strong>Toán học điểm dừng 50%–70% trên mỗi Hồ Cổ Vật Vùng:</strong> Trong 50–70% đầu tiên, hầu hết lượt quay đều mở mới Cổ Vật kích hoạt thưởng Bộ (Set Bonus). Khi vượt quá 70%, xác suất nổ trùng mảnh Lam/Tím đã max tăng vọt làm **bốc hơi hơn 40% hiệu suất Dawnium**!</li>
+              <li><strong>Phối hợp 2 bước chuẩn:</strong> (1) Dùng Vé Cổ Vật quay chạm <code>50%–70%</code> bộ vùng → (2) Kiểm tra Tượng Nữ Thần xem danh sách mảnh còn khuyết → (3) Cầm <strong>Trái Định Mệnh (Destiny Fruits)</strong> ra bản đồ đào chính xác từng mảnh cuối!</li>
+              <li><strong>Lịch găm Vé Cổ Vật &amp; Quỹ Cứng Trái Định Mệnh:</strong>
+                <br/>• <strong>Cuối Mùa 1 (từ Ngày 30–46):</strong> Ngưng quay hồ Thủy Quốc đã đủ bộ; tích toàn bộ Vé Cổ Vật bung vào **Ngày 47 (Hồ Long Cảng Đợt I)** và chừa nửa sau cho **Ngày 78 (Hồ Long Cảng Đợt II)**.
+                <br/>• <strong>Quỹ Bất Khả Xâm Phạm <code>20–30 Trái Định Mệnh</code>:</strong> Luôn khóa cứng tối thiểu 20–30 Quả trong túi (cộng ~60 Quả phát trong tuần = đủ <code>80 lượt dò</code> lấy 4 vé bù cho **Lucky Bingo** ở Ngày <code>15, 36, 57, 78, 99, 120, 141</code>).</li>
+            </ul>
+          </div>
+
+          <div class="card card-cyan">
+            <div class="media-row">
+              <img src="assets/fandom/Molly.png" alt="Đào Tâm Giao & Kết Giao Đồng Hành" class="rpg-icon" loading="lazy" />
+              <div>
+                <h3 class="card-title">3. Phân Tích Đào Tâm Giao, Thẻ Nữ Thần &amp; Vòng Quay Đồng Hành</h3>
+                <span class="pill pill-cyan">Lv.38+ • Wheel Pity 60–90</span>
+              </div>
+            </div>
+            <ul class="clean-list">
+              <li><strong>Đào Nhật Ký &amp; Kết Giao Đồng Hành (Ủy Thác Bản Đồ):</strong> Làm mới bảng Ủy Thác săn nhiệm vụ Vàng rớt <em>Nhật Ký Đồng Hành (Companion Journal)</em>: mở NPC thường tốn <code>1 cuốn</code>, NPC Vàng tốn <code>3 cuốn</code>; sau khi mở, tặng Nhật Ký đúng người cho <strong><code>×2.0 EXP Tâm Giao</code></strong>!</li>
+              <li><strong>Chiến lược tích Quà Tâm Giao (Hoa / Trang Sức / Nội Thất / Sách — đúng gu <code>×1.25 EXP</code>):</strong>
+                <br/>• <em>Bước 1:</em> Nâng đồng loạt toàn bộ NPC lên <strong><code>Lv.20</code></strong> (mở %ST / %Giảm ST cực rẻ) → <em>Bước 2:</em> Đẩy NPC đúng hệ phái lên <strong><code>Lv.50</code></strong> (Crit/Accuracy/Block) &amp; <strong><code>Lv.60</code></strong> (mở Skin).
+                <br/>• <em>Bước 3 (Trên Lv.60 — BẮT BUỘC TÍCH KHO):</em> Lượng quà từ Lv.60 → Lv.100 tăng gấp bội — tuyệt đối không tặng rải rác! Hãy găm kho để dồn thẳng <strong><code>Lv.100</code></strong> cho đúng NPC mở dòng hiếm (VD: *Tăng Trị Liệu* cho Hiền Giả, *Chính Xác* phá Block ở S2–S3) hoặc dùng trong **Hành Trình Khế Ước (Bond Odyssey)** đào thức ăn Pet!</li>
+              <li><strong>Thẻ Nữ Thần / Huy Hiệu Cực Quang &amp; Vòng Quay Tâm Giao (<em>Companion Wheel</em>):</strong>
+                <br/>• <em>Thẻ Nữ Thần:</em> Giữ lại cuối mùa sang vùng mới mở để ăn hệ số mới.
+                <br/>• <em>Bẫy Vòng Quay (Bảo hiểm <code>60–90 lượt</code>):</em> Vòng quay thường gộp chung NPC + Cổ Vật — nếu F2P chưa gom đủ `70–90 vé` hoặc NPC kỳ đó lệch chỉ số nghề, **bỏ qua ngay** để dồn vé hốt trọn **Collab Giới Hạn (*KonoSuba, Hoa Sơn Tái Khởi*)**! Thứ tự ưu tiên Vòng Quay: <code>Kỹ Năng &gt; Cổ Vật &gt; Huyễn Thú &gt; Dawnium</code>.</li>
+            </ul>
+          </div>
+
+          <div class="card card-rose">
+            <div class="media-row">
+              <img src="assets/art/pet_pandariel.jpg" alt="Tích Lũy Huyễn Thú & Tinh Thể" class="rpg-icon" loading="lazy" />
+              <div>
+                <h3 class="card-title">4. Tích Lũy Vé Huyễn Thú (<code>Bond Trinket</code>) &amp; Mốc <code>120 Tinh Thể</code></h3>
+                <span class="pill pill-rose">Chuẩn Bị Vượt Lv.108</span>
+              </div>
+            </div>
+            <ul class="clean-list staff-bullets">
+              <li><strong>Quy luật 60 + 120 Tinh Thể Triệu Hồi:</strong> Mỗi lượt quay Pet (bảo hiểm 80 lượt) có <code>4.2%</code> rơi Tinh Thể (≥1 viên mỗi x10). Đổi xác Pet Đỏ đầu tiên (<em>Aegiswing / Nyxarchon</em>) tốn <code>60 Tinh Thể</code>, nhưng ngay ở <strong>Ngày 50 (Mùa 2 — Lv.108)</strong>, mở tiến hóa Trưởng Thành đòi hỏi **thêm 2 bản sao = <code>120 Tinh Thể</code>**!</li>
+              <li><strong>Hai cột mốc nổ hũ Pet Giới Hạn (UP Banner) phải ghi nhớ:</strong>
+                <br/>• <strong>Ngày 92 (Giữa Mùa 2 Long Cảng):</strong> Mở Banner **Pandariel (Gấu Trúc T0 — cắt 1 lượt CD toàn bộ Chiến Kỹ đầu trận)** → bắt buộc dồn vé &amp; quỹ Dawnium từ đầu S2!
+                <br/>• <strong>Ngày 159 (Giữa Mùa 3 Aethyris):</strong> Mở Banner **Prismora (Hồ Ly 9 Đuôi Đỏ)**.</li>
+              <li><strong>Mẹo giữ Cộng Hưởng 4 Ô giá rẻ:</strong> Dùng `18 Tinh Thể` đổi <em>Sylvaerie (Cam)</em> và mảnh <em>Kels</em> miễn phí từ Shop Đấu Trường đặt vào Ô Phụ để kéo mốc Cộng Hưởng đội lên cao mà không hao Tinh Thể của Pet Đỏ chính!</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- BẢNG TỔNG HỢP NGƯỠNG TÍCH LŨY & TRẠM KIỂM KÊ DỰ TOÁN LƯU COOKIE -->
+        <div class="card card-emerald" style="margin-bottom:18px;">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">5. Trạm Kiểm Kê Túi Đồ &amp; Dự Toán Tích Lũy Bảo Hiểm Cá Nhân (Tự Động Lưu Cookie)</h3>
+              <span class="section-sub">Nhập số vé đang giữ trong túi nhân vật để tính chính xác tổng quỹ vào ngày bung lụa &amp; số lần chạm Bảo Hiểm (Pity)</span>
+            </div>
+            <span class="pill pill-emerald">Cookie Stash Tracker</span>
+          </div>
+
+          <div class="calc-grid">
+            <div class="form-field"><label for="hdStellatie">Tinh Cầu Stellatie (Skill thường) đang có</label><input type="number" id="hdStellatie" value="45" min="0" step="5" /></div>
+            <div class="form-field"><label for="hdCovenite">Đá Khế Ước Covenite (Chuyên nghề) đang có</label><input type="number" id="hdCovenite" value="38" min="0" step="5" /></div>
+            <div class="form-field"><label for="hdRelicTicket">Vé Quay Cổ Vật đang tích</label><input type="number" id="hdRelicTicket" value="50" min="0" step="5" /></div>
+            <div class="form-field"><label for="hdDestinyFruit">Trái Định Mệnh (Dò cổ vật / Bingo) đang có</label><input type="number" id="hdDestinyFruit" value="28" min="0" step="2" /></div>
+            <div class="form-field"><label for="hdPetPulls">Tín Vật Quay Pet đang tích</label><input type="number" id="hdPetPulls" value="35" min="0" step="5" /></div>
+            <div class="form-field"><label for="hdWheelTickets">Vé Vòng Quay Tâm Giao / Sự Kiện đang có</label><input type="number" id="hdWheelTickets" value="25" min="0" step="5" /></div>
+            <div class="form-field">
+              <label for="hdPlaystyle">Mức độ đầu tư hàng tuần</label>
+              <select id="hdPlaystyle">
+                <option value="1" selected>Cày Chay Chuẩn (F2P Full Nhiệm Vụ &amp; Shop)</option>
+                <option value="1.35">Thẻ Tháng + Pass Mùa (+35% tốc độ tích vé)</option>
+                <option value="1.85">Nạp Vừa / Gói Sự Kiện (+85% tốc độ tích vé)</option>
+              </select>
+            </div>
+            <div class="form-field"><label for="hdDaysWait">Số ngày dự định nhịn tích tiếp</label><input type="number" id="hdDaysWait" value="14" min="0" max="180" step="1" /></div>
+          </div>
+
+          <div class="table-wrap" style="margin-top:8px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Hạng Mục Tích Lũy</th>
+                  <th>Đang Có</th>
+                  <th>Thu Thêm Dự Kiến</th>
+                  <th>Tổng Quỹ Ngày Xả</th>
+                  <th>Mốc Bảo Hiểm / Ngưỡng Chuẩn</th>
+                  <th>Đánh Giá &amp; Khuyến Nghị Hành Động</th>
+                </tr>
+              </thead>
+              <tbody id="hoardForecastBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="detail-inline-actions">
+          <a class="detail-jump-link" href="pages/phan-tich-tich-luy-roll-skill-co-vat-tam-giao.html">💎 Mở Chuyên Đề Chi Tiết: Phân Tích Tích Lũy Skill, Cổ Vật &amp; Đào Tâm Giao →</a>
+          <button type="button" class="detail-jump-link" onclick="switchTab('events-hub')" style="cursor:pointer;">🗓️ Xem Tiếp: Lộ Trình Chi Tiết Event Xoay Vòng &amp; Event Lớn →</button>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           TAB 14: LỘ TRÌNH CHI TIẾT TỪNG EVENT XOAY VÒNG & EVENT LỚN XUYÊN MÙA
+           ===================================================================== -->
+      <section class="tab-panel" id="tab-events-hub" aria-labelledby="heading-events-hub">
+        <div class="showcase-banner">
+          <img src="assets/fandom/Journey_Overture.jpg" alt="Lộ trình chi tiết Event xoay vòng và Event lớn Sword x Staff" class="showcase-bg" loading="lazy" />
+          <div class="showcase-overlay">
+            <h2 id="heading-events-hub">Lộ Trình Chi Tiết Từng Event Xoay Vòng (7d / 14d / 21d) &amp; Đại Sự Kiện Xuyên Mùa</h2>
+            <p>Radar sự kiện thời gian thực theo tuổi máy chủ nhân vật, chi tiết nhiệm vụ vòng lặp (Loop Quests), định mức vật phẩm cần thủ trước và lịch Bản Đồ Mùa – Pet UP – Collab.</p>
+          </div>
+        </div>
+
+        <div id="charEventsBar" class="char-session-strip"></div>
+
+        <!-- RADAR 4 Ô TRẠNG THÁI EVENT HIỆN TẠI THEO TUỔI SERVER NHÂN VẬT -->
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+              Radar Sự Kiện Trực Tiếp Trên Máy Chủ Của Nhân Vật Đang Chọn
+            </h2>
+            <p class="section-sub">Tự động tính chính xác theo Tuổi Server trong Hồ Sơ Cookie (bấm đổi tuổi server ở Hồ Sơ hoặc Mục 9 để xem trước mọi tuần!)</p>
+          </div>
+        </div>
+        <div class="event-radar-grid" id="liveEventRadar"></div>
+
+        <!-- BỘ LỌC HỒ SƠ CHI TIẾT TẤT CẢ CÁC LOẠI EVENT -->
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              Bách Khoa Chi Tiết Toàn Bộ Event Xoay Vòng &amp; Đại Sự Kiện (Nhiệm Vụ • Tích Trữ • Mẹo Ăn Max Quà)
+            </h2>
+            <p class="section-sub">Lọc theo nhóm chu kỳ để nắm trọn điều kiện nhiệm vụ, chi phí bảo hiểm và các bẫy làm mất vé</p>
+          </div>
+        </div>
+
+        <div class="filter-bar">
+          <div class="chip-group" id="eventHubCatGroup">
+            <button type="button" class="chip-btn active" data-ecat="all">Tất Cả Sự Kiện (10)</button>
+            <button type="button" class="chip-btn" data-ecat="weekly">Chu Kỳ 7 Ngày &amp; 3 Tuần (Kho Báu / Bingo / Cào / Giải Đố)</button>
+            <button type="button" class="chip-btn" data-ecat="sunday">Chủ Nhật Luân Phiên (Khe Nứt / Hỗn Mang)</button>
+            <button type="button" class="chip-btn" data-ecat="major">Event Lớn 14 Ngày &amp; Bản Đồ Mùa</button>
+            <button type="button" class="chip-btn" data-ecat="limited">Vòng Quay Tâm Giao, Pet UP &amp; Collab</button>
+          </div>
+        </div>
+
+        <div class="grid-2" id="eventsCatalogGrid" style="margin-bottom:20px;"></div>
+
+        <!-- BẢNG TỔNG HỢP LỊCH EVENT LỚN & XOAY VÒNG XUYÊN MÙA S0 → S7 -->
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              Bảng Lộ Trình Tổng Thể Các Đại Sự Kiện, Bản Đồ Mùa &amp; Banner Giới Hạn (Ngày 1 → Ngày 520+)
+            </h2>
+            <p class="section-sub">Đối chiếu nhanh thời điểm xuất hiện từng Event lớn để luôn chuẩn bị sẵn vật tư trước 1–2 tuần</p>
+          </div>
+        </div>
+        <div class="table-wrap" style="margin-bottom:16px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Mốc Ngày Server</th>
+                <th>Tên Sự Kiện / Đại Lễ Hội</th>
+                <th>Nhóm Chu Kỳ</th>
+                <th>Vật Tư Bắt Buộc Thủ Trước</th>
+                <th>Phần Thưởng Đích Quan Trọng Nhất</th>
+              </tr>
+            </thead>
+            <tbody id="masterEventsTimelineBody"></tbody>
+          </table>
+        </div>
+
+        <div class="detail-inline-actions">
+          <a class="detail-jump-link" href="pages/lo-trinh-event-xoay-vong-event-lon.html">🎪 Mở Chuyên Đề Chi Tiết: Lộ Trình Event Xoay Vòng &amp; Đại Sự Kiện →</a>
+          <button type="button" class="detail-jump-link" onclick="switchTab('seasons')" style="cursor:pointer;">📅 Quay Về Tra Cứu Lịch 42 Mốc Server S0–S7 →</button>
+        </div>
       </section>
 
     </main>
@@ -2325,7 +2754,7 @@
   <footer class="site-main-footer" aria-label="Chân trang Điều Hướng Toàn Bộ Wiki">
     <div class="site-footer-grid">
       <div class="site-footer-col">
-        <h4>Đại Bách Khoa Chính</h4>
+        <h3 class="footer-col-title">Đại Bách Khoa Chính</h3>
         <ul class="site-footer-links">
           <li><button type="button" onclick="switchTab('overview')">1. Tân Thủ, Kinh Tế &amp; 30 Giftcode</button></li>
           <li><button type="button" onclick="switchTab('mechanics')">2. Công Thức Chiến Đấu &amp; Thăng Cấp Skill</button></li>
@@ -2335,31 +2764,99 @@
         </ul>
       </div>
       <div class="site-footer-col">
-        <h4>Sức Mạnh, Mùa Giải &amp; Máy Tính</h4>
+        <h3 class="footer-col-title">Sức Mạnh, Thế Giới &amp; Công Cụ</h3>
         <ul class="site-footer-links">
           <li><button type="button" onclick="switchTab('gear')">6. Trang Bị, Đá Thần Tạo &amp; 8 Ngọc T1–T15</button></li>
-          <li><button type="button" onclick="switchTab('relics-pets')">7. 30 Cổ Vật &amp; 12 Huyễn Thú (Auto-Loot)</button></li>
-          <li><button type="button" onclick="switchTab('companions-life')">8. 75 Đồng Hành, Collab &amp; 26 Món Ăn</button></li>
-          <li><button type="button" onclick="switchTab('seasons')">9. Lịch Ngày Server S0–S7, Bingo &amp; Reset</button></li>
-          <li><button type="button" onclick="switchTab('calculators')">11. Trung Tâm 6 Máy Tính Công Thức</button></li>
+          <li><button type="button" onclick="switchTab('relics-pets')">7. 30 Cổ Vật &amp; 12 Huyễn Thú</button></li>
+          <li><button type="button" onclick="switchTab('companions-life')">8. 75 Đồng Hành, 26 Món &amp; Collab</button></li>
+          <li><button type="button" onclick="switchTab('seasons')">9. Lịch Ngày Server S0–S7 &amp; Mốc Đã Ghim</button></li>
+          <li><button type="button" onclick="switchTab('world')">10. 7 Vương Quốc, Phó Bản &amp; PvP</button></li>
+          <li><button type="button" onclick="switchTab('calculators')">11. Trung Tâm 7 Máy Tính Công Thức</button></li>
+          <li><button type="button" onclick="switchTab('rank-yield')">12. Tính Tài Nguyên &amp; % Tăng/Giảm Theo Rank</button></li>
+          <li><button type="button" onclick="switchTab('item-hoard')">13. Tích Lũy Roll Skill, Cổ Vật &amp; Tâm Giao</button></li>
+          <li><button type="button" onclick="switchTab('events-hub')">14. Lộ Trình Event Xoay Vòng &amp; Event Lớn</button></li>
         </ul>
       </div>
       <div class="site-footer-col">
-        <h4>Chuyên Đề Chi Tiết (Đồng Bộ UI)</h4>
+        <h3 class="footer-col-title">18 Chuyên Đề Chuyên Sâu</h3>
         <ul class="site-footer-links">
-          <li><a href="pages/index.html">📚 Bộ Lọc 14 Chuyên Đề Chi Tiết Theo Chủ Đề →</a></li>
-          <li><a href="pages/xam-lang-hon-mang-chaos-invasion.html">⚔️ Chuyên Đề Xâm Lăng Hỗn Mang (Chaos Invasion)</a></li>
-          <li><a href="pages/chon-nghe-style-build-chuyen-lop.html">🧭 Chọn Lớp, Style vs Build &amp; Đổi Nghề Lv.100</a></li>
-          <li><a href="pages/he-thong-mua-giai-lo-trinh-reset.html">📅 Hệ Thống Theo Mùa, Bingo 32 Vé &amp; 128 ★</a></li>
-          <li><a href="pages/bo-build-meta-4-che-do.html">🛡️ Bộ Build Meta 4 Chế Độ PvP / PvE &amp; Xoay Chiêu</a></li>
+          <li><a href="pages/index.html">Mở Thư Viện 18 Chuyên Đề Theo Chủ Đề →</a></li>
+          <li><a href="pages/co-che-tang-cap-tuong-nu-than-du-doan-lv.html">Cơ Chế Tăng Cấp, Tượng Nữ Thần &amp; Dự Đoán Level</a></li>
+          <li><a href="pages/tinh-tai-nguyen-theo-rank-bi-canh.html">Tính Tài Nguyên Cần Tích &amp; % Theo Rank Bí Cảnh</a></li>
+          <li><a href="pages/phan-tich-tich-luy-roll-skill-co-vat-tam-giao.html">Tích Lũy Roll Skill, Cổ Vật &amp; Đào Tâm Giao</a></li>
+          <li><a href="pages/lo-trinh-event-xoay-vong-event-lon.html">Lộ Trình Event Xoay Vòng &amp; Event Lớn</a></li>
+          <li><a href="pages/xam-lang-hon-mang-chaos-invasion.html">Cẩm Nang Xâm Lăng Hỗn Mang (Chaos Invasion)</a></li>
         </ul>
       </div>
     </div>
   </footer>
   <div class="site-copyright-bar">
-    <strong>Sword x Staff — Đại Bách Khoa Toàn Thư Tiếng Việt</strong> • Cổng Wiki Cộng Đồng &amp; Công Cụ Thực Chiến Hợp Nhất Duy Nhất • Bấm <code>Ctrl + K</code> để tra cứu tức thì mọi lúc.
+    <strong>Sword x Staff — Đại Bách Khoa Toàn Thư Tiếng Việt</strong> • Hồ sơ nhân vật cá nhân lưu trên Cookie trình duyệt • Bấm <code>Ctrl + K</code> để tra cứu tức thì mọi lúc.
   </div>
 </div><!-- /.wiki-page-frame -->
+
+<!-- CHARACTER PROFILE COOKIE MODAL -->
+<div class="char-modal-backdrop" id="charProfileModal" role="dialog" aria-modal="true" aria-labelledby="charModalTitle">
+  <div class="char-modal">
+    <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:10px;">
+      <h3 class="card-title" id="charModalTitle">👤 Hồ Sơ Nhân Vật &amp; Theo Dõi Lịch Trình Cá Nhân (Cookie Session)</h3>
+      <button type="button" class="icon-btn" id="closeCharModalBtn" aria-label="Đóng cửa sổ hồ sơ">✕</button>
+    </div>
+    <p class="section-sub" style="margin-bottom:12px;">Hệ thống tự động tạo tên nhân vật giả tưởng (hoặc bạn tự đặt theo tên trong game) và lưu trực tiếp vào <strong>Cookie trình duyệt (<code>sxs_char_profile</code> • hạn 365 ngày)</strong> để đồng bộ Tuổi Server, Hạng Bí Cảnh, Túi Đồ Tích Lũy và các Mốc Đã Ghim xuyên suốt mọi trang!</p>
+
+    <div class="calc-grid" style="margin-bottom:12px;">
+      <div class="form-field" style="grid-column:1 / -1;">
+        <label for="charNameInput">Tên Nhân Vật Của Bạn</label>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <input type="text" id="charNameInput" maxlength="36" placeholder="Nhập tên nhân vật hoặc bấm Tạo ngẫu nhiên..." style="flex:1; min-width:180px;" />
+          <button type="button" class="icon-btn" id="rollRandomNameBtn" style="border-color:var(--border-strong); font-weight:700;">🎲 Tạo Tên Ngẫu Nhiên</button>
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="charClassSelect">Hệ Phái Chủ Lực</label>
+        <select id="charClassSelect">
+          <option value="duelist">Kiếm Công: Đấu Sĩ → Tàn Sát → Ma Kiếm</option>
+          <option value="knight">Khiên Thủ: Hiệp Sĩ → Đền Thánh → Thánh Kỵ</option>
+          <option value="sorcerer">Trượng Công: Thuật Sư → Pháp Chủ → Ma Đạo</option>
+          <option value="sage">Hỗ Trợ / Ám: Hiền Giả → Tiên Tri → Hiền Vương</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label for="charServerNameInput">Tên / Cụm Máy Chủ (Tùy chọn)</label>
+        <input type="text" id="charServerNameInput" maxlength="28" placeholder="VD: S12 - Aqualis / Funtap S05" />
+      </div>
+      <div class="form-field">
+        <label for="charSrvDayModalInput">Tuổi Máy Chủ Hiện Tại (Ngày 1 → 550+)</label>
+        <input type="number" id="charSrvDayModalInput" min="1" max="800" value="15" />
+      </div>
+      <div class="form-field">
+        <label for="charRankModalSelect">Hạng (Rank) Bí Cảnh Hiện Tại</label>
+        <select id="charRankModalSelect">
+          <option value="0">Rank 1 — Tân Thủ (S0 • Lv.1–39)</option>
+          <option value="1">Rank 2 — Mạo Hiểm Giả (S0 • Lv.40–59)</option>
+          <option value="2">Rank 3 — Dũng Sĩ / Tinh Anh (S0 • Lv.60–74)</option>
+          <option value="3">Rank 4 — Anh Hùng I (S1 • Lv.75–81)</option>
+          <option value="4" selected>Rank 5 — Anh Hùng II (S1 • Lv.82–89)</option>
+          <option value="5">Rank 6 — Anh Hùng III (S1 • Lv.90–105)</option>
+          <option value="6">Rank 7 — Truyền Thuyết I (S2 • Lv.106–119)</option>
+          <option value="7">Rank 8 — Truyền Thuyết III (S2 • Lv.120–135)</option>
+          <option value="8">Rank 9 — Sử Thi / Thánh Vực (S3 • Lv.136–171)</option>
+          <option value="9">Rank 10 — Thần Thoại / Bất Tử (S4–S5 • Lv.172+)</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="charCookieStatusBox" style="font-size:0.76rem; padding:8px 10px; border-radius:8px; background:var(--bg-elevated); border:1px solid var(--border-subtle); color:var(--text-secondary); margin-bottom:12px;"></div>
+
+    <div style="display:flex; justify-content:space-between; gap:8px; flex-wrap:wrap;">
+      <button type="button" class="icon-btn" id="resetCharSessionBtn" style="color:var(--accent-rose);">Đặt lại phiên mới</button>
+      <div style="display:flex; gap:8px;">
+        <button type="button" class="icon-btn" id="cancelCharModalBtn">Đóng</button>
+        <button type="button" class="icon-btn" id="saveCharModalBtn" style="background:var(--staff-primary); color:#FFFFFF; border-color:var(--staff-primary); font-weight:700;">💾 Lưu Vào Cookie &amp; Áp Dụng</button>
+      </div>
+    </div>
+  </div>
+</div>
   <script>
     // =========================================================================
     // 1. DANH SÁCH 28 MÃ GIFTCODE (GLOBAL BOLTRAY & VN/SEA) + 25 THUẬT NGỮ CỐT LÕI
@@ -3860,16 +4357,31 @@
 
     function resolveGlossaryIcon(g) {
       const t = (g.vn + ' ' + g.en).toLowerCase();
+      if (t.includes('chiến kỹ') || t.includes('techniques')) return 'assets/fandom/Heavy_Impact.png';
+      if (t.includes('bí thuật') || t.includes('charms')) return 'assets/fandom/Elemental_Mystery.png';
+      if (t.includes('battle essence') || t.includes('tinh hoa chiến')) return 'assets/icons/gems/amethyst.svg';
       if (t.includes('dawnium')) return 'assets/icons/items/cur-dawnium.svg';
       if (t.includes('rolla')) return 'assets/fandom/Rolla.png';
       if (t.includes('covenite')) return 'assets/icons/items/cur-covenite.svg';
-      if (t.includes('stellatie') || t.includes('astrolabe')) return 'assets/icons/items/cur-stellatie.svg';
+      if (t.includes('stellatie') || t.includes('cầu nguyện')) return 'assets/icons/items/cur-stellatie.svg';
+      if (t.includes('primostar') || t.includes('nguyên thủy')) return 'assets/icons/gems/amber.svg';
+      if (t.includes('astrolabe') || t.includes('tinh tượng')) return 'assets/icons/relics/relic-2.svg';
       if (t.includes('destiny')) return 'assets/fandom/Destiny_Fruits.png';
-      if (t.includes('divinecraft') || t.includes('unique')) return 'assets/icons/items/divinecraft.svg';
+      if (t.includes('divinecraft')) return 'assets/icons/items/divinecraft.svg';
+      if (t.includes('unique') || t.includes('độc nhất')) return 'assets/icons/items/slot-armor.svg';
+      if (t.includes('chrono') || t.includes('cát thời gian')) return 'assets/icons/gems/citrine.svg';
+      if (t.includes('temporal') || t.includes('đá thời gian')) return 'assets/icons/regions/aethyris.svg';
       if (t.includes('pet') || t.includes('trinket')) return 'assets/icons/items/cur-petcrystal.svg';
       if (t.includes('auroradrasil')) return 'assets/icons/items/cur-treasure.svg';
-      if (t.includes('chaos')) return 'assets/fandom/Mysterious_Merchant.png';
-      if (t.includes('wyrm')) return 'assets/fandom/Dragon.png';
+      if (t.includes('chaos')) return 'assets/icons/items/cur-chaos.svg';
+      if (t.includes('wyrm')) return 'assets/icons/items/cur-guild.svg';
+      if (t.includes('mastery') || t.includes('tinh thông')) return 'assets/icons/gems/ruby.svg';
+      if (t.includes('block') || t.includes('đỡ đòn')) return 'assets/icons/items/slot-offhand.svg';
+      if (t.includes('effect hit') || t.includes('hiệu ứng')) return 'assets/icons/gems/sapphire.svg';
+      if (t.includes('accuracy') || t.includes('chính xác')) return 'assets/icons/gems/beryl.svg';
+      if (t.includes('affinity') || t.includes('thân hòa')) return 'assets/icons/relics/relic-1.svg';
+      if (t.includes('mirage') || t.includes('ảo ảnh')) return 'assets/icons/regions/loonghaven.svg';
+      if (t.includes('overheal') || t.includes('khiên máu')) return 'assets/icons/gems/moonstone.svg';
       if (g.cat === 'Kỹ Năng') return 'assets/fandom/Elemental_Mystery.png';
       if (g.cat === 'Cổ Vật') return 'assets/icons/relics/relic-0.svg';
       return 'assets/icons/items/slot-weapon.svg';
@@ -3882,13 +4394,19 @@
     const communityNavBtns = document.querySelectorAll('.community-nav-btn[data-tab]');
     const tabPanels = document.querySelectorAll('.tab-panel');
     const sidebarNav = document.getElementById('sidebarNav');
+    const sidebarBackdrop = document.getElementById('sidebarBackdrop');
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+
+    function setMobileDrawer(open) {
+      sidebarNav.classList.toggle('mobile-open', open);
+      if (sidebarBackdrop) sidebarBackdrop.classList.toggle('open', open);
+      mobileMenuBtn.setAttribute('aria-expanded', String(open));
+    }
 
     function switchTab(tabId, skipScroll) {
       navBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.tab === tabId));
       tabPanels.forEach(panel => panel.classList.toggle('active', panel.id === 'tab-' + tabId));
-      sidebarNav.classList.remove('mobile-open');
-      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      setMobileDrawer(false);
       if (history.replaceState) {
         history.replaceState(null, '', '#tab-' + tabId);
       }
@@ -3910,9 +4428,9 @@
     navBtns.forEach(btn => btn.addEventListener('click', () => switchTab(btn.dataset.tab)));
     communityNavBtns.forEach(btn => btn.addEventListener('click', () => switchTab(btn.dataset.tab)));
     mobileMenuBtn.addEventListener('click', () => {
-      const open = sidebarNav.classList.toggle('mobile-open');
-      mobileMenuBtn.setAttribute('aria-expanded', String(open));
+      setMobileDrawer(!sidebarNav.classList.contains('mobile-open'));
     });
+    if (sidebarBackdrop) sidebarBackdrop.addEventListener('click', () => setMobileDrawer(false));
 
     const themeToggleBtn = document.getElementById('themeToggleBtn');
     const themeLabel = document.getElementById('themeLabel');
@@ -3934,34 +4452,70 @@
       return ({ 'T0': 't-0', 'T0.5': 't-05', 'T1': 't-1', 'T2': 't-2', 'T3': 't-3', 'T4': 't-4' })[t] || 't-3';
     }
 
-    // Giftcodes as Illustrated Chest Cards
+    // Giftcodes as Filterable Compact Chest Cards (12 default + 1-click expand all 30)
     const giftcodeGrid = document.getElementById('giftcodeGrid');
-    giftcodeGrid.innerHTML = GIFTCODES.map(g => {
-      const rw = g.reward.toLowerCase();
-      const icon = rw.includes('dawnium') ? 'assets/icons/items/cur-dawnium.svg'
-        : rw.includes('pet') ? 'assets/icons/items/cur-petcrystal.svg'
-        : rw.includes('sao nguyên thủy') ? 'assets/icons/items/cur-stellatie.svg'
-        : 'assets/icons/items/giftchest.svg';
-      return `
-        <div class="gift-card">
-          <img src="${icon}" alt="Quà Giftcode ${g.code}" class="rpg-icon rpg-icon-sm" loading="lazy" />
-          <div class="gift-card-info">
-            <div class="gift-card-code">${g.code}</div>
-            <div class="gift-card-reward">${g.reward}</div>
-          </div>
-          <button type="button" class="copy-code-btn" data-copy="${g.code}">Sao chép</button>
-        </div>
-      `;
-    }).join('');
+    const giftcodeFilterGroup = document.getElementById('giftcodeFilterGroup');
+    const giftcodeToggleWrap = document.getElementById('giftcodeToggleWrap');
+    let activeGiftFilter = 'all';
+    let showAllGiftcodes = false;
 
-    giftcodeGrid.querySelectorAll('.copy-code-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        navigator.clipboard?.writeText(btn.dataset.copy);
-        const orig = btn.textContent;
-        btn.textContent = 'Đã chép!';
-        setTimeout(() => { btn.textContent = orig; }, 1400);
+    function renderGiftcodes() {
+      const filtered = GIFTCODES.filter(g => {
+        const rw = g.reward.toLowerCase();
+        if (activeGiftFilter === 'sea') return /\[(?:sea|vn)\]/i.test(g.reward);
+        if (activeGiftFilter === 'global') return !/\[(?:sea|vn)\]/i.test(g.reward);
+        if (activeGiftFilter === 'vip') return rw.includes('dawnium') || rw.includes('stellatie') || rw.includes('cầu nguyện') || rw.includes('sao nguyên thủy') || rw.includes('pet');
+        return true;
       });
-    });
+      const visible = showAllGiftcodes ? filtered : filtered.slice(0, 12);
+      giftcodeGrid.innerHTML = visible.map(g => {
+        const rw = g.reward.toLowerCase();
+        const icon = rw.includes('dawnium') ? 'assets/icons/items/cur-dawnium.svg'
+          : rw.includes('pet') ? 'assets/icons/items/cur-petcrystal.svg'
+          : (rw.includes('stellatie') || rw.includes('cầu nguyện') || rw.includes('sao nguyên thủy')) ? 'assets/icons/items/cur-stellatie.svg'
+          : 'assets/icons/items/giftchest.svg';
+        return `
+          <div class="gift-card">
+            <img src="${icon}" alt="Quà Giftcode ${g.code}" class="rpg-icon rpg-icon-sm" loading="lazy" />
+            <div class="gift-card-info">
+              <div class="gift-card-code" title="${g.code}">${g.code}</div>
+              <div class="gift-card-reward">${g.reward}</div>
+            </div>
+            <button type="button" class="copy-code-btn" data-copy="${g.code}">Sao chép</button>
+          </div>
+        `;
+      }).join('');
+      giftcodeGrid.querySelectorAll('.copy-code-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          navigator.clipboard?.writeText(btn.dataset.copy);
+          const orig = btn.textContent;
+          btn.textContent = 'Đã chép!';
+          setTimeout(() => { btn.textContent = orig; }, 1400);
+        });
+      });
+      if (giftcodeToggleWrap) {
+        if (filtered.length > 12) {
+          giftcodeToggleWrap.innerHTML = `<button type="button" class="icon-btn" id="toggleAllGiftBtn">${showAllGiftcodes ? 'Thu gọn danh sách Giftcode ▲' : `Xem toàn bộ ${filtered.length} mã Giftcode ▾`}</button>`;
+          document.getElementById('toggleAllGiftBtn').addEventListener('click', () => {
+            showAllGiftcodes = !showAllGiftcodes;
+            renderGiftcodes();
+          });
+        } else {
+          giftcodeToggleWrap.innerHTML = '';
+        }
+      }
+    }
+    if (giftcodeFilterGroup) {
+      giftcodeFilterGroup.querySelectorAll('[data-gf]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          activeGiftFilter = btn.dataset.gf;
+          showAllGiftcodes = activeGiftFilter !== 'all';
+          giftcodeFilterGroup.querySelectorAll('[data-gf]').forEach(x => x.classList.toggle('active', x === btn));
+          renderGiftcodes();
+        });
+      });
+    }
+    renderGiftcodes();
 
     // Glossary with Item Icons
     document.getElementById('glossaryTableBody').innerHTML = GLOSSARY_DATA.map(g => `
@@ -4196,6 +4750,86 @@
       });
     }
 
+    // =========================================================================
+    // HỒ SƠ NHÂN VẬT TỰ TẠO & THEO DÕI CÁ NHÂN HÓA LƯU TRÊN COOKIE TRÌNH DUYỆT
+    // =========================================================================
+    function setWikiCookie(name, valObj, days = 365) {
+      const encoded = encodeURIComponent(JSON.stringify(valObj));
+      const maxAge = days * 86400;
+      document.cookie = `${name}=${encoded}; path=/; max-age=${maxAge}; SameSite=Lax`;
+      try { localStorage.setItem('cookie_mirror_' + name, JSON.stringify(valObj)); } catch (_) {}
+    }
+
+    function getWikiCookie(name) {
+      const prefix = name + '=';
+      const parts = (document.cookie || '').split(';');
+      for (let p of parts) {
+        p = p.trim();
+        if (p.indexOf(prefix) === 0) {
+          try { return JSON.parse(decodeURIComponent(p.slice(prefix.length))); } catch (_) {}
+        }
+      }
+      try {
+        const mir = localStorage.getItem('cookie_mirror_' + name);
+        if (mir) return JSON.parse(mir);
+      } catch (_) {}
+      return null;
+    }
+
+    const RPG_NAME_PREFIXES = [
+      'Kiếm Thánh', 'Pháp Vương', 'Thánh Kỵ', 'Hiền Giả', 'Thợ Săn Cổ Vật',
+      'Lãnh Chúa Ánh Sao', ' Kẻ Chinh Phục', 'Hộ Vệ Cực Quang', 'Ma Đạo Sư', 'Tiên Tri Bóng Đêm'
+    ];
+    const RPG_NAME_REALMS = [
+      'Kanstein', 'Aqualis', 'Drasilgard', 'Fortburg', 'Long Cảng',
+      'Aethyris', 'Harpadia', 'Ignis', ' Tinh Tú', 'Hư Không'
+    ];
+    function generateAutoCharName() {
+      const p = RPG_NAME_PREFIXES[Math.floor(Math.random() * RPG_NAME_PREFIXES.length)].trim();
+      const r = RPG_NAME_REALMS[Math.floor(Math.random() * RPG_NAME_REALMS.length)].trim();
+      const tag = Math.floor(100 + Math.random() * 900);
+      return `${p} ${r} #${tag}`;
+    }
+
+    const CHAR_CLASS_META = {
+      duelist: {
+        label: 'Kiếm Công (Đấu Sĩ → Ma Kiếm)',
+        icon: 'assets/icons/classes/duelist.svg',
+        advice: 'Ưu tiên Cổ Vật Hệ Lửa, Ngọc Obsidian + Amethyst, giữ Đá Khế Ước rút Xuyên Giáp Công Kích (Lv.106) & tích Chính Xác phá Block!'
+      },
+      knight: {
+        label: 'Khiên Thủ (Hiệp Sĩ → Thánh Kỵ)',
+        icon: 'assets/icons/classes/knight.svg',
+        advice: 'Kỳ 3 (Ngày 22) nhớ nhắm mảnh Trảm Phá Tinh Tú (466%+ ST), nuôi NPC Braulio/Molly lấy Đỡ Đòn & khảm Ngọc Moonstone + Sapphire!'
+      },
+      sorcerer: {
+        label: 'Trượng Công (Thuật Sư → Pháp Chủ)',
+        icon: 'assets/icons/classes/sorcerer.svg',
+        advice: 'Ghép 3–4 hệ ăn Bí Ẩn Nguyên Tố đầu mùa, gom Cổ Vật Ánh Sáng/Lửa, luôn giữ 1 ô Khiên Gió và dồn Tốc Độ + Tinh Thông!'
+      },
+      sage: {
+        label: 'Hỗ Trợ / Ám (Hiền Giả → Tiên Tri)',
+        icon: 'assets/icons/classes/sage.svg',
+        advice: 'Lên Bậc 4 ưu tiên Ánh Sáng Ảo Ảnh (Khiên máu dư), khảm Ngọc Hổ Phách (Amber) và tích Quà Tâm Giao đẩy Lv.100 mở Tăng Trị Liệu!'
+      }
+    };
+
+    let CHAR_PROFILE = getWikiCookie('sxs_char_profile');
+    if (!CHAR_PROFILE || !CHAR_PROFILE.name) {
+      const legacyDay = parseInt(localStorage.getItem('sxs_srv_day') || '15', 10) || 15;
+      CHAR_PROFILE = {
+        name: generateAutoCharName(),
+        cls: 'duelist',
+        serverName: 'Kanstein S01',
+        srvDay: legacyDay,
+        rankIdx: legacyDay >= 114 ? 8 : (legacyDay >= 47 ? 6 : (legacyDay >= 20 ? 5 : (legacyDay >= 12 ? 4 : 1))),
+        pinnedDays: [15, 22, 24, 43],
+        createdAt: new Date().toISOString().slice(0, 10)
+      };
+      setWikiCookie('sxs_char_profile', CHAR_PROFILE, 365);
+    }
+    if (!Array.isArray(CHAR_PROFILE.pinnedDays)) CHAR_PROFILE.pinnedDays = [15, 22, 24, 43];
+
     // Interactive Server-Day Event & Milestone Checker + Horizontal Route Line
     const srvDayEl = document.getElementById('srvDayInput');
     const srvDateEl = document.getElementById('srvOpenDateInput');
@@ -4266,6 +4900,12 @@
       if (!srvDayEl || !tlBody) return;
       const curDay = Math.max(1, parseInt(srvDayEl.value, 10) || 1);
       localStorage.setItem('sxs_srv_day', String(curDay));
+      if (CHAR_PROFILE.srvDay !== curDay) {
+        CHAR_PROFILE.srvDay = curDay;
+        setWikiCookie('sxs_char_profile', CHAR_PROFILE, 365);
+        if (typeof renderCharStripsEverywhere === 'function') renderCharStripsEverywhere();
+        if (typeof renderLiveEventRadar === 'function') renderLiveEventRadar();
+      }
       const openDateStr = srvDateEl ? srvDateEl.value : '';
       const meta = getSeasonMeta(curDay);
       const curStage = ROUTE_STAGES.find(s => curDay >= s.min && curDay <= s.max) || ROUTE_STAGES[0];
@@ -4297,6 +4937,7 @@
       }
 
       if (srvBannerEl) {
+        const clsInfo = CHAR_CLASS_META[CHAR_PROFILE.cls] || CHAR_CLASS_META.duelist;
         srvBannerEl.innerHTML = `
           <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; margin-bottom:6px;">
             <div>
@@ -4307,8 +4948,11 @@
               <span class="pill pill-staff">${meta.cap}</span> • ${resetNote}
             </div>
           </div>
-          <div style="font-size:0.8rem; color:var(--accent-emerald);">
-            <strong>Khuyến nghị ngay lúc này:</strong> ${meta.tip}
+          <div style="font-size:0.8rem; color:var(--accent-emerald); margin-bottom:4px;">
+            <strong>Lộ trình cho ${CHAR_PROFILE.name}${CHAR_PROFILE.serverName ? ' (' + CHAR_PROFILE.serverName + ')' : ''}:</strong> ${meta.tip}
+          </div>
+          <div style="font-size:0.77rem; color:var(--text-secondary);">
+            <strong>🎯 Gợi ý riêng theo nhánh ${clsInfo.label}:</strong> ${clsInfo.advice}
           </div>
         `;
       }
@@ -4341,8 +4985,12 @@
           : `<div style="padding:12px; color:var(--accent-emerald); font-weight:600;">Đã mở toàn bộ ${SERVER_MILESTONES.length} mốc lịch trình hiện có từ S0 tới S7 Nova!</div>`;
       }
 
+      const pinnedCountEl = document.getElementById('pinnedMsCount');
+      if (pinnedCountEl) pinnedCountEl.textContent = String(CHAR_PROFILE.pinnedDays.length);
+
       const catLabels = { dungeon: 'Phó Bản', event: 'Sự Kiện / Báu Vật', system: 'Chuyển Chức / Hệ Thống' };
       const filtered = SERVER_MILESTONES.filter(m => {
+        if (activeMFilter === 'pinned') return CHAR_PROFILE.pinnedDays.includes(m.day);
         if (activeMFilter === 'season') return m.day >= curStage.min && m.day <= curStage.max;
         if (activeMFilter === 'upcoming') return m.day >= curDay && (m.day - curDay) <= 14;
         if (activeMFilter === 'unlocked') return m.day < curDay;
@@ -4352,13 +5000,17 @@
 
       tlBody.innerHTML = filtered.length ? filtered.map((m, idx) => {
         const diff = m.day - curDay;
+        const isPinned = CHAR_PROFILE.pinnedDays.includes(m.day);
         const statusBadge = diff < 0
           ? '<span class="pill pill-emerald">Đã mở</span>'
           : (diff === 0 ? '<span class="pill pill-cyan">Hôm nay!</span>' : `<span class="pill pill-sword">Còn ${diff} ngày</span>`);
         const cal = openDateStr ? `<br/><span style="font-size:0.72rem;color:var(--text-muted);">${fmtCalDate(openDateStr, m.day)}</span>` : '';
         return `
           <tr style="${diff < 0 ? 'opacity:0.76;' : ''}">
-            <td><strong>Ngày ${m.day}</strong><br/><span style="font-size:0.72rem;color:var(--text-muted);">${m.sDay}</span>${cal}</td>
+            <td>
+              <strong>Ngày ${m.day}</strong><br/><span style="font-size:0.72rem;color:var(--text-muted);">${m.sDay}</span>${cal}<br/>
+              <button type="button" class="pin-ms-btn${isPinned ? ' pinned' : ''}" data-pinday="${m.day}">${isPinned ? '★ Đã ghim' : '📌 Theo dõi'}</button>
+            </td>
             <td>${statusBadge}</td>
             <td><span class="pill pill-cyan">${m.kingdom}</span></td>
             <td><span class="pill pill-staff">${catLabels[m.cat] || m.cat}</span></td>
@@ -4374,11 +5026,25 @@
             </td>
           </tr>
         `;
-      }).join('') : '<tr><td colspan="5" style="text-align:center;color:var(--text-muted);padding:18px;">Không có mốc nào khớp bộ lọc hiện tại.</td></tr>';
+      }).join('') : '<tr><td colspan="5" style="text-align:center;color:var(--text-muted);padding:18px;">Chưa có mốc nào trong danh sách bộ lọc này (hãy bấm "📌 Theo dõi" ở các mốc bạn muốn nhắc lịch!).</td></tr>';
+
+      tlBody.querySelectorAll('[data-pinday]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const d = Number(btn.dataset.pinday);
+          if (CHAR_PROFILE.pinnedDays.includes(d)) {
+            CHAR_PROFILE.pinnedDays = CHAR_PROFILE.pinnedDays.filter(x => x !== d);
+          } else {
+            CHAR_PROFILE.pinnedDays.push(d);
+            CHAR_PROFILE.pinnedDays.sort((a, b) => a - b);
+          }
+          setWikiCookie('sxs_char_profile', CHAR_PROFILE, 365);
+          renderCharStripsEverywhere();
+          renderServerMilestones();
+        });
+      });
     }
 
     if (srvDayEl) {
-      const savedDay = localStorage.getItem('sxs_srv_day');
       const savedOpenDate = localStorage.getItem('sxs_srv_open_date');
       if (savedOpenDate && srvDateEl) {
         srvDateEl.value = savedOpenDate;
@@ -4387,13 +5053,18 @@
           const today = new Date();
           today.setHours(0, 0, 0, 0);
           srvDayEl.value = Math.max(1, Math.floor((today - od) / 86400000) + 1);
+          CHAR_PROFILE.srvDay = Number(srvDayEl.value);
         }
-      } else if (savedDay) {
-        srvDayEl.value = savedDay;
+      } else {
+        srvDayEl.value = CHAR_PROFILE.srvDay || localStorage.getItem('sxs_srv_day') || 15;
       }
 
       srvDayEl.addEventListener('input', () => {
         if (srvDateEl) { srvDateEl.value = ''; localStorage.removeItem('sxs_srv_open_date'); }
+        CHAR_PROFILE.srvDay = Math.max(1, parseInt(srvDayEl.value, 10) || 1);
+        setWikiCookie('sxs_char_profile', CHAR_PROFILE, 365);
+        renderCharStripsEverywhere();
+        if (typeof renderLiveEventRadar === 'function') renderLiveEventRadar();
         renderServerMilestones();
       });
       if (srvDateEl) {
@@ -5151,6 +5822,759 @@
     document.getElementById('foodCount').addEventListener('input', calcFood);
     calcFood();
 
+    const LEVEL_ENGINE_DATA = {"base":50,"sleepHours":2,"curve":[0,1,10,10.5,11,11.4,11.7,12,12.4,12.8,13.2,13.6,14,14.4,14.8,15.3,15.7,16.2,16.7,51.5,53.1,54.7,56.3,58,59.7,61.5,63.4,65.3,67.2,69.3,71.3,73.5,75.7,77.9,80.3,82.7,85.2,263.2,271.1,279.2,287.6,296.2,305.1,314.2,323.7,333.4,343.4,353.7,364.3,375.2,386.5,398.1,410,422.3,435,1344.1,1384.5,1426,1468.8,1512.8,1558.2,1605,1653.1,1702.7,1753.8,1806.4,1860.6,1916.4,1973.9,2033.1,2094.1,2156.9,2221.6,6864.9,7070.8,7282.9,7501.4,7726.5,7958.3,8197,8442.9,8696.2,8957.1,9225.8,9502.6,9787.7,10081.3,10383.7,10695.2,11016.1,11346.6,58434.9,60187.9,61993.6,63853.4,65769,67742,69774.3,71867.5,74023.6,76244.3,78531.6,80887.5,83314.2,85813.6,88388,91039.6,93770.8,96584,298444.4,307397.8,316619.7,326118.3,335901.8,345978.9,356358.3,367049,378060.5,389402.3,401084.4,413116.9,425510.4,438275.7,451424,464966.7,478915.7,493283.2,762122.5,784986.2,808535.7,832791.8,857775.6,883508.8,910014.1,937314.5,965434,994397,1024228.9,1054955.8,1086604.4,1119202.6,1152778.6,1187362,1222982.9,1259672.3,1946193.8,2004579.6,2064717,2126658.5,2190458.2,2256172,2323857.1,2393572.9,2465380,2539341.4,2615521.7,2693987.3,2774807,2858051.2,2943792.7,3032106.5,3123069.7,3216761.8],"normalCost":[0,80,90,90,90,90,90,90,90,100,350,355,360,370,375,390,400,450,500,500,1483,1844,1865,1916,2043,2067,2169,2437,2536,2860,2995,3607,3794,3876,3996,4261,4289,4510,4928,5086,17203,19189,21484,21509,23052,24627,25480,26852,29068,32008,33168,33332,34095,35628,35929,37680,38331,38878,39016,41731,43128,45042,45412,47152,47282,47340,50487,53076,54257,54405,197114,310414,330204,334735,348791,360389,360701,362826,378632,379059,408765,440713,464670,467234,477970,484690,509874,513879,527583,532378,583801,612907,643189,644274,670957,678226,706678,712891,749807,751452,2904398,3027527,3032011,3117883,3191855,3220513,3258763,3346658,3389858,3548753,3631694,3771824,3796167,3866624,3924404,4029348,4101565,4245434,4245686,4514881,4566377,4752888,4866448,5012377,5016341,5178619,5229563,5423881,5459728,6335318,22859655,23541185,23587156,24290510,24337860,25112507,25161277,25962089,26062556,26920314,27780149,28608441,28773140,29687769,29800863,30864506,30980992,32025290,32205262,33270698,34387276,35609150,35871344,37143639,37211154,38460179,38529719,39822474,40037353,43248083,384397189,395865205,396350698,409177436,409177436,422418979,422934039,437149695,438210719,453833849,468396986,484113075,485851805,502143700,503337628,519592952,520822698,538272785,540172742,557963011,576777448,595380011,596764450,617434129,620286073,641012583,642481335,663183389,665452610,744690971,2620623845,2703801921,2703801921,2792192360,2794759820,2888754553,2888754553,2980438827,2980438827,3096164727,3194748619,3295905907,3301859736,3403342750,3406408972,3520595075,3520595075,3632079837,3638585746,3764255949,3875294137,3997808227,4001361860,4124210958,4127871200,4265935534,4269705583,4611633646,4819261842,5241197635,8396775166,8653446722,8653446722,8911452623,8918009398,9183952180,9231226526,9520477986,9520477986,10681570731,11006427414,11343026943,11351297399,11689972571,11698491140,12065130378,12117775138,12497519344,12515594045,12898073116,13316305447,13723543441,13733422271,14153470135,14163645330,14596905141,14617866043,15813682227,16521078957,18187390959,18187390959],"seasonCost":{"S1":[886086,888547,926501,964086,1012164,1054111,1096529,1135645,1174997,1214584,1258533,1303677,1348574,1393941,1439780,1486091,1532872,1580125,1627849,1676044,1730017,1783360,1833196,1833196],"S2":[6342809,6791971,7349165,7896724,8431041,8948504,9536985,10062872,10591166,11201308,11280750,11334730,11387696,11440662,11493628,11546594,11599560,11652526,11679009,11731975,11784941,11811613,11838097,11864580,11917547,11970514,12049964,12155898,12208865,12261832,12314799,12394079,12447046,12500012,12500012,12526495,12579461,12632427,12658910,12711876,12764842,12817637,12870602,12950050,13029499,13082464,13135429,13188395,13214878,13267843,13320809,13372809,13399290,13425771,13452251,13478732,13478732],"S3":[44969859,48762878,52604320,56396556,60225668,63980989,67994521,71934262,76039985,80194876,80600630,81009637,81415408,81685922,81821179,82226950,82632720,82903234,83309005,83714776,83985290,84388130,84658635,84929139,85334896,85605400,85875905,86281661,86552166,86822670,86957923,87237117,87507648,87913445,103526684,114131779,114434891,114586448,114889559,115192672,115344229,115928916,116231965,116686535,116838059,117444154,117747201,117898726,118353296,118656343,118807868,119120332,119271871,119726482,120029557,120181095,120484169,120787245,121090319,105899150,106656837,106969019,107120569,107423670,107726771,108332972,108484523,109242275,109545375,109696926,110000026,110293284,110444820,110747894,111050968,111657115,111808652,111960189,112263263,112414799,112717873,113019510,113322580,113625650,113777185,114080255,114080255,114231790,114231790,114383325,114498509,114534860,114649996,114649996],"S4":[744690971,804233453,864436925,925029631,986011570,1047382743,1110376404,1173889043,1235194660,1298187639,1302471254,1305533399,1306961497,1309817693,1312673889,1315530085,1318386280,1321242476,1322670574,1325526770,1328382966,1331308702,1334165048,1337021393,1339877738,1342734083,1345590428,1348446774,1351303119,1354159464,1357015809,1359833971,1362690236,1365546501,1368402766,1369830899,1372687164,1375543428,1378399693,1381255958,1384112223,1385490351,1388346513,1391202675,1392630756,1395486917,1398343079,1401199241,1404055402,1406911564,1408339645,1411302011,1414158388,1417014765,1419871142,1422727519,1425583895,1427012084,1429868461,1432724838,1435581215,1436995360,1439851709,1442708058,1445564407,1448420756,1451277105,1454133454,1455561628,1458417977,1461274326,1463946577,1466802567,1469658556,1472514546,1473942540,1476798530,1479654519,1482510509,1485366498,1488222487,1491390587,1494247175,1497103763,1498532057,1501388645,1504245233,1507101820,1509958408,1511386702,1514243290,1516329564,1519184700,1522039835,1522039835],"S5":[5463561867,5897456119,6333530684,6771785560,7199857482,7648291229,8099632058,8553879969,9011034962,9455099919,9472937158,9488937390,9488937390,9488937390,9504937622,9552938319,9560938435,9560938435,9576938667,9576938667,9592210130,9592210130,9592210130,9592210130,9608209145,9608209145,9608209145,9608209145,9616208652,9616208652,9631501763,9695493123,9703492043,9711490963,9711490963,9727488802,9735487722,9759484482,9759484482,9759484482,9785529212,9809531003,9809531003,9825532198,9849533990,9873535781,9897537573,9945541156,9953541754,9961542351,9967495071,9975494022,9983492973,9983492973,9991491924,9991491924,9991491924,9991491924,9991491924,9991491924,9992732141,9992732141,9992732141,10040731815,10040731815,10056731706,10072731597,10128731216,10136731162,10160730999,10168827598,10168827598,10176827619,10184827641,10192827663,10208827706,10216827728,10216827728,10224827750,10224827750,10240386648,10256386001,10288384708,10288384708,10288384708,10288384708,10288384708,10288384708,10288384708,10296384384,10325676141,10349668870,10357666447,10481462149,10605257850,10729053552,10852849253,10976644955,11100440657,11224236358,11348032060,11471827761,11595623463,11719419165,11843214866,11967010568,12090806269,12214601971,12338397672,12462193374,12585989076,12709784777,12833580479,12957376180,13081171882,13204967584,13328763285,13452558987,13576354688,13700150390,13823946092,13947741793,14071537495,14195333196,14319128898,14442924600,14566720301,14690516003,14814311704,14938107406,15061903108,15185698809,15309494511,15433290212,15557085914,15680881615,15804677317,15928473019,16052268720,16176064422,16299860123,16423655825,16547451527,16671247228,16795042930,16918838631,17042634333,17166430035,17290225736,17414021438,17414021438]},"kingdoms":[{"season":"S1","cap":100,"openDay":1,"sLost":0,"sStart":0,"sEnd":0,"vnName":"Thung Lũng Xanh (Verdantglade)","gates":[[0,6,14],[20,2,5],[22,1,7],[24,1,0],[26,3,11],[30,1,1],[32,1,2],[34,1,3],[36,1,6]]},{"season":"S1","cap":100,"openDay":4,"sLost":0,"sStart":0,"sEnd":0,"vnName":"Rặng Núi Tro Tàn (Cinder Ridge)","gates":[[36,1,1],[38,1,4],[40,1,3],[42,1,5],[44,1,7],[46,1,4],[48,1,2],[50,2,3],[52,1,3],[54,1,2],[56,1,6],[60,3,11],[62,1,4],[64,1,4],[66,1,9]]},{"season":"S1","cap":100,"openDay":12,"sLost":38,"sStart":15,"sEnd":33,"vnName":"Thủy Quốc Aqualis (S1)","gates":[[68,1,3],[70,1,7],[72,1,2],[74,1,2],[76,1,6],[78,1,4],[80,2,5],[82,1,5],[84,1,8],[86,1,2],[88,1,5],[90,2,7],[92,1,6],[94,1,6],[96,1,5],[98,1,1]]},{"season":"S2","cap":130,"openDay":47,"sLost":101,"sStart":61,"sEnd":105,"vnName":"Long Cảng Loong Haven (S2)","gates":[[98,1,4],[100,1,3],[102,1,4],[104,1,3],[106,1,4],[108,1,4],[110,2,8],[112,1,4],[114,1,4],[116,1,5],[118,1,6],[120,2,9],[122,1,5],[124,1,3],[126,1,5],[128,1,7],[130,0,1]]},{"season":"S3","cap":160,"openDay":114,"sLost":224,"sStart":128,"sEnd":207,"vnName":"Thiên Không Giới Aethyris (S3)","gates":[[0,1,3],[130,1,3],[132,1,4],[134,1,4],[136,1,4],[138,1,6],[140,2,8],[142,1,4],[144,1,4],[146,1,5],[148,1,6],[150,2,6],[152,1,4],[154,1,5],[156,1,6],[158,1,6]]},{"season":"S4","cap":190,"openDay":215,"sLost":182,"sStart":229,"sEnd":290,"vnName":"Vũ Quốc Harpadia (S4)","gates":[[0,1,33],[160,1,2],[162,1,4],[164,1,4],[166,1,4],[168,1,3],[170,2,9],[172,1,3],[174,1,3],[176,1,5],[178,1,4],[180,2,4],[182,1,3],[184,1,1],[186,1,0],[188,1,0]]},{"season":"S5","cap":220,"openDay":316,"sLost":190,"sStart":330,"sEnd":390,"vnName":"Hỏa Quốc Ignis (S5)","gates":[[0,4,35],[192,1,2],[194,1,4],[196,1,5],[198,1,6],[200,2,8],[202,1,5],[204,1,6],[206,1,5],[208,1,5],[212,1,0],[214,1,0],[216,1,0],[218,1,0]]}]};
+
+    // 7. Day-by-Day Level & Goddess Statue Predictor
+    function getLvSeasonWin(day) {
+      if (day < 47) return { sKey: 'S1', startDay: 1, endDay: 46, floorLv: 1, capLv: 100, maxK: day < 4 ? 0 : day < 12 ? 1 : 2 };
+      if (day < 114) return { sKey: 'S2', startDay: 47, endDay: 113, floorLv: 100, capLv: 130, maxK: 3 };
+      if (day < 215) return { sKey: 'S3', startDay: 114, endDay: 214, floorLv: 130, capLv: 160, maxK: 4 };
+      if (day < 316) return { sKey: 'S4', startDay: 215, endDay: 315, floorLv: 160, capLv: 190, maxK: 5 };
+      return { sKey: 'S5', startDay: 316, endDay: 416, floorLv: 190, capLv: 220, maxK: 6 };
+    }
+    function getLvStepCost(L, capLv, sKey) {
+      const D = LEVEL_ENGINE_DATA;
+      if (L < capLv) return D.normalCost[L] || D.normalCost[D.normalCost.length - 1];
+      const arr = D.seasonCost[sKey] || D.seasonCost.S1;
+      const idx = Math.max(0, L - capLv);
+      return idx < arr.length ? arr[idx] : arr[arr.length - 1];
+    }
+    function getLvBedRate(day, level, passPct, customB, customN) {
+      const D = LEVEL_ENGINE_DATA;
+      const win = getLvSeasonWin(day);
+      let B = 1, nK = 0, nS = 0, nextGate = null;
+      for (let i = 0; i <= win.maxK; i++) {
+        const k = D.kingdoms[i];
+        if (k.sLost > 0) {
+          if (day > k.sEnd) nS += k.sLost;
+          else if (day >= k.sStart) nS += Math.min(k.sLost, Math.round(((day - k.sStart + 1) / Math.max(1, k.sEnd - k.sStart + 1)) * k.sLost));
+        }
+        for (const g of k.gates) {
+          if (g[0] <= level) { B += g[1]; nK += g[2]; }
+          else if (!nextGate || g[0] < nextGate.lv) nextGate = { lv: g[0], dB: g[1], dN: g[2], kName: k.vnName };
+        }
+      }
+      const useB = customB > 0 ? Math.min(D.curve.length - 1, customB) : Math.min(D.curve.length - 1, B);
+      const useN = customN >= 0 ? customN : (nK + nS);
+      const xpPerHour = D.base * D.curve[useB] * (1 + (useN + passPct) / 100);
+      return { B: useB, n: useN, xpPerHour, win, nextGate };
+    }
+    function calcLevelPredictor() {
+      const curDay = Math.max(1, Math.min(416, parseInt(document.getElementById('lvCurDay').value, 10) || 1));
+      const targetDay = Math.max(curDay, Math.min(416, parseInt(document.getElementById('lvTargetDay').value, 10) || curDay));
+      const rawCurLv = Math.max(0, Math.min(370, parseInt(document.getElementById('lvCurLevel').value, 10) || 0));
+      const curPct = Math.max(0, Math.min(99, parseInt(document.getElementById('lvCurPct').value, 10) || 0));
+      const goalLv = Math.max(2, Math.min(370, parseInt(document.getElementById('lvGoalLevel').value, 10) || 100));
+      const crystals = Math.max(0, Math.min(200, parseInt(document.getElementById('lvCrystals').value, 10) || 0));
+      const passPct = Number(document.getElementById('lvPassSel').value) || 0;
+      const customB = Math.max(0, Math.min(162, parseInt(document.getElementById('lvCustomB').value, 10) || 0));
+      const customN = Math.max(-1, Math.min(1600, parseInt(document.getElementById('lvCustomN').value, 10) ?? -1));
+
+      const resetDays = new Set([47, 114, 215, 316]);
+      let simStartDay = rawCurLv > 0 ? curDay : 1;
+      let L = rawCurLv > 0 ? rawCurLv : 1;
+      const initWin = getLvSeasonWin(simStartDay);
+      let xp = rawCurLv > 0 ? (curPct / 100) * getLvStepCost(L, initWin.capLv, initWin.sKey) : 0;
+
+      // Current snapshot before advancing
+      const nowSnap = getLvBedRate(simStartDay, L, passPct, customB, customN);
+      document.getElementById('outLvBlessing').textContent = 'B=' + nowSnap.B + ' • n=' + nowSnap.n;
+      document.getElementById('outLvRateHour').textContent = fmt(Math.round(nowSnap.xpPerHour)) + ' /h';
+      document.getElementById('outLvCrystalVal').textContent = fmt(Math.round(nowSnap.xpPerHour * 2)) + ' EXP';
+
+      // Bedtime gate advice
+      let adviceHtml = '';
+      if (nowSnap.nextGate && customB === 0) {
+        let xpToGate = -xp;
+        for (let gl = L; gl < nowSnap.nextGate.lv; gl++) xpToGate += getLvStepCost(gl, nowSnap.win.capLv, nowSnap.win.sKey);
+        const sleepUnit = nowSnap.xpPerHour * 2;
+        const crNeeded = Math.max(1, Math.ceil(xpToGate / sleepUnit));
+        const afterRate = getLvBedRate(simStartDay, nowSnap.nextGate.lv, passPct, 0, customN).xpPerHour;
+        const extraHours = (8 - 2 * crNeeded) * (1 - nowSnap.xpPerHour / afterRate);
+        if (crNeeded <= 2 && extraHours > 0.15) {
+          adviceHtml = '💡 <strong>Thời điểm vàng đập Tinh Thể trước giờ ngủ:</strong> Cổng <code>Lv.' + nowSnap.nextGate.lv + '</code> mở thêm <strong>+' + nowSnap.nextGate.dB + ' Tượng Lớn &amp; +' + nowSnap.nextGate.dN + ' Tượng Nhỏ</strong> (nâng Giường lên <code>' + fmt(Math.round(afterRate)) + '/h</code>). Chỉ cần dùng <strong>' + crNeeded + ' viên Tinh Thể</strong> tối nay rồi mở map trước khi ngủ 8h sẽ giúp bạn về đích sớm hơn thêm <strong>~' + (extraHours < 1 ? Math.round(extraHours * 60) + ' phút' : extraHours.toFixed(1) + ' giờ') + '</strong>!';
+        } else {
+          adviceHtml = '🧭 <strong>Cổng tượng kế tiếp:</strong> <code>Lv.' + nowSnap.nextGate.lv + '</code> (cần thêm <code>' + fmt(Math.round(Math.max(0, xpToGate))) + ' EXP</code> ≈ <strong>' + (xpToGate / nowSnap.xpPerHour).toFixed(1) + ' giờ</strong> treo Giường) → nâng sản lượng lên <code>' + fmt(Math.round(afterRate)) + ' EXP/h</code>.';
+        }
+      } else {
+        adviceHtml = '✨ Đã mở toàn bộ cổng cấp độ Tượng Nữ Thần khả dụng của Vương Quốc hiện tại — mỗi viên Tinh Thể Thời Gian rút ngắn chính xác <strong>2.0 giờ</strong> treo máy (nhớ dùng hết trước khi hết mùa!).';
+      }
+      document.getElementById('outLvGateAdvice').innerHTML = adviceHtml;
+
+      // Simulate day by day up to Math.max(targetDay, simStartDay + 90) to find goalLv ETA and targetDay snapshot
+      const maxSimDay = Math.min(416, Math.max(targetDay, simStartDay + 100));
+      let totalHoursElapsed = 0;
+      let goalReachedHours = L >= goalLv ? 0 : null;
+      let goalReachedDay = L >= goalLv ? simStartDay : null;
+      let remCrystals = crystals;
+      const rows = [];
+      let targetSnap = null;
+
+      for (let d = simStartDay; d <= maxSimDay; d++) {
+        const win = getLvSeasonWin(d);
+        if (d > simStartDay && resetDays.has(d) && L > win.floorLv) {
+          L = win.floorLv;
+          xp = 0;
+        }
+        const useCrToday = d === simStartDay ? remCrystals : 0;
+        remCrystals = 0;
+        const effHours = 26 + 2 * useCrToday;
+        let gainedToday = 0;
+
+        for (let h = 0; h < effHours; h++) {
+          const st = getLvBedRate(d, L, passPct, customB, customN);
+          const qMult = L < 25 ? 2.2 : L < 44 ? 1.25 : 1.0;
+          const add = st.xpPerHour * qMult;
+          xp += add;
+          gainedToday += add;
+          if (h < 24) totalHoursElapsed += 1;
+          let need = getLvStepCost(L, win.capLv, win.sKey);
+          while (xp >= need && L < win.capLv + 160) {
+            xp -= need;
+            L++;
+            need = getLvStepCost(L, win.capLv, win.sKey);
+            if (goalReachedHours === null && L >= goalLv) {
+              goalReachedHours = totalHoursElapsed;
+              goalReachedDay = d;
+            }
+          }
+        }
+
+        const endSt = getLvBedRate(d, L, passPct, customB, customN);
+        const endNeed = getLvStepCost(L, win.capLv, win.sKey);
+        const endPct = Math.min(99, Math.round((xp / endNeed) * 100));
+        if (d === targetDay) targetSnap = { L, endPct, win };
+        if (d <= targetDay && (rows.length < 35 || d === targetDay || d === simStartDay || d % 3 === 0)) {
+          rows.push({
+            day: d,
+            season: win.sKey + ' (Trần ' + win.capLv + ')',
+            lvText: 'Lv.' + L + ' (' + endPct + '%)' + (L > win.capLv ? ' [Mùa +' + (L - win.capLv) + ']' : ''),
+            bnText: 'B=' + endSt.B + ' • n=' + endSt.n,
+            rate: fmt(Math.round(endSt.xpPerHour)) + ' /h',
+            dayGain: fmt(Math.round(gainedToday))
+          });
+        }
+      }
+
+      if (targetSnap) {
+        document.getElementById('outLvAtTargetDay').textContent = 'Lv.' + targetSnap.L + ' (' + targetSnap.endPct + '%)';
+      }
+      if (goalReachedHours === 0) {
+        document.getElementById('outLvGoalEta').textContent = 'Đã đạt Lv.' + goalLv + '!';
+      } else if (goalReachedHours !== null) {
+        const dEst = (goalReachedHours / 24).toFixed(1);
+        document.getElementById('outLvGoalEta').textContent = '~' + dEst + ' ngày (N' + goalReachedDay + ')';
+      } else {
+        document.getElementById('outLvGoalEta').textContent = 'Ngoài mùa hiện tại';
+      }
+
+      document.getElementById('outLvDailyRows').innerHTML = rows.map(r =>
+        '<tr><td><strong>Ngày ' + r.day + '</strong></td><td><code>' + r.season + '</code></td><td><strong>' + r.lvText + '</strong></td><td><code>' + r.bnText + '</code></td><td><code>' + r.rate + '</code></td><td>' + r.dayGain + '</td></tr>'
+      ).join('');
+    }
+    ['lvCurDay', 'lvTargetDay', 'lvCurLevel', 'lvCurPct', 'lvGoalLevel', 'lvCrystals', 'lvPassSel', 'lvCustomB', 'lvCustomN'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('input', calcLevelPredictor);
+      if (el && el.tagName === 'SELECT') el.addEventListener('change', calcLevelPredictor);
+    });
+    calcLevelPredictor();
+
+    // =========================================================================
+    // MỤC 12: BẢNG 10 MỐC RANK BÍ CẢNH & MÁY TÍNH % TĂNG / GIẢM SẢN LƯỢNG 2 CHIỀU
+    // =========================================================================
+    const MATERIAL_RANKS = [
+      { idx: 0, name: "Rank 1 — Tân Thủ (Novice)", unlock: "S0 • Lv.1–39 (Thung Lũng Xanh)", hammer: 220, shovel: 110, knuckle: 320, pickaxe: 4200 },
+      { idx: 1, name: "Rank 2 — Mạo Hiểm Giả (Adventurer)", unlock: "S0 • Lv.40–59 (Đầu Rặng Tro)", hammer: 340, shovel: 170, knuckle: 490, pickaxe: 6500 },
+      { idx: 2, name: "Rank 3 — Dũng Sĩ / Tinh Anh (Elite)", unlock: "S0 • Lv.60–74 (Cuối Rặng Tro)", hammer: 420, shovel: 210, knuckle: 610, pickaxe: 8200 },
+      { idx: 3, name: "Rank 4 — Anh Hùng I (Hero I)", unlock: "S1 • Lv.75–81 (Mở Thủy Quốc N12)", hammer: 520, shovel: 260, knuckle: 760, pickaxe: 10400 },
+      { idx: 4, name: "Rank 5 — Anh Hùng II (Hero II)", unlock: "S1 • Lv.82–89 (Bậc 3 Thủy Quốc)", hammer: 600, shovel: 300, knuckle: 880, pickaxe: 12200 },
+      { idx: 5, name: "Rank 6 — Anh Hùng III (Hero III ★ Mốc Xả S1)", unlock: "S1 • Lv.90–105 (Đột Phá N20+)", hammer: 680, shovel: 340, knuckle: 1000, pickaxe: 14000 },
+      { idx: 6, name: "Rank 7 — Truyền Thuyết I (Legend I)", unlock: "S2 • Lv.106–119 (Đầu Long Cảng N47)", hammer: 880, shovel: 440, knuckle: 1300, pickaxe: 18500 },
+      { idx: 7, name: "Rank 8 — Truyền Thuyết III (Legend III ★ Đỉnh S2)", unlock: "S2 • Lv.120–135 (Giữa/Cuối Long Cảng)", hammer: 1100, shovel: 550, knuckle: 1620, pickaxe: 23500 },
+      { idx: 8, name: "Rank 9 — Sử Thi / Thánh Vực (Aethyris)", unlock: "S3 • Lv.136–171 (Thiên Không Giới N114)", hammer: 1450, shovel: 725, knuckle: 2150, pickaxe: 31000 },
+      { idx: 9, name: "Rank 10 — Thần Thoại / Bất Tử (Harpadia–Ignis)", unlock: "S4–S5 • Lv.172+ (Vũ Quốc & Hỏa Quốc)", hammer: 1920, shovel: 960, knuckle: 2850, pickaxe: 42000 }
+    ];
+
+    const ryCurEl = document.getElementById('ryCurrentRank');
+    const ryTgtEl = document.getElementById('ryTargetRank');
+    const ryMatrixBody = document.getElementById('rankYieldMatrixBody');
+    const ryInputs = ['ryCurrentRank', 'ryTargetRank', 'ryHammerHave', 'ryShovelHave', 'ryKnuckleHave', 'ryPickaxeHave', 'ryDailyBuyMode', 'ryMilestoneGoal'];
+
+    if (ryCurEl && ryTgtEl) {
+      ryCurEl.innerHTML = MATERIAL_RANKS.map(r => `<option value="${r.idx}">${r.name} — ${r.hammer} Quặng/búa</option>`).join('');
+      ryTgtEl.innerHTML = MATERIAL_RANKS.map(r => `<option value="${r.idx}">${r.name} — ${r.hammer} Quặng/búa</option>`).join('');
+      const initCur = Math.min(9, Math.max(0, Number(CHAR_PROFILE.rankIdx) || 4));
+      ryCurEl.value = String(initCur);
+      ryTgtEl.value = String(Math.min(9, initCur < 5 ? 5 : initCur + 1));
+    }
+
+    function calcRankYield() {
+      if (!ryCurEl || !ryTgtEl) return;
+      const curIdx = Number(ryCurEl.value) || 0;
+      const tgtIdx = Number(ryTgtEl.value) || 0;
+      const curR = MATERIAL_RANKS[curIdx];
+      const tgtR = MATERIAL_RANKS[tgtIdx];
+
+      const hHave = Math.max(0, Number(document.getElementById('ryHammerHave').value) || 0);
+      const sHave = Math.max(0, Number(document.getElementById('ryShovelHave').value) || 0);
+      const kHave = Math.max(0, Number(document.getElementById('ryKnuckleHave').value) || 0);
+      const pHave = Math.max(0, Number(document.getElementById('ryPickaxeHave').value) || 0);
+      const dailyGain = Math.max(1, Number(document.getElementById('ryDailyBuyMode').value) || 12);
+      const goal = document.getElementById('ryMilestoneGoal').value;
+
+      const totalTools = hHave + sHave + kHave + pHave;
+      const diffPct = ((tgtR.hammer - curR.hammer) / curR.hammer) * 100;
+      const highR = curR.hammer >= tgtR.hammer ? curR : tgtR;
+      const lowR = curR.hammer >= tgtR.hammer ? tgtR : curR;
+      const earlyBurnLossPct = highR.hammer === lowR.hammer ? 0 : ((highR.hammer - lowR.hammer) / highR.hammer) * 100;
+
+      const gainEl = document.getElementById('outRyGainPct');
+      gainEl.textContent = (diffPct >= 0 ? '+' : '') + diffPct.toFixed(1) + '%';
+      gainEl.style.color = diffPct > 0 ? 'var(--accent-emerald)' : (diffPct < 0 ? 'var(--accent-rose)' : 'var(--accent-cyan)');
+
+      document.getElementById('outRyLossPct').textContent = earlyBurnLossPct === 0 ? '0% (Cùng Rank)' : `-${earlyBurnLossPct.toFixed(1)}% tài nguyên`;
+
+      const curOre = hHave * curR.hammer;
+      const tgtOre = hHave * tgtR.hammer;
+      const curSand = sHave * curR.shovel;
+      const tgtSand = sHave * tgtR.shovel;
+      document.getElementById('outRyOreCompare').textContent = `${fmt(curOre)} → ${fmt(tgtOre)}`;
+
+      let neededTools = 400;
+      let goalDesc = 'Mốc 400 lượt Sự Kiện Cào Thẻ';
+      const evalRank = tgtR.hammer >= curR.hammer ? tgtR : curR;
+      if (goal === 'double800') {
+        neededTools = 800;
+        goalDesc = 'Mốc kép 800 lượt (2 kỳ Cào Thẻ)';
+      } else if (goal === 'star128' || goal === 'star152' || goal === 'star176') {
+        const oreReq = goal === 'star128' ? 85000 : (goal === 'star152' ? 140000 : 210000);
+        const hammersReq = Math.ceil(oreReq / evalRank.hammer);
+        neededTools = hammersReq;
+        goalDesc = `${hammersReq} Búa Sắt ở ${evalRank.name.split('—')[1].trim()} (~${fmt(oreReq)} Quặng Thô)`;
+      }
+
+      const currentRelevant = (goal.startsWith('star')) ? hHave : totalTools;
+      const dailyRelevant = (goal.startsWith('star')) ? Math.max(2, Math.round(dailyGain * 0.32)) : dailyGain;
+      const missing = Math.max(0, neededTools - currentRelevant);
+      const daysNeed = missing === 0 ? 0 : Math.ceil(missing / dailyRelevant);
+
+      document.getElementById('outRyToolsProgress').textContent = `${fmt(currentRelevant)} / ${fmt(neededTools)}`;
+      const daysEl = document.getElementById('outRyDaysNeeded');
+      daysEl.textContent = daysNeed === 0 ? 'ĐÃ ĐỦ MỐC!' : `Cần ~${daysNeed} ngày`;
+      daysEl.style.color = daysNeed === 0 ? 'var(--accent-emerald)' : 'var(--sword-primary)';
+
+      const deltaOre = tgtOre - curOre;
+      const deltaSand = tgtSand - curSand;
+      document.getElementById('outRyDetailedVerdict').innerHTML = `
+        <div>
+          <strong>Kết luận thực chiến cho ${CHAR_PROFILE.name}:</strong>
+          ${diffPct > 0
+            ? `Nếu bạn nhịn <strong>${fmt(hHave)} Búa Sắt + ${fmt(sHave)} Xẻng Cát</strong> từ <em>${curR.name}</em> đợi lên <em>${tgtR.name}</em> mới xả, bạn <strong>LỜI THÊM +${diffPct.toFixed(1)}%</strong> (nhận thêm miễn phí <strong>+${fmt(deltaOre)} Quặng Thô</strong> &amp; <strong>+${fmt(deltaSand)} Cát Thời Gian</strong>)! Nếu lỡ xả non ngay bây giờ, bạn mất trắng <strong>${earlyBurnLossPct.toFixed(1)}%</strong> tổng sản lượng.`
+            : (diffPct < 0
+              ? `Rank đối chiếu (<em>${tgtR.name}</em>) thấp hơn Rank đang đứng tới <strong>${diffPct.toFixed(1)}%</strong> (kém hơn <strong>${fmt(Math.abs(deltaOre))} Quặng Thô</strong>) — đây chính là minh chứng vì sao không bao giờ được xả kho ở đầu mùa!`
+              : `Hai ô đang chọn cùng <em>${curR.name}</em>. Hãy chọn một Rank cao hơn hoặc thấp hơn để xem độ chênh lệch %!`)
+          }
+          <br/><span style="font-size:0.8rem; color:var(--text-secondary);">📌 <strong>Tiến độ mục tiêu (${goalDesc}):</strong> Đang đạt <strong>${Math.min(100, Math.round((currentRelevant / Math.max(1, neededTools)) * 100))}%</strong> ${missing > 0 ? `— còn thiếu <strong>${fmt(missing)}</strong> đơn vị (~${daysNeed} ngày tích theo nhịp hiện tại).` : '— sẵn sàng bung đúng ngày mở sự kiện!'}</span>
+        </div>
+      `;
+
+      if (ryMatrixBody) {
+        ryMatrixBody.innerHTML = MATERIAL_RANKS.map((r, i) => {
+          const prev = i > 0 ? MATERIAL_RANKS[i - 1] : null;
+          const stepPct = prev ? `+${(((r.hammer - prev.hammer) / prev.hammer) * 100).toFixed(1)}%` : 'Gốc S0';
+          const vsSel = ((r.hammer - curR.hammer) / curR.hammer) * 100;
+          const badgeHtml = r.idx === curIdx
+            ? '<span class="rank-diff-zero">0% (Đang chọn)</span>'
+            : (vsSel > 0
+              ? `<span class="rank-diff-pos">+${vsSel.toFixed(1)}% lời hơn</span>`
+              : `<span class="rank-diff-neg">${vsSel.toFixed(1)}% thấp hơn</span>`);
+          return `
+            <tr class="${r.idx === curIdx ? 'rank-active-row' : ''}">
+              <td><strong>${r.name}</strong></td>
+              <td><span class="section-sub">${r.unlock}</span></td>
+              <td><code>${fmt(r.hammer)}</code> Quặng</td>
+              <td><code>${fmt(r.shovel)}</code> Cát</td>
+              <td><code>${fmt(r.knuckle)}</code> Tinh Hoa</td>
+              <td><code>${fmt(r.pickaxe)}</code> Rolla</td>
+              <td><span class="pill pill-cyan">${stepPct}</span></td>
+              <td>${badgeHtml}</td>
+            </tr>
+          `;
+        }).join('');
+      }
+    }
+    ryInputs.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('input', calcRankYield);
+        el.addEventListener('change', calcRankYield);
+      }
+    });
+    calcRankYield();
+
+    // =========================================================================
+    // MỤC 13: TRẠM KIỂM KÊ TÚI ĐỒ & DỰ TOÁN TÍCH LŨY BẢO HIỂM (LƯU COOKIE)
+    // =========================================================================
+    const hdIds = ['hdStellatie', 'hdCovenite', 'hdRelicTicket', 'hdDestinyFruit', 'hdPetPulls', 'hdWheelTickets', 'hdPlaystyle', 'hdDaysWait'];
+    const savedStash = getWikiCookie('sxs_char_stash');
+    if (savedStash) {
+      hdIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && savedStash[id] !== undefined) el.value = savedStash[id];
+      });
+    }
+
+    function calcHoardForecast() {
+      const mult = Number(document.getElementById('hdPlaystyle').value) || 1;
+      const days = Math.max(0, Number(document.getElementById('hdDaysWait').value) || 0);
+      const stashObj = {};
+      hdIds.forEach(id => { stashObj[id] = document.getElementById(id).value; });
+      setWikiCookie('sxs_char_stash', stashObj, 365);
+
+      const items = [
+        {
+          name: '1. Tinh Cầu Cầu Nguyện (Stellatie)',
+          icon: 'assets/icons/items/cur-stellatie.svg',
+          have: Math.max(0, Number(document.getElementById('hdStellatie').value) || 0),
+          daily: 2.6 * mult,
+          pity: 70,
+          pityLabel: '70 lượt = 1 Skill Cam (200 lượt = Rương chọn Bậc 1)',
+          adviceFn: tot => tot >= 70 ? `Đủ nổ chắc chắn <strong>${Math.floor(tot / 70)} mốc Cam</strong>! Chỉ xả nếu chưa đủ cấp nghề chuyển chức.` : `Còn thiếu <strong>${70 - tot} vé</strong> chạm bảo hiểm Cam — tiếp tục găm!`
+        },
+        {
+          name: '2. Đá Khế Ước Chuyên Nghề (Covenite)',
+          icon: 'assets/icons/items/cur-covenite.svg',
+          have: Math.max(0, Number(document.getElementById('hdCovenite').value) || 0),
+          daily: 1.8 * mult,
+          pity: 70,
+          pityLabel: '70 lượt = 100% Skill Cam đúng nhánh nghề hiện tại',
+          adviceFn: tot => tot >= 70 ? `Đủ rút <strong>${Math.floor(tot / 70)} trụ cột Cam</strong> ngay ngày mở Bậc 3 (Lv.82) / Bậc 4 (Lv.106) / Bậc 5 (Lv.136)!` : `Găm chặt không bấm lẻ! Thiếu <strong>${70 - tot} viên</strong> chạm bảo hiểm bậc mới.`
+        },
+        {
+          name: '3. Vé Triệu Hồi Cổ Vật Vùng',
+          icon: 'assets/icons/relics/relic-0.svg',
+          have: Math.max(0, Number(document.getElementById('hdRelicTicket').value) || 0),
+          daily: 2.2 * mult,
+          pity: 60,
+          pityLabel: 'Dừng ở 50%–70% bộ vùng • Găm cuối S1 cho Long Cảng N47',
+          adviceFn: tot => tot >= 80 ? `Kho vé dồi dào (<strong>${tot} vé</strong>) — đủ bung mở 50–70% bộ Cổ Vật vương quốc mới ngay ngày đầu!` : `Tiếp tục tích tới ≥80 vé cho đợt mở Hồ Cổ Vật mùa mới (Ngày 47 / 78 / 114).`
+        },
+        {
+          name: '4. Trái Định Mệnh (Destiny Fruits)',
+          icon: 'assets/fandom/Destiny_Fruits.png',
+          have: Math.max(0, Number(document.getElementById('hdDestinyFruit').value) || 0),
+          daily: 2.1 * mult,
+          pity: 25,
+          pityLabel: 'Quỹ an toàn 20–30 Quả (+60 trong tuần = 80 lượt dò Bingo)',
+          adviceFn: tot => tot >= 25 ? `An toàn tuyệt đối cho <strong>Lucky Bingo 32 vé</strong>! Phần dò dư trên 30 Quả dùng quét mảnh Cổ Vật khuyết.` : `<span style="color:var(--accent-rose);">CẢNH BÁO: Dưới ngưỡng 25 Quả! Tuyệt đối ngưng dò bản đồ kẻo thiếu 4 vé Bingo!</span>`
+        },
+        {
+          name: '5. Tín Vật Khế Ước Pet (Bond Trinkets)',
+          icon: 'assets/icons/items/cur-petcrystal.svg',
+          have: Math.max(0, Number(document.getElementById('hdPetPulls').value) || 0),
+          daily: 1.7 * mult,
+          pity: 80,
+          pityLabel: '80 lượt bảo hiểm • 120 Tinh Thể vượt Lv.108 • UP Pandariel N92',
+          adviceFn: tot => {
+            const estCrystals = Math.round(tot * 0.11);
+            return tot >= 80 ? `Đủ <strong>${Math.floor(tot / 80)} vòng bảo hiểm Pet</strong> (~+${estCrystals} Tinh Thể) — để dành đón Pandariel (N92) / Prismora (N159)!` : `Thiếu <strong>${80 - tot} vé</strong> đầy vòng bảo hiểm 80 lượt.`;
+          }
+        },
+        {
+          name: '6. Vé Vòng Quay Tâm Giao / Sự Kiện (Wheel)',
+          icon: 'assets/official/companions_26.png',
+          have: Math.max(0, Number(document.getElementById('hdWheelTickets').value) || 0),
+          daily: 1.1 * mult,
+          pity: 75,
+          pityLabel: 'Bảo hiểm Vòng Quay 60–90 vé (Tránh bẫy hồ chung lệch nghề!)',
+          adviceFn: tot => tot >= 75 ? `Đủ ngưỡng bảo hiểm (<strong>${tot} vé</strong>) chốt trọn 1 Đồng Hành Giới Hạn / Collab đúng chỉ số nghề!` : `Chưa chạm ngưỡng 75 vé an toàn — bỏ qua vòng quay lệch nghề để dồn kỳ Collab!`
+        }
+      ];
+
+      const tbody = document.getElementById('hoardForecastBody');
+      if (tbody) {
+        tbody.innerHTML = items.map(it => {
+          const add = Math.round(it.daily * days);
+          const total = it.have + add;
+          return `
+            <tr>
+              <td><div class="media-row"><img src="${it.icon}" alt="" class="rpg-icon rpg-icon-sm" loading="lazy" /><strong>${it.name}</strong></div></td>
+              <td><code>${fmt(it.have)}</code></td>
+              <td><span class="rank-diff-pos">+${fmt(add)}</span></td>
+              <td><strong style="font-size:0.95rem;">${fmt(total)}</strong></td>
+              <td><span class="section-sub">${it.pityLabel}</span></td>
+              <td style="font-size:0.8rem;">${it.adviceFn(total)}</td>
+            </tr>
+          `;
+        }).join('');
+      }
+    }
+    hdIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('input', calcHoardForecast);
+        el.addEventListener('change', calcHoardForecast);
+      }
+    });
+    calcHoardForecast();
+
+    // =========================================================================
+    // MỤC 14: RADAR EVENT THỜI GIAN THỰC & BÁCH KHOA EVENT XOAY VÒNG / LỚN
+    // =========================================================================
+    const EVENTS_CATALOG = [
+      {
+        cat: 'weekly',
+        badge: 'Chu Kỳ 7 Ngày (Ngày 8 + 7n)',
+        title: '1. Đại Chiến Báu Vật (Grand Treasure Hunt)',
+        icon: 'assets/icons/items/cur-treasure.svg',
+        tasks: 'Nhiệm vụ hàng ngày & hàng tuần tặng ~2,240 Auroradrasil Energy/tuần (bảo lưu vĩnh viễn qua các kỳ không mất!).',
+        hoard: 'Tầng 1–4 = 2,040 NL • Chốt 1 món Tầng 5 = 3,240 NL • Chốt 2 món Tầng 5 = 4,440 NL • Gom 3 tuần = 5,640 NL.',
+        rewards: 'Tượng Thần May Mắn (Kỳ 2 N15, Kỳ 6 N43, Kỳ 10 N71, Kỳ 14 N99), Ngọc Khởi Nguyên (Kỳ 4 N29, Kỳ 8 N57), Cây Thần Vàng (Kỳ 18 N127), Hòn Đá Phù Thủy (Kỳ 20 N141).',
+        trap: 'Cấm xả lẻ tẻ hàng tuần khi chưa đủ 3,240 NL và tuyệt đối không chọn mảnh kỹ năng thường ở ô giữa Tầng 5!'
+      },
+      {
+        cat: 'weekly',
+        badge: 'Xoay Vòng 21 Ngày • Tuần A (N15, 36, 57, 78...)',
+        title: '2. Lucky Bingo (Bingo May Mắn 2 Bảng 32 Ô)',
+        icon: 'assets/fandom/Destiny_Fruits.png',
+        tasks: '4 nhiệm vụ ngày = 4 vé/ngày × 7 ngày = 28 vé free (Đăng nhập, tiêu 60 Thể Lực, đánh 3 Đấu Trường, quay 1 Fantomon) + Nhiệm vụ vòng lặp Dò Tìm Vận Mệnh (20 lần dò = 1 vé).',
+        hoard: 'Quỹ cứng 20–30 Trái Định Mệnh trong túi (cộng ~60 Trái phát trong tuần sự kiện = tròn 80 lượt dò lấy 4 vé cuối đủ 32 vé).',
+        rewards: 'Vé Vòng Quay May Mắn, Nguyên liệu Món Đỏ, Tinh Thể & Quà hoàn thành 2 bảng Bingo.',
+        trap: 'Vé nhiệm vụ ngày KHÔNG cộng dồn nếu quên nhận; tuyệt đối đợi Bingo mở mới bấm Dò Tìm Vận Mệnh!'
+      },
+      {
+        cat: 'weekly',
+        badge: 'Xoay Vòng 21 Ngày • Tuần B (N22, 43, 64, 85...)',
+        title: '3. Sự Kiện Cào Thẻ (Lucky Scratch — Bí Cảnh)',
+        icon: 'assets/icons/items/divinecraft.svg',
+        tasks: 'Hoàn thành sôi nổi ngày và tiêu thụ Dụng Cụ Bí Cảnh (Búa Sắt, Xẻng Cát, Đốt Ngón Tay, Cuốc Vàng) khoảng ~400 lượt để lấy đủ thẻ cào mốc cao.',
+        hoard: 'Mua đều 2-2-2-2 hàng ngày tích sẵn 350–400+ dụng cụ; ở Mùa 1 chờ lên Cấp 90 (Anh Hùng III ~N20) sang đúng Ngày 22 mới xả!',
+        rewards: 'Sao Nguyên Thủy, Dawnium, Trái Định Mệnh, Huy Hiệu Cổ Vật & lượng lớn Quặng/Cát đẩy Điểm Dưỡng Thành.',
+        trap: 'Nếu bạn đang đứng sát ngưỡng đột phá Rank lớn (+50~60% sản lượng) mà đã đủ 128 ★ mùa, đừng cố đốt sạch kho chỉ vì vài thẻ cào bậc thấp!'
+      },
+      {
+        cat: 'weekly',
+        badge: 'Xoay Vòng 21 Ngày • Tuần C (N29, 50, 71, 92...)',
+        title: '4. Giải Đố Feneck (Feneck\'s Puzzle — Phúc Lợi 100%)',
+        icon: 'assets/icons/items/cur-covenite.svg',
+        tasks: 'Treo máy, giải câu đố tương tác bản đồ & hoàn thành nhiệm vụ thường ngày nhẹ nhàng trong 7 ngày — không ép đốt kho tài nguyên!',
+        hoard: 'Không cần đốt vé trước; đây là tuần "hồi sức tích kho" chuẩn bị cho đợt Lucky Bingo quay lại vào tuần kế tiếp!',
+        rewards: 'Tặng miễn phí 18 Trái Định Mệnh + 6 Đá Khế Ước (Covenite) + Dawnium.',
+        trap: 'Cất ngay 18 Trái Định Mệnh vừa nhận vào kho cho Bingo tuần tới (Ngày 36 / 57 / 78...), đừng bấm dò lẻ hết ngay!'
+      },
+      {
+        cat: 'sunday',
+        badge: 'Chủ Nhật Cách Tuần (24 Giờ Duy Nhất)',
+        title: '5. Khe Nứt Hư Không (Void Rift — 10 Lượt Tổ Đội)',
+        icon: 'assets/icons/relics/relic-3.svg',
+        tasks: 'Tổ đội 4 người (1 Tank + 1 Heal + 2 DPS) vượt 10 lượt cổng Hư Không trong ngày Chủ Nhật; xác suất nhảy thẳng lên Tầng 5.',
+        hoard: 'Giữ Món Ăn Buff Chiến Đấu; gặp cổng hiện chữ Contested hãy cưỡi thú sang cổng khác tránh mất thời gian tranh chấp.',
+        rewards: 'Cổ Vật Đỏ (Mythic) rơi trực tiếp ở tầng sâu, Cát Thời Gian & Mảnh Cổ Vật hiếm.',
+        trap: '10 lượt KHÔNG BẢO LƯU sang Thứ Hai — quên đi ngày Chủ Nhật là mất trắng toàn bộ tuần đó!'
+      },
+      {
+        cat: 'sunday',
+        badge: 'Chủ Nhật Luân Phiên + Thứ Hai Đổi Thưởng',
+        title: '6. Xâm Lăng Hỗn Mang (Chaos Invasion & NPC Bí Ẩn)',
+        icon: 'assets/fandom/Mysterious_Merchant.png',
+        tasks: 'Lập đội 4 người cố định đánh 4 trận xoay tua: mỗi trận 1 người lắp full DPS + 3 người kia lắp full Buff/Trừ Giáp đẩy kỷ lục BXH riêng từng Nghề.',
+        hoard: 'Tích giữ Tinh Thể Hỗn Mang (Chaos Crystals) qua các kỳ — thiếu tiền thì đuổi NPC đi chờ kỳ sau mua tiếp.',
+        rewards: 'Mảnh Lò Rèn Nguyên Thủy (Primal Forge — tăng Quặng Thô Xe Đẩy mỗi giờ).',
+        trap: 'Tại NPC Bí Ẩn ngày Thứ Hai: CHỈ MUA DUY NHẤT PRIMAL FORGE nâng thẳng tới Immortal, cấm mua rương đồ lẻ!'
+      },
+      {
+        cat: 'major',
+        badge: 'Đại Sự Kiện 14 Ngày (Ra Mắt / Lễ Hội / Đào Kho Báu)',
+        title: '7. Khúc Dạo Đầu Hành Trình & Lễ Hội Đào Kho Báu Đa Tầng',
+        icon: 'assets/icons/items/giftchest.svg',
+        tasks: 'Điểm danh 14 ngày + Nhiệm vụ vòng lặp (Loop Quests) tính điểm khi tiêu Thể Lực, đập Dụng Cụ Bí Cảnh, dùng Trái Định Mệnh & vượt Phó Bản.',
+        hoard: 'Giữ bình Thể Lực, Dụng Cụ Bí Cảnh dư và quỹ ≥3,000 Dawnium để ăn trọn nhiều vòng điểm sự kiện 14 ngày (Summer Carnival / Halloween / Kỷ Niệm).',
+        rewards: 'Di Vật Thần Thoại Sword × Staff, Merri Doll, Rương Kỹ Năng Tự Chọn, Thẻ Nữ Thần SSR & Ngoại trang giới hạn (Salted Splash / Phantom Purr).',
+        trap: 'Đừng tiêu sạch bình Thể Lực dự trữ ở tuần thường không có sự kiện tích điểm vòng lặp!'
+      },
+      {
+        cat: 'major',
+        badge: 'Sự Kiện Giữa Mùa (Ngày 26 • 61 • 128 • 228 • 329)',
+        title: '8. Bản Đồ Sự Kiện Mùa Giải (Season Event Maps)',
+        icon: 'assets/fandom/Rolla.png',
+        tasks: 'Mở khóa vùng bản đồ sự kiện riêng vào giữa mỗi mùa: S1 Season Map (N26), S2 Acme Nexus (N61), S3 Astral Odyssey (N128), S4 Grotesque Fairground (N228), S5 Frostfire Voyage (N329).',
+        hoard: 'Chừa Thể Lực và lượt khám phá ngay ngày mở bản đồ mùa để dọn sạch sương mù sớm.',
+        rewards: 'Nút tăng tốc Season Power (EXP & Drop mùa), lượng lớn Vé Gacha, Đá Khế Ước & Khung/Danh hiệu mùa.',
+        trap: 'Bỏ bê bản đồ mùa vài ngày đầu sẽ làm tụt cấp Season Power khiến farm Phó Bản cuối mùa chậm hơn hẳn!'
+      },
+      {
+        cat: 'limited',
+        badge: 'Banner Giới Hạn Mùa 2 & Mùa 3 (Ngày 92 & Ngày 159)',
+        title: '9. Hồ Triệu Hồi Huyễn Thú Đỏ UP (Pandariel & Prismora)',
+        icon: 'assets/art/pet_pandariel.jpg',
+        tasks: 'Banner giới hạn xuất hiện đúng mốc tuổi server: Gấu Trúc Pandariel (Ngày 92 S2) và Hồ Ly 9 Đuôi Prismora (Ngày 159 S3).',
+        hoard: 'Tích tối thiểu 80–160+ lượt quay Pet / Dawnium trước Ngày 92 và Ngày 159.',
+        rewards: 'Pandariel T0 (vào trận cắt ngay 1 lượt CD toàn bộ Chiến Kỹ + búp %ST vĩnh viễn) & Prismora T0.',
+        trap: 'Xả sạch vé Pet vào hồ thường ngay tuần 70–85 khiến trắng tay đúng ngày Ngày 92 Pandariel xuất hiện!'
+      },
+      {
+        cat: 'limited',
+        badge: 'Đại Lễ Hội 14–21 Ngày • Bảo Hiểm 60–90 Vé',
+        title: '10. Vòng Quay Tâm Giao & Sự Kiện Hợp Tác IP (Collabs)',
+        icon: 'assets/official/companions_76.png',
+        tasks: 'Đăng nhập nhận 1 NPC Vàng miễn phí (Kazuma / Yoon Jong) + minigame ghép hình/vượt ải nhận vé quay + Vòng Quay Giới Hạn (KonoSuba, Hoa Sơn Tái Khởi, Lưỡi Kéo Học Đường, Vocaloid...).',
+        hoard: 'Găm tối thiểu 70–90 Vé Vòng Quay / Dawnium dự phòng; ưu tiên Vòng Quay Kỹ Năng > Cổ Vật > Pet > Dawnium.',
+        rewards: 'Đồng Hành Collab độc quyền (Megumin, Darkness, Aqua, Cheongmyeong...) cộng thẳng Crit / Block / Trị Liệu & Skin giới hạn không mở lại.',
+        trap: 'Với Vòng Quay thường gộp chung NPC + Cổ Vật: nếu NPC lệch chỉ số nghề của bạn, tuyệt đối NHỊN không quay lẻ!'
+      }
+    ];
+
+    const MASTER_EVENT_TIMELINE = [
+      { day: 'Ngày 1–14', name: 'Khúc Dạo Đầu Hành Trình (Journey Overture)', type: 'Event Lớn 14d', prep: 'Đăng nhập đủ 14 ngày & làm nhiệm vụ Prize Punch', rw: 'Di Vật Sword × Staff + Merri Doll + Skin Salted Splash' },
+      { day: 'Ngày 8', name: 'Đại Chiến Báu Vật Kỳ 1 (Cinder Ridge)', type: 'Chu Kỳ 7d', prep: 'F2P NHỊN toàn bộ ~2,240 NL bảo lưu sang tuần sau', rw: 'Giữ năng lượng đón Tượng Thần May Mắn ở Ngày 15' },
+      { day: 'Ngày 15', name: 'Kho Báu Kỳ 2 + Lucky Bingo #1', type: '7d + 21d (Tuần A)', prep: 'Xả 3,240 NL + làm đủ 28 vé ngày + 20–30 Trái Định Mệnh', rw: 'Tượng Thần May Mắn #1 (+10% x2 Phó Bản) + Full 2 bảng Bingo' },
+      { day: 'Ngày 22', name: 'Kho Báu Kỳ 3 + Sự Kiện Cào Thẻ #1', type: '7d + 21d (Tuần B)', prep: 'Đợi lên Lv.90 Anh Hùng III xả ~400 Dụng Cụ Bí Cảnh (nhịn NL Kho Báu)', rw: 'Đẩy chạm mốc 128 ★ Sao Nguyên Thủy + Quà Cào Thẻ' },
+      { day: 'Ngày 26', name: 'Bản Đồ Sự Kiện Season 1 (S1 Season Map)', type: 'Bản Đồ Mùa', prep: 'Chuẩn bị Thể Lực mở bản đồ sự kiện giữa mùa', rw: 'Vé quay, Đá Khế Ước & tài nguyên đẩy Đền Nguyên Thủy' },
+      { day: 'Ngày 29', name: 'Kho Báu Kỳ 4 + Giải Đố Feneck #1', type: '7d + 21d (Tuần C)', prep: 'Cân nhắc 3,240 NL (hoặc nhịn cho N36/N43); giữ quà Giải Đố', rw: 'Ngọc Khởi Nguyên #1 + Free 18 Trái Định Mệnh & 6 Covenite' },
+      { day: 'Ngày 36', name: 'Kho Báu Kỳ 5 + Lucky Bingo #2', type: '7d + 21d (Tuần A)', prep: 'Dùng 18 Trái từ Giải Đố + ~10 Trái túi ăn trọn 32 vé Bingo #2', rw: 'Rương Cổ Vật Đỏ Thủy Quốc + Thưởng Bingo lần 2' },
+      { day: 'Ngày 43', name: 'Kho Báu Kỳ 6 + Sự Kiện Cào Thẻ #2', type: '7d + 21d (Tuần B)', prep: 'Xả 3,240 NL chốt trước giờ Reset Mùa 1 (N46–47)', rw: 'Tượng Thần May Mắn #2 nâng sao nhân đôi thưởng phó bản!' },
+      { day: 'Ngày 57 → 61', name: 'Kỳ 8 (Ngọc Khởi Nguyên + Bingo #3) & Bản Đồ Acme Nexus', type: 'S2 Trọng Điểm', prep: '3,240 NL + 20–30 Trái Định Mệnh + Thể Lực mở Acme Nexus', rw: 'Ngọc Khởi Nguyên khảm 10 ô Ngọc S2 & Season Power Lv.130' },
+      { day: 'Ngày 71 → 78', name: 'Kỳ 10 (Tượng May Mắn) & Hồ Cổ Vật Long Cảng II + Bingo #4', type: 'S2 Giữa Mùa', prep: '3,240 NL ở N71 + Vé Cổ Vật tích cho Đợt II ở N78', rw: 'Nâng sao Tượng May Mắn & mở bộ Cổ Vật Đỏ Long Cảng II' },
+      { day: 'Ngày 92 → 99', name: 'Banner Pet Đỏ Pandariel (N92) & Kỳ 14 Tượng May Mắn + Bingo #5', type: 'UP Giới Hạn S2', prep: '80–160 Vé Pet / Dawnium (N92) + 3,240 NL Kho Báu (N99)', rw: 'Huyễn Thú T0 Pandariel (-1 CD đầu trận) & Tượng May Mắn' },
+      { day: 'Ngày 127 → 128', name: 'Kỳ 18 Cây Thần Vàng + Cào Thẻ #6 & Bản Đồ Astral Odyssey', type: 'S3 Trọng Điểm', prep: 'BẮT BUỘC có sẵn 3,240 NL ở Ngày 127', rw: 'Cổ Vật Cây Thần Vàng (+10% sản lượng Căn Cứ vĩnh viễn!)' },
+      { day: 'Ngày 141 → 159', name: 'Kỳ 20 Hòn Đá Phù Thủy + Bingo #7 (N141) & Pet UP Prismora (N159)', type: 'UP Giới Hạn S3', prep: '3,240 NL (N141) + Kho vé Pet tích từ sau ngày 92 cho N159', rw: 'Hòn Đá Phù Thủy & Huyễn Thú Đỏ Hồ Ly Prismora' },
+      { day: 'Ngày 228 & 329', name: 'Hội Chợ Kỳ Dị Harpadia (N228) & Hải Trình Băng Hỏa Ignis (N329)', type: 'Event Lớn S4–S5', prep: 'Dụng cụ Bí Cảnh Rank 10 + Thể Lực khám phá bản đồ mùa', rw: 'Tài nguyên Bậc 6–7, Ngọc T10–T15 & Sao Hợp Ước Finale of Chaos' },
+      { day: 'Định kỳ Lễ / Phiên Bản', name: 'Đại Lễ Hội Hợp Tác Collab (KonoSuba, Hoa Sơn, Lưỡi Kéo...)', type: 'Collab 14–21d', prep: '70–90 Vé Vòng Quay Tâm Giao + quỹ dự phòng ≥3,000 Dawnium', rw: 'Đồng Hành Vàng giới hạn & Ngoại trang Collab độc bản' }
+    ];
+
+    let activeEventCat = 'all';
+    function renderEventsCatalog() {
+      const grid = document.getElementById('eventsCatalogGrid');
+      if (!grid) return;
+      const list = EVENTS_CATALOG.filter(e => activeEventCat === 'all' || e.cat === activeEventCat);
+      grid.innerHTML = list.map(e => `
+        <article class="card card-cyan">
+          <div class="media-row" style="margin-bottom:8px;">
+            <img src="${e.icon}" alt="" class="rpg-icon" loading="lazy" />
+            <div>
+              <span class="pill pill-cyan" style="margin-bottom:3px;">${e.badge}</span>
+              <h3 class="card-title">${e.title}</h3>
+            </div>
+          </div>
+          <ul class="clean-list" style="font-size:0.83rem;">
+            <li><strong>Cơ chế &amp; Nhiệm vụ:</strong> ${e.tasks}</li>
+            <li><strong>Định mức cần tích trước:</strong> ${e.hoard}</li>
+            <li><strong>Phần thưởng cốt lõi:</strong> ${e.rewards}</li>
+            <li style="color:var(--accent-rose);"><strong>Bẫy cần tránh:</strong> ${e.trap}</li>
+          </ul>
+        </article>
+      `).join('');
+    }
+    const evCatGrp = document.getElementById('eventHubCatGroup');
+    if (evCatGrp) {
+      evCatGrp.querySelectorAll('[data-ecat]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          activeEventCat = btn.dataset.ecat;
+          evCatGrp.querySelectorAll('[data-ecat]').forEach(b => b.classList.toggle('active', b === btn));
+          renderEventsCatalog();
+        });
+      });
+    }
+    renderEventsCatalog();
+
+    const masterEvBody = document.getElementById('masterEventsTimelineBody');
+    if (masterEvBody) {
+      masterEvBody.innerHTML = MASTER_EVENT_TIMELINE.map(r => `
+        <tr>
+          <td><strong>${r.day}</strong></td>
+          <td><strong>${r.name}</strong></td>
+          <td><span class="pill pill-staff">${r.type}</span></td>
+          <td>${r.prep}</td>
+          <td style="color:var(--accent-emerald); font-weight:600;">${r.rw}</td>
+        </tr>
+      `).join('');
+    }
+
+    function renderLiveEventRadar() {
+      const radarEl = document.getElementById('liveEventRadar');
+      if (!radarEl) return;
+      const d = Math.max(1, Number(CHAR_PROFILE.srvDay) || 15);
+
+      // 1. Active or Next Grand Treasure Hunt (Day = 8 + 7*(k-1), each lasts 7 days)
+      let huntHtml = '';
+      if (d < 8) {
+        huntHtml = `<span class="pill pill-sword">Còn ${8 - d} ngày mở Kỳ 1</span><strong>Kỳ 1 mở vào Ngày 8</strong><span class="section-sub">Hiện đang ở tuần mở server (Journey Overture). Tích sẵn NL đừng tiêu lẻ!</span>`;
+      } else {
+        const k = Math.floor((d - 8) / 7) + 1;
+        const startDay = 8 + (k - 1) * 7;
+        const endDay = startDay + 6;
+        const daysLeft = endDay - d + 1;
+        const subNames = ['Giải Đố Feneck (+18 Quả & +6 Đá)', 'Đại Chiến Mở Server (Chưa mở sub-event)', 'Lucky Bingo (32 vé • Thủ 20–30 Quả)', 'Cào Thẻ May Mắn (~400 lượt Bí Cảnh)'];
+        const subType = k === 1 ? subNames[1] : subNames[k % 3 === 2 ? 2 : (k % 3 === 0 ? 3 : 0)];
+        huntHtml = `<span class="pill pill-emerald">Đang chạy Kỳ #${k} (N${startDay}–N${endDay})</span><strong>Đại Chiến Báu Vật Kỳ ${k}</strong><span class="section-sub">Còn <strong>${daysLeft} ngày</strong> trong kỳ • Đi kèm: <strong>${subType}</strong></span>`;
+      }
+
+      // 2. Next Bingo / Scratch / Puzzle exact days
+      const nextSubDay = (baseDay) => d <= baseDay ? baseDay : baseDay + Math.ceil((d - baseDay) / 21) * 21;
+      const nBingo = nextSubDay(15);
+      const nScratch = nextSubDay(22);
+      const nPuzzle = nextSubDay(29);
+
+      // 3. Weekly Sunday rotation
+      const weekNum = Math.ceil(d / 7);
+      const sunMode = weekNum % 2 === 1 ? 'Khe Nứt Hư Không (10 lượt không bảo lưu)' : 'Xâm Lăng Hỗn Mang (4 vòng → Primal Forge)';
+
+      // 4. Next Major Map / Limited Pet Banner
+      const majors = [
+        { day: 26, label: 'Bản Đồ Mùa S1 (Season Map)' },
+        { day: 47, label: 'Khai Mở Season 2 Long Cảng' },
+        { day: 61, label: 'Bản Đồ Mùa S2 Acme Nexus' },
+        { day: 92, label: 'Banner Pet Đỏ T0 Pandariel!' },
+        { day: 114, label: 'Khai Mở Season 3 Aethyris' },
+        { day: 127, label: 'Kỳ 18 Cây Thần Vàng (+10% Căn Cứ)' },
+        { day: 159, label: 'Banner Pet Đỏ Hồ Ly Prismora!' },
+        { day: 228, label: 'Hội Chợ Kỳ Dị Harpadia (S4)' },
+        { day: 329, label: 'Hải Trình Băng Hỏa Ignis (S5)' }
+      ];
+      const nextMaj = majors.find(m => m.day >= d) || { day: d + 14, label: 'Lễ Hội Xoay Vòng / Collab Endgame' };
+
+      radarEl.innerHTML = `
+        <div class="event-radar-card">
+          <div style="font-size:0.73rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">1. Chu Kỳ Kho Báu Hiện Tại (Ngày #${d})</div>
+          ${huntHtml}
+        </div>
+        <div class="event-radar-card">
+          <div style="font-size:0.73rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">2. Đếm Ngược Vòng Lặp 3 Tuần</div>
+          <div>🎯 <strong>Bingo kế:</strong> Ngày ${nBingo} (${nBingo === d ? 'Đang mở!' : 'còn ' + (nBingo - d) + ' ngày'})</div>
+          <div>⛏️ <strong>Cào Thẻ kế:</strong> Ngày ${nScratch} (${nScratch === d ? 'Đang mở!' : 'còn ' + (nScratch - d) + ' ngày'})</div>
+          <div>🧩 <strong>Giải Đố kế:</strong> Ngày ${nPuzzle} (${nPuzzle === d ? 'Đang mở!' : 'còn ' + (nPuzzle - d) + ' ngày'})</div>
+        </div>
+        <div class="event-radar-card">
+          <div style="font-size:0.73rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">3. Tâm Điểm Chủ Nhật Tuần #${weekNum}</div>
+          <span class="pill pill-cyan">Luân Phiên Tổ Đội 4 Người</span>
+          <strong>${sunMode}</strong>
+          <span class="section-sub">Nhớ ăn Món Buff Chiến Đấu trước khi vào trận!</span>
+        </div>
+        <div class="event-radar-card">
+          <div style="font-size:0.73rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">4. Đại Sự Kiện / UP Sắp Tới</div>
+          <span class="pill pill-rose">${nextMaj.day === d ? 'MỞ HÔM NAY!' : 'Còn ' + (nextMaj.day - d) + ' ngày (Ngày ' + nextMaj.day + ')'}</span>
+          <strong>${nextMaj.label}</strong>
+          <span class="section-sub">Hồ sơ đang theo dõi: <strong>${CHAR_PROFILE.name}</strong></span>
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // ĐỒNG BỘ GIAO DIỆN HỒ SƠ COOKIE NHÂN VẬT TOÀN TRANG & HỘP THOẠI MODAL
+    // =========================================================================
+    const charModal = document.getElementById('charProfileModal');
+    function openCharModal() {
+      if (!charModal) return;
+      document.getElementById('charNameInput').value = CHAR_PROFILE.name || '';
+      document.getElementById('charClassSelect').value = CHAR_PROFILE.cls || 'duelist';
+      document.getElementById('charServerNameInput').value = CHAR_PROFILE.serverName || '';
+      document.getElementById('charSrvDayModalInput').value = CHAR_PROFILE.srvDay || 15;
+      document.getElementById('charRankModalSelect').value = String(CHAR_PROFILE.rankIdx ?? 4);
+      const rawCookiePresent = (document.cookie || '').includes('sxs_char_profile=');
+      document.getElementById('charCookieStatusBox').innerHTML =
+        `🍪 <strong>Trạng thái phiên Cookie:</strong> <code>sxs_char_profile</code> ${rawCookiePresent ? '(Đang hoạt động trên Cookie HTTP/Browser)' : '(Đang đồng bộ Cookie + bộ nhớ trình duyệt cục bộ)'} • Đã ghim <strong>${CHAR_PROFILE.pinnedDays.length}</strong> mốc lịch trình.`;
+      charModal.classList.add('open');
+    }
+    function closeCharModal() {
+      if (charModal) charModal.classList.remove('open');
+    }
+
+    function renderCharStripsEverywhere() {
+      const clsInfo = CHAR_CLASS_META[CHAR_PROFILE.cls] || CHAR_CLASS_META.duelist;
+      const rObj = MATERIAL_RANKS[Math.min(9, Math.max(0, Number(CHAR_PROFILE.rankIdx) || 0))];
+      const topIcon = document.getElementById('topbarCharIcon');
+      const topName = document.getElementById('topbarCharName');
+      const topSrv = document.getElementById('topbarCharSrv');
+      if (topIcon) topIcon.src = clsInfo.icon;
+      if (topName) topName.textContent = CHAR_PROFILE.name;
+      if (topSrv) topSrv.textContent = 'N' + CHAR_PROFILE.srvDay;
+
+      const stripHtml = `
+        <div class="char-session-id">
+          <img src="${clsInfo.icon}" alt="" />
+          <div>
+            <div style="display:flex; flex-wrap:wrap; align-items:center; gap:6px;">
+              <strong>${CHAR_PROFILE.name}</strong>
+              <span class="pill pill-cyan">${CHAR_PROFILE.serverName || 'Server Kanstein'} • Ngày #${CHAR_PROFILE.srvDay}</span>
+              <span class="pill pill-staff">${clsInfo.label}</span>
+              <span class="pill pill-emerald">🍪 Cookie Session</span>
+            </div>
+            <div style="font-size:0.76rem; color:var(--text-secondary); margin-top:2px;">
+              Hạng Bí Cảnh hiện tại: <strong>${rObj.name}</strong> • Đang ghim theo dõi <strong>${CHAR_PROFILE.pinnedDays.length} mốc</strong>
+            </div>
+          </div>
+        </div>
+        <div class="char-session-actions">
+          <button type="button" class="icon-btn js-quick-reroll-name" title="Tạo ngẫu nhiên một biệt danh mới và lưu Cookie">🎲 Đổi Tên Nhanh</button>
+          <button type="button" class="icon-btn js-open-char-modal" style="border-color:var(--border-strong); font-weight:700;">⚙️ Chỉnh Hồ Sơ / Server</button>
+        </div>
+      `;
+      ['charPersonalBar', 'charRankBar', 'charHoardBar', 'charEventsBar'].forEach(id => {
+        const box = document.getElementById(id);
+        if (box) box.innerHTML = stripHtml;
+      });
+      document.querySelectorAll('.js-open-char-modal').forEach(b => b.addEventListener('click', openCharModal));
+      document.querySelectorAll('.js-quick-reroll-name').forEach(b => b.addEventListener('click', () => {
+        CHAR_PROFILE.name = generateAutoCharName();
+        setWikiCookie('sxs_char_profile', CHAR_PROFILE, 365);
+        renderCharStripsEverywhere();
+        renderServerMilestones();
+        calcRankYield();
+        renderLiveEventRadar();
+      }));
+    }
+
+    document.getElementById('charProfileTriggerBtn').addEventListener('click', openCharModal);
+    document.getElementById('closeCharModalBtn').addEventListener('click', closeCharModal);
+    document.getElementById('cancelCharModalBtn').addEventListener('click', closeCharModal);
+    document.getElementById('rollRandomNameBtn').addEventListener('click', () => {
+      document.getElementById('charNameInput').value = generateAutoCharName();
+    });
+    document.getElementById('saveCharModalBtn').addEventListener('click', () => {
+      const enteredName = document.getElementById('charNameInput').value.trim();
+      CHAR_PROFILE.name = enteredName || generateAutoCharName();
+      CHAR_PROFILE.cls = document.getElementById('charClassSelect').value || 'duelist';
+      CHAR_PROFILE.serverName = document.getElementById('charServerNameInput').value.trim() || 'Kanstein S01';
+      CHAR_PROFILE.srvDay = Math.max(1, parseInt(document.getElementById('charSrvDayModalInput').value, 10) || 15);
+      CHAR_PROFILE.rankIdx = Math.min(9, Math.max(0, parseInt(document.getElementById('charRankModalSelect').value, 10) || 4));
+      setWikiCookie('sxs_char_profile', CHAR_PROFILE, 365);
+      if (srvDayEl) srvDayEl.value = CHAR_PROFILE.srvDay;
+      if (ryCurEl) {
+        ryCurEl.value = String(CHAR_PROFILE.rankIdx);
+        ryTgtEl.value = String(Math.min(9, CHAR_PROFILE.rankIdx < 5 ? 5 : CHAR_PROFILE.rankIdx + 1));
+      }
+      renderCharStripsEverywhere();
+      renderServerMilestones();
+      calcRankYield();
+      renderLiveEventRadar();
+      closeCharModal();
+    });
+    document.getElementById('resetCharSessionBtn').addEventListener('click', () => {
+      CHAR_PROFILE = {
+        name: generateAutoCharName(),
+        cls: 'duelist',
+        serverName: 'Kanstein S01',
+        srvDay: 15,
+        rankIdx: 4,
+        pinnedDays: [15, 22, 24, 43],
+        createdAt: new Date().toISOString().slice(0, 10)
+      };
+      setWikiCookie('sxs_char_profile', CHAR_PROFILE, 365);
+      if (srvDayEl) srvDayEl.value = 15;
+      if (ryCurEl) { ryCurEl.value = '4'; ryTgtEl.value = '5'; }
+      renderCharStripsEverywhere();
+      renderServerMilestones();
+      calcRankYield();
+      renderLiveEventRadar();
+      openCharModal();
+    });
+    if (charModal) {
+      charModal.addEventListener('click', e => { if (e.target === charModal) closeCharModal(); });
+    }
+    renderCharStripsEverywhere();
+    renderLiveEventRadar();
+    renderServerMilestones();
+
     // =========================================================================
     // TÌM KIẾM TỨC THỜI TOÀN CỤC (CTRL + K) KÈM HÌNH ẢNH ICON TRỰC QUAN
     // =========================================================================
@@ -5162,7 +6586,10 @@
       { title: "Route Line S0 → S7 APEX/Nova, Chu Kỳ Kho Báu 8+7n & Bingo Ngày 15", cat: "Mùa Giải", tab: "seasons", icon: "assets/icons/relics/relic-0.svg", desc: "Tượng Thần May Mắn Kỳ 2 (Ngày 15) & Kỳ 6 (Ngày 43), Cào Thẻ Ngày 22, Công thức 10★ + Điểm/100." },
       { title: "Collab KonoSuba (Megumin, Darkness, Aqua, Kazuma) & Hoa Sơn Tái Khởi", cat: "Đồng Hành & Collab", tab: "companions-life", icon: "assets/official/companions_76.png", desc: "75 Đồng Hành chính thức, Ngoại trang Visages Lv.60 & 26 Món Ăn Vĩnh Viễn." },
       { title: "Split Mirage (Ảo Ảnh Phân Tách), Khe Nứt Hư Không & Đấu Trường 3v3", cat: "Thế Giới & PvP", tab: "world", icon: "assets/icons/bosses/primordial-loong.svg", desc: "Wave 11-12 tránh thuần Summoner, 7 Vương Quốc Kanstein & 5 Boss lớn." },
-      { title: "Trung Tâm 6 Máy Tính Công Thức Chiến Đấu & Đá Thần Tạo", cat: "Công Cụ", tab: "calculators", icon: "assets/icons/items/divinecraft.svg", desc: "Mô phỏng phá Block, Đá Thần Tạo, Thể Lực, Kho Báu, Sao Nguyên Thủy & Món Ăn." },
+      { title: "Trung Tâm 7 Máy Tính Công Thức Chiến Đấu, Dự Đoán Level & Đá Thần Tạo", cat: "Công Cụ", tab: "calculators", icon: "assets/icons/items/divinecraft.svg", desc: "Mô phỏng phá Block, Đá Thần Tạo, Thể Lực, Kho Báu, 30 Món Ăn, Sao Nguyên Thủy & Dự Đoán Level." },
+      { title: "Tính Tài Nguyên Cần Tích & % Tăng/Giảm Sản Lượng Theo 10 Rank Bí Cảnh", cat: "Tích Trữ & Rank", tab: "rank-yield", icon: "assets/icons/items/divinecraft.svg", desc: "So sánh % lời/lỗ giữa Rank 1 → Rank 10 (Búa Sắt, Xẻng Cát, Quyền Sáo, Cuốc Vàng) & mốc 400 Cào Thẻ." },
+      { title: "Phân Tích Tích Lũy Roll Skill, Roll Cổ Vật, Đào Tâm Giao & Vòng Quay", cat: "Tích Trữ & Gacha", tab: "item-hoard", icon: "assets/icons/items/cur-covenite.svg", desc: "Ngưỡng dừng Covenite, quy tắc 50–70% Cổ Vật, Quà Tâm Giao Lv.20/60/100 & Trạm kiểm kê lưu Cookie." },
+      { title: "Radar & Lộ Trình Chi Tiết Event Xoay Vòng (7d/14d/21d) & Đại Sự Kiện", cat: "Sự Kiện & Chu Kỳ", tab: "events-hub", icon: "assets/fandom/Journey_Overture.jpg", desc: "Kho Báu 8+7n, Bingo/Cào Thẻ/Giải Đố, Khe Nứt/Hỗn Mang, Bản Đồ Mùa, Pandariel N92 & Collab." },
       ...Object.entries(BUILDS_DATA).map(([k, b]) => ({
         title: b.title, cat: "Bộ Build Xoay Chiêu", tab: "builds", icon: resolveBuildPortrait(k), desc: b.rotation, buildKey: k
       })),
@@ -5195,24 +6622,32 @@
       { title: "Tiểu Sử 13 NPC & Tộc Dryason, Collab & 26 Món Ăn (30 Đĩa)", cat: "Chuyên Đề Chi Tiết", tab: "companions-life", wiki: "pages/dong-hanh-dryason-mon-an-collab.html", icon: "assets/fandom/Molly.png", desc: "Tiểu sử đầy đủ Molly, Akane, Reina, Narss, Hermes, KonoSuba/Hoa Sơn & 26 Món Đỏ/Cam/Tím." },
       { title: "Hệ Thống Theo Mùa (<100 vs >100), Chu Kỳ 8+7n, Bingo N15 & Reset 128 ★", cat: "Chuyên Đề Chi Tiết", tab: "seasons", wiki: "pages/he-thong-mua-giai-lo-trinh-reset.html", icon: "assets/art/relic_showcase.jpg", desc: "Kỳ 2 Ngày 15 Tượng May Mắn + Bingo #1, Cào Thẻ Ngày 22, công thức 10★ + Điểm/100 & Astral Pact." },
       { title: "Xâm Lăng Hỗn Mang (Chaos Invasion) & Thương Nhân Bí Ẩn", cat: "Chuyên Đề Chi Tiết", tab: "world", wiki: "pages/xam-lang-hon-mang-chaos-invasion.html", icon: "assets/fandom/Chaos_Invasion_1.webp", desc: "BXH chia theo Nghề, 4 vòng xoay 1 DPS + 3 Buff & chỉ mua Primal Forge → Immortal." },
-      { title: "Bản Đồ Đại Lục Kanstein, Phó Bản Hàng Ngày & Split Mirage", cat: "Chuyên Đề Chi Tiết", tab: "world", wiki: "pages/ban-do-kanstein-pho-ban-coop.html", icon: "assets/fandom/World_of_Kanstein.png", desc: "Truyền thuyết 5 lục địa, Auroradrasil → Hellhold 6.2M, Wave 11–12+ & Void Rift." }
+      { title: "Bản Đồ Đại Lục Kanstein, Phó Bản Hàng Ngày & Split Mirage", cat: "Chuyên Đề Chi Tiết", tab: "world", wiki: "pages/ban-do-kanstein-pho-ban-coop.html", icon: "assets/fandom/World_of_Kanstein.png", desc: "Truyền thuyết 5 lục địa, Auroradrasil → Hellhold 6.2M, Wave 11–12+ & Void Rift." },
+      { title: "Tính Tài Nguyên Theo Rank Bí Cảnh & So Sánh % Lời / Lỗ Khi Xả Sớm", cat: "Chuyên Đề Chi Tiết", tab: "rank-yield", wiki: "pages/tinh-tai-nguyen-theo-rank-bi-canh.html", icon: "assets/art/gear_showcase.jpg", desc: "4 Bí Cảnh Nguyên Liệu, bảng 10 Rank S0–S5, nguyên tắc mua 2-2-2-2 & toán học mốc 400 Cào Thẻ." },
+      { title: "Phân Tích Tích Lũy Roll Skill, Roll Cổ Vật, Đào Tâm Giao & Vòng Quay", cat: "Chuyên Đề Chi Tiết", tab: "item-hoard", wiki: "pages/phan-tich-tich-luy-roll-skill-co-vat-tam-giao.html", icon: "assets/fandom/Destiny_Fruits.png", desc: "Ngưỡng dừng Covenite, dừng 50–70% Cổ Vật, Nhật Ký/Quà Tâm Giao Lv.60+ & bẫy Vòng Quay 60–90 vé." },
+      { title: "Lộ Trình Chi Tiết Event Xoay Vòng (7d/14d/21d), Bản Đồ Mùa & Event Lớn", cat: "Chuyên Đề Chi Tiết", tab: "events-hub", wiki: "pages/lo-trinh-event-xoay-vong-event-lon.html", icon: "assets/fandom/Journey_Overture.jpg", desc: "4 tầng chu kỳ Event, Loop Quests 14 ngày, lịch Bản Đồ Mùa N26–N329, Pet UP N92/N159 & Collab." },
+      { title: "Cơ Chế Tăng Cấp, Tượng Nữ Thần c(B), Giường 36h & Dự Đoán Level Theo Ngày", cat: "Chuyên Đề Chi Tiết", tab: "calculators", wiki: "pages/co-che-tang-cap-tuong-nu-than-du-doan-lv.html", icon: "assets/official/official_ss3.jpg", desc: "Công thức EXP/h = 50 × c(B) × (1 + n/100), bảng cổng Tượng Nữ Thần & lộ trình cấp độ S0–S5." }
     ];
 
-    // Render 14 UI-Synchronized Native Detail Pages in Tab 1 (#wikiDetailLibraryGrid)
+    // Render 18 Detail Pages in Tab 1 (#wikiDetailLibraryGrid) — 3x6 balanced grid
     const WIKI_DETAIL_PAGES = [
-      { isNew: true, cat: "Nhập Môn & Kinh Tế", file: "tan-thu-kinh-te-giftcode.html", title: "1. Tân Thủ 7 Ngày, Tiến Trình Nhà, Journey Overture & 30 Code", desc: "Reroll, Xe Đẩy 36h, Giường, Gian Hàng Lv.20, Commercium Lv.40, Cõi Vật Chất, FAQ & 30 Code." },
-      { isNew: true, cat: "Cơ Chế & Kỹ Năng", file: "co-che-chien-dau-skill-ascend.html", title: "2. Công Thức Chiến Đấu 4 Giai Đoạn, Skill Ascend & Ô Lưới", desc: "Block vs Accuracy, 5 loại Skill, toán học Sao ★ vs Rarity Rare→Immortal & Bí Ẩn Nguyên Tố." },
-      { isNew: true, cat: "Nghề & Bộ Build", file: "chon-nghe-style-build-chuyen-lop.html", title: "3. Chọn Nghề, Style vs Build vs Mechanic & Đổi Nghề Lv.100", desc: "Câu chuyện 4 tầng nghề (Sư Phụ Mei), biên độ ST 50%~300%, Slate miễn phí & 8h hoàn tác." },
+      { isNew: true, cat: "Cơ Chế & Kỹ Năng", file: "co-che-tang-cap-tuong-nu-than-du-doan-lv.html", title: "18. Cơ Chế Tăng Cấp, Tượng Nữ Thần c(B) & Dự Đoán Level Theo Ngày", desc: "Công thức EXP/giờ = 50 × c(B) × (1 + n/100), bước nhảy ×3.09 đầu quốc gia, định lý Tinh Thể Thời Gian & bảng EXP S0–S5." },
+      { isNew: true, cat: "Tích Trữ & Chu Kỳ Event", file: "tinh-tai-nguyen-theo-rank-bi-canh.html", title: "15. Tính Tài Nguyên Cần Tích & % Tăng/Giảm Sản Lượng Theo Từng Rank", desc: "4 Bí Cảnh (Búa Sắt, Xẻng Cát, Quyền Sáo, Cuốc Vàng), ma trận % lời/lỗ 10 Rank S0–S5 & công thức 2-2-2-2." },
+      { isNew: true, cat: "Tích Trữ & Chu Kỳ Event", file: "phan-tich-tich-luy-roll-skill-co-vat-tam-giao.html", title: "16. Phân Tích Tích Lũy Roll Skill, Roll Cổ Vật, Đào Tâm Giao & Pet", desc: "Điểm dừng cấp nghề Covenite, quy tắc 50–70% Cổ Vật, Nhật Ký/Quà Tâm Giao Lv.60+ & bẫy Vòng Quay 60–90 vé." },
+      { isNew: true, cat: "Tích Trữ & Chu Kỳ Event", file: "lo-trinh-event-xoay-vong-event-lon.html", title: "17. Lộ Trình Chi Tiết Từng Event Xoay Vòng (7d/14d/21d) & Event Lớn", desc: "Kho Báu 8+7n, Bingo/Cào Thẻ/Giải Đố, Khe Nứt/Hỗn Mang, Loop Quests 14 ngày, Bản Đồ Mùa & Collab." },
+      { isNew: false, cat: "Nhập Môn & Kinh Tế", file: "tan-thu-kinh-te-giftcode.html", title: "1. Tân Thủ 7 Ngày, Tiến Trình Nhà, Journey Overture & 30 Code", desc: "Reroll, Xe Đẩy 36h, Giường, Gian Hàng Lv.20, Commercium Lv.40, Cõi Vật Chất, FAQ & 30 Code." },
+      { isNew: false, cat: "Cơ Chế & Kỹ Năng", file: "co-che-chien-dau-skill-ascend.html", title: "2. Công Thức Chiến Đấu 4 Giai Đoạn, Skill Ascend & Ô Lưới", desc: "Block vs Accuracy, 5 loại Skill, toán học Sao ★ vs Rarity Rare→Immortal & Bí Ẩn Nguyên Tố." },
+      { isNew: false, cat: "Nghề & Bộ Build", file: "chon-nghe-style-build-chuyen-lop.html", title: "3. Chọn Nghề, Style vs Build vs Mechanic & Đổi Nghề Lv.100", desc: "Câu chuyện 4 tầng nghề (Sư Phụ Mei), biên độ ST 50%~300%, Slate miễn phí & 8h hoàn tác." },
       { isNew: false, cat: "Nghề & Bộ Build", file: "ho-so-chien-binh-dau-si-cuong-chien.html", title: "4. Nhánh Kiếm Công: Chiến Binh → Đấu Sĩ → Cuồng Chiến → Ma Kiếm", desc: "Chân dung Nam/Nữ chính thức cùng bảng kỹ năng chuẩn Bậc 1 → Bậc 7 kèm icon game." },
       { isNew: false, cat: "Nghề & Bộ Build", file: "ho-so-hiep-si-thanh-ky-si.html", title: "5. Nhánh Khiên Thủ: Hiệp Sĩ → Thánh Kỵ Sĩ → Đền Thánh", desc: "3 hướng Block / Water / Light Knight, Vùng Cấm Bay & bảng kỹ năng chuẩn nhánh Khiên Thủ." },
       { isNew: false, cat: "Nghề & Bộ Build", file: "ho-so-phap-su-thuat-su-dai-phap-su.html", title: "6. Nhánh Trượng Công: Pháp Sư → Thuật Sư → Đại Pháp Sư → Pháp Chủ", desc: "5 lối build nguyên tố khắc hệ cùng bảng kỹ năng chuẩn Bậc 1 → Bậc 7 kèm icon game." },
       { isNew: false, cat: "Nghề & Bộ Build", file: "ho-so-hien-gia-bi-thuat-su.html", title: "7. Nhánh Hỗ Trợ & Ám: Hiền Giả → Bí Thuật Sư → Tiên Tri", desc: "Erosion / Direct / Healer / Stone Emperor cùng bảng kỹ năng chuẩn Hiền Giả → Tiên Tri." },
-      { isNew: true, cat: "Nghề & Bộ Build", file: "bo-build-meta-4-che-do.html", title: "8. Bộ Build Chuẩn Meta 4 Chế Độ PvP / PvE & Xoay Chiêu", desc: "Quy tắc xếp 4 ô Chiến Kỹ AI, chống đẩy lùi hụt tầm & ma trận 4 chế độ PvP/PvE." },
-      { isNew: true, cat: "Trang Bị, Ngọc & Cổ Vật", file: "trang-bi-da-than-tao-ngoc.html", title: "9. Trang Bị 5 Ô, Bảng Giá Đá Thần Tạo & 8 Loại Ngọc T1–T15", desc: "Cộng hưởng +5/+10, 4 Ngọc Đôi chuẩn, cảnh báo khóa giao dịch Ngọc T7+ & mồi Lò Cơ Khí." },
+      { isNew: false, cat: "Nghề & Bộ Build", file: "bo-build-meta-4-che-do.html", title: "8. Bộ Build Chuẩn Meta 4 Chế Độ PvP / PvE & Xoay Chiêu", desc: "Quy tắc xếp 4 ô Chiến Kỹ AI, chống đẩy lùi hụt tầm & ma trận 4 chế độ PvP/PvE." },
+      { isNew: false, cat: "Trang Bị, Ngọc & Cổ Vật", file: "trang-bi-da-than-tao-ngoc.html", title: "9. Trang Bị 5 Ô, Bảng Giá Đá Thần Tạo & 8 Loại Ngọc T1–T15", desc: "Cộng hưởng +5/+10, 4 Ngọc Đôi chuẩn, cảnh báo khóa giao dịch Ngọc T7+ & mồi Lò Cơ Khí." },
       { isNew: false, cat: "Huyễn Thú & Đồng Hành", file: "co-vat-trai-dinh-menh-huyen-thu.html", title: "10. Bảo Tàng Cổ Vật, Trái Định Mệnh & 12 Huyễn Thú", desc: "Tượng May Mắn Kỳ 2 N15 & Kỳ 6 N43, 3 vật liệu Tư Chất & 12 hồ sơ Pet vượt Lv.108." },
       { isNew: false, cat: "Huyễn Thú & Đồng Hành", file: "dong-hanh-dryason-mon-an-collab.html", title: "11. Tiểu Sử 13 NPC & Dryason, Collab & 26 Món Ăn (30 Đĩa)", desc: "Tiểu sử nguyên bản Molly, Akane, Reina, Narss, Hermes, KonoSuba/Hoa Sơn & 26 Món Vĩnh Viễn." },
-      { isNew: true, cat: "Sự Kiện, Hỗn Mang & Mùa Giải", file: "he-thong-mua-giai-lo-trinh-reset.html", title: "12. Hệ Thống Theo Mùa (<100 vs >100), Chu Kỳ 8+7n & Bingo Ngày 15", desc: "Kỳ 2 Ngày 15 Tượng May Mắn + Bingo #1, Cào Thẻ Ngày 22, công thức 10★ + Điểm/100 & 128 ★." },
-      { isNew: true, cat: "Sự Kiện, Hỗn Mang & Mùa Giải", file: "xam-lang-hon-mang-chaos-invasion.html", title: "13. Toàn Tập Xâm Lăng Hỗn Mang (Chaos Invasion) & NPC Bí Ẩn", desc: "BXH theo Nghề, 4 vòng xoay 1 DPS + 3 Buff, Primal Forge Shard & lưu ý khi test Solo." },
+      { isNew: false, cat: "Sự Kiện, Hỗn Mang & Mùa Giải", file: "he-thong-mua-giai-lo-trinh-reset.html", title: "12. Hệ Thống Theo Mùa (<100 vs >100), Chu Kỳ 8+7n & Bingo Ngày 15", desc: "Kỳ 2 Ngày 15 Tượng May Mắn + Bingo #1, Cào Thẻ Ngày 22, công thức 10★ + Điểm/100 & 128 ★." },
+      { isNew: false, cat: "Sự Kiện, Hỗn Mang & Mùa Giải", file: "xam-lang-hon-mang-chaos-invasion.html", title: "13. Toàn Tập Xâm Lăng Hỗn Mang (Chaos Invasion) & NPC Bí Ẩn", desc: "BXH theo Nghề, 4 vòng xoay 1 DPS + 3 Buff, Primal Forge Shard & lưu ý khi test Solo." },
       { isNew: false, cat: "Sự Kiện, Hỗn Mang & Mùa Giải", file: "ban-do-kanstein-pho-ban-coop.html", title: "14. Bản Đồ Đại Lục Kanstein, Phó Bản Hàng Ngày & Split Mirage", desc: "Truyền thuyết Nữ Thần & 5 lục địa, chấm hạng S phó bản, Wave 11–12+ & Void Rift 10 lượt." }
     ];
 
@@ -5235,11 +6670,11 @@
           <a class="detail-lib-card${it.isNew ? ' is-new' : ''}" href="pages/${it.file}">
             <div class="detail-lib-meta">
               <span>${it.cat}</span>
-              <span class="pill pill-cyan" style="font-size:0.65rem; padding:2px 6px;">ĐỒNG BỘ UI</span>
+              ${it.isNew ? '<span class="pill pill-sword" style="font-size:0.65rem; padding:2px 7px;">MỚI</span>' : ''}
             </div>
             <div class="detail-lib-title">${it.title}</div>
             <div class="detail-lib-desc">${it.desc}</div>
-            <div style="font-size:0.75rem; font-weight:700; color:var(--accent-cyan); margin-top:auto; padding-top:4px;">Mở chuyên đề chi tiết →</div>
+            <div style="font-size:0.77rem; font-weight:700; color:var(--brand-primary); margin-top:auto; padding-top:6px;">Đọc chuyên đề →</div>
           </a>
         `).join('');
       }

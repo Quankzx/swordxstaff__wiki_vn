@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cơ Chế Tăng Cấp, Tượng Nữ Thần, Giường 36h & Mô Hình Dự Đoán Level Theo Ngày — Sword x Staff Đại Bách Khoa VN</title>
+  <link rel="icon" href="../assets/fandom/Site-favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/main.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Mở danh mục điều hướng" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <a href="../index.html" class="brand" style="gap:11px;">
+        <div class="brand-crest">
+          <img src="../assets/fandom/Site-logo.png" alt="Biểu tượng cộng đồng Sword x Staff" />
+        </div>
+        <div>
+          <div class="brand-title font-display">SWORD <span class="x-mark">x</span> STAFF — ĐẠI BÁCH KHOA VN</div>
+          <span class="brand-sub">Cơ Sở Dữ Liệu Game, Phân Tích Meta &amp; 7 Máy Tính</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="topbar-actions">
+      <a href="index.html" class="icon-btn" style="text-decoration:none; white-space:nowrap;">
+        <span>18 Chuyên Đề</span>
+      </a>
+      <a href="../index.html#tab-calculators" class="icon-btn" style="text-decoration:none; white-space:nowrap;">
+        <span>7 Máy Tính</span>
+      </a>
+      <a href="../index.html" class="icon-btn" style="text-decoration:none; white-space:nowrap;">
+        <span>Trang Chính</span>
+      </a>
+      <button class="icon-btn" id="themeToggleBtn" aria-label="Đổi giao diện Sáng hoặc Tối">
+        <span id="themeLabel">Tối</span>
+      </button>
+    </div>
+  </header>
+  <div class="sidebar-backdrop" id="sidebarBackdrop" aria-hidden="true"></div>
+
+  <div class="wiki-page-frame">
+    <div class="app-shell">
+      <nav class="sidebar" id="sidebarNav" aria-label="Danh mục chuyên đề">
+        <div class="nav-group-label">Nhập Môn &amp; Cơ Chế Cốt Lõi</div>
+        <a class="nav-btn" href="../index.html#tab-overview"><span>1. Tân Thủ, Kinh Tế &amp; Giftcode</span></a>
+        <a class="nav-btn" href="../index.html#tab-mechanics"><span>2. Cơ Chế Chiến Đấu &amp; Công Thức</span></a>
+        <div class="nav-group-label">Mùa Giải, Thế Giới &amp; Giả Lập</div>
+        <a class="nav-btn" href="../index.html#tab-seasons"><span>9. Lịch Mùa Giải, Kho Báu &amp; Reset</span></a>
+        <a class="nav-btn" href="../index.html#tab-world"><span>10. 7 Vương Quốc, Phó Bản &amp; PvP</span></a>
+        <a class="nav-btn active" href="../index.html#tab-calculators"><span>11. Trung Tâm 7 Máy Tính (Dự Đoán Lv)</span></a>
+        <div class="nav-group-label">Hoạch Định Tích Trữ &amp; Event</div>
+        <a class="nav-btn" href="../index.html#tab-rank-yield"><span>12. Tính Tài Nguyên &amp; % Rank</span></a>
+        <a class="nav-btn" href="index.html"><span>📚 Thư Viện 18 Chuyên Đề</span></a>
+      </nav>
+
+      <main class="main-content">
+        <div class="detail-crumb-bar">
+          <div class="detail-crumb-links">
+            <a href="../index.html">🏠 Trang Chính Đại Bách Khoa</a>
+            <span>/</span>
+            <a href="../index.html#tab-calculators">11. Trung Tâm 7 Máy Tính</a>
+            <span>/</span>
+            <span>18. Cơ Chế Tăng Cấp, Tượng Nữ Thần &amp; Dự Đoán Level Theo Ngày</span>
+          </div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <a href="../index.html#calc-level-predictor" class="detail-jump-link" style="margin:0;">🧮 Mở Máy Tính Dự Đoán Level Ngay →</a>
+            <a href="index.html" class="detail-jump-link" style="margin:0;">📚 Lọc 18 Chuyên Đề</a>
+          </div>
+        </div>
+
+        <div class="showcase-banner" style="margin-bottom:18px;">
+          <img src="../assets/fandom/World_of_Kanstein.png" alt="Cơ Chế Tăng Cấp, Tượng Nữ Thần, Giường 36h & Mô Hình Dự Đoán Level Theo Ngày" class="showcase-bg" loading="lazy" />
+          <div class="showcase-overlay">
+            <h1 style="font-size:clamp(1.25rem, 2.4vw, 1.75rem); color:#FFFFFF; margin-bottom:6px;">Cơ Chế Tăng Cấp, Tượng Nữ Thần, Giường 36h &amp; Mô Hình Toán Học Dự Đoán Level Theo Ngày</h1>
+            <p>Giải mã công thức máy chủ EXP/giờ = 50 × c(B) × (1 + n/100), quy luật nhảy bậc ×3.09 của Tượng Nữ Thần Lớn, +1% Tượng Thất Lạc, định lý Tinh Thể Thời Gian và bảng chuẩn Level Ngày 1 → Mùa 5.</p>
+          </div>
+        </div>
+
+        <div class="grid-2" id="cong-thuc-giuong" style="margin-bottom:18px;">
+          <div class="card card-staff">
+            <div class="card-header">
+              <h3 class="card-title">1. Công Thức Sản Lượng EXP Giường (Bed XP/h) &amp; Đường Cong Phước Lành c(B)</h3>
+              <span class="pill pill-staff">Server Formula</span>
+            </div>
+            <ul class="clean-list">
+              <li><strong>Công thức gốc trên máy chủ:</strong> <code>EXP/giờ = 50 × c(B) × (1 + (n + Bonus_Khác) / 100)</code>. Trong Sword x Staff, đánh quái ngoài map không rơi EXP cày chay; sau Lv.25, sản lượng Giường (Bed) quyết định trực tiếp tốc độ lên cấp.</li>
+              <li><strong>Cấp Phước Lành <code>B = 1 + Số_Tượng_Nữ_Thần_Lớn</code>:</strong> Đạt 100% khám phá mỗi vùng cốt truyện chính sẽ thắp sáng 1 Tượng Nữ Thần Lớn (Verdantglade có <code>17</code> tượng; Cinder Ridge, Aqualis, Loong Haven, Aethyris, Harpadia, Ignis, Aeperis mỗi quốc gia có <code>18</code> tượng).</li>
+              <li><strong>Quy luật nhảy bậc cực đại của <code>c(B)</code>:</strong> Ngay tại <strong>Tượng Nữ Thần Lớn đầu tiên của mỗi Vương Quốc mới</strong> (<code>B = 2, 19, 37, 55, 73, 91, 109, 127, 145</code>), hệ số <code>c(B)</code> <strong>nhân vọt gấp ~3.09 lần</strong> (riêng Verdantglade <code>B=1→2</code> nhân <code>×10.00</code>, Harpadia S4 <code>B=90→91</code> nhân <code>×5.15</code>, và từ Aeperis S6 <code>B=126→127</code> nhân <code>×1.54</code>). Giữa các tượng còn lại trong cùng Vương Quốc, mỗi tượng lớn tăng thêm xấp xỉ <strong><code>+3%</code> cấp số nhân</strong> (<code>c(B+1) ≈ 1.03 × c(B)</code>).</li>
+              <li><strong>Tổng Tượng Nữ Thần Thất Lạc <code>n</code> (+1%/tượng):</strong> Mọi Tượng Nữ Thần Thất Lạc ở khu phụ Vương Quốc <em>và</em> trên Bản Đồ Mùa (Whaleback <code>+38</code>, Acme Nexus <code>+101</code>, Stellardom <code>+224</code>, Whimsy World <code>+182</code>, Frost/Flame Route <code>+190</code>, Echo Realm <code>+196</code>) đều cộng dồn trực tiếp <strong><code>+1% EXP Giường</code></strong> và <code>+1%</code> sản lượng 1 loại tài nguyên Xe Đẩy. Thẻ Tháng (Monthly Pass) cộng thêm <strong><code>+5%</code></strong> vào cùng hệ số này.</li>
+            </ul>
+          </div>
+
+          <div class="card card-cyan">
+            <div class="card-header">
+              <h3 class="card-title">2. Phân Biệt 4 Loại Tượng, Giường 36 Giờ &amp; Định Lý Tinh Thể Thời Gian</h3>
+              <span class="pill pill-cyan">Optimization Math</span>
+            </div>
+            <ul class="clean-list staff-bullets">
+              <li><strong>4 loại Tượng dễ nhầm lẫn:</strong> (1) <em>Tượng Nữ Thần Lớn</em> tăng <code>+1 Phước Lành B</code> &amp; mở trần cấp Xe Đẩy; (2) <em>Tượng Nữ Thần Thất Lạc trên bản đồ</em> cộng <code>+1% EXP Giường</code> (có <code>99</code> tượng trong 7 Vương Quốc bị chặn bởi Dụng cụ mở map mua ở Shop Quốc Gia giá ~3,000 xu: Thuốc Héo, Mũi Khoan, Thủy Lôi, Vân Ngọc, Búa Thanh Tẩy, Công Tắc Gạch, Búa Băng/Hỏa); (3) <em>Tượng Thất Lạc từ Dò Tìm Vận Mệnh</em> (<code>0.01%</code>, bảo hiểm lần <code>20,000</code>) cho 33.3% cơ hội tăng thẳng 1–2 cấp NV / +1★ Skill / +1% chỉ số; (4) <em>Tượng Dũng Sĩ &amp; Phù Thủy</em> dùng chung <code>1 lượt Viếng Thăm/ngày</code> lấy buff chiến đấu 1 trận (<code>70% +10% • 25% +20% • 5% +40%</code>), không tăng EXP Giường.</li>
+              <li><strong>Quy tắc Giường 36 Giờ &amp; 26 Giờ EXP/Ngày:</strong> Giường tích trữ tối đa <strong><code>36 giờ</code></strong>. Mỗi ngày có <strong>1 lượt Ngủ Nhanh miễn phí = <code>+2 giờ</code></strong> sản lượng hiện tại → 1 ngày chuẩn thu <strong><code>26 giờ EXP Giường</code></strong>. Trước ngày mở Vương Quốc / Mùa mới <code>36–45 giờ</code>, áp dụng kỹ thuật <strong>Găm Giường 36h</strong> (ở mốc còn ~34h vào túi bấm 1 Tinh Thể để kích hoạt ké lượt Ngủ Nhanh free mà không lỡ tay thu Giường) để xả cấp ngay sáng ngày mở mùa.</li>
+              <li><strong>Định lý Tinh Thể Thời Gian (<code>+2 giờ/viên</code>):</strong> Trong cùng một mùa, 1 viên Tinh Thể luôn đưa bạn tới cấp mục tiêu sớm hơn ~<code>2 giờ</code> dù dùng lúc nào. <strong>Thời điểm duy nhất lời thêm giờ</strong> là ngay trước giấc ngủ dài <code>H</code> giờ (VD <code>H = 8h</code>), nếu đập <code>k ≤ 2</code> viên giúp vượt ngay một <strong>Cổng Cấp Độ (Gate)</strong> để mở vùng tượng mới trước khi ngủ: <code>Giờ_Lời_Thêm = (H − 2k) × (1 − r_trước / r_sau)</code>. Tại Cổng <code>Lv.36</code> (Cinder Ridge) và <code>Lv.68</code> (Aqualis), 1 viên đúng tối đó lời thêm tới <strong><code>+4.1 giờ</code></strong>! Tuyệt đối <strong>dùng hết Tinh Thể ngay trong mùa</strong> (không để sang mùa sau vì Season Level mùa sau đắt gấp 7–16 lần trong khi Giường chỉ tăng ~3 lần).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card card-emerald" id="bang-vuong-quoc-tuong" style="margin-bottom:18px;">
+          <div class="card-header">
+            <h3 class="card-title">3. Bảng Chuẩn 8 Vương Quốc (S0 → S6): Bước Nhảy Phước Lành c(B), Tổng Tượng &amp; Trần Xe Đẩy</h3>
+            <span class="pill pill-emerald">Blessing &amp; Statue Atlas</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Vương Quốc &amp; Ngày Mở Server</th>
+                  <th>Cổng Lv Đầu</th>
+                  <th>Tượng Lớn</th>
+                  <th>Dải Phước Lành B</th>
+                  <th>Bước Nhảy Hệ Số c(B)</th>
+                  <th>Tượng Nhỏ Quốc Gia Lũy Kế</th>
+                  <th>Tượng Nhỏ Bản Đồ Mùa</th>
+                  <th>Tổng n Toàn Server</th>
+                  <th>Trần Cấp Xe Đẩy</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Verdantglade</strong> (S0 • Ngày 1)</td><td><code>Lv.0</code></td><td><code>17</code></td><td><code>2 → 18</code></td><td><code>1.0 → 10.0 (×10.00) → 16.7</code></td><td><code>49</code> (11 cần dụng cụ)</td><td><code>0</code></td><td><code>49 (+49%)</code></td><td>Theo B</td></tr>
+                <tr><td><strong>Cinder Ridge</strong> (S0 • Ngày 4)</td><td><code>Lv.36</code></td><td><code>18</code></td><td><code>19 → 36</code></td><td><code>16.7 → 51.5 (×3.08) → 85.2</code></td><td><code>117</code> (+68; 15 dụng cụ)</td><td><code>0</code></td><td><code>117 (+117%)</code></td><td>Theo B</td></tr>
+                <tr><td><strong>Aqualis</strong> (S1 • Ngày 12)</td><td><code>Lv.68</code></td><td><code>18</code></td><td><code>37 → 54</code></td><td><code>85.2 → 263.2 (×3.09) → 435.0</code></td><td><code>191</code> (+74; 16 dụng cụ)</td><td><code>+38</code> (Whaleback N15–33)</td><td><code>229 (+229%)</code></td><td><code>Lv.72</code></td></tr>
+                <tr><td><strong>Loong Haven</strong> (S2 • Ngày 47)</td><td><code>Lv.98</code></td><td><code>18</code></td><td><code>55 → 72</code></td><td><code>435.0 → 1,344.1 (×3.09) → 2,221.6</code></td><td><code>270</code> (+79; 16 dụng cụ)</td><td><code>+101</code> (Acme Nexus N61–105)</td><td><code>409 (+409%)</code></td><td><code>Lv.108</code></td></tr>
+                <tr><td><strong>Aethyris</strong> (S3 • Ngày 114)</td><td><code>Lv.130</code></td><td><code>18</code></td><td><code>73 → 90</code></td><td><code>2,221.6 → 6,864.9 (×3.09) → 11,346.6</code></td><td><code>348</code> (+78; 16 dụng cụ)</td><td><code>+224</code> (Stellardom N128–207)</td><td><code>711 (+711%)</code></td><td><code>Lv.180</code></td></tr>
+                <tr><td><strong>Harpadia</strong> (S4 • Ngày 215)</td><td><code>Lv.160</code></td><td><code>18</code></td><td><code>91 → 108</code></td><td><code>11,346.6 → 58,434.9 (×5.15) → 96,584</code></td><td><code>430</code> (+82; 14 dụng cụ)</td><td><code>+182</code> (Whimsy World...)</td><td><code>975 (+975%)</code></td><td><code>Lv.252</code></td></tr>
+                <tr><td><strong>Ignis</strong> (S5 • Ngày 316)</td><td><code>Lv.190</code></td><td><code>18</code></td><td><code>109 → 126</code></td><td><code>96,584 → 298,444.4 (×3.09) → 493,283</code></td><td><code>511</code> (+81; 11 dụng cụ)</td><td><code>+190</code> (Frost/Flame Route)</td><td><code>1,246 (+1,246%)</code></td><td><code>Lv.342</code></td></tr>
+                <tr><td><strong>Aeperis</strong> (S6 • Ngày 417)</td><td><code>Lv.220</code></td><td><code>18</code></td><td><code>127 → 144</code></td><td><code>493,283 → 762,122.5 (×1.54) → 1,259,672</code></td><td><code>591</code> (+80)</td><td><code>+196</code> (Echo Realm)</td><td><code>1,522 (+1,522%)</code></td><td><code>Lv.432</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-bottom:18px;">
+          <div class="card card-sword" id="bang-cong-cap-do">
+            <div class="card-header">
+              <h3 class="card-title">4. Cổng Cấp Độ Mở Tượng &amp; Sản Lượng Giường (S0 → S3)</h3>
+              <span class="pill pill-sword">Gate Breakpoints</span>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Cổng Cấp Độ (Quốc Gia)</th>
+                    <th>Phước Lành B</th>
+                    <th>Tượng Nhỏ Quốc Gia</th>
+                    <th>EXP/h Gốc (n=0)</th>
+                    <th>EXP/h Đủ Tượng</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Lv.1 → 20</strong> (Verdantglade)</td><td><code>7 → 9</code></td><td><code>14 → 19</code></td><td><code>600 → 640</code></td><td><code>684 → 762 /h</code></td></tr>
+                  <tr><td><strong>Lv.26 → 36</strong> (Max Verdantglade)</td><td><code>14 → 18</code></td><td><code>37 → 49</code></td><td><code>740 → 835</code></td><td><code>1,014 → 1,244 /h</code></td></tr>
+                  <tr><td><strong>Lv.36</strong> (Đầu Cinder Ridge ×3.08)</td><td><code>19</code></td><td><code>50</code></td><td><code>2,575</code></td><td><strong><code>3,863 /h</code></strong></td></tr>
+                  <tr><td><strong>Lv.44</strong> (Chuyển Nghề Bậc II)</td><td><code>23</code></td><td><code>69</code></td><td><code>2,900</code></td><td><code>4,901 /h</code></td></tr>
+                  <tr><td><strong>Lv.60 → 66</strong> (Max Cinder Ridge)</td><td><code>33 → 36</code></td><td><code>100 → 117</code></td><td><code>3,895 → 4,260</code></td><td><code>7,790 → 9,244 /h</code></td></tr>
+                  <tr><td><strong>Lv.68</strong> (Đầu Aqualis S1 ×3.09)</td><td><code>37</code></td><td><code>120</code></td><td><code>13,160</code></td><td><strong><code>28,952 /h</code></strong></td></tr>
+                  <tr><td><strong>Lv.82</strong> (Chuyển Nghề Bậc III)</td><td><code>45</code></td><td><code>151</code></td><td><code>16,670</code></td><td><code>41,842 /h</code></td></tr>
+                  <tr><td><strong>Lv.90</strong> (Expert III • Rank 6)</td><td><code>50</code></td><td><code>173</code></td><td><code>19,325</code></td><td><code>52,757 /h</code></td></tr>
+                  <tr><td><strong>Lv.98</strong> (Max S1 + 38 Whaleback)</td><td><code>54</code></td><td><code>191 (+38=229)</code></td><td><code>21,750</code></td><td><strong><code>71,558 /h</code></strong></td></tr>
+                  <tr><td><strong>Lv.98 S2</strong> (Đầu Long Cảng ×3.09)</td><td><code>55</code></td><td><code>195 (+38=233)</code></td><td><code>67,205</code></td><td><strong><code>223,793 /h</code></strong></td></tr>
+                  <tr><td><strong>Lv.130 S2</strong> (Max S2 + 139 Mùa)</td><td><code>72</code></td><td><code>270 (+139=409)</code></td><td><code>111,080</code></td><td><strong><code>565,397 /h</code></strong></td></tr>
+                  <tr><td><strong>Lv.160 S3</strong> (Max S3 + 363 Mùa)</td><td><code>90</code></td><td><code>348 (+363=711)</code></td><td><code>567,330</code></td><td><strong><code>4,601,046 /h</code></strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card card-rose" id="bang-chi-phi-exp">
+            <div class="card-header">
+              <h3 class="card-title">5. Bảng Chi Phí EXP Thường &amp; EXP Mùa Giải (Lv.1 → S6)</h3>
+              <span class="pill pill-rose">Exact XP Ladder</span>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Đoạn Cấp Độ / Bậc</th>
+                    <th>Tổng EXP Đoạn</th>
+                    <th>Tích Lũy Từ Lv.1</th>
+                    <th>EXP Đơn Lẻ Đầu → Cuối</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Lv.1 → 10</strong> (Tân Thủ)</td><td><code>810</code></td><td><code>810</code></td><td><code>80 → 100</code></td></tr>
+                  <tr><td><strong>Lv.11 → 20</strong> (Sơ Tâm Hạ)</td><td><code>4,050</code></td><td><code>4,860</code></td><td><code>350 → 500</code></td></tr>
+                  <tr><td><strong>Lv.21 → 30</strong> (Sơ Tâm Trung)</td><td><code>21,220</code></td><td><code>26,080</code></td><td><code>1,483 → 2,860</code></td></tr>
+                  <tr><td><strong>Lv.31 → 40</strong> (Sơ Tâm Thượng)</td><td><code>41,342</code></td><td><code>67,422</code></td><td><code>2,995 → 5,086</code></td></tr>
+                  <tr><td><strong>Lv.41 → 50</strong> (Dũng Giả Hạ)</td><td><code>240,472</code></td><td><code>307,894</code></td><td><code>17,203 → 32,008</code></td></tr>
+                  <tr><td><strong>Lv.51 → 60</strong> (Dũng Giả Trung)</td><td><code>367,788</code></td><td><code>675,682</code></td><td><code>33,168 → 41,731</code></td></tr>
+                  <tr><td><strong>Lv.61 → 70</strong> (Dũng Giả Thượng)</td><td><code>487,581</code></td><td><code>1,163,263</code></td><td><code>43,128 → 54,405</code></td></tr>
+                  <tr><td><strong>Lv.71 → 80</strong> (Anh Hùng Hạ S1)</td><td><code>3,362,865</code></td><td><code>4,526,128</code></td><td><code>197,114 → 379,059</code></td></tr>
+                  <tr><td><strong>Lv.81 → 90</strong> (Anh Hùng Trung S1)</td><td><code>4,827,756</code></td><td><code>9,353,884</code></td><td><code>408,765 → 532,378</code></td></tr>
+                  <tr><td><strong>Lv.91 → 100</strong> (Anh Hùng Thượng S1)</td><td><code>6,754,182</code></td><td><strong><code>16,108,066</code></strong></td><td><code>583,801 → 751,452</code></td></tr>
+                  <tr><td><strong>Season Lv S1 (101 → 170)</strong></td><td><code>116,507,521</code></td><td>Bể Mùa S1</td><td><code>886,086 → 1,833,196</code></td></tr>
+                  <tr><td><strong>Lv.101 → 130 Thường (S2)</strong></td><td><code>124,007,386</code></td><td><strong><code>140,115,452</code></strong></td><td><code>2,904,398 → 6,335,318</code></td></tr>
+                  <tr><td><strong>Season Lv S2 (131 → 280)</strong></td><td><code>1,925,200,752</code></td><td>Bể Mùa S2</td><td><code>6,342,809 → 13,478,732</code></td></tr>
+                  <tr><td><strong>Lv.131 → 160 Thường (S3)</strong></td><td><code>932,152,590</code></td><td><strong><code>1,072,268,042</code></strong></td><td><code>22.86M → 43.25M</code></td></tr>
+                  <tr><td><strong>Lv.161 → 190 Thường (S4)</strong></td><td><code>15,653,645,626</code></td><td><strong><code>16,725,913,668</code></strong></td><td><code>384.4M → 744.7M</code></td></tr>
+                  <tr><td><strong>Lv.191 → 220 Thường (S5)</strong></td><td><code>106,462,389,642</code></td><td><strong><code>123,188,303,310</code></strong></td><td><code>2.62B → 5.24B</code></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-staff" id="bang-du-doan-level-ngay" style="margin-bottom:18px;">
+          <div class="card-header">
+            <h3 class="card-title">6. Bảng Chuẩn Dự Đoán Level Theo Ngày Tuổi Máy Chủ (Ngày 1 → Ngày 416 • S0 → S5)</h3>
+            <span class="pill pill-staff">Verified Daily Forecast</span>
+          </div>
+          <p class="card-body">Mô phỏng theo từng bước giờ (<code>26h EXP Giường/ngày = 24h tự nhiên + 2h Ngủ Nhanh miễn phí</code>) kết hợp khóa ngày mở Vương Quốc của server và cổng cấp độ mở Tượng Nữ Thần:</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Tuổi Server</th>
+                  <th>Mùa &amp; Cột Mốc Hệ Thống Mở Khóa</th>
+                  <th>F2P Tiêu Chuẩn (8 Đá/Mùa)</th>
+                  <th>Thẻ Tháng + 12 Đá Đẩy Cổng</th>
+                  <th>Phước Lành B &amp; Tượng Nhỏ n</th>
+                  <th>Sản Lượng Giường Chuẩn</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Ngày 1</strong></td><td>Mở Verdantglade + Đại Thụ Auroradrasil</td><td><code>Lv.33</code></td><td><code>Lv.33 (46%)</code></td><td><code>B = 16 • n = 40</code></td><td><code>1,099 /h</code></td></tr>
+                <tr><td><strong>Ngày 2–3</strong></td><td>Kịch trần Verdantglade (Chờ Ngày 4 mở Cinder Ridge)</td><td><code>Lv.40 → Lv.42</code></td><td><code>Lv.40 → Lv.42 (79%)</code></td><td><code>B = 18 • n = 49</code></td><td><code>1,244 /h</code></td></tr>
+                <tr><td><strong>Ngày 4</strong></td><td>Mở <strong>Cinder Ridge (×3.08)</strong> + Mecha Summit + <strong>Nghề Bậc II (Lv.44)</strong></td><td><strong><code>Lv.48–49</code></strong></td><td><strong><code>Lv.49 (54%)</code></strong></td><td><code>B = 25 • n = 75</code></td><td><code>5,381 /h</code></td></tr>
+                <tr><td><strong>Ngày 7</strong></td><td>Tiến sâu Cinder Ridge XII–XV (Elite III Lv.60)</td><td><code>Lv.62</code></td><td><code>Lv.63</code></td><td><code>B = 34 • n = 104</code></td><td><code>8,191 /h</code></td></tr>
+                <tr><td><strong>Ngày 10–11</strong></td><td>Kịch trần Cinder Ridge (Đêm N10–11 găm Giường 36h chờ S1!)</td><td><code>Lv.71 → Lv.72</code></td><td><code>Lv.71 → Lv.72 (39%)</code></td><td><code>B = 36 • n = 117</code></td><td><code>9,244 /h</code></td></tr>
+                <tr><td><strong>Ngày 12</strong></td><td>Mở <strong>Aqualis S1 (×3.09)</strong> + Ocean Palace Ruins</td><td><strong><code>Lv.75</code></strong></td><td><strong><code>Lv.75 (69%)</code></strong></td><td><code>B = 40 • n = 131</code></td><td><code>33,218 /h</code></td></tr>
+                <tr><td><strong>Ngày 15</strong></td><td>Mở Đảo Whaleback + Bingo #1 + <strong>Nghề Bậc III (Lv.82)</strong></td><td><strong><code>Lv.82</code></strong></td><td><strong><code>Lv.83</code></strong></td><td><code>B = 45 • n = 153</code></td><td><code>42,175 /h</code></td></tr>
+                <tr><td><strong>Ngày 18–20</strong></td><td>Chạm mốc <strong>Lv.90 Anh Hùng III</strong> (Chuẩn bị xả Cào Thẻ N22)</td><td><code>Lv.89 → Lv.93</code></td><td><strong><code>Lv.90 → Lv.94</code></strong></td><td><code>B = 50 • n = 181</code></td><td><code>55,270 /h</code></td></tr>
+                <tr><td><strong>Ngày 24</strong></td><td>Mở <strong>Đền Nguyên Thủy (Yêu cầu Lv.100)</strong> + Đổi Nghề Tự Do</td><td><strong><code>Lv.103</code></strong></td><td><strong><code>Lv.104</code></strong></td><td><code>B = 54 • n = 211</code></td><td><code>67,643 /h</code></td></tr>
+                <tr><td><strong>Ngày 33</strong></td><td>Mở khu cuối Whaleback + Phó bản Gác Hoàng Tuyền (Hellhold)</td><td><code>Lv.116</code></td><td><code>Lv.117</code></td><td><code>B = 54 • n = 229 (Max S1)</code></td><td><code>71,558 /h</code></td></tr>
+                <tr><td><strong>Ngày 46</strong></td><td>Chốt S1 (Mốc 128★–176★ • Găm Giường 36h chờ S2!)</td><td><strong><code>Lv.129–130</code></strong></td><td><strong><code>Lv.131</code></strong></td><td><code>B = 54 • n = 229</code></td><td><code>71,558 /h</code></td></tr>
+                <tr><td><strong>Ngày 47 → 60</strong></td><td>Reset về <code>Lv.100</code> mở <strong>Long Cảng S2 (×3.09)</strong> → Ngày 60 mở Tướng Quân Lăng (<code>Lv.130</code>)</td><td><strong><code>Lv.102 → Lv.130</code></strong></td><td><strong><code>Lv.103 → Lv.131</code></strong></td><td><code>B = 57 → 72 • n = 240 → 308</code></td><td><code>242K → 453K /h</code></td></tr>
+                <tr><td><strong>Ngày 113</strong></td><td>Chốt S2 Long Cảng (Mốc 680★–920★)</td><td><strong><code>Lv.188–190</code></strong></td><td><strong><code>Lv.191+</code></strong></td><td><code>B = 72 • n = 409</code></td><td><code>565,397 /h</code></td></tr>
+                <tr><td><strong>Ngày 114 → 127</strong></td><td>Reset về <code>Lv.130</code> mở <strong>Aethyris S3 (×3.09)</strong> → Ngày 127 mở Vĩnh Hằng Hoa Đình (<code>Lv.160</code>)</td><td><strong><code>Lv.132 → Lv.160</code></strong></td><td><strong><code>Lv.133 → Lv.161</code></strong></td><td><code>B = 75 → 90 • n = 419 → 487</code></td><td><code>1.89M → 3.33M /h</code></td></tr>
+                <tr><td><strong>Ngày 214</strong></td><td>Chốt S3 Aethyris (Trước khi về sàn <code>Lv.160</code> vào Harpadia S4)</td><td><code>Lv.250–265</code></td><td><code>Lv.265–275</code></td><td><code>B = 90 • n = 711</code></td><td><code>4,601,046 /h</code></td></tr>
+                <tr><td><strong>Ngày 215 → 315</strong></td><td>Mùa 4 <strong>Harpadia (×5.15)</strong>: Ngày 228 chạm <code>Lv.190</code> → Chốt S4</td><td><code>Lv.162 → Lv.270+</code></td><td><code>Lv.163 → Lv.285+</code></td><td><code>B = 93 → 108 • n = 750 → 975</code></td><td><code>26.3M → 51.9M /h</code></td></tr>
+                <tr><td><strong>Ngày 316 → 416</strong></td><td>Mùa 5 <strong>Ignis (×3.09)</strong>: Ngày 329 chạm <code>Lv.220</code> → Chốt S5</td><td><code>Lv.192 → Lv.293+</code></td><td><code>Lv.193 → Lv.300+</code></td><td><code>B = 113 → 126 • n = 1,012 → 1,246</code></td><td><code>186.8M → 332.0M /h</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="callout callout-info">
+          <div>
+            <strong>Nguồn đối chiếu &amp; ghi công dữ liệu gốc:</strong> Đường cong <code>c(B)</code>, số lượng tượng từng bản đồ và thang EXP được trích xuất và kiểm chứng từ dữ liệu trò chơi cùng nghiên cứu của <a href="https://www.purrwikimania.com/blog/sleep" target="_blank" rel="noopener">Purrwikimania (Bed XP &amp; XP Tables)</a> và bảng tính <a href="https://sxstx.feiyastudio.com/" target="_blank" rel="noopener">Feiya Studio Calculator</a>. Bấm sang <a href="../index.html#calc-level-predictor"><strong>Máy Tính Dự Đoán Level Tương Tác Trên Trang Chính →</strong></a> để nhập đúng cấp độ hiện tại của bạn!
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const themeToggleBtn = document.getElementById('themeToggleBtn');
+      const themeLabel = document.getElementById('themeLabel');
+      const initTheme = localStorage.getItem('sxs_wiki_theme') || 'light';
+      document.documentElement.setAttribute('data-theme', initTheme);
+      if (themeLabel) themeLabel.textContent = initTheme === 'dark' ? 'Sáng' : 'Tối';
+      if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+          const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('sxs_wiki_theme', next);
+          if (themeLabel) themeLabel.textContent = next === 'dark' ? 'Sáng' : 'Tối';
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

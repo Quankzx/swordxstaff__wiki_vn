@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lộ Trình Chi Tiết Từng Event Xoay Vòng (7 Ngày / 14 Ngày / 21 Ngày) & Đại Sự Kiện Xuyên Mùa — Sword x Staff Đại Bách Khoa VN</title>
+  <link rel="icon" href="../assets/fandom/Site-favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/main.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Mở danh mục điều hướng" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <a href="../index.html" class="brand" style="gap:11px;">
+        <div class="brand-crest">
+          <img src="../assets/fandom/Site-logo.png" alt="Biểu tượng cộng đồng Sword x Staff" />
+        </div>
+        <div>
+          <div class="brand-title font-display">SWORD <span class="x-mark">x</span> STAFF — ĐẠI BÁCH KHOA VN</div>
+          <span class="brand-sub">Cơ Sở Dữ Liệu Game, Phân Tích Meta &amp; 7 Máy Tính</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="topbar-actions">
+      <div class="global-search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5" stroke-linecap="round"/>
+        </svg>
+        <input type="search" id="globalSearchInput" class="global-search-input" placeholder="Tìm nhanh chuyên đề hoặc nhảy về 14 mục Trang Chính (Ctrl+K)..." aria-label="Tìm kiếm toàn trang" autocomplete="off" />
+        <span class="kbd-hint" aria-hidden="true">Ctrl+K</span>
+        <div id="searchDropdown" class="search-dropdown" role="listbox" aria-label="Kết quả tìm kiếm nhanh"></div>
+      </div>
+
+      <button type="button" class="icon-btn char-profile-btn" id="subCharProfileBtn" title="Hồ sơ nhân vật lưu trên Cookie trình duyệt">
+        <span class="cookie-dot" aria-hidden="true"></span>
+        <img src="../assets/icons/classes/duelist.svg" alt="" id="subTopCharIcon" />
+        <span class="char-name-txt" id="subTopCharName">Nhà Thám Hiểm</span>
+        <span class="char-srv-chip" id="subTopCharSrv">N15</span>
+      </button>
+
+      <a href="index.html" class="icon-btn" style="text-decoration:none; white-space:nowrap;">
+        <span>18 Chuyên Đề</span>
+      </a>
+      <a href="../index.html" class="icon-btn" style="text-decoration:none; white-space:nowrap;">
+        <span>Trang Chính</span>
+      </a>
+
+      <button class="icon-btn" id="themeToggleBtn" aria-label="Đổi giao diện Sáng hoặc Tối">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41" stroke-linecap="round"/>
+        </svg>
+        <span id="themeLabel">Tối</span>
+      </button>
+    </div>
+  </header>
+  <div class="sidebar-backdrop" id="sidebarBackdrop" aria-hidden="true"></div>
+
+  <div class="wiki-page-frame">
+    <div class="app-shell">
+      <nav class="sidebar" id="sidebarNav" aria-label="Danh mục chuyên đề">
+        <div class="nav-group-label">Nhập Môn &amp; Cơ Chế Cốt Lõi</div>
+      <a class="nav-btn" href="../index.html#tab-overview"><span>1. Tân Thủ, Kinh Tế & Giftcode</span></a>
+      <a class="nav-btn" href="../index.html#tab-mechanics"><span>2. Cơ Chế Chiến Đấu & Công Thức</span></a>
+      
+      <div class="nav-group-label">Nghề Nghiệp, Kỹ Năng &amp; Build</div>
+      <a class="nav-btn" href="../index.html#tab-classes"><span>3. 26 Nghề (Bậc 1–8) & Icon Game</span></a>
+      <a class="nav-btn" href="../index.html#tab-skills"><span>4. Kho 125 Kỹ Năng & Bí Thuật</span></a>
+      <a class="nav-btn" href="../index.html#tab-builds"><span>5. Bộ Build Meta 4 Chế Độ PvP/PvE</span></a>
+      
+      <div class="nav-group-label">Trang Bị, Sức Mạnh &amp; Đời Sống</div>
+      <a class="nav-btn" href="../index.html#tab-gear"><span>6. Trang Bị, Đá Thần Tạo & 8 Ngọc</span></a>
+      <a class="nav-btn" href="../index.html#tab-relics-pets"><span>7. 30 Cổ Vật & 12 Huyễn Thú</span></a>
+      <a class="nav-btn" href="../index.html#tab-companions-life"><span>8. 75 Đồng Hành, 26 Món & Collab</span></a>
+      
+      <div class="nav-group-label">Mùa Giải, Thế Giới &amp; Giả Lập</div>
+      <a class="nav-btn" href="../index.html#tab-seasons"><span>9. Lịch Mùa Giải, Kho Báu & Reset</span></a>
+      <a class="nav-btn" href="../index.html#tab-world"><span>10. 7 Vương Quốc, Phó Bản & PvP</span></a>
+      <a class="nav-btn" href="../index.html#tab-calculators"><span>11. Trung Tâm 7 Máy Tính</span></a>
+      
+      <div class="nav-group-label">Hoạch Định Tích Trữ &amp; Event</div>
+      <a class="nav-btn" href="../index.html#tab-rank-yield"><span>12. Tính Tài Nguyên & % Rank</span></a>
+      <a class="nav-btn" href="../index.html#tab-item-hoard"><span>13. Tích Lũy Skill, Cổ Vật & Tâm Giao</span></a>
+      <a class="nav-btn active" href="../index.html#tab-events-hub"><span>14. Event Xoay Vòng & Event Lớn</span></a>
+        <div class="nav-group-label">Chuyên Đề Mở Rộng</div>
+        <a class="nav-btn" href="index.html"><span>📚 Thư Viện 18 Chuyên Đề</span></a>
+        <div class="sidebar-footer">
+          <strong>Sword x Staff — Đại Bách Khoa VN</strong><br/>
+          Bấm <code>Ctrl + K</code> để tra cứu nhanh.
+        </div>
+      </nav>
+
+      <main class="main-content">
+        
+    <div class="detail-crumb-bar">
+      <div class="detail-crumb-links">
+        <a href="../index.html">🏠 Trang Chính Đại Bách Khoa</a>
+        <span>/</span>
+        <a href="../index.html#tab-events-hub">14. Event Xoay Vòng & Event Lớn</a>
+        <span>/</span>
+        <span>17. Lộ Trình Event Xoay Vòng & Lớn</span>
+      </div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <a href="../index.html#tab-events-hub" class="detail-jump-link" style="margin:0;">← Về Mục Gốc Trang Chính</a>
+        <a href="index.html" class="detail-jump-link" style="margin:0;">📚 Lọc 18 Chuyên Đề</a>
+      </div>
+    </div>
+    
+    <details class="detail-topic-switcher">
+          <summary><span>Chuyển nhanh giữa 18 chuyên đề chuyên sâu</span><span aria-hidden="true">▾</span></summary>
+          <div class="detail-topic-strip">
+      <a href="tan-thu-kinh-te-giftcode.html" class="chip-btn" style="text-decoration:none;">1. Tân Thủ, Căn Cứ & 30 Code</a><a href="co-che-chien-dau-skill-ascend.html" class="chip-btn" style="text-decoration:none;">2. Công Thức & Skill Ascend</a><a href="chon-nghe-style-build-chuyen-lop.html" class="chip-btn" style="text-decoration:none;">3. Chọn Nghề & Đổi Lớp Lv.100</a><a href="ho-so-chien-binh-dau-si-cuong-chien.html" class="chip-btn" style="text-decoration:none;">4. Hồ Sơ Kiếm Công (Bậc 1→7)</a><a href="ho-so-hiep-si-thanh-ky-si.html" class="chip-btn" style="text-decoration:none;">5. Hồ Sơ Khiên Thủ (Hiệp Sĩ)</a><a href="ho-so-phap-su-thuat-su-dai-phap-su.html" class="chip-btn" style="text-decoration:none;">6. Hồ Sơ Trượng Công (Bậc 1→7)</a><a href="ho-so-hien-gia-bi-thuat-su.html" class="chip-btn" style="text-decoration:none;">7. Hồ Sơ Hiền Giả & Bí Thuật</a><a href="bo-build-meta-4-che-do.html" class="chip-btn" style="text-decoration:none;">8. Bộ Build Meta 4 Chế Độ</a><a href="trang-bi-da-than-tao-ngoc.html" class="chip-btn" style="text-decoration:none;">9. Trang Bị, Đá Thần Tạo & Ngọc</a><a href="co-vat-trai-dinh-menh-huyen-thu.html" class="chip-btn" style="text-decoration:none;">10. Cổ Vật & 12 Huyễn Thú</a><a href="dong-hanh-dryason-mon-an-collab.html" class="chip-btn" style="text-decoration:none;">11. Tiểu Sử 13 NPC, Collab & Món</a><a href="he-thong-mua-giai-lo-trinh-reset.html" class="chip-btn" style="text-decoration:none;">12. Chu Kỳ 8+7n, Bingo N15 & Reset</a><a href="xam-lang-hon-mang-chaos-invasion.html" class="chip-btn" style="text-decoration:none;">13. Xâm Lăng Hỗn Mang (Full)</a><a href="ban-do-kanstein-pho-ban-coop.html" class="chip-btn" style="text-decoration:none;">14. Bản Đồ Kanstein & Co-op</a><a href="tinh-tai-nguyen-theo-rank-bi-canh.html" class="chip-btn" style="text-decoration:none;">15. Tính Tài Nguyên & % Rank</a><a href="phan-tich-tich-luy-roll-skill-co-vat-tam-giao.html" class="chip-btn" style="text-decoration:none;">16. Tích Lũy Skill, Cổ Vật & Tâm Giao</a><a href="lo-trinh-event-xoay-vong-event-lon.html" class="chip-btn active" style="text-decoration:none;">17. Lộ Trình Event Xoay Vòng & Lớn</a>
+    </div>
+        </details>
+  
+  
+        <div class="showcase-banner" style="margin-bottom:18px;">
+          <img src="../assets/fandom/Journey_Overture.jpg" alt="Lộ Trình Chi Tiết Từng Event Xoay Vòng (7 Ngày / 14 Ngày / 21 Ngày) & Đại Sự Kiện Xuyên Mùa" class="showcase-bg" loading="lazy" />
+          <div class="showcase-overlay">
+            <h1 style="font-size:clamp(1.25rem, 2.4vw, 1.75rem); color:#FFFFFF; margin-bottom:6px;">Lộ Trình Chi Tiết Từng Event Xoay Vòng (7 Ngày / 14 Ngày / 21 Ngày) & Đại Sự Kiện Xuyên Mùa</h1>
+            <p>Bản đồ toàn cảnh 4 tầng chu kỳ sự kiện trong Sword x Staff: Đại Chiến Báu Vật 8+7n, vòng lặp 21 ngày Bingo – Cào Thẻ – Giải Đố, Chủ Nhật luân phiên, Loop Quests 14 ngày, Bản Đồ Mùa và Collab.</p>
+          </div>
+        </div>
+        
+      <div class="card card-staff" id="bon-tang-chu-ky" style="margin-bottom:18px;">
+        <div class="card-header">
+          <h3 class="card-title">1. Kiến Trúc 4 Tầng Chu Kỳ Sự Kiện Cố Định &amp; Xoay Vòng</h3>
+          <span class="pill pill-staff">Event Loop Architecture</span>
+        </div>
+        <div class="grid-2">
+          <ul class="clean-list">
+            <li><strong>Tầng 1 — Chu Kỳ 7 Ngày (<code>Ngày = 8 + 7×(Kỳ−1)</code>):</strong> <em>Đại Chiến Báu Vật</em> chạy đều đặn mỗi tuần (~2,240 NL nhiệm vụ/tuần, bảo lưu vĩnh viễn). Cần <code>3,240 NL</code> chốt 1 món Tầng 5 hoặc <code>4,440 NL</code> chốt 2 món Tầng 5 ở các kỳ vàng: <strong>Kỳ 2 N15 &amp; Kỳ 6 N43</strong> (Tượng May Mắn), <strong>Kỳ 4 N29 &amp; Kỳ 8 N57</strong> (Ngọc Khởi Nguyên), <strong>Kỳ 18 N127</strong> (Cây Thần Vàng), <strong>Kỳ 20 N141</strong> (Hòn Đá Phù Thủy).</li>
+            <li><strong>Tầng 2 — Chu Kỳ Xoay Vòng 21 Ngày (3 Tuần Lặp Lại):</strong>
+              <br/>• <em>Tuần A — Lucky Bingo (N15, 36, 57, 78, 99, 120, 141):</em> 28 vé nhiệm vụ ngày + 80 lượt dò Vận Mệnh (thủ 20–30 Quả) = 32 vé lật sạch 2 bảng.
+              <br/>• <em>Tuần B — Cào Thẻ May Mắn (N22, 43, 64, 85, 106, 127):</em> Cần ~400 lượt Dụng Cụ Bí Cảnh (chỉ xả khi đã chạm Rank đỉnh mùa như Anh Hùng III Lv.90+).
+              <br/>• <em>Tuần C — Giải Đố Feneck (N29, 50, 71, 92, 113, 134):</em> Phát miễn phí <code>18 Quả Vận Mệnh + 6 Đá Khế Ước</code> làm vốn nuôi tuần Bingo kế tiếp!</li>
+          </ul>
+          <ul class="clean-list staff-bullets">
+            <li><strong>Tầng 3 — Chủ Nhật Luân Phiên 14 Ngày:</strong> Đan xen giữa <strong>Khe Nứt Hư Không</strong> (10 lượt Chủ Nhật không bảo lưu, nhảy tầng 5 rớt Cổ Vật Đỏ) và <strong>Xâm Lăng Hỗn Mang</strong> (đội 4 người xoay 4 vòng 1 DPS + 3 Buff đua BXH Nghề → Thứ Hai mua <em>Primal Forge</em>).</li>
+            <li><strong>Tầng 4 — Đại Sự Kiện 14–21 Ngày, Bản Đồ Mùa &amp; Banner UP:</strong>
+              <br/>• <em>Bản Đồ Mùa:</em> S1 (<code>N26</code>) → S2 <em>Acme Nexus</em> (<code>N61</code>) → S3 <em>Astral Odyssey</em> (<code>N128</code>) → S4 <em>Grotesque Fairground</em> (<code>N228</code>) → S5 <em>Frostfire Voyage</em> (<code>N329</code>).
+              <br/>• <em>Banner Pet Đỏ UP:</em> <strong>Pandariel</strong> (<code>Ngày 92</code>) &amp; <strong>Prismora</strong> (<code>Ngày 159</code>).
+              <br/>• <em>Lễ Hội Đào Kho Báu 14 Ngày &amp; Collab IP:</em> Tích điểm vòng lặp tiêu Thể Lực / Bí Cảnh / Trái Định Mệnh và Vòng Quay Collab (bảo hiểm 60–90 vé).</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout callout-info">
+        <div>Xem ngay <strong>Radar Đếm Ngược Sự Kiện Trực Tiếp Theo Tuổi Máy Chủ Của Nhân Vật Bạn</strong> tại <a href="../index.html#tab-events-hub"><strong>Mục 14. Radar &amp; Bách Khoa Event Xoay Vòng / Event Lớn →</strong></a></div>
+      </div>
+    
+    <div class="detail-inline-actions" style="margin-top:20px; padding-top:14px; border-top:1px solid var(--border-subtle);">
+      <a class="detail-jump-link" href="../index.html#tab-events-hub">← Quay Lại 14. Event Xoay Vòng & Event Lớn (Trang Chính)</a>
+      <a class="detail-jump-link" href="index.html">📚 Mở Bộ Lọc 18 Chuyên Đề Theo Chủ Đề →</a>
+    </div>
+  
+      </main>
+    </div>
+
+    <footer class="site-main-footer" aria-label="Chân trang Điều Hướng Toàn Bộ Wiki">
+      <div class="site-footer-grid">
+        <div class="site-footer-col">
+          <h3 class="footer-col-title">Đại Bách Khoa Chính</h3>
+          <ul class="site-footer-links">
+            <li><a href="../index.html#tab-overview">1. Tân Thủ, Kinh Tế &amp; 30 Giftcode</a></li>
+            <li><a href="../index.html#tab-mechanics">2. Công Thức Chiến Đấu &amp; Thăng Cấp Skill</a></li>
+            <li><a href="../index.html#tab-classes">3. Cây 26 Nghề (Bậc 1–8) &amp; Đổi Nghề Lv.100</a></li>
+            <li><a href="../index.html#tab-skills">4. Kho 125 Kỹ Năng Kèm Icon Game</a></li>
+            <li><a href="../index.html#tab-builds">5. Bộ Build Meta 4 Chế Độ PvP / PvE</a></li>
+          </ul>
+        </div>
+        <div class="site-footer-col">
+          <h3 class="footer-col-title">Sức Mạnh, Thế Giới &amp; Công Cụ</h3>
+          <ul class="site-footer-links">
+            <li><a href="../index.html#tab-gear">6. Trang Bị, Đá Thần Tạo &amp; 8 Ngọc T1–T15</a></li>
+            <li><a href="../index.html#tab-relics-pets">7. 30 Cổ Vật &amp; 12 Huyễn Thú</a></li>
+            <li><a href="../index.html#tab-companions-life">8. 75 Đồng Hành, 26 Món &amp; Collab</a></li>
+            <li><a href="../index.html#tab-seasons">9. Lịch Ngày Server S0–S7 &amp; Mốc Đã Ghim</a></li>
+            <li><a href="../index.html#tab-world">10. 7 Vương Quốc, Phó Bản &amp; PvP</a></li>
+            <li><a href="../index.html#tab-calculators">11. Trung Tâm 7 Máy Tính Công Thức</a></li>
+            <li><a href="../index.html#tab-rank-yield">12. Tính Tài Nguyên &amp; % Tăng/Giảm Theo Rank</a></li>
+            <li><a href="../index.html#tab-item-hoard">13. Tích Lũy Roll Skill, Cổ Vật &amp; Tâm Giao</a></li>
+            <li><a href="../index.html#tab-events-hub">14. Lộ Trình Event Xoay Vòng &amp; Event Lớn</a></li>
+          </ul>
+        </div>
+        <div class="site-footer-col">
+          <h3 class="footer-col-title">18 Chuyên Đề Chuyên Sâu</h3>
+          <ul class="site-footer-links">
+            <li><a href="index.html">Mở Thư Viện 18 Chuyên Đề Theo Chủ Đề →</a></li>
+            <li><a href="co-che-tang-cap-tuong-nu-than-du-doan-lv.html">Cơ Chế Tăng Cấp, Tượng Nữ Thần &amp; Dự Đoán Level</a></li>
+            <li><a href="tinh-tai-nguyen-theo-rank-bi-canh.html">Tính Tài Nguyên Cần Tích &amp; % Theo Rank Bí Cảnh</a></li>
+            <li><a href="phan-tich-tich-luy-roll-skill-co-vat-tam-giao.html">Tích Lũy Roll Skill, Cổ Vật &amp; Đào Tâm Giao</a></li>
+            <li><a href="lo-trinh-event-xoay-vong-event-lon.html">Lộ Trình Event Xoay Vòng &amp; Event Lớn</a></li>
+            <li><a href="xam-lang-hon-mang-chaos-invasion.html">Cẩm Nang Xâm Lăng Hỗn Mang (Chaos Invasion)</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <div class="site-copyright-bar">
+      <strong>Sword x Staff — Đại Bách Khoa Toàn Thư Tiếng Việt</strong> • Đồng bộ Hồ Sơ Cookie Nhân Vật xuyên suốt mọi trang • Bấm <code>Ctrl + K</code> để tra cứu tức thì.
+    </div>
+  </div>
+
+  <div class="char-modal-backdrop" id="subCharModal" role="dialog" aria-modal="true" aria-labelledby="subCharModalTitle">
+    <div class="char-modal">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:10px;">
+        <h3 class="card-title" id="subCharModalTitle">👤 Hồ Sơ Nhân Vật Cá Nhân (Lưu Cookie Trình Duyệt)</h3>
+        <button type="button" class="icon-btn" id="subCloseCharBtn">✕</button>
+      </div>
+      <p class="section-sub" style="margin-bottom:12px;">Thay đổi tên nhân vật, hệ phái hoặc tuổi máy chủ tại đây sẽ lưu trực tiếp vào Cookie <code>sxs_char_profile</code> và đồng bộ tức thì với Trang Chính!</p>
+      <div class="calc-grid" style="margin-bottom:12px;">
+        <div class="form-field" style="grid-column:1 / -1;">
+          <label for="subCharNameInp">Tên Nhân Vật</label>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <input type="text" id="subCharNameInp" maxlength="36" style="flex:1; min-width:180px;" />
+            <button type="button" class="icon-btn" id="subRollNameBtn">🎲 Tạo Tên Ngẫu Nhiên</button>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="subCharClsSel">Hệ Phái</label>
+          <select id="subCharClsSel">
+            <option value="duelist">Kiếm Công: Đấu Sĩ → Ma Kiếm</option>
+            <option value="knight">Khiên Thủ: Hiệp Sĩ → Thánh Kỵ</option>
+            <option value="sorcerer">Trượng Công: Thuật Sư → Pháp Chủ</option>
+            <option value="sage">Hỗ Trợ / Ám: Hiền Giả → Tiên Tri</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="subCharDayInp">Tuổi Máy Chủ (Ngày 1 → 550+)</label>
+          <input type="number" id="subCharDayInp" min="1" max="800" value="15" />
+        </div>
+      </div>
+      <div style="display:flex; justify-content:flex-end; gap:8px;">
+        <a href="../index.html#tab-seasons" class="icon-btn" style="text-decoration:none;">📅 Mở Lịch Cá Nhân</a>
+        <button type="button" class="icon-btn" id="subSaveCharBtn" style="background:var(--staff-primary); color:#FFFFFF; border-color:var(--staff-primary); font-weight:700;">💾 Lưu Cookie</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const sidebarNav = document.getElementById('sidebarNav');
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      if (mobileMenuBtn && sidebarNav) {
+        const sbBackdrop = document.getElementById('sidebarBackdrop');
+    const setSubDrawer = (open) => {
+      sidebarNav.classList.toggle('mobile-open', open);
+      if (sbBackdrop) sbBackdrop.classList.toggle('open', open);
+      mobileMenuBtn.setAttribute('aria-expanded', String(open));
+    };
+    mobileMenuBtn.addEventListener('click', () => setSubDrawer(!sidebarNav.classList.contains('mobile-open')));
+    if (sbBackdrop) sbBackdrop.addEventListener('click', () => setSubDrawer(false));
+      }
+
+      const themeToggleBtn = document.getElementById('themeToggleBtn');
+      const themeLabel = document.getElementById('themeLabel');
+      const initTheme = localStorage.getItem('sxs_wiki_theme') || 'light';
+      document.documentElement.setAttribute('data-theme', initTheme);
+      if (themeLabel) themeLabel.textContent = initTheme === 'dark' ? 'Sáng' : 'Tối';
+      if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+          const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('sxs_wiki_theme', next);
+          if (themeLabel) themeLabel.textContent = next === 'dark' ? 'Sáng' : 'Tối';
+        });
+      }
+
+      // Shared Cookie Character Session on all Unified Subpages
+      const CLS_ICONS = {
+        duelist: '../assets/icons/classes/duelist.svg',
+        knight: '../assets/icons/classes/knight.svg',
+        sorcerer: '../assets/icons/classes/sorcerer.svg',
+        sage: '../assets/icons/classes/sage.svg'
+      };
+      const PREF = ['Kiếm Thánh', 'Pháp Vương', 'Thánh Kỵ', 'Hiền Giả', 'Thợ Săn Cổ Vật', 'Lãnh Chúa Ánh Sao'];
+      const REALM = ['Kanstein', 'Aqualis', 'Drasilgard', 'Fortburg', 'Long Cảng', 'Aethyris'];
+      function randName() {
+        return PREF[Math.floor(Math.random() * PREF.length)] + ' ' + REALM[Math.floor(Math.random() * REALM.length)] + ' #' + Math.floor(100 + Math.random() * 900);
+      }
+      function readCharCookie() {
+        const parts = (document.cookie || '').split(';');
+        for (let p of parts) {
+          p = p.trim();
+          if (p.indexOf('sxs_char_profile=') === 0) {
+            try { return JSON.parse(decodeURIComponent(p.slice(17))); } catch (_) {}
+          }
+        }
+        try { const m = localStorage.getItem('cookie_mirror_sxs_char_profile'); if (m) return JSON.parse(m); } catch (_) {}
+        return null;
+      }
+      function writeCharCookie(obj) {
+        document.cookie = 'sxs_char_profile=' + encodeURIComponent(JSON.stringify(obj)) + '; path=/; max-age=' + (365 * 86400) + '; SameSite=Lax';
+        try { localStorage.setItem('cookie_mirror_sxs_char_profile', JSON.stringify(obj)); localStorage.setItem('sxs_srv_day', String(obj.srvDay)); } catch (_) {}
+      }
+      let prof = readCharCookie();
+      if (!prof || !prof.name) {
+        prof = { name: randName(), cls: 'duelist', serverName: 'Kanstein S01', srvDay: 15, rankIdx: 4, pinnedDays: [15, 22, 24, 43] };
+        writeCharCookie(prof);
+      }
+      function syncSubTopbar() {
+        const ic = document.getElementById('subTopCharIcon');
+        const nm = document.getElementById('subTopCharName');
+        const sv = document.getElementById('subTopCharSrv');
+        if (ic) ic.src = CLS_ICONS[prof.cls] || CLS_ICONS.duelist;
+        if (nm) nm.textContent = prof.name;
+        if (sv) sv.textContent = 'N' + (prof.srvDay || 15);
+      }
+      syncSubTopbar();
+      const subModal = document.getElementById('subCharModal');
+      const trig = document.getElementById('subCharProfileBtn');
+      if (trig && subModal) {
+        trig.addEventListener('click', () => {
+          document.getElementById('subCharNameInp').value = prof.name || '';
+          document.getElementById('subCharClsSel').value = prof.cls || 'duelist';
+          document.getElementById('subCharDayInp').value = prof.srvDay || 15;
+          subModal.classList.add('open');
+        });
+        document.getElementById('subCloseCharBtn').addEventListener('click', () => subModal.classList.remove('open'));
+        document.getElementById('subRollNameBtn').addEventListener('click', () => {
+          document.getElementById('subCharNameInp').value = randName();
+        });
+        document.getElementById('subSaveCharBtn').addEventListener('click', () => {
+          prof.name = document.getElementById('subCharNameInp').value.trim() || randName();
+          prof.cls = document.getElementById('subCharClsSel').value || 'duelist';
+          prof.srvDay = Math.max(1, parseInt(document.getElementById('subCharDayInp').value, 10) || 15);
+          writeCharCookie(prof);
+          syncSubTopbar();
+          subModal.classList.remove('open');
+        });
+        subModal.addEventListener('click', e => { if (e.target === subModal) subModal.classList.remove('open'); });
+      }
+
+      const SUB_SEARCH = [{"title":"1. Tân Thủ, Kinh Tế & Giftcode (Trang Chính)","cat":"Mục Chính","href":"../index.html#tab-overview","icon":"../assets/fandom/Site-logo.png","desc":"Quay về bảng tra cứu & công cụ tương tác trên Trang Chính Đại Bách Khoa."},{"title":"2. Cơ Chế Chiến Đấu & Công Thức (Trang Chính)","cat":"Mục Chính","href":"../index.html#tab-mechanics","icon":"../assets/fandom/Site-logo.png","desc":"Quay về bảng tra cứu & công cụ tương tác trên Trang Chính Đại Bách Khoa."},{"title":"3. 26 Nghề (Bậc 1–8) & Icon Game (Trang Chính)","cat":"Mục Chính","href":"../index.html#tab-classes","icon":"../assets/fandom/Site-logo.png","desc":"Quay về bảng tra cứu & công cụ tương tác trên Trang Chính Đại Bách Khoa."},{"title":"4. Kho 125 Kỹ Năng & Bí Thuật (Trang Chính)","cat":"Mục Chính","href":"../index.html#tab-skills","icon":"../assets/fandom/Site-logo.png","desc":"Quay về bảng tra cứu & công cụ tương tác trên Trang Chính Đại Bách Khoa."},{"title":"5. Bộ Build Meta 4 Chế Độ PvP/PvE (Trang Chính)","cat":"Mục Chính","href":"../index.html#tab-builds","icon":"../assets/fandom/Site-logo.png","desc":"Quay về bảng tra cứu & công cụ tương tác trên Trang Chính Đại Bách Khoa."},{"title":"6. Trang Bị, Đá Thần Tạo & 8 Ngọc (Trang Chính)","cat":"Mục Chính","href":"../index.html#tab-gear","icon":"../assets/fandom/Site-logo.png","desc":"Quay về bảng tra cứu & công cụ tương tác trên Trang Chính Đại Bách Khoa."},{"title":"7. 30 Cổ Vật & 12 Huyễn Thú (Trang Chính)","cat":"Mục Chính","href":"../index.html#tab-relics-pets","icon":"../assets/fandom/Site-logo.png","desc":"Quay về bảng tra cứu & công cụ tương tác trên Trang Chính Đại Bách Khoa."},{"title":"8. 75 Đồng Hành, 26 Món & Collab (Trang Chính)","cat":"Mục Chính","href":"../index.html#tab-companions-life","icon":"../assets/fandom/Site-logo.png","desc":"Quay về bảng tra cứu & công cụ tương tác trên Trang Chính Đại Bách Khoa."},{"title":"9. Lịch Mùa Giải, Kho Báu & Reset (Trang Chính)","cat":"Mục Chính","href":"../index.html#tab-seasons","icon":"../assets/fandom/Site-logo.png","desc":"Quay về bảng tra cứu & công cụ tương tác trên Trang Chính Đại Bách Khoa."},{"title":"10. 7 Vương Quốc, Phó Bản & PvP (Trang Chính)","cat":"Mục Chính","href":"../index.html#tab-world","icon":"../assets/fandom/Site-logo.png","desc":"Quay về bảng tra cứu & công cụ tương tác trên Trang Chính Đại Bách Khoa."},{"title":"11. Trung Tâm 7 Máy Tính (Trang Chính)","cat":"Mục Chính","href":"../index.html#tab-calculators","icon":"../assets/fandom/Site-logo.png","desc":"Quay về bảng tra cứu & công cụ tương tác trên Trang Chính Đại Bách Khoa."},{"title":"12. Tính Tài Nguyên & % Rank (Trang Chính)","cat":"Mục Chính","href":"../index.html#tab-rank-yield","icon":"../assets/fandom/Site-logo.png","desc":"Quay về bảng tra cứu & công cụ tương tác trên Trang Chính Đại Bách Khoa."},{"title":"13. Tích Lũy Skill, Cổ Vật & Tâm Giao (Trang Chính)","cat":"Mục Chính","href":"../index.html#tab-item-hoard","icon":"../assets/fandom/Site-logo.png","desc":"Quay về bảng tra cứu & công cụ tương tác trên Trang Chính Đại Bách Khoa."},{"title":"14. Event Xoay Vòng & Event Lớn (Trang Chính)","cat":"Mục Chính","href":"../index.html#tab-events-hub","icon":"../assets/fandom/Site-logo.png","desc":"Quay về bảng tra cứu & công cụ tương tác trên Trang Chính Đại Bách Khoa."},{"title":"Cẩm Nang Tân Thủ 7 Ngày Đầu, Tiến Trình Căn Cứ, Journey Overture & 30 Giftcode","cat":"Nhập Môn & Kinh Tế","href":"tan-thu-kinh-te-giftcode.html","icon":"../assets/fandom/Journey_Overture.jpg","desc":"Tổng hợp toàn bộ chiến lược khởi đầu F2P, quản lý Xe Đẩy 36h, Giường EXP, Gian Hàng Lv.20, Thương Hội Commercium Lv.40, sự kiện ra mắt 14 ngày và trọn bộ Giftcode Global + VN/SEA."},{"title":"Công Thức Chiến Đấu 4 Giai Đoạn, 5 Loại Kỹ Năng & Toán Học Skill Ascend","cat":"Cơ Chế & Kỹ Năng","href":"co-che-chien-dau-skill-ascend.html","icon":"../assets/fandom/Skill_Full_Value_Example.webp","desc":"Giải mã toàn bộ công thức ATK/(ATK+DEF)×0.625, thứ tự kiểm định Block trước Crit, 4 nhóm sát thương độc lập, thẻ Skill Tags và bài toán Sao (★) vs Phẩm Chất (Rare → Immortal)."},{"title":"Cẩm Nang Chọn Nghề (Bậc 1 → Bậc 4 Sư Phụ Mei), Style vs Build & Đổi Lớp Không Mất Mát Lv.100","cat":"Nghề & Bộ Build","href":"chon-nghe-style-build-chuyen-lop.html","icon":"../assets/fandom/Classes.webp","desc":"Hành trình thức tỉnh 4 tầng định mệnh, sự khác biệt cốt lõi giữa Phong Cách (Style) – Lối Build – Cơ Chế (Mechanic), biên độ sát thương 4 lớp và cẩm nang toàn tập Chuyển Lớp Không Mất Mát ở Aqualis Lv.100."},{"title":"Hồ Sơ Chi Tiết Nhánh Kiếm Công: Chiến Binh (Warrior) → Đấu Sĩ (Duelist) → Cuồng Chiến → Ma Kiếm","cat":"Nghề & Bộ Build","href":"ho-so-chien-binh-dau-si-cuong-chien.html","icon":"../assets/fandom/Warrior.jpg","desc":"Tranh chân dung Nam/Nữ chính thức cùng bảng dữ liệu chuẩn xác toàn bộ Chiến Kỹ & Bí Thuật từ Chiến Binh Bậc 1, Đấu Sĩ Bậc 2 tới Cuồng Chiến – Tàn Sát – Tinh Vẫn Ma Kiếm."},{"title":"Hồ Sơ Chi Tiết Nhánh Khiên Thủ: Hiệp Sĩ (Knight) → Thánh Hiệp Sĩ (Paladin) → Đền Thánh","cat":"Nghề & Bộ Build","href":"ho-so-hiep-si-thanh-ky-si.html","icon":"../assets/art/class_templar.jpg","desc":"Pháo đài di động \"Vùng Cấm Bay\" bảo vệ tổ đội: tranh chân dung Nam/Nữ chính thức cùng bảng chuẩn xác toàn bộ Chiến Kỹ & Bí Thuật chuyên biệt từ Hiệp Sĩ Bậc 2 tới Thánh Hiệp Sĩ – Đền Thánh – Huy Hoàng."},{"title":"Hồ Sơ Chi Tiết Nhánh Trượng Công: Pháp Sư (Mage) → Thuật Sư (Sorcerer) → Đại Pháp Sư → Pháp Chủ","cat":"Nghề & Bộ Build","href":"ho-so-phap-su-thuat-su-dai-phap-su.html","icon":"../assets/fandom/Mage.jpg","desc":"Bậc thầy bão nguyên tố diện rộng: chân dung Nam/Nữ chính thức cùng bảng chuẩn xác toàn bộ Chiến Kỹ & Bí Thuật từ Pháp Sư Bậc 1, Thuật Sư Bậc 2 tới Đại Pháp Sư – Kẻ Hủy Diệt – Pháp Chủ."},{"title":"Hồ Sơ Chi Tiết Nhánh Hỗ Trợ & Ám Thuật: Hiền Giả (Sage) → Bí Thuật Sư (Arcanist) → Tiên Tri","cat":"Nghề & Bộ Build","href":"ho-so-hien-gia-bi-thuat-su.html","icon":"../assets/art/class_prophet.jpg","desc":"Đại chiến lược gia làm chủ Trị Liệu, Triệu Hồi và Ăn Mòn Bóng Tối: chân dung Nam/Nữ chính thức cùng bảng chuẩn xác toàn bộ kỹ năng từ Hiền Giả Bậc 2 tới Bí Thuật Sư – Thống Trị Giả – Tiên Tri."},{"title":"Cẩm Nang Bộ Build Chuẩn Meta Theo Nghề & Mùa (4 Chế Độ PvP Đông / PvP Solo / PvE Đông / PvE Solo)","cat":"Nghề & Bộ Build","href":"bo-build-meta-4-che-do.html","icon":"../assets/art/hero_banner.jpg","desc":"Nguyên tắc vàng xếp thứ tự ưu tiên 4 ô Chiến Kỹ AI ra đòn, cách né bẫy kỹ năng Knock Back và ma trận thay đổi kỹ năng/Pet cho từng chế độ thực chiến."},{"title":"Trang Bị 5 Ô, Bảng Chi Phí Đá Thần Tạo & Lộ Trình Ghép 8 Loại Ngọc (T1 → T15)","cat":"Trang Bị, Ngọc & Cổ Vật","href":"trang-bi-da-than-tao-ngoc.html","icon":"../assets/art/gear_showcase.jpg","desc":"Quy tắc nâng đều Cộng Hưởng +5/+10, bảng chi phí khóa dòng tẩy tại lò rèn Micaela (100–3,200 Đá), các dòng Độc Nhất (Unique) và mẹo mồi Năng Lượng Lò Cơ Khí ghép Ngọc T7–T15."},{"title":"Bảo Tàng 30 Cổ Vật Vĩnh Viễn, Chiến Thuật Trái Định Mệnh & Hồ Sơ 12 Huyễn Thú (Fantomons)","cat":"Huyễn Thú & Đồng Hành","href":"co-vat-trai-dinh-menh-huyen-thu.html","icon":"../assets/art/relic_showcase.jpg","desc":"Đầu tư đúng hơn 35% Lực Chiến vĩnh viễn không bao giờ reset: quy tắc dò Trái Định Mệnh, cơ chế Auto-Loot Lv.50, 3 vật liệu Tư Chất và chi tiết kỹ năng 12 Huyễn Thú."},{"title":"Tiểu Sử Nguyên Bản 13 Nhân Vật & Tộc Dryason, Collab KonoSuba / Hoa Sơn & 26 Món Ăn Vĩnh Viễn","cat":"Huyễn Thú & Đồng Hành","href":"dong-hanh-dryason-mon-an-collab.html","icon":"../assets/art/tavern_recipes.jpg","desc":"Trọn bộ hồ sơ cốt truyện chính thức của 13 nhân vật đại lục Kanstein kèm chân dung lớn, chủng tộc Dryason, quy tắc Thiện Cảm Lv.60 mở Skin và Quy tắc 30 Đĩa Món Đỏ/Cam/Tím."},{"title":"Hệ Thống Theo Mùa (< Lv.100 vs > Lv.100), Chu Kỳ Kho Báu 8+7n (Kỳ 2 Ngày 15), Bingo 32 Vé & Reset 128 ★","cat":"Sự Kiện, Hỗn Mang & Mùa Giải","href":"he-thong-mua-giai-lo-trinh-reset.html","icon":"../assets/official/official_trailer_thumb.jpg","desc":"Phân tách rõ đầu tư Vĩnh Viễn (< Lv.100) và Theo Mùa (> Lv.100), lịch chuẩn Đại Chiến Báu Vật chu kỳ 8 + 7n (Kỳ 1 Ngày 8, Kỳ 2 Ngày 15 + Bingo #1), công thức Sao Nguyên Thủy và 3 nhóm tài nguyên chốt mùa."},{"title":"Cẩm Nang Toàn Tập Xâm Lăng Hỗn Mang (Chaos Invasion): Đội Hình 4 Vòng, BXH Nghề & Primal Forge","cat":"Sự Kiện, Hỗn Mang & Mùa Giải","href":"xam-lang-hon-mang-chaos-invasion.html","icon":"../assets/fandom/Chaos_Invasion_1.webp","desc":"Chiến thuật chuẩn từ A–Z cho sự kiện đua sát thương quan trọng nhất: tách BXH công bằng theo từng Nghề, xoay tua 4 trận (1 DPS + 3 Support), giá trị tuyệt đối của Primal Forge Shard và quy tắc Thương Nhân Bí Ẩn."},{"title":"Truyền Thuyết & Bản Đồ Đại Lục Kanstein, Phó Bản Hàng Ngày, Split Mirage & Raid Thánh Thú","cat":"Sự Kiện, Hỗn Mang & Mùa Giải","href":"ban-do-kanstein-pho-ban-coop.html","icon":"../assets/fandom/World_of_Kanstein.png","desc":"Bí ẩn Nữ Thần sáng tạo thế giới trú ẩn Kanstein, tranh bản đồ chính thức của các đại lục, bảng Lực Chiến Phó Bản Hàng Ngày và chiến thuật vượt Wave 11–12+ Lò Ảo Ảnh."},{"title":"Tính Tài Nguyên Cần Tích Cho Các Mốc & Ma Trận % Tăng / Giảm Sản Lượng Giữa 10 Rank Bí Cảnh","cat":"Tích Trữ & Chu Kỳ Event","href":"tinh-tai-nguyen-theo-rank-bi-canh.html","icon":"../assets/art/gear_showcase.jpg","desc":"Phân tích toán học 4 Bí Cảnh Nguyên Liệu (Búa Sắt, Xẻng Cát, Đốt Ngón Tay, Cuốc Vàng), đối chiếu % chênh lệch từ Rank 1 Tân Thủ đến Rank 10 Thần Thoại và nguyên tắc mua 2-2-2-2."},{"title":"Phân Tích Tích Lũy Dài Hạn: Roll Kỹ Năng, Roll Cổ Vật, Đào Tâm Giao & Vòng Quay Bảo Hiểm","cat":"Tích Trữ & Chu Kỳ Event","href":"phan-tich-tich-luy-roll-skill-co-vat-tam-giao.html","icon":"../assets/art/relic_showcase.jpg","desc":"Cẩm nang quản trị toàn bộ vé triệu hồi và vật phẩm hiếm: điểm dừng cấp nghề cho Stellatie/Covenite, ngưỡng dừng 50–70% Cổ Vật, lộ trình Đào Tâm Giao (Lv.20 → 60 → 100) và cách né bẫy Vòng Quay 60–90 vé."},{"title":"Lộ Trình Chi Tiết Từng Event Xoay Vòng (7 Ngày / 14 Ngày / 21 Ngày) & Đại Sự Kiện Xuyên Mùa","cat":"Tích Trữ & Chu Kỳ Event","href":"lo-trinh-event-xoay-vong-event-lon.html","icon":"../assets/fandom/Journey_Overture.jpg","desc":"Bản đồ toàn cảnh 4 tầng chu kỳ sự kiện trong Sword x Staff: Đại Chiến Báu Vật 8+7n, vòng lặp 21 ngày Bingo – Cào Thẻ – Giải Đố, Chủ Nhật luân phiên, Loop Quests 14 ngày, Bản Đồ Mùa và Collab."}];
+      const globalSearchInput = document.getElementById('globalSearchInput');
+      const searchDropdown = document.getElementById('searchDropdown');
+      if (globalSearchInput && searchDropdown) {
+        globalSearchInput.addEventListener('input', () => {
+          const q = globalSearchInput.value.trim().toLowerCase();
+          if (!q) { searchDropdown.classList.remove('open'); return; }
+          const matches = SUB_SEARCH.filter(m =>
+            m.title.toLowerCase().includes(q) || m.desc.toLowerCase().includes(q) || m.cat.toLowerCase().includes(q)
+          ).slice(0, 10);
+          if (!matches.length) {
+            searchDropdown.innerHTML = '<div style="padding:14px; color:var(--text-muted); font-size:0.86rem;">Không tìm thấy nội dung khớp từ khóa.</div>';
+          } else {
+            searchDropdown.innerHTML = matches.map(m => `
+              <a href="${m.href}" class="search-item" style="text-decoration:none; color:inherit;">
+                <img src="${m.icon}" alt="" class="search-item-icon" loading="lazy" />
+                <div class="search-item-body">
+                  <div class="search-item-top">
+                    <span>${m.title}</span>
+                    <span class="search-item-cat">${m.cat}</span>
+                  </div>
+                  <div class="search-item-desc">${m.desc}</div>
+                </div>
+              </a>
+            `).join('');
+          }
+          searchDropdown.classList.add('open');
+        });
+        document.addEventListener('click', e => {
+          if (!e.target.closest('.global-search-wrap')) searchDropdown.classList.remove('open');
+        });
+        document.addEventListener('keydown', e => {
+          if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+            e.preventDefault();
+            globalSearchInput.focus();
+          } else if (e.key === 'Escape') {
+            searchDropdown.classList.remove('open');
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
